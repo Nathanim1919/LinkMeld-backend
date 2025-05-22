@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import Capture, { ICapture } from '../models/Capture';
 
 export const saveCapture = async (req: Request, res: Response): Promise<void> => {
+  console.log('Saving capture:', req.body);
   try {
     const { url, timestamp, text, html } = req.body;
 
