@@ -7,52 +7,62 @@ export const saveCapture = async (req: Request, res: Response): Promise<void> =>
   try {
     const {
       url,
-      timestamp,
-      metadata,
       mainText,
-      images,
-      links,
+      metadata,
       documents,
-      interactive,
+      metrics,
+      timestamp,
     } = req.body;
 
     // Validate required fields
-    if (!url || !timestamp || !mainText) {
-      res.status(400).json({ message: 'Missing required fields: url, timestamp, mainText' });
+    if (!url || !timestamp) {
+      res.status(400).json({ message: 'Missing required fields: url, timestamp' });
       return;
     }
 
-    // Sanitize mainText
-    const cleanText = sanitizeHtml(mainText, {
-      allowedTags: [],
-      allowedAttributes: {},
-    });
+    // Detect PDF
+    const isPdf = url.match(/\.pdf($|\?)/i);
 
-    // Filter and deduplicate links
-    const uniqueLinks = Array.from(new Map(
-      links.map((link: { href: string; text: string }) => [link.href, link])
-    ).values());
+    // Sanitize inputs
+    const cleanMainText = mainText ? sanitizeHtml(mainText, { allowedTags: [], allowedAttributes: {} }) : '';
+    const cleanMetadata = {
+      title: sanitizeHtml(metadata?.title || 'Untitled', { allowedTags: [] }),
+      description: sanitizeHtml(metadata?.description || '', { allowedTags: [] }),
+      url: sanitizeHtml(metadata?.url || url, { allowedTags: [] }),
+      favicon: sanitizeHtml(metadata?.favicon || '', { allowedTags: [] }),
+      siteName: sanitizeHtml(metadata?.siteName || '', { allowedTags: [] }),
+      publishedTime: sanitizeHtml(metadata?.publishedTime || '', { allowedTags: [] }),
+      author: sanitizeHtml(metadata?.author || '', { allowedTags: [] }),
+      keywords: sanitizeHtml(metadata?.keywords || '', { allowedTags: [] }),
+      viewport: sanitizeHtml(metadata?.viewport || '', { allowedTags: [] }),
+      extractionMethod: sanitizeHtml(metadata?.extractionMethod || 'unknown', { allowedTags: [] }),
+      isPdf: !!isPdf,
+    };
+
+    // Ensure documents is an array
+    const cleanDocuments = Array.isArray(documents) ? documents.map(doc => ({
+      url: sanitizeHtml(doc.url, { allowedTags: [] }),
+      type: sanitizeHtml(doc.type, { allowedTags: [] }),
+    })) : [];
 
     // Prepare capture data
     const captureData: Partial<ICapture> = {
       url,
       timestamp: new Date(timestamp),
-      metadata: {
-        title: metadata?.title || 'Untitled',
-        description: metadata?.description || '',
-        url: metadata?.url || url,
-        favicon: metadata?.favicon || '',
+      metadata: cleanMetadata,
+      mainText: cleanMainText,
+      documents: cleanDocuments,
+      metrics: {
+        contentExtraction: metrics?.contentExtraction || 0,
+        documentExtraction: metrics?.documentExtraction || 0,
+        metadataExtraction: metrics?.metadataExtraction || 0,
+        totalTime: metrics?.totalTime || 0,
+        textLength: metrics?.textLength || 0,
+        documentCount: metrics?.documentCount || 0,
       },
-      mainText: cleanText,
-      images: images?.map((img: { src: string; alt: string }) => ({
-        url: img.src,
-        alt: img.alt,
-      })) || [],
-      links: uniqueLinks as { href: string; text: string }[],
-      documents: documents || [],
-      interactiveForms: interactive?.forms || [],
     };
 
+    // Save to MongoDB
     const capture = new Capture(captureData);
     await capture.save();
 

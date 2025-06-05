@@ -16,16 +16,16 @@ app.use(bodyParser.json({ limit: '10mb' }));
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }));
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: '*', // Allow all origins for development
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  allowedHeaders: 'Content-Type, Authorization',
+}));
 app.use(express.json());
 
 // Routes
 app.use('/api', captureRoutes);
 
-// Basic route
-app.get('/', (req: Request, res: Response) => {
-  res.json({ message: 'Welcome to LinkMeld API' });
-});
 
 // Start server
 app.listen(port, () => {

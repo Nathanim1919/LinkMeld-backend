@@ -8,12 +8,24 @@ export interface ICapture extends Document {
     description: string;
     url: string;
     favicon: string;
+    siteName: string;
+    publishedTime: string;
+    author: string;
+    keywords: string;
+    viewport: string;
+    extractionMethod: string;
+    isPdf: boolean;
   };
   mainText: string;
-  images: { url: string; alt: string }[];
-  links: { href: string; text: string }[];
   documents: { url: string; type: string }[];
-  interactiveForms: { action: string; method: string; inputs: { type: string; name: string; value: string }[] }[];
+  metrics: {
+    contentExtraction: number;
+    documentExtraction: number;
+    metadataExtraction: number;
+    totalTime: number;
+    textLength: number;
+    documentCount: number;
+  };
 }
 
 const CaptureSchema: Schema = new Schema({
@@ -24,22 +36,28 @@ const CaptureSchema: Schema = new Schema({
     description: { type: String, default: '' },
     url: { type: String, default: '' },
     favicon: { type: String, default: '' },
+    siteName: { type: String, default: '' },
+    publishedTime: { type: String, default: '' },
+    author: { type: String, default: '' },
+    keywords: { type: String, default: '' },
+    viewport: { type: String, default: '' },
+    extractionMethod: { type: String, default: 'unknown' },
+    isPdf: { type: Boolean, default: false },
   },
-  mainText: { type: String, required: true },
-  images: [{ url: { type: String }, alt: { type: String } }],
-  links: [{ href: { type: String }, text: { type: String } }],
-  documents: [{ url: { type: String }, type: { type: String } }],
-  interactiveForms: [{
-    action: { type: String },
-    method: { type: String },
-    inputs: [{
-      type: { type: String },
-      name: String,
-      value: String,
-    }],
+  mainText: { type: String, default: '' },
+  documents: [{
+    url: { type: String },
+    type: { type: String },
   }],
-});
- 
+  metrics: {
+    contentExtraction: { type: Number, default: 0 },
+    documentExtraction: { type: Number, default: 0 },
+    metadataExtraction: { type: Number, default: 0 },
+    totalTime: { type: Number, default: 0 },
+    textLength: { type: Number, default: 0 },
+    documentCount: { type: Number, default: 0 },
+  },
+}, {});
 CaptureSchema.index({ url: 1, timestamp: -1 });
 CaptureSchema.index({ 'metadata.title': 'text', mainText: 'text' });
 
