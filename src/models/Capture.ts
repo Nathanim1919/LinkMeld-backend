@@ -1,12 +1,15 @@
 import mongoose, { Schema, Document } from 'mongoose';
 
 export interface ICapture extends Document {
+  // user: mongoose.Types.ObjectId;
+  folder?: mongoose.Types.ObjectId;
   url: string;
+  title: string;
+  summary: string;
   timestamp: Date;
   metadata: {
     title: string;
     description: string;
-    url: string;
     favicon: string;
     siteName: string;
     publishedTime: string;
@@ -18,6 +21,9 @@ export interface ICapture extends Document {
   };
   mainText: string;
   documents: { url: string; type: string }[];
+  tags: string[];
+  pinned: boolean;
+  archived: boolean;
   metrics: {
     contentExtraction: number;
     documentExtraction: number;
@@ -29,12 +35,15 @@ export interface ICapture extends Document {
 }
 
 const CaptureSchema: Schema = new Schema({
+  folder: { type: mongoose.Schema.Types.ObjectId, ref: 'Folder' },
   url: { type: String, required: true },
+  title: { type: String, default: 'Untitled' },
+  summary: { type: String, default: '' },
   timestamp: { type: Date, required: true },
+
   metadata: {
     title: { type: String, default: 'Untitled' },
     description: { type: String, default: '' },
-    url: { type: String, default: '' },
     favicon: { type: String, default: '' },
     siteName: { type: String, default: '' },
     publishedTime: { type: String, default: '' },
@@ -44,11 +53,16 @@ const CaptureSchema: Schema = new Schema({
     extractionMethod: { type: String, default: 'unknown' },
     isPdf: { type: Boolean, default: false },
   },
+
   mainText: { type: String, default: '' },
   documents: [{
     url: { type: String },
     type: { type: String },
   }],
+  tags: [{ type: String }],
+  pinned: { type: Boolean, default: false },
+  archived: { type: Boolean, default: false },
+
   metrics: {
     contentExtraction: { type: Number, default: 0 },
     documentExtraction: { type: Number, default: 0 },
@@ -57,8 +71,9 @@ const CaptureSchema: Schema = new Schema({
     textLength: { type: Number, default: 0 },
     documentCount: { type: Number, default: 0 },
   },
-}, {});
-CaptureSchema.index({ url: 1, timestamp: -1 });
-CaptureSchema.index({ 'metadata.title': 'text', mainText: 'text' });
+});
+
+CaptureSchema.index({ user: 1, folder: 1, timestamp: -1 });
+CaptureSchema.index({ title: 'text', mainText: 'text', 'metadata.title': 'text' });
 
 export default mongoose.model<ICapture>('Capture', CaptureSchema);
