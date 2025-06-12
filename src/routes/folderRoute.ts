@@ -2,7 +2,8 @@ import { Router } from "express";
 import {
   createFolder,
   getFolders,
-  getFolderById
+  getFolderById,
+  appendCaptureToFolder
 } from "../controllers/folderController";
 
 const router = Router();
@@ -13,5 +14,7 @@ router.post("/", createFolder);
 router.get("/", getFolders);
 // Route to get a folder by ID
 router.get("/:id", getFolderById);
+// Route to append a capture to a folder
+router.post("/:id/capture", appendCaptureToFolder);
 
 export default router;
