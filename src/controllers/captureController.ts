@@ -1,22 +1,23 @@
-import { Request, Response } from 'express';
-import Capture, { ICapture } from '../models/Capture';
-import sanitizeHtml from 'sanitize-html';
+import { Request, Response } from "express";
+import Capture, { ICapture } from "../models/Capture";
+import sanitizeHtml from "sanitize-html";
 
-export const saveCapture = async (req: Request, res: Response): Promise<void> => {
-  console.log('[LinkMeld] Saving capture:', { url: req.body.url, timestamp: req.body.timestamp });
+export const saveCapture = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  console.log("[LinkMeld] Saving capture:", {
+    url: req.body.url,
+    timestamp: req.body.timestamp,
+  });
   try {
-    const {
-      url,
-      mainText,
-      metadata,
-      documents,
-      metrics,
-      timestamp,
-    } = req.body;
+    const { url, mainText, metadata, documents, metrics, timestamp } = req.body;
 
     // Validate required fields
     if (!url || !timestamp) {
-      res.status(400).json({ message: 'Missing required fields: url, timestamp' });
+      res
+        .status(400)
+        .json({ message: "Missing required fields: url, timestamp" });
       return;
     }
 
@@ -24,26 +25,36 @@ export const saveCapture = async (req: Request, res: Response): Promise<void> =>
     const isPdf = url.match(/\.pdf($|\?)/i);
 
     // Sanitize inputs
-    const cleanMainText = mainText ? sanitizeHtml(mainText, { allowedTags: [], allowedAttributes: {} }) : '';
+    const cleanMainText = mainText
+      ? sanitizeHtml(mainText, { allowedTags: [], allowedAttributes: {} })
+      : "";
     const cleanMetadata = {
-      title: sanitizeHtml(metadata?.title || 'Untitled', { allowedTags: [] }),
-      description: sanitizeHtml(metadata?.description || '', { allowedTags: [] }),
+      title: sanitizeHtml(metadata?.title || "Untitled", { allowedTags: [] }),
+      description: sanitizeHtml(metadata?.description || "", {
+        allowedTags: [],
+      }),
       url: sanitizeHtml(metadata?.url || url, { allowedTags: [] }),
-      favicon: sanitizeHtml(metadata?.favicon || '', { allowedTags: [] }),
-      siteName: sanitizeHtml(metadata?.siteName || '', { allowedTags: [] }),
-      publishedTime: sanitizeHtml(metadata?.publishedTime || '', { allowedTags: [] }),
-      author: sanitizeHtml(metadata?.author || '', { allowedTags: [] }),
-      keywords: sanitizeHtml(metadata?.keywords || '', { allowedTags: [] }),
-      viewport: sanitizeHtml(metadata?.viewport || '', { allowedTags: [] }),
-      extractionMethod: sanitizeHtml(metadata?.extractionMethod || 'unknown', { allowedTags: [] }),
+      favicon: sanitizeHtml(metadata?.favicon || "", { allowedTags: [] }),
+      siteName: sanitizeHtml(metadata?.siteName || "", { allowedTags: [] }),
+      publishedTime: sanitizeHtml(metadata?.publishedTime || "", {
+        allowedTags: [],
+      }),
+      author: sanitizeHtml(metadata?.author || "", { allowedTags: [] }),
+      keywords: sanitizeHtml(metadata?.keywords || "", { allowedTags: [] }),
+      viewport: sanitizeHtml(metadata?.viewport || "", { allowedTags: [] }),
+      extractionMethod: sanitizeHtml(metadata?.extractionMethod || "unknown", {
+        allowedTags: [],
+      }),
       isPdf: !!isPdf,
     };
 
     // Ensure documents is an array
-    const cleanDocuments = Array.isArray(documents) ? documents.map(doc => ({
-      url: sanitizeHtml(doc.url, { allowedTags: [] }),
-      type: sanitizeHtml(doc.type, { allowedTags: [] }),
-    })) : [];
+    const cleanDocuments = Array.isArray(documents)
+      ? documents.map((doc) => ({
+          url: sanitizeHtml(doc.url, { allowedTags: [] }),
+          type: sanitizeHtml(doc.type, { allowedTags: [] }),
+        }))
+      : [];
 
     // Prepare capture data
     const captureData: Partial<ICapture> = {
@@ -66,20 +77,32 @@ export const saveCapture = async (req: Request, res: Response): Promise<void> =>
     const capture = new Capture(captureData);
     await capture.save();
 
-    console.log('[LinkMeld] Capture saved:', { id: capture._id, url });
-    res.status(201).json({ message: 'Capture saved successfully', captureId: capture._id });
+    console.log("[LinkMeld] Capture saved:", { id: capture._id, url });
+    res
+      .status(201)
+      .json({ message: "Capture saved successfully", captureId: capture._id });
   } catch (error) {
-    console.error('[LinkMeld] Error saving capture:', error);
-    res.status(500).json({ message: 'Error saving capture', error: error.message });
+    console.error("[LinkMeld] Error saving capture:", error);
+    res
+      .status(500)
+      .json({ message: "Error saving capture", error: error.message });
   }
 };
 
-export const getCaptures = async (req: Request, res: Response): Promise<void> => {
+export const getCaptures = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
   try {
-    const captures = await Capture.find().sort({ timestamp: -1 }).limit(50);
+    const captures = await Capture.find()
+      .sort({ timestamp: -1 })
+      .populate("folder", "name") // Populate folder name
+      .exec();
     res.status(200).json(captures);
   } catch (error) {
-    console.error('[LinkMeld] Error fetching captures:', error);
-    res.status(500).json({ message: 'Error fetching captures', error: error.message });
+    console.error("[LinkMeld] Error fetching captures:", error);
+    res
+      .status(500)
+      .json({ message: "Error fetching captures", error: error.message });
   }
 };
