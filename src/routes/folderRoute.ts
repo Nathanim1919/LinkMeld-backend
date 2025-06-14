@@ -3,7 +3,8 @@ import {
   createFolder,
   getFolders,
   getFolderById,
-  appendCaptureToFolder
+  appendCaptureToFolder,
+  getCapturesWithSpecificFolder
 } from "../controllers/folderController";
 
 const router = Router();
@@ -16,5 +17,6 @@ router.get("/", getFolders);
 router.get("/:id", getFolderById);
 // Route to append a capture to a folder
 router.post("/:id/capture", appendCaptureToFolder);
+router.get("/:id/captures", getCapturesWithSpecificFolder); // Assuming this is to get captures in a folder
 
 export default router;
