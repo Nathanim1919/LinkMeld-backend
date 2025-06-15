@@ -17,9 +17,35 @@ export const getAllDistinctSiteName = async (
       return;
     }
 
+    // get the number of captures for each site name
+    const siteNameCounts = await Capture.aggregate([
+      {
+        $group: {
+          _id: "$metadata.siteName",
+          count: { $sum: 1 },
+        },
+      },
+      {
+        $project: {
+          siteName: "$_id",
+          count: 1,
+          _id: 0,
+        },
+      },
+    ]);
+    // Convert the counts to a map for easier access
+    const siteNameCountMap = siteNameCounts.reduce(
+      (acc, { siteName, count }) => {
+        acc[siteName] = count;
+        return acc;
+      },
+      {}
+    );
+
     res.status(200).json({
       message: "Successfully fetched all distinct site names",
       siteNames,
+      siteNameCounts: siteNameCountMap,
     });
   } catch (error) {
     console.error("[LinkMeld] Error fetching distinct site names:", error);
