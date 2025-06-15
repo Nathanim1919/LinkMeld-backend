@@ -112,9 +112,12 @@ export const bookmarkOrUnbookmarkCapture = async (
   res: Response
 ): Promise<void> => {
   const { captureId } = req.params;
+ 
 
   if (!captureId) {
-    res.status(400).json({ message: "Capture ID is required" });
+    res.status(400).json({
+      message: "Invalid request. Please provide captureId and isBookmarked.",
+    });
     return;
   }
 
@@ -125,7 +128,6 @@ export const bookmarkOrUnbookmarkCapture = async (
       return;
     }
 
-    // Toggle bookmark status
     capture.bookmarked = !capture.bookmarked;
     await capture.save();
 
@@ -133,10 +135,13 @@ export const bookmarkOrUnbookmarkCapture = async (
       message: `Capture ${
         capture.bookmarked ? "bookmarked" : "unbookmarked"
       } successfully`,
-      capture,
+      captureId: capture._id,
     });
   } catch (error) {
-    console.error("[LinkMeld] Error toggling bookmark:", error);
-    res.status(500).json({ message: "Error toggling bookmark", error });
+    console.error("[LinkMeld] Error bookmarking/unbookmarking capture:", error);
+    res.status(500).json({
+      message: "Error bookmarking/unbookmarking capture",
+      error: error.message,
+    });
   }
 };
