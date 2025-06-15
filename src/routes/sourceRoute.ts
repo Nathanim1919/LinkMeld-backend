@@ -2,6 +2,7 @@ import { Router } from "express";
 import {
   getAllDistinctSiteName,
   getCapturesWithSiteName,
+  getCapturesWithSpecificSiteName
 } from "../controllers/sourceController";
 
 const sourceRouter = Router();
@@ -10,5 +11,6 @@ const sourceRouter = Router();
 sourceRouter.get("/", getAllDistinctSiteName);
 // Route to get captures with a specific site name
 sourceRouter.get("/captures-by-site-name", getCapturesWithSiteName);
+sourceRouter.get("/:siteName/captures", getCapturesWithSpecificSiteName);
 
 export default sourceRouter;
