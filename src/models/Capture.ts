@@ -3,6 +3,7 @@ import mongoose, { Schema, Document } from 'mongoose';
 export interface ICapture extends Document {
   // user: mongoose.Types.ObjectId;
   folder?: mongoose.Types.ObjectId;
+  bookmarked?: boolean;
   url: string;
   title: string;
   summary: string;
@@ -40,7 +41,7 @@ const CaptureSchema: Schema = new Schema({
   title: { type: String, default: 'Untitled' },
   summary: { type: String, default: '' },
   timestamp: { type: Date, required: true },
-
+  bookmarked: { type: Boolean, default: false },
   metadata: {
     title: { type: String, default: 'Untitled' },
     description: { type: String, default: '' },

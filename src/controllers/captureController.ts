@@ -106,3 +106,37 @@ export const getCaptures = async (
       .json({ message: "Error fetching captures", error: error.message });
   }
 };
+
+export const bookmarkOrUnbookmarkCapture = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  const { captureId } = req.params;
+
+  if (!captureId) {
+    res.status(400).json({ message: "Capture ID is required" });
+    return;
+  }
+
+  try {
+    const capture = await Capture.findById(captureId);
+    if (!capture) {
+      res.status(404).json({ message: "Capture not found" });
+      return;
+    }
+
+    // Toggle bookmark status
+    capture.bookmarked = !capture.bookmarked;
+    await capture.save();
+
+    res.status(200).json({
+      message: `Capture ${
+        capture.bookmarked ? "bookmarked" : "unbookmarked"
+      } successfully`,
+      capture,
+    });
+  } catch (error) {
+    console.error("[LinkMeld] Error toggling bookmark:", error);
+    res.status(500).json({ message: "Error toggling bookmark", error });
+  }
+};
