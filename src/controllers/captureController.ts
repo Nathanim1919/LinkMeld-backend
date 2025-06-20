@@ -112,7 +112,6 @@ export const bookmarkOrUnbookmarkCapture = async (
   res: Response
 ): Promise<void> => {
   const { captureId } = req.params;
- 
 
   if (!captureId) {
     res.status(400).json({
@@ -146,3 +145,23 @@ export const bookmarkOrUnbookmarkCapture = async (
   }
 };
 
+export const getBookmarkedCaptures = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  try {
+    const captures = await Capture.find({ bookmarked: true })
+      .sort({ timestamp: -1 })
+      .populate("folder", "name") // Populate folder name
+      .exec();
+    res.status(200).json(captures);
+  } catch (error) {
+    console.error("[LinkMeld] Error fetching bookmarked captures:", error);
+    res
+      .status(500)
+      .json({
+        message: "Error fetching bookmarked captures",
+        error: error.message,
+      });
+  }
+};

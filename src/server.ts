@@ -6,6 +6,9 @@ import captureRoutes from "./routes/captureRoutes";
 import folderRoutes from "./routes/folderRoute";
 import bodyParser from "body-parser";
 import sourceRoutes from "./routes/sourceRoute"; // Import source routes
+import { auth } from "./lib/auth";
+import { toNodeHandler } from "better-auth/node";
+
 const app: Express = express();
 const port = process.env.PORT || 3000;
 
@@ -16,12 +19,15 @@ connectDB();
 app.use(bodyParser.json({ limit: "10mb" }));
 app.use(bodyParser.urlencoded({ limit: "10mb", extended: true }));
 
-// Middleware
+// Middleware to handle authentication
+app.all("/api/auth/*splat", toNodeHandler(auth));
+
+// Configure CORS middleware
 app.use(
   cors({
-    origin: "*", // Allow all origins for development
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    allowedHeaders: "Content-Type, Authorization",
+    origin: "http://localhost:5173", // Replace with your frontend's origin
+    methods: ["GET", "POST", "PUT", "DELETE"], // Specify allowed HTTP methods
+    credentials: true, // Allow credentials (cookies, authorization headers, etc.)
   })
 );
 app.use(express.json());
@@ -30,11 +36,6 @@ app.use(express.json());
 app.use("/api/v1/captures", captureRoutes);
 app.use("/api/v1/folders", folderRoutes);
 app.use("/api/v1/sources", sourceRoutes); // Use source routes
-
-// app.use((err, req, res, next) => {
-//   console.error(err.stack);
-//   res.status(500).send('Something broke!');
-// });
 
 // Start server
 app.listen(port, () => {
