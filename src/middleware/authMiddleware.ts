@@ -1,6 +1,7 @@
 // Import RequestHandler along with the others
+// file name is auth.middleware.ts
 import { Request, Response, NextFunction, RequestHandler } from "express";
-import { auth } from "src/lib/auth";
+import { auth } from "../lib/auth";
 import { fromNodeHeaders } from "better-auth/node";
 
 // Extend the Express Request type to include the user property
@@ -23,8 +24,6 @@ export const authentication: RequestHandler = async (
     const session = await auth.api.getSession({
       headers: headers,
     });
-
-    console.log("Session:", session);
 
     if (!session) {
       // It's good practice to add a `return` here to make the exit point explicit

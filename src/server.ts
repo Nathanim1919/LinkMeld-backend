@@ -42,6 +42,8 @@ app.use((err: Error, req: Request, res: Response, next: Function) => {
 
 app.use(express.json());
 
+// console.log(require.resolve("../middleware/auth.middleware"));
+
 // Routes
 app.use("/api/v1/captures", captureRoutes);
 app.use("/api/v1/folders", folderRoutes);

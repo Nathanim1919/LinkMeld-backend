@@ -5,7 +5,7 @@ import {
   bookmarkOrUnbookmarkCapture,
   getBookmarkedCaptures
 } from "../controllers/captureController";
-import { authentication } from "src/middleware/auth.middleware";
+import { authentication } from "../middleware/authMiddleware";
 
 const router = express.Router();
 
