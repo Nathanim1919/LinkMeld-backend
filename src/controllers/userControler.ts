@@ -1,14 +1,10 @@
-// import { auth } from "src/lib/auth";
+import { Request, Response } from "express"
+export const resetAllData = (req: Request, res: Response):Promise<void> => {
+    try {
+        
+    } catch (error) {
+        
+    }
+}
 
-// export const SignUp = async (req: Request, res: Response): Promise<Response> => {
-//   const { email, password } = req.body;
 
-// await auth.api.signUpEmail({
-//     body: {
-//         email,
-//         password
-//     },
-//     asResponse: true
-// }),
-
-// }

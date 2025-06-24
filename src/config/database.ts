@@ -1,15 +1,22 @@
-import mongoose from 'mongoose';
+import dotenv from "dotenv";
+dotenv.config();
 
-const connectDB = async (): Promise<void> => {
+
+import mongoose from "mongoose";
+
+export const connectMongo = async () => {
+
+  // const mongoURI = process.env.MONGO_URI as string;
+  const mongoURI = "mongodb://localhost:27017/LinkMeld"
+  
+  if (!mongoURI) {
+    throw new Error("MONGO_URI is not defined in .env file");
+  }
   try {
-    // const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/LinkMeld';
-    const mongoURI = 'mongodb://localhost:27017/LinkMeld'; // Use a default URI for local development
     await mongoose.connect(mongoURI);
-    console.log('📦 MongoDB Connected...');
-  } catch (err) {
-    console.error('MongoDB connection error:', err);
+    console.log("MongoDB connected");
+  } catch (error) {
+    console.error("MongoDB connection error:", error);
     process.exit(1);
   }
 };
-
-export default connectDB; 

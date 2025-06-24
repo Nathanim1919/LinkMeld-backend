@@ -5,8 +5,11 @@ import {
   bookmarkOrUnbookmarkCapture,
   getBookmarkedCaptures
 } from "../controllers/captureController";
+import { authentication } from "src/middleware/auth.middleware";
 
 const router = express.Router();
+
+router.use(authentication); // Apply authentication middleware to all routes in this router
 
 router.post("/save", saveCapture);
 router.get("/", getCaptures);
