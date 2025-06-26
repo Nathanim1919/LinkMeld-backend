@@ -1,39 +1,44 @@
 import mongoose from "mongoose";
-import Folder, { IFolder } from "../models/Folder";
-import Capture from "../models/Capture";
+import Collection, { ICollection } from "../models/Collection";
 import { Request, Response } from "express";
+import { Capture } from "../models/Capture";
 
-export const createFolder = async (
+export const createCollection = async (
   req: Request,
   res: Response
 ): Promise<void> => {
   try {
-    const { name, parentFolder } = req.body;
+    const { name, parentCollection } = req.body;
 
     if (!name) {
-      res.status(400).json({ message: "Folder name is required" });
+      res.status(400).json({ message: "Collection name is required" });
       return;
     }
-    const folderData: Partial<IFolder> = {
+    const folderData: Partial<ICollection> = {
       name: name.trim(),
     };
 
-    if (parentFolder && !mongoose.Types.ObjectId.isValid(parentFolder)) {
-      res.status(400).json({ message: "Invalid parent folder ID" });
+    if (
+      parentCollection &&
+      !mongoose.Types.ObjectId.isValid(parentCollection)
+    ) {
+      res.status(400).json({ message: "Invalid parent collection ID" });
       return;
     }
-    // Check if folder with the same name already exists in the user's folders
-    const existingFolder = await Folder.findOne({ name: folderData.name });
-    if (existingFolder) {
+    // Check if collection with the same name already exists in the user's collections
+    const existingCollection = await Collection.findOne({
+      name: folderData.name,
+    });
+    if (existingCollection) {
       res.status(409).json({
         message:
-          "Folder with this name already exists in the specified parent folder",
+          "Collection with this name already exists in the specified parent collection",
       });
       return;
     }
 
-    const newFolder = await Folder.create(folderData);
-    res.status(201).json(newFolder);
+    const newCollection = await Collection.create(folderData);
+    res.status(201).json(newCollection);
   } catch (error) {
     res
       .status(500)
@@ -46,8 +51,8 @@ export const getFolders = async (
   res: Response
 ): Promise<void> => {
   try {
-    const folders = await Folder.find().populate("captures");
-    res.status(200).json(folders);
+    const collections = await Collection.find().populate("captures");
+    res.status(200).json(collections);
   } catch (error) {
     res
       .status(500)
@@ -67,13 +72,13 @@ export const getFolderById = async (
       return;
     }
 
-    const folder = await Folder.findById(id).populate("captures");
-    if (!folder) {
-      res.status(404).json({ message: "Folder not found" });
+    const collection = await Collection.findById(id).populate("captures");
+    if (!collection) {
+      res.status(404).json({ message: "Collection not found" });
       return;
     }
 
-    res.status(200).json(folder);
+    res.status(200).json(collection);
   } catch (error) {
     res
       .status(500)
@@ -105,13 +110,13 @@ export const appendCaptureToFolder = async (
       return;
     }
 
-    const folder = await Folder.findById(id);
-    if (!folder) {
-      res.status(404).json({ message: "Folder not found" });
+    const collection = await Collection.findById(id);
+    if (!collection) {
+      res.status(404).json({ message: "collection not found" });
       return;
     }
-    if (!folder) {
-      res.status(404).json({ message: "Folder not found" });
+    if (!collection) {
+      res.status(404).json({ message: "collection not found" });
       return;
     }
 
@@ -122,18 +127,18 @@ export const appendCaptureToFolder = async (
       return;
     }
     // Check if capture already exists in the folder
-    if (folder.captures && folder.captures.includes(captureId)) {
+    if (collection.captures && collection.captures.includes(captureId)) {
       res
         .status(409)
         .json({ message: "Capture already exists in this folder" });
       return;
     }
     // Append capture to the folder's captures array
-    folder.captures = folder.captures || [];
-    folder.captures.push(captureId);
-    await folder.save();
+    collection.captures = collection.captures || [];
+    collection.captures.push(captureId);
+    await collection.save();
     // Optionally, you can also update the capture's folder reference
-    capture.folder = new mongoose.Types.ObjectId(id);
+    capture.collection = collection._id as any;
     await capture.save();
     // Return success response
     res.status(200).json({ message: "Capture added to folder successfully" });
@@ -160,21 +165,21 @@ export const removeCaptureFromFolder = async (
       return;
     }
 
-    const folder = await Folder.findById(folderId);
-    if (!folder) {
+    const collection = await Collection.findById(folderId);
+    if (!collection) {
       res.status(404).json({ message: "Folder not found" });
       return;
     }
-    // Check if capture exists in the folder
-    if (!folder.captures || !folder.captures.includes(captureId)) {
+    // Check if capture exists in the collection
+    if (!collection.captures || !collection.captures.includes(captureId)) {
       res.status(404).json({ message: "Capture not found in this folder" });
       return;
     }
-    // Remove capture from the folder's captures array
-    folder.captures = folder.captures.filter(
+    // Remove capture from the collection's captures array
+    collection.captures = collection.captures.filter(
       (id) => id.toString() !== captureId.toString()
     );
-    await folder.save();
+    await collection.save();
     res
       .status(200)
       .json({ message: "Capture removed from folder successfully" });
@@ -196,13 +201,13 @@ export const deleteFolder = async (
       return;
     }
 
-    const folder = await Folder.findByIdAndDelete(id);
-    if (!folder) {
-      res.status(404).json({ message: "Folder not found" });
+    const collection = await Collection.findByIdAndDelete(id);
+    if (!collection) {
+      res.status(404).json({ message: "Collection not found" });
       return;
     }
 
-    res.status(200).json({ message: "Folder deleted successfully" });
+    res.status(200).json({ message: "Collection deleted successfully" });
   } catch (error) {
     res
       .status(500)
@@ -222,14 +227,14 @@ export const updateFolder = async (
       return;
     }
 
-    const folder = await Folder.findById(id);
-    if (!folder) {
-      res.status(404).json({ message: "Folder not found" });
+    const collection = await Collection.findById(id);
+    if (!collection) {
+      res.status(404).json({ message: "Collection not found" });
       return;
     }
 
     if (name) {
-      folder.name = name.trim();
+      collection.name = name.trim();
     }
 
     if (parentFolder && !mongoose.Types.ObjectId.isValid(parentFolder)) {
@@ -237,10 +242,10 @@ export const updateFolder = async (
       return;
     }
 
-    folder.parentFolder = parentFolder || null;
+    collection.parentCollection = parentFolder || null;
 
-    await folder.save();
-    res.status(200).json(folder);
+    await collection.save();
+    res.status(200).json(collection);
   } catch (error) {
     res
       .status(500)
@@ -254,18 +259,19 @@ export const getCapturesWithSpecificFolder = async (
 ): Promise<void> => {
   try {
     const { id } = req.params;
-
     if (!id || !mongoose.Types.ObjectId.isValid(id as string)) {
       res.status(400).json({ message: "Invalid or missing folder ID" });
       return;
     }
 
-    const captures = await Capture.find({ folder: id })
-      .sort({ timestamp: -1 }) // Sort by timestamp in descending order
-      .populate("folder", "name") // Populate folder name
-      .exec();
+    const collection = await Collection.findById(id).populate("captures");
 
-    res.status(200).json(captures);
+    if (!collection) {
+      res.status(404).json({ message: "Collection not found" });
+      return;
+    }
+
+    res.status(200).json(collection.captures);
   } catch (error) {
     console.error("[LinkMeld] Error fetching captures by folder:", error);
     res.status(500).json({ message: "Error fetching captures by folder" });

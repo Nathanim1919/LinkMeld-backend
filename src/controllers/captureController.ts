@@ -5,99 +5,6 @@ import { sanitizeHtml } from '../utils/sanitization';
 import { generateSlug } from '../utils/slugify';
 import { normalizeUrl } from '../utils/urls';
 
-// Future services (commented out for now)
-// import { extractEntities } from '../services/nlp';
-// import { queue } from '../services/queue';
-// import { generateEmbeddings } from '../services/ai';
-
-// export const saveCapture = async (
-//   req: Request,
-//   res: Response
-// ): Promise<void> => {
-//   console.log("[LinkMeld] Saving capture:", {
-//     url: req.body.url,
-//     timestamp: req.body.timestamp,
-//   });
-//   try {
-//     const { url, mainText, metadata, documents, metrics, timestamp } = req.body;
-
-//     // Validate required fields
-//     if (!url || !timestamp) {
-//       res
-//         .status(400)
-//         .json({ message: "Missing required fields: url, timestamp" });
-//       return;
-//     }
-
-//     // Detect PDF
-//     const isPdf = url.match(/\.pdf($|\?)/i);
-
-//     // Sanitize inputs
-//     const cleanMainText = mainText
-//       ? sanitizeHtml(mainText, { allowedTags: [], allowedAttributes: {} })
-//       : "";
-//     const cleanMetadata = {
-//       title: sanitizeHtml(metadata?.title || "Untitled", { allowedTags: [] }),
-//       description: sanitizeHtml(metadata?.description || "", {
-//         allowedTags: [],
-//       }),
-//       url: sanitizeHtml(metadata?.url || url, { allowedTags: [] }),
-//       favicon: sanitizeHtml(metadata?.favicon || "", { allowedTags: [] }),
-//       siteName: sanitizeHtml(metadata?.siteName || "", { allowedTags: [] }),
-//       publishedTime: sanitizeHtml(metadata?.publishedTime || "", {
-//         allowedTags: [],
-//       }),
-//       author: sanitizeHtml(metadata?.author || "", { allowedTags: [] }),
-//       keywords: sanitizeHtml(metadata?.keywords || "", { allowedTags: [] }),
-//       viewport: sanitizeHtml(metadata?.viewport || "", { allowedTags: [] }),
-//       extractionMethod: sanitizeHtml(metadata?.extractionMethod || "unknown", {
-//         allowedTags: [],
-//       }),
-//       isPdf: !!isPdf,
-//     };
-
-//     // Ensure documents is an array
-//     const cleanDocuments = Array.isArray(documents)
-//       ? documents.map((doc) => ({
-//           url: sanitizeHtml(doc.url, { allowedTags: [] }),
-//           type: sanitizeHtml(doc.type, { allowedTags: [] }),
-//         }))
-//       : [];
-
-//     // Prepare capture data
-//     const captureData: Partial<ICapture> = {
-//       user: req.user?._id, // Assuming user is set in the request
-//       url,
-//       timestamp: new Date(timestamp),
-//       metadata: cleanMetadata,
-//       mainText: cleanMainText,
-//       documents: cleanDocuments,
-//       metrics: {
-//         contentExtraction: metrics?.contentExtraction || 0,
-//         documentExtraction: metrics?.documentExtraction || 0,
-//         metadataExtraction: metrics?.metadataExtraction || 0,
-//         totalTime: metrics?.totalTime || 0,
-//         textLength: metrics?.textLength || 0,
-//         documentCount: metrics?.documentCount || 0,
-//       },
-//     };
-
-//     // Save to MongoDB
-//     const capture = new Capture(captureData);
-//     await capture.save();
-
-//     console.log("[LinkMeld] Capture saved:", capture);
-//     res
-//       .status(201)
-//       .json({ message: "Capture saved successfully", captureId: capture._id });
-//   } catch (error) {
-//     console.error("[LinkMeld] Error saving capture:", error);
-//     res
-//       .status(500)
-//       .json({ message: "Error saving capture", error: error.message });
-//   }
-// };
-
 
 export const saveCapture = async (req: Request, res: Response) => {
   try {
@@ -120,7 +27,6 @@ export const saveCapture = async (req: Request, res: Response) => {
       selectedText,
       documents = [],
       links = [],
-      timestamp,
       favicon,
       siteName,
       publishedTime,
@@ -280,7 +186,7 @@ export const getCaptures = async (
   try {
     const captures = await Capture.find()
       .sort({ timestamp: -1 })
-     
+      .populate("collection", "name")
       .exec();
     res.status(200).json(captures);
   } catch (error) {
@@ -336,6 +242,7 @@ export const getBookmarkedCaptures = async (
   try {
     const captures = await Capture.find({ bookmarked: true })
       .sort({ timestamp: -1 })
+      .populate("collection", "name")
       .exec();
     res.status(200).json(captures);
   } catch (error) {

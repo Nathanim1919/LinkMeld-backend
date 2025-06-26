@@ -1,16 +1,16 @@
 import { Router } from "express";
 import {
-  createFolder,
+  createCollection,
   getFolders,
   getFolderById,
   appendCaptureToFolder,
   getCapturesWithSpecificFolder
-} from "../controllers/folderController";
+} from "../controllers/collectionController";
 
 const router = Router();
 
 // Route to create a new folder
-router.post("/", createFolder);
+router.post("/", createCollection);
 // Route to get all folders
 router.get("/", getFolders);
 // Route to get a folder by ID

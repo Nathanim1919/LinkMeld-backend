@@ -1,22 +1,22 @@
 import mongoose, { Document } from "mongoose";
 
-export interface IFolder extends Document {
+export interface ICollection extends Document {
   user: mongoose.Types.ObjectId;
   name: string;
   captures?: mongoose.Types.ObjectId[];
-  parentFolder?: mongoose.Types.ObjectId;
+  parentCollection?: mongoose.Types.ObjectId;
   createdAt: Date;
   updatedAt: Date;
 }
 
-const FolderSchema = new mongoose.Schema(
+const CollectionSchema = new mongoose.Schema(
   {
     user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
     name: { type: String, required: true },
     captures: [{ type: mongoose.Schema.Types.ObjectId, ref: "Capture" }],
-    parentFolder: {
+    parentCollection: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Folder",
+      ref: "Collection",
       default: null,
     },
   },
@@ -25,5 +25,5 @@ const FolderSchema = new mongoose.Schema(
   }
 );
 
-const Folder = mongoose.model<IFolder>("Folder", FolderSchema);
-export default Folder;
+const Collection = mongoose.model("Collection", CollectionSchema);
+export default Collection;

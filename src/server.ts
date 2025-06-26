@@ -3,7 +3,7 @@ import express, { Express } from "express";
 import cors from "cors";
 import { connectMongo } from "./config/database";
 import captureRoutes from "./routes/captureRoutes";
-import folderRoutes from "./routes/folderRoute";
+import collectionRoutes from "./routes/collectionRoute";
 import sourceRoutes from "./routes/sourceRoute"; // Import source routes
 import { auth } from "./lib/auth";
 import { fromNodeHeaders, toNodeHandler } from "better-auth/node";
@@ -46,7 +46,7 @@ app.use(express.json());
 
 // Routes
 app.use("/api/v1/captures", captureRoutes);
-app.use("/api/v1/folders", folderRoutes);
+app.use("/api/v1/folders", collectionRoutes);
 app.use("/api/v1/sources", sourceRoutes); // Use source routes
 
 app.get("/api/me", async (req: Request, res: Response) => {
@@ -54,6 +54,11 @@ app.get("/api/me", async (req: Request, res: Response) => {
     headers: fromNodeHeaders(req.headers),
   });
   res.json(session);
+});
+
+
+app.get("/api/health", (req: Request, res: Response) => {
+  res.status(200).json({ status: "ok", message: "Server is healthy" });
 });
 
 // Start server
