@@ -264,7 +264,16 @@ export const getCapturesWithSpecificFolder = async (
       return;
     }
 
-    const collection = await Collection.findById(id).populate("captures");
+    // i get array of captures in the folder but also each capture has an id of collection so let's populate the captures
+    const collection = await Collection.findById(id)
+                                                    .populate({
+                                                      path: 'captures',
+                                                      populate: {
+                                                        path: 'collection',
+                                                        model: 'Collection',
+                                                      }
+                                                    });
+
 
     if (!collection) {
       res.status(404).json({ message: "Collection not found" });
