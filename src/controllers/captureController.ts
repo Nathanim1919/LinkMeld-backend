@@ -1,93 +1,277 @@
-import { Request, Response } from "express";
-import Capture, { ICapture } from "../models/Capture";
-import sanitizeHtml from "sanitize-html";
+import { Request, Response } from 'express';
+import { Capture, ICapture } from '../models/Capture'
+import { hashContent } from '../utils/hashing';
+import { sanitizeHtml } from '../utils/sanitization';
+import { generateSlug } from '../utils/slugify';
+import { normalizeUrl } from '../utils/urls';
 
-export const saveCapture = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
-  console.log("[LinkMeld] Saving capture:", {
-    url: req.body.url,
-    timestamp: req.body.timestamp,
-  });
+// Future services (commented out for now)
+// import { extractEntities } from '../services/nlp';
+// import { queue } from '../services/queue';
+// import { generateEmbeddings } from '../services/ai';
+
+// export const saveCapture = async (
+//   req: Request,
+//   res: Response
+// ): Promise<void> => {
+//   console.log("[LinkMeld] Saving capture:", {
+//     url: req.body.url,
+//     timestamp: req.body.timestamp,
+//   });
+//   try {
+//     const { url, mainText, metadata, documents, metrics, timestamp } = req.body;
+
+//     // Validate required fields
+//     if (!url || !timestamp) {
+//       res
+//         .status(400)
+//         .json({ message: "Missing required fields: url, timestamp" });
+//       return;
+//     }
+
+//     // Detect PDF
+//     const isPdf = url.match(/\.pdf($|\?)/i);
+
+//     // Sanitize inputs
+//     const cleanMainText = mainText
+//       ? sanitizeHtml(mainText, { allowedTags: [], allowedAttributes: {} })
+//       : "";
+//     const cleanMetadata = {
+//       title: sanitizeHtml(metadata?.title || "Untitled", { allowedTags: [] }),
+//       description: sanitizeHtml(metadata?.description || "", {
+//         allowedTags: [],
+//       }),
+//       url: sanitizeHtml(metadata?.url || url, { allowedTags: [] }),
+//       favicon: sanitizeHtml(metadata?.favicon || "", { allowedTags: [] }),
+//       siteName: sanitizeHtml(metadata?.siteName || "", { allowedTags: [] }),
+//       publishedTime: sanitizeHtml(metadata?.publishedTime || "", {
+//         allowedTags: [],
+//       }),
+//       author: sanitizeHtml(metadata?.author || "", { allowedTags: [] }),
+//       keywords: sanitizeHtml(metadata?.keywords || "", { allowedTags: [] }),
+//       viewport: sanitizeHtml(metadata?.viewport || "", { allowedTags: [] }),
+//       extractionMethod: sanitizeHtml(metadata?.extractionMethod || "unknown", {
+//         allowedTags: [],
+//       }),
+//       isPdf: !!isPdf,
+//     };
+
+//     // Ensure documents is an array
+//     const cleanDocuments = Array.isArray(documents)
+//       ? documents.map((doc) => ({
+//           url: sanitizeHtml(doc.url, { allowedTags: [] }),
+//           type: sanitizeHtml(doc.type, { allowedTags: [] }),
+//         }))
+//       : [];
+
+//     // Prepare capture data
+//     const captureData: Partial<ICapture> = {
+//       user: req.user?._id, // Assuming user is set in the request
+//       url,
+//       timestamp: new Date(timestamp),
+//       metadata: cleanMetadata,
+//       mainText: cleanMainText,
+//       documents: cleanDocuments,
+//       metrics: {
+//         contentExtraction: metrics?.contentExtraction || 0,
+//         documentExtraction: metrics?.documentExtraction || 0,
+//         metadataExtraction: metrics?.metadataExtraction || 0,
+//         totalTime: metrics?.totalTime || 0,
+//         textLength: metrics?.textLength || 0,
+//         documentCount: metrics?.documentCount || 0,
+//       },
+//     };
+
+//     // Save to MongoDB
+//     const capture = new Capture(captureData);
+//     await capture.save();
+
+//     console.log("[LinkMeld] Capture saved:", capture);
+//     res
+//       .status(201)
+//       .json({ message: "Capture saved successfully", captureId: capture._id });
+//   } catch (error) {
+//     console.error("[LinkMeld] Error saving capture:", error);
+//     res
+//       .status(500)
+//       .json({ message: "Error saving capture", error: error.message });
+//   }
+// };
+
+
+export const saveCapture = async (req: Request, res: Response) => {
   try {
-    const { url, mainText, metadata, documents, metrics, timestamp } = req.body;
-
-    // Validate required fields
-    if (!url || !timestamp) {
-      res
-        .status(400)
-        .json({ message: "Missing required fields: url, timestamp" });
-      return;
+    // 1. Input Validation
+    const requiredFields = ['url', 'timestamp'];
+    const missingFields = requiredFields.filter(field => !req.body[field]);
+    
+    if (missingFields.length > 0) {
+      return res.status(400).json({
+        success: false,
+        error: `Missing required fields: ${missingFields.join(', ')}`
+      });
     }
 
-    // Detect PDF
-    const isPdf = url.match(/\.pdf($|\?)/i);
-
-    // Sanitize inputs
-    const cleanMainText = mainText
-      ? sanitizeHtml(mainText, { allowedTags: [], allowedAttributes: {} })
-      : "";
-    const cleanMetadata = {
-      title: sanitizeHtml(metadata?.title || "Untitled", { allowedTags: [] }),
-      description: sanitizeHtml(metadata?.description || "", {
-        allowedTags: [],
-      }),
-      url: sanitizeHtml(metadata?.url || url, { allowedTags: [] }),
-      favicon: sanitizeHtml(metadata?.favicon || "", { allowedTags: [] }),
-      siteName: sanitizeHtml(metadata?.siteName || "", { allowedTags: [] }),
-      publishedTime: sanitizeHtml(metadata?.publishedTime || "", {
-        allowedTags: [],
-      }),
-      author: sanitizeHtml(metadata?.author || "", { allowedTags: [] }),
-      keywords: sanitizeHtml(metadata?.keywords || "", { allowedTags: [] }),
-      viewport: sanitizeHtml(metadata?.viewport || "", { allowedTags: [] }),
-      extractionMethod: sanitizeHtml(metadata?.extractionMethod || "unknown", {
-        allowedTags: [],
-      }),
-      isPdf: !!isPdf,
-    };
-
-    // Ensure documents is an array
-    const cleanDocuments = Array.isArray(documents)
-      ? documents.map((doc) => ({
-          url: sanitizeHtml(doc.url, { allowedTags: [] }),
-          type: sanitizeHtml(doc.type, { allowedTags: [] }),
-        }))
-      : [];
-
-    // Prepare capture data
-    const captureData: Partial<ICapture> = {
+    const { 
       url,
-      timestamp: new Date(timestamp),
-      metadata: cleanMetadata,
-      mainText: cleanMainText,
-      documents: cleanDocuments,
-      metrics: {
-        contentExtraction: metrics?.contentExtraction || 0,
-        documentExtraction: metrics?.documentExtraction || 0,
-        metadataExtraction: metrics?.metadataExtraction || 0,
-        totalTime: metrics?.totalTime || 0,
-        textLength: metrics?.textLength || 0,
-        documentCount: metrics?.documentCount || 0,
-      },
+      title,
+      description,
+      mainText,
+      selectedText,
+      documents = [],
+      links = [],
+      timestamp,
+      favicon,
+      siteName,
+      publishedTime,
+      author,
+      keywords,
+      viewport,
+      language = 'en',
+      userAgent
+    } = req.body;
+
+    // 2. Content Preparation
+    const contentToSave = selectedText?.trim() || mainText?.trim() || '';
+    if (contentToSave.length < 50) {
+      return res.status(400).json({
+        success: false,
+        error: 'Content too short (minimum 50 characters required)'
+      });
+    }
+
+    // 3. Core Processing
+    const isPdf = !!url.match(/\.pdf($|\?)/i);
+    const wordCount = contentToSave.split(/\s+/).filter(Boolean).length; // More accurate word count
+    const readingTime = Math.ceil(wordCount / 200);
+
+    const normalizeLanguage = (lang: string): string => {
+      const supportedLanguages = [
+        'none', 'da', 'nl', 'english', 'fi', 'french', 
+        'german', 'hungarian', 'italian', 'nb', 'pt', 
+        'ro', 'ru', 'es', 'sv', 'tr'
+      ];
+      
+      if (!lang) return 'english';
+      
+      const langMap: Record<string, string> = {
+        'en': 'english',
+        'en-US': 'english',
+        'en-GB': 'english',
+        'es': 'spanish',
+        'fr': 'french',
+        'de': 'german',
+        'pt': 'portuguese',
+        'it': 'italian',
+        'ru': 'russian'
+      };
+
+      const baseLang = lang.split('-')[0].toLowerCase();
+      const normalized = langMap[baseLang] || langMap[lang.toLowerCase()];
+      
+      return supportedLanguages.includes(normalized) 
+        ? normalized 
+        : 'english';
     };
 
-    // Save to MongoDB
-    const capture = new Capture(captureData);
-    await capture.save();
+    // 4. Build Capture Object
+    const captureData: Partial<ICapture> = {
+      owner: req.user._id,
+      url: normalizeUrl(url),
+      title: sanitizeHtml(title || 'Untitled', { allowedTags: [] }),
+      slug: generateSlug(title || url),
+      contentHash: hashContent(contentToSave),
 
-    console.log("[LinkMeld] Capture saved:", { id: capture._id, url });
-    res
-      .status(201)
-      .json({ message: "Capture saved successfully", captureId: capture._id });
+      content: {
+        raw: contentToSave,
+        clean: sanitizeHtml(contentToSave, { allowedTags: [], allowedAttributes: {} }),
+        highlights: [],
+        attachments: []
+      },
+
+      metadata: {
+        description: sanitizeHtml(description || '', { allowedTags: [] }),
+        favicon: sanitizeHtml(favicon || '', { allowedTags: [] }),
+        siteName: sanitizeHtml(siteName || '', { allowedTags: [] }),
+        publishedAt: sanitizeHtml(publishedTime || '', { allowedTags: [] }),
+        author: sanitizeHtml(author || '', { allowedTags: [] }),
+        keywords: Array.isArray(keywords) 
+          ? keywords.map(k => sanitizeHtml(k, { allowedTags: [] }))
+          : [sanitizeHtml(keywords || '', { allowedTags: [] })],
+        viewport: sanitizeHtml(viewport || '', { allowedTags: [] }),
+        language: normalizeLanguage(language),
+        isPdf,
+        type: isPdf ? 'document' : 'article',
+        wordCount,
+        readingTime
+      },
+
+      documents: Array.isArray(documents) 
+        ? documents
+            .filter(doc => doc?.url && doc?.type)
+            .slice(0, 20)
+            .map(doc => ({
+              url: sanitizeHtml(doc.url, { allowedTags: [] }),
+              type: sanitizeHtml(doc.type.toLowerCase(), { allowedTags: [] })
+            }))
+        : [],
+
+      status: 'active',
+      version: 1,
+      source: {
+        ip: req.ip,
+        userAgent: sanitizeHtml(userAgent || '', { allowedTags: [] }),
+        extensionVersion: req.headers['x-extension-version']?.toString() || '1.0.0'
+      },
+
+      searchTokens: [
+        ...(title?.toLowerCase().split(/\s+/) || []),
+        ...(description?.toLowerCase().split(/\s+/) || [])
+      ],
+
+      references: Array.isArray(links)
+        ? links
+            .filter(link => link?.href)
+            .slice(0, 100)
+            .map(link => ({
+              type: 'link',
+              url: sanitizeHtml(link.href, { allowedTags: [] }),
+              title: sanitizeHtml(link.text || '', { allowedTags: [] })
+            }))
+        : []
+    };
+
+    // 5. Save to Database
+    const capture = await new Capture(captureData).save();
+    console.log(capture);
+
+    // 6. Response
+    res.status(201).json({
+      success: true,
+      data: {
+        id: capture._id,
+        url: capture.url,
+        title: capture.title,
+        contentLength: capture.metadata.wordCount,
+        documents: capture.documents?.length || 0, // Safe length access
+        timestamp: capture.metadata.capturedAt
+      }
+    });
+
   } catch (error) {
-    console.error("[LinkMeld] Error saving capture:", error);
-    res
-      .status(500)
-      .json({ message: "Error saving capture", error: error.message });
+    console.error('[CaptureController] Error:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Internal server error',
+      ...(process.env.NODE_ENV === 'development' && { 
+        details: error instanceof Error ? error.message : 'Unknown error'
+      })
+    });
   }
 };
+
+
+
 
 export const getCaptures = async (
   req: Request,
@@ -96,7 +280,7 @@ export const getCaptures = async (
   try {
     const captures = await Capture.find()
       .sort({ timestamp: -1 })
-      .populate("folder", "name") // Populate folder name
+     
       .exec();
     res.status(200).json(captures);
   } catch (error) {
@@ -152,7 +336,6 @@ export const getBookmarkedCaptures = async (
   try {
     const captures = await Capture.find({ bookmarked: true })
       .sort({ timestamp: -1 })
-      .populate("folder", "name") // Populate folder name
       .exec();
     res.status(200).json(captures);
   } catch (error) {

@@ -2,58 +2,58 @@ import Capture from "../models/Capture"; // Correct relative import
 import { Request, Response } from "express";
 
 // Get all distinct sources from the Capture model (siteName)
-export const getAllDistinctSiteName = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
-  try {
-    // Fetch distinct site names from the metadata.siteName field
-    const siteNames = await Capture.distinct("metadata.siteName");
+// export const getAllDistinctSiteName = async (
+//   req: Request,
+//   res: Response
+// ): Promise<void> => {
+//   try {
+//     // Fetch distinct site names from the metadata.siteName field
+//     const siteNames = await Capture.distinct("metadata.siteName");
 
-    if (!siteNames || siteNames.length === 0) {
-      res.status(404).json({
-        message: "No distinct site names found",
-      });
-      return;
-    }
+//     if (!siteNames || siteNames.length === 0) {
+//       res.status(404).json({
+//         message: "No distinct site names found",
+//       });
+//       return;
+//     }
 
-    // get the number of captures for each site name
-    const siteNameCounts = await Capture.aggregate([
-      {
-        $group: {
-          _id: "$metadata.siteName",
-          count: { $sum: 1 },
-        },
-      },
-      {
-        $project: {
-          siteName: "$_id",
-          count: 1,
-          _id: 0,
-        },
-      },
-    ]);
-    // Convert the counts to a map for easier access
-    const siteNameCountMap = siteNameCounts.reduce(
-      (acc, { siteName, count }) => {
-        acc[siteName] = count;
-        return acc;
-      },
-      {}
-    );
+//     // get the number of captures for each site name
+//     const siteNameCounts = await Capture.aggregate([
+//       {
+//         $group: {
+//           _id: "$metadata.siteName",
+//           count: { $sum: 1 },
+//         },
+//       },
+//       {
+//         $project: {
+//           siteName: "$_id",
+//           count: 1,
+//           _id: 0,
+//         },
+//       },
+//     ]);
+//     // Convert the counts to a map for easier access
+//     const siteNameCountMap = siteNameCounts.reduce(
+//       (acc, { siteName, count }) => {
+//         acc[siteName] = count;
+//         return acc;
+//       },
+//       {}
+//     );
 
-    res.status(200).json({
-      message: "Successfully fetched all distinct site names",
-      siteNames,
-      siteNameCounts: siteNameCountMap,
-    });
-  } catch (error) {
-    console.error("[LinkMeld] Error fetching distinct site names:", error);
-    res.status(500).json({
-      message: "Error fetching distinct site names",
-    });
-  }
-};
+//     res.status(200).json({
+//       message: "Successfully fetched all distinct site names",
+//       siteNames,
+//       siteNameCounts: siteNameCountMap,
+//     });
+//   } catch (error) {
+//     console.error("[LinkMeld] Error fetching distinct site names:", error);
+//     res.status(500).json({
+//       message: "Error fetching distinct site names",
+//     });
+//   }
+// };
 
 export const getCapturesWithSiteName = async (
   req: Request,
