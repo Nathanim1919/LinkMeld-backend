@@ -19,6 +19,7 @@ export const resetAllData = async (
     await clearCaptures(user);
     await clearFolders(user);
 
+
     res
       .status(200)
       .json({ message: "All user captures and folders have been reset." });
@@ -31,7 +32,7 @@ export const resetAllData = async (
 
 export const clearCaptures = async (user: any): Promise<void> => {
   try {
-    const res = await Capture.deleteMany({ owner: user });
+    const res = await Capture.deleteMany({ owner: user.id });
     console.log(`Deleted ${res.deletedCount} captures for user: ${user.id}`);
     // Optionally, you can also clear any related collections or folders if needed
   } catch (error) {
@@ -44,7 +45,7 @@ export const clearFolders = async (user: any): Promise<void> => {
   try {
     // Assuming you have a Folder model to manage user folders
     // Replace with your actual folder model and logic
-    const res = await Collection.deleteMany({ user: user });
+    const res = await Collection.deleteMany({ user: user.id });
     console.log(`Deleted ${res.deletedCount} folders for user: ${user.id}`);
   } catch (error) {
     console.error(`Error clearing folders for user ${user.id}:`, error);

@@ -1,25 +1,30 @@
-import { Request, Response } from 'express';
-import { Capture, ICapture } from '../models/Capture'
-import { hashContent } from '../utils/hashing';
-import { sanitizeHtml } from '../utils/sanitization';
-import { generateSlug } from '../utils/slugify';
-import { normalizeUrl } from '../utils/urls';
+import { Request, Response } from "express";
+import { Capture, ICapture } from "../models/Capture";
+import { hashContent } from "../utils/hashing";
+import { sanitizeHtml } from "../utils/sanitization";
+import { generateSlug } from "../utils/slugify";
+import { normalizeUrl } from "../utils/urls";
+import mongoose from "mongoose";
 
-
-export const saveCapture = async (req: Request, res: Response) => {
+export const saveCapture = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
   try {
+    console.log(`[LinkMeld] Saving capture for user: ${req.user}`);
     // 1. Input Validation
-    const requiredFields = ['url', 'timestamp'];
-    const missingFields = requiredFields.filter(field => !req.body[field]);
-    
+    const requiredFields = ["url", "timestamp"];
+    const missingFields = requiredFields.filter((field) => !req.body[field]);
+
     if (missingFields.length > 0) {
-      return res.status(400).json({
+      res.status(400).json({
         success: false,
-        error: `Missing required fields: ${missingFields.join(', ')}`
+        error: `Missing required fields: ${missingFields.join(", ")}`,
       });
+      return;
     }
 
-    const { 
+    const {
       url,
       title,
       description,
@@ -33,17 +38,18 @@ export const saveCapture = async (req: Request, res: Response) => {
       author,
       keywords,
       viewport,
-      language = 'en',
-      userAgent
+      language = "en",
+      userAgent,
     } = req.body;
 
     // 2. Content Preparation
-    const contentToSave = selectedText?.trim() || mainText?.trim() || '';
+    const contentToSave = selectedText?.trim() || mainText?.trim() || "";
     if (contentToSave.length < 50) {
-      return res.status(400).json({
+      res.status(400).json({
         success: false,
-        error: 'Content too short (minimum 50 characters required)'
+        error: "Content too short (minimum 50 characters required)",
       });
+      return;
     }
 
     // 3. Core Processing
@@ -53,103 +59,127 @@ export const saveCapture = async (req: Request, res: Response) => {
 
     const normalizeLanguage = (lang: string): string => {
       const supportedLanguages = [
-        'none', 'da', 'nl', 'english', 'fi', 'french', 
-        'german', 'hungarian', 'italian', 'nb', 'pt', 
-        'ro', 'ru', 'es', 'sv', 'tr'
+        "none",
+        "da",
+        "nl",
+        "english",
+        "fi",
+        "french",
+        "german",
+        "hungarian",
+        "italian",
+        "nb",
+        "pt",
+        "ro",
+        "ru",
+        "es",
+        "sv",
+        "tr",
       ];
-      
-      if (!lang) return 'english';
-      
+
+      if (!lang) return "english";
+
       const langMap: Record<string, string> = {
-        'en': 'english',
-        'en-US': 'english',
-        'en-GB': 'english',
-        'es': 'spanish',
-        'fr': 'french',
-        'de': 'german',
-        'pt': 'portuguese',
-        'it': 'italian',
-        'ru': 'russian'
+        en: "english",
+        "en-US": "english",
+        "en-GB": "english",
+        es: "spanish",
+        fr: "french",
+        de: "german",
+        pt: "portuguese",
+        it: "italian",
+        ru: "russian",
       };
 
-      const baseLang = lang.split('-')[0].toLowerCase();
+      const baseLang = lang.split("-")[0].toLowerCase();
       const normalized = langMap[baseLang] || langMap[lang.toLowerCase()];
-      
-      return supportedLanguages.includes(normalized) 
-        ? normalized 
-        : 'english';
+
+      return supportedLanguages.includes(normalized) ? normalized : "english";
     };
+
 
     // 4. Build Capture Object
     const captureData: Partial<ICapture> = {
-      owner: req.user,
+      owner: req.user.id,
       url: normalizeUrl(url),
-      title: sanitizeHtml(title || 'Untitled', { allowedTags: [] }),
+      title: sanitizeHtml(title || "Untitled", { allowedTags: [] }),
       slug: generateSlug(title || url),
       contentHash: hashContent(contentToSave),
 
       content: {
         raw: contentToSave,
-        clean: sanitizeHtml(contentToSave, { allowedTags: [], allowedAttributes: {} }),
+        clean: sanitizeHtml(contentToSave, {
+          allowedTags: [],
+          allowedAttributes: {},
+        }),
         highlights: [],
-        attachments: []
+        attachments: [],
       },
 
       metadata: {
-        description: sanitizeHtml(description || '', { allowedTags: [] }),
-        favicon: sanitizeHtml(favicon || '', { allowedTags: [] }),
-        siteName: sanitizeHtml(siteName || '', { allowedTags: [] }),
-        publishedAt: sanitizeHtml(publishedTime || '', { allowedTags: [] }),
-        author: sanitizeHtml(author || '', { allowedTags: [] }),
-        keywords: Array.isArray(keywords) 
-          ? keywords.map(k => sanitizeHtml(k, { allowedTags: [] }))
-          : [sanitizeHtml(keywords || '', { allowedTags: [] })],
-        viewport: sanitizeHtml(viewport || '', { allowedTags: [] }),
+        description: sanitizeHtml(description || "", { allowedTags: [] }),
+        favicon: sanitizeHtml(favicon || "", { allowedTags: [] }),
+        siteName: sanitizeHtml(siteName || "", { allowedTags: [] }),
+        publishedAt: sanitizeHtml(publishedTime || "", { allowedTags: [] }),
+        author: sanitizeHtml(author || "", { allowedTags: [] }),
+        keywords: Array.isArray(keywords)
+          ? keywords.map((k) => sanitizeHtml(k, { allowedTags: [] }))
+          : [sanitizeHtml(keywords || "", { allowedTags: [] })],
+        viewport: sanitizeHtml(viewport || "", { allowedTags: [] }),
         language: normalizeLanguage(language),
         isPdf,
-        type: isPdf ? 'document' : 'article',
+        type: isPdf ? "document" : "article",
         wordCount,
-        readingTime
+        readingTime,
       },
 
-      documents: Array.isArray(documents) 
+      documents: Array.isArray(documents)
         ? documents
-            .filter(doc => doc?.url && doc?.type)
+            .filter((doc) => doc?.url && doc?.type)
             .slice(0, 20)
-            .map(doc => ({
+            .map((doc) => ({
               url: sanitizeHtml(doc.url, { allowedTags: [] }),
-              type: sanitizeHtml(doc.type.toLowerCase(), { allowedTags: [] })
+              type: sanitizeHtml(doc.type.toLowerCase(), { allowedTags: [] }),
             }))
         : [],
 
-      status: 'active',
+      status: "active",
       version: 1,
       source: {
         ip: req.ip,
-        userAgent: sanitizeHtml(userAgent || '', { allowedTags: [] }),
-        extensionVersion: req.headers['x-extension-version']?.toString() || '1.0.0'
+        userAgent: sanitizeHtml(userAgent || "", { allowedTags: [] }),
+        extensionVersion:
+          req.headers["x-extension-version"]?.toString() || "1.0.0",
       },
 
       searchTokens: [
         ...(title?.toLowerCase().split(/\s+/) || []),
-        ...(description?.toLowerCase().split(/\s+/) || [])
+        ...(description?.toLowerCase().split(/\s+/) || []),
       ],
 
       references: Array.isArray(links)
         ? links
-            .filter(link => link?.href)
+            .filter((link) => link?.href)
             .slice(0, 100)
-            .map(link => ({
-              type: 'link',
+            .map((link) => ({
+              type: "link",
               url: sanitizeHtml(link.href, { allowedTags: [] }),
-              title: sanitizeHtml(link.text || '', { allowedTags: [] })
+              title: sanitizeHtml(link.text || "", { allowedTags: [] }),
             }))
-        : []
+        : [],
     };
 
     // 5. Save to Database
     const capture = await new Capture(captureData).save();
-    console.log(capture);
+    console.log(`[LinkMeld] Capture saved: ${capture._id} (${capture.url})`);
+    if (!capture) {
+      res.status(500).json({
+        success: false,
+        error: "Failed to save capture",
+      });
+      return;
+    }
+
 
     // 6. Response
     res.status(201).json({
@@ -159,25 +189,20 @@ export const saveCapture = async (req: Request, res: Response) => {
         url: capture.url,
         title: capture.title,
         contentLength: capture.metadata.wordCount,
-        documents: capture.documents?.length || 0, // Safe length access
-        timestamp: capture.metadata.capturedAt
-      }
+        documents: capture.documents?.length || 0,
+        timestamp: capture.metadata.capturedAt,
+      },
     });
-
   } catch (error) {
-    console.error('[CaptureController] Error:', error);
     res.status(500).json({
       success: false,
-      error: 'Internal server error',
-      ...(process.env.NODE_ENV === 'development' && { 
-        details: error instanceof Error ? error.message : 'Unknown error'
-      })
+      error: "Internal server error",
+      ...(process.env.NODE_ENV === "development" && {
+        details: error instanceof Error ? error.message : "Unknown error",
+      }),
     });
   }
 };
-
-
-
 
 export const getCaptures = async (
   req: Request,
@@ -247,11 +272,9 @@ export const getBookmarkedCaptures = async (
     res.status(200).json(captures);
   } catch (error) {
     console.error("[LinkMeld] Error fetching bookmarked captures:", error);
-    res
-      .status(500)
-      .json({
-        message: "Error fetching bookmarked captures",
-        error: error.message,
-      });
+    res.status(500).json({
+      message: "Error fetching bookmarked captures",
+      error: error.message,
+    });
   }
 };

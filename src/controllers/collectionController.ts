@@ -22,7 +22,7 @@ export const createCollection = async (
       return;
     }
     const folderData: Partial<ICollection> = {
-      user: user, // Assuming user is available in req
+      user: user.id, // Assuming user is available in req
       name: name.trim(),
     };
 
@@ -36,7 +36,7 @@ export const createCollection = async (
     // Check if collection with the same name already exists in the user's collections
     const existingCollection = await Collection.findOne({
       name: folderData.name,
-      user: user,
+      user: user.id,
     });
     if (existingCollection) {
       res.status(409).json({
