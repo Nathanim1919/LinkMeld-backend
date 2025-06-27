@@ -11,7 +11,6 @@ export const saveCapture = async (
   res: Response
 ): Promise<void> => {
   try {
-    console.log(`[LinkMeld] Saving capture for user: ${req.user}`);
     // 1. Input Validation
     const requiredFields = ["url", "timestamp"];
     const missingFields = requiredFields.filter((field) => !req.body[field]);
@@ -171,7 +170,6 @@ export const saveCapture = async (
 
     // 5. Save to Database
     const capture = await new Capture(captureData).save();
-    console.log(`[LinkMeld] Capture saved: ${capture._id} (${capture.url})`);
     if (!capture) {
       res.status(500).json({
         success: false,
@@ -252,7 +250,6 @@ export const bookmarkOrUnbookmarkCapture = async (
       captureId: capture._id,
     });
   } catch (error) {
-    console.error("[LinkMeld] Error bookmarking/unbookmarking capture:", error);
     res.status(500).json({
       message: "Error bookmarking/unbookmarking capture",
       error: error.message,
@@ -271,7 +268,6 @@ export const getBookmarkedCaptures = async (
       .exec();
     res.status(200).json(captures);
   } catch (error) {
-    console.error("[LinkMeld] Error fetching bookmarked captures:", error);
     res.status(500).json({
       message: "Error fetching bookmarked captures",
       error: error.message,

@@ -48,7 +48,6 @@ export const getAllDistinctSiteName = async (
       siteNameCounts: siteNameCountMap,
     });
   } catch (error) {
-    console.error("[LinkMeld] Error fetching distinct site names:", error);
     res.status(500).json({
       message: "Error fetching distinct site names",
     });
@@ -89,7 +88,6 @@ export const getCapturesWithSiteName = async (
       captures,
     });
   } catch (error) {
-    console.error("[LinkMeld] Error fetching captures by site name:", error);
     res.status(500).json({
       message: "Error fetching captures by site name",
     });
@@ -127,7 +125,6 @@ export const getCapturesWithSpecificSiteName = async (
 
     res.status(200).json(captures);
   } catch (error) {
-    console.error("[LinkMeld] Error fetching captures by site name:", error);
     res.status(500).json({
       message: "Error fetching captures by site name",
     });

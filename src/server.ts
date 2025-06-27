@@ -32,18 +32,15 @@ app.use(
 );
 
 app.all("/api/auth/*splat", (req: Request, res: Response, next: Function) => {
-  console.log("Auth request:", req.method, req.url);
   toNodeHandler(auth)(req, res);
 });
 
 app.use((err: Error, req: Request, res: Response, next: Function) => {
-  console.error("Server error:", err);
   res.status(500).json({ error: "Internal Server Error" });
 });
 
 app.use(express.json());
 
-// console.log(require.resolve("../middleware/auth.middleware"));
 
 // Routes
 app.use("/api/v1/captures", captureRoutes);
