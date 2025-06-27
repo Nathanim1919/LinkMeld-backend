@@ -5,6 +5,7 @@ import { connectMongo } from "./config/database";
 import captureRoutes from "./routes/captureRoutes";
 import collectionRoutes from "./routes/collectionRoute";
 import sourceRoutes from "./routes/sourceRoute"; // Import source routes
+import userRoutes from "./routes/userRoute";
 import { auth } from "./lib/auth";
 import { fromNodeHeaders, toNodeHandler } from "better-auth/node";
 import { Request, Response } from "express";
@@ -48,6 +49,7 @@ app.use(express.json());
 app.use("/api/v1/captures", captureRoutes);
 app.use("/api/v1/folders", collectionRoutes);
 app.use("/api/v1/sources", sourceRoutes); // Use source routes
+app.use("/api/v1/account", userRoutes);
 
 app.get("/api/me", async (req: Request, res: Response) => {
   const session = await auth.api.getSession({
