@@ -82,7 +82,7 @@ export const saveCapture = async (req: Request, res: Response) => {
 
     // 4. Build Capture Object
     const captureData: Partial<ICapture> = {
-      owner: req.user._id,
+      owner: req.user,
       url: normalizeUrl(url),
       title: sanitizeHtml(title || 'Untitled', { allowedTags: [] }),
       slug: generateSlug(title || url),

@@ -4,10 +4,13 @@ import {
   getFolders,
   getFolderById,
   appendCaptureToFolder,
-  getCapturesWithSpecificFolder
+  getCapturesWithSpecificFolder,
 } from "../controllers/collectionController";
+import { authentication } from "../middleware/authMiddleware";
 
 const router = Router();
+
+router.use(authentication); // Apply authentication middleware to all routes in this router
 
 // Route to create a new folder
 router.post("/", createCollection);

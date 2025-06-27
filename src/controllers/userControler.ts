@@ -1,4 +1,6 @@
 import { Request, Response } from "express";
+import { Capture } from "../models/Capture";
+import Collection from "../models/Collection";
 
 // reset ll user captures, folders, and all data
 export const resetAllData = async (
@@ -28,15 +30,24 @@ export const resetAllData = async (
 };
 
 export const clearCaptures = async (user: any): Promise<void> => {
-  // Implement the logic to clear all captures for the user
-  // This could involve deleting records from a database or clearing a cache
-  console.log(`Clearing captures for user: ${user.id}`);
-  // Example: await CaptureModel.deleteMany({ userId: user.id });
+  try {
+    const res = await Capture.deleteMany({ owner: user });
+    console.log(`Deleted ${res.deletedCount} captures for user: ${user.id}`);
+    // Optionally, you can also clear any related collections or folders if needed
+  } catch (error) {
+    console.error(`Error clearing captures for user ${user.id}:`, error);
+    throw new Error(`Failed to clear captures: ${error.message}`);
+  }
 };
 
 export const clearFolders = async (user: any): Promise<void> => {
-  // Implement the logic to clear all folders for the user
-  // This could involve deleting records from a database or clearing a cache
-  console.log(`Clearing folders for user: ${user.id}`);
-  // Example: await FolderModel.deleteMany({ userId: user.id });
+  try {
+    // Assuming you have a Folder model to manage user folders
+    // Replace with your actual folder model and logic
+    const res = await Collection.deleteMany({ user: user });
+    console.log(`Deleted ${res.deletedCount} folders for user: ${user.id}`);
+  } catch (error) {
+    console.error(`Error clearing folders for user ${user.id}:`, error);
+    throw new Error(`Failed to clear folders: ${error.message}`);
+  }
 };

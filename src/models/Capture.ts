@@ -222,7 +222,7 @@ const CaptureSchema = new Schema<ICapture>({
   owner: { 
     type: Types.ObjectId, 
     ref: 'User',
-    required: false,
+    required: true,
     index: true
   },
   workspace: { 

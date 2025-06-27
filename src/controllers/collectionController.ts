@@ -9,12 +9,20 @@ export const createCollection = async (
 ): Promise<void> => {
   try {
     const { name, parentCollection } = req.body;
+    const {user} = req;
+    if (!user) {
+      res.status(401).json({ message: "User not authenticated" });
+      return;
+    }
+
+
 
     if (!name) {
       res.status(400).json({ message: "Collection name is required" });
       return;
     }
     const folderData: Partial<ICollection> = {
+      user: user, // Assuming user is available in req
       name: name.trim(),
     };
 
@@ -28,6 +36,7 @@ export const createCollection = async (
     // Check if collection with the same name already exists in the user's collections
     const existingCollection = await Collection.findOne({
       name: folderData.name,
+      user: user,
     });
     if (existingCollection) {
       res.status(409).json({
