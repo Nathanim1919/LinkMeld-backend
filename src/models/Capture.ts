@@ -123,17 +123,17 @@ export interface ICapture extends Omit<Document, 'collection'> {
     readingTime: number;
   };
 
-  /* Future: AI/ML Features
+  // Future: AI/ML Features
   ai?: {
     summary?: string;
-    embeddings?: {
-      content?: IContentEmbedding;
-    };
-    classifications?: {
-      topic?: string;
-    };
+    // embeddings?: {
+    //   content?: IContentEmbedding;
+    // };
+    // classifications?: {
+    //   topic?: string;
+    // };
   };
-  */
+  
 
   // ---- Graph Relationships ----
   references: ICaptureReference[];
@@ -270,6 +270,19 @@ const CaptureSchema = new Schema<ICapture>({
     type: String,
     required: true,
     index: true
+  },
+
+  ai: {
+    summary: {
+      type: String,
+      default:""
+    }
+    // embeddings: {
+    //   content: EmbeddingSchema
+    // },
+    // classifications: {
+    //   topic: String
+    // }
   },
 
   // ---- Content Storage ----

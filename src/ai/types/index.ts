@@ -9,9 +9,21 @@ export interface AIPrompt {
 
 export interface AIResponse {
   success: boolean;
-  data?: any;
+  data?: {
+    summary: string;
+    embeddings: number[];
+  };
   error?: string;
+  retryAfter?: number;
 }
+
+
+export type ProcessingRequest = {
+  userId: string;
+  content: string;
+  userApiKey: string;
+}
+
 
 export interface AIConfig {
   model: string;
