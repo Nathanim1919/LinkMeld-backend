@@ -5,7 +5,8 @@ import { sanitizeHtml } from "../utils/sanitization";
 import { generateSlug } from "../utils/slugify";
 import { normalizeUrl } from "../utils/urls";
 import { processContent } from "../ai/services/aiService";
-import User from "../models/User";
+import Conversation from "src/models/Conversation";
+import mongoose from "mongoose";
 
 export const saveCapture = async (
   req: Request,
@@ -185,6 +186,13 @@ export const saveCapture = async (
       capture.ai.summary = result.data.summary || "";
       capture.ai.embeddings = result.data.embeddings || [];
     }
+
+    // Create Conversation
+    const conversation = await Conversation.create({
+      captureId: capture._id,
+    });
+
+    capture.conversation = new mongoose.Types.ObjectId(conversation._id);
 
     await capture.save();
 
