@@ -9,7 +9,9 @@ import { MongoClient } from "mongodb";
 // In your auth.ts
 const mongo = new MongoClient(process.env.MONGO_URI! as string);
 mongo.connect(); // Explicitly connect
-const db = mongo.db();
+
+const dbName = new URL(process.env.MONGO_URI!).pathname.slice(1); // Extract db name from URI
+const db = mongo.db(dbName); // ✅ Use the actual DB name
 
 export const auth = betterAuth({
   database: mongodbAdapter(db),

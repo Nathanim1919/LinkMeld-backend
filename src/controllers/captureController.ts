@@ -4,7 +4,8 @@ import { hashContent } from "../utils/hashing";
 import { sanitizeHtml } from "../utils/sanitization";
 import { generateSlug } from "../utils/slugify";
 import { normalizeUrl } from "../utils/urls";
-import mongoose from "mongoose";
+import { processContent } from "../ai/services/aiService";
+import User from "../models/User";
 
 export const saveCapture = async (
   req: Request,
@@ -96,7 +97,8 @@ export const saveCapture = async (
       return supportedLanguages.includes(normalized) ? normalized : "english";
     };
 
-
+    // get the active user
+    const user = await User.findById(req.user.id);
     // 4. Build Capture Object
     const captureData: Partial<ICapture> = {
       owner: req.user.id,
@@ -170,6 +172,7 @@ export const saveCapture = async (
 
     // 5. Save to Database
     const capture = await new Capture(captureData).save();
+    console.log("Capture saved:", capture._id);
     if (!capture) {
       res.status(500).json({
         success: false,
@@ -178,6 +181,14 @@ export const saveCapture = async (
       return;
     }
 
+    const result = await processContent(capture.content.clean);
+
+    if (result.success && result.data) {
+      capture.ai.summary = result.data.summary || "";
+      capture.ai.embeddings = result.data.embeddings || [];
+    }
+
+    await capture.save();
 
     // 6. Response
     res.status(201).json({
@@ -189,6 +200,7 @@ export const saveCapture = async (
         contentLength: capture.metadata.wordCount,
         documents: capture.documents?.length || 0,
         timestamp: capture.metadata.capturedAt,
+        ai: capture.ai,
       },
     });
   } catch (error) {

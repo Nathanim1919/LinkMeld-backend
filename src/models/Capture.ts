@@ -124,8 +124,9 @@ export interface ICapture extends Omit<Document, 'collection'> {
   };
 
   // Future: AI/ML Features
-  ai?: {
+  ai: {
     summary?: string;
+    embeddings?:number[]; // Placeholder for future embeddings
     // embeddings?: {
     //   content?: IContentEmbedding;
     // };
@@ -276,6 +277,10 @@ const CaptureSchema = new Schema<ICapture>({
     summary: {
       type: String,
       default:""
+    },
+    embeddings:{
+      type: [Number],
+      default: []
     }
     // embeddings: {
     //   content: EmbeddingSchema

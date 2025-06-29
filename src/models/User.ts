@@ -1,5 +1,5 @@
 import mongoose, { Schema } from "mongoose";
-import { decrypt, encrypt } from "src/security/crypto";
+import { decrypt, encrypt } from "../security/crypto";
 
 const UserSchema: Schema = new Schema(
   {
@@ -37,5 +37,6 @@ UserSchema.methods.setGeminiKey = function(apiKey: string) {
   this.externalServices.gemini.apiKey = apiKey;
 }
 
-const User = mongoose.model("User", UserSchema);
+const User = mongoose.model("User", UserSchema, "user");
+
 export default User;

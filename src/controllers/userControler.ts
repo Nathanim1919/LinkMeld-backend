@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { Capture } from "../models/Capture";
 import Collection from "../models/Collection";
+import User from "../models/User";
 
 // reset ll user captures, folders, and all data
 export const resetAllData = async (
@@ -18,7 +19,6 @@ export const resetAllData = async (
 
     await clearCaptures(user);
     await clearFolders(user);
-
 
     res
       .status(200)
@@ -43,5 +43,29 @@ export const clearFolders = async (user: any): Promise<void> => {
     await Collection.deleteMany({ user: user.id });
   } catch (error) {
     throw new Error(`Failed to clear folders: ${error.message}`);
+  }
+};
+
+export const addGeminiApiKey = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  try {
+    const { user } = req;
+    const { geminiApiKey } = req.body;
+
+    const activeUser = await User.findById(user);
+
+    if (!activeUser) {
+      res.status(401).json({
+        message: "User Not Found",
+      });
+      return;
+    }
+
+    activeUser.setGeminiKey = geminiApiKey;
+    await activeUser.save();
+  } catch (error) {
+    throw new Error(`Failed to set Gemini Api Key!!`);
   }
 };
