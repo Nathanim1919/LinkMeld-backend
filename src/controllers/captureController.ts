@@ -97,8 +97,6 @@ export const saveCapture = async (
       return supportedLanguages.includes(normalized) ? normalized : "english";
     };
 
-    // get the active user
-    const user = await User.findById(req.user.id);
     // 4. Build Capture Object
     const captureData: Partial<ICapture> = {
       owner: req.user.id,

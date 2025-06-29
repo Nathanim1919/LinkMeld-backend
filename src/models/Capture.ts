@@ -58,6 +58,7 @@ export interface ICapture extends Omit<Document, 'collection'> {
   title: string;
   slug: string;
   contentHash: string;
+  conversation?: Types.ObjectId; // Reference to Conversation model
 
   // ---- Content Storage ----
   content: {
@@ -282,12 +283,11 @@ const CaptureSchema = new Schema<ICapture>({
       type: [Number],
       default: []
     }
-    // embeddings: {
-    //   content: EmbeddingSchema
-    // },
-    // classifications: {
-    //   topic: String
-    // }
+  },
+
+  conversation: {
+    type: Schema.Types.ObjectId,
+    ref: 'Conversation'
   },
 
   // ---- Content Storage ----
