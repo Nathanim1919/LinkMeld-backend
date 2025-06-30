@@ -5,7 +5,7 @@ import { sanitizeHtml } from "../utils/sanitization";
 import { generateSlug } from "../utils/slugify";
 import { normalizeUrl } from "../utils/urls";
 import { processContent } from "../ai/services/aiService";
-import Conversation from "src/models/Conversation";
+import Conversation from "../models/Conversation";
 import mongoose from "mongoose";
 
 export const saveCapture = async (
@@ -191,6 +191,8 @@ export const saveCapture = async (
     const conversation = await Conversation.create({
       captureId: capture._id,
     });
+
+    console.log("Conversation created:", conversation);
 
     capture.conversation = new mongoose.Types.ObjectId(conversation._id);
 
