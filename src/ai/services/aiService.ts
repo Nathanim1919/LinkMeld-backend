@@ -2,18 +2,17 @@ import { AIResponse } from "../types";
 import { Request, Response } from "express";
 import { Capture } from "../../models/Capture";
 // import { validate as uuidValidate } from 'uuid';
-import { rateLimit } from 'express-rate-limit';
-
+import { rateLimit } from "express-rate-limit";
 
 // Type definitions
 interface Message {
-  role: 'user' | 'assistant' | 'system';
+  role: "user" | "assistant" | "system";
   content: string;
   timestamp?: Date;
 }
 
 // Constants and configuration
-const DEFAULT_MODEL = 'gemini-2.0-flash';
+const DEFAULT_MODEL = "gemini-2.0-flash";
 const MAX_CONVERSATION_LENGTH = 30; // Max messages in conversation
 const MAX_INPUT_LENGTH = 10000; // Characters
 const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000; // 15 minutes
@@ -325,52 +324,69 @@ const handleGeminiError = (error: any): AIResponse => {
   };
 };
 
-
 // Rate limiter middleware
 export const conversationRateLimiter = rateLimit({
   windowMs: RATE_LIMIT_WINDOW_MS,
   max: RATE_LIMIT_MAX_REQUESTS,
   standardHeaders: true,
   legacyHeaders: false,
-  message: 'Too many requests, please try again later.',
+  message: "Too many requests, please try again later.",
 });
 
-const validateRequest = (req: Request): { isValid: boolean; error?: string } => {
-  if (!req.body) return { isValid: false, error: 'Request body is missing' };
-  
+const validateRequest = (
+  req: Request
+): { isValid: boolean; error?: string } => {
+  if (!req.body) return { isValid: false, error: "Request body is missing" };
+
   const { captureId, messages } = req.body as ConversationRequest;
   // || !uuidValidate(captureId
   if (!captureId) {
-    return { isValid: false, error: 'Invalid or missing captureId' };
+    return { isValid: false, error: "Invalid or missing captureId" };
   }
-  
+
   if (!Array.isArray(messages) || messages.length === 0) {
-    return { isValid: false, error: 'Messages must be a non-empty array' };
+    return { isValid: false, error: "Messages must be a non-empty array" };
   }
-  
+
   if (messages.length > MAX_CONVERSATION_LENGTH) {
-    return { isValid: false, error: `Conversation too long. Max ${MAX_CONVERSATION_LENGTH} messages allowed.` };
+    return {
+      isValid: false,
+      error: `Conversation too long. Max ${MAX_CONVERSATION_LENGTH} messages allowed.`,
+    };
   }
-  
+
   for (const msg of messages) {
-    if (!msg.role || !['user', 'assistant', 'system'].includes(msg.role)) {
-      return { isValid: false, error: 'Invalid message role' };
+    if (!msg.role || !["user", "assistant", "system"].includes(msg.role)) {
+      return { isValid: false, error: "Invalid message role" };
     }
-    if (!msg.content || typeof msg.content !== 'string' || msg.content.length > MAX_INPUT_LENGTH) {
-      return { isValid: false, error: 'Invalid message content' };
+    if (
+      !msg.content ||
+      typeof msg.content !== "string" ||
+      msg.content.length > MAX_INPUT_LENGTH
+    ) {
+      return { isValid: false, error: "Invalid message content" };
     }
   }
-  
+
   return { isValid: true };
 };
 
-const buildConversationPrompt = (content: string, messages: Message[]): string => {
+const buildConversationPrompt = (
+  content: string,
+  messages: Message[]
+): string => {
   // System message with clear document awareness
   const systemMessage = `You are an AI document analysis assistant. Follow these rules STRICTLY:
 
 1. DOCUMENT STATUS:
    - Document Content: ${content ? "AVAILABLE (see below)" : "NOT UPLOADED"}
-   ${content ? `\nDOCUMENT CONTENT PREVIEW:\n${content.substring(0, 1000)}${content.length > 1000 ? '...' : ''}` : ''}
+   ${
+     content
+       ? `\nDOCUMENT CONTENT PREVIEW:\n${content.substring(0, 1000)}${
+           content.length > 1000 ? "..." : ""
+         }`
+       : ""
+   }
 
 2. RESPONSE RULES:
    - If NO document content: Guide user to upload one politely
@@ -386,13 +402,14 @@ const buildConversationPrompt = (content: string, messages: Message[]): string =
 
   // Filter out unhelpful messages and get last 3 exchanges
   const conversationHistory = messages
-    .filter(msg => !msg.content.includes("I can't answer that"))
+    .filter((msg) => !msg.content.includes("I can't answer that"))
     .slice(-6) // Last 3 exchanges (user + assistant pairs)
-    .map(msg => `${msg.role.toUpperCase()}: ${msg.content}`)
-    .join('\n');
+    .map((msg) => `${msg.role.toUpperCase()}: ${msg.content}`)
+    .join("\n");
 
   // Current user's last message
-  const lastUserMessage = messages.filter(m => m.role === 'user').slice(-1)[0]?.content || '';
+  const lastUserMessage =
+    messages.filter((m) => m.role === "user").slice(-1)[0]?.content || "";
 
   return `
 ${systemMessage}
@@ -414,30 +431,44 @@ const processConversation = async (
 ): Promise<ProcessedResponse> => {
   try {
     const prompt = buildConversationPrompt(content, messages);
-    
+
     const startTime = Date.now();
     const response = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${process.env.GEMINI_API_KEY}`,
       {
-        method: 'POST',
-        headers: { 
-          'Content-Type': 'application/json',
-          'X-Client-ID': process.env.CLIENT_ID || 'your-service-id',
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-Client-ID": process.env.CLIENT_ID || "your-service-id",
         },
         body: JSON.stringify({
-          contents: [{
-            parts: [{ text: prompt }],
-          }],
+          contents: [
+            {
+              parts: [{ text: prompt }],
+            },
+          ],
           generationConfig: {
             temperature: 0.7,
             topP: 0.9,
             maxOutputTokens: 1000, // Limit response length
           },
           safetySettings: [
-            { category: 'HARM_CATEGORY_HARASSMENT', threshold: 'BLOCK_ONLY_HIGH' },
-            { category: 'HARM_CATEGORY_HATE_SPEECH', threshold: 'BLOCK_ONLY_HIGH' },
-            { category: 'HARM_CATEGORY_SEXUALLY_EXPLICIT', threshold: 'BLOCK_ONLY_HIGH' },
-            { category: 'HARM_CATEGORY_DANGEROUS_CONTENT', threshold: 'BLOCK_ONLY_HIGH' },
+            {
+              category: "HARM_CATEGORY_HARASSMENT",
+              threshold: "BLOCK_ONLY_HIGH",
+            },
+            {
+              category: "HARM_CATEGORY_HATE_SPEECH",
+              threshold: "BLOCK_ONLY_HIGH",
+            },
+            {
+              category: "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+              threshold: "BLOCK_ONLY_HIGH",
+            },
+            {
+              category: "HARM_CATEGORY_DANGEROUS_CONTENT",
+              threshold: "BLOCK_ONLY_HIGH",
+            },
           ],
         }),
         signal,
@@ -445,41 +476,48 @@ const processConversation = async (
     );
 
     const latency = Date.now() - startTime;
-    console.log(`API call latency: ${latency}ms`);
-    
+    // console.log(`API call latency: ${latency}ms`);
+
     if (!response.ok) {
       const errorData = await response.json();
-      console.error('Gemini API error:', {
+      console.error("Gemini API error:", {
         status: response.status,
         error: errorData,
         promptPreview: prompt.substring(0, 100),
       });
-      throw new Error(`API Error ${response.status}: ${errorData.error?.message || 'Unknown error'}`);
+      throw new Error(
+        `API Error ${response.status}: ${
+          errorData.error?.message || "Unknown error"
+        }`
+      );
     }
 
     const data = await response.json();
-    const messageText = data?.candidates?.[0]?.content?.parts?.[0]?.text || '';
-    
+    const messageText = data?.candidates?.[0]?.content?.parts?.[0]?.text || "";
+
     // Log token usage for cost monitoring
     const tokensUsed = data?.usageMetadata?.totalTokenCount;
     if (tokensUsed) {
       console.log(`Tokens used: ${tokensUsed}`);
     }
 
-    return { 
+    return {
       message: messageText,
       tokensUsed,
       modelUsed: model,
     };
   } catch (error) {
-    console.error('Conversation processing failed:', error);
+    console.error("Conversation processing failed:", error);
     throw error;
   }
 };
 
-export const converseWithAI = async (req: Request, res: Response): Promise<void> => {
+export const converseWithAI = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
   // Validate request
-  console.log('Request Body:', req.body);
+  // console.log('Request Body:', req.body);
   const { isValid, error } = validateRequest(req);
   if (!isValid) {
     res.status(400).json({ success: false, error });
@@ -493,13 +531,12 @@ export const converseWithAI = async (req: Request, res: Response): Promise<void>
   try {
     // In a real implementation, you would fetch the content associated with captureId
     const content = await Capture.findById(captureId)
-      .select('content') // Assuming content is stored in the Capture model
+      .select("content") // Assuming content is stored in the Capture model
       .lean()
       .exec();
-    
 
     if (!content) {
-      res.status(404).json({ success: false, error: 'Content not found' });
+      res.status(404).json({ success: false, error: "Content not found" });
       return;
     }
 
@@ -510,7 +547,6 @@ export const converseWithAI = async (req: Request, res: Response): Promise<void>
       model,
       controller.signal
     );
-
 
     // console.log(`Conversation processed for captureId and content of: ${content.content.raw}`);
 
@@ -531,14 +567,15 @@ export const converseWithAI = async (req: Request, res: Response): Promise<void>
       },
     });
   } catch (error) {
-    if (error.name === 'AbortError') {
-      res.status(504).json({ success: false, error: 'Request timeout' });
+    if (error.name === "AbortError") {
+      res.status(504).json({ success: false, error: "Request timeout" });
     } else {
-      console.error('Conversation error:', error);
-      res.status(500).json({ 
-        success: false, 
-        error: 'Internal server error',
-        details: process.env.NODE_ENV === 'development' ? error.message : undefined,
+      console.error("Conversation error:", error);
+      res.status(500).json({
+        success: false,
+        error: "Internal server error",
+        details:
+          process.env.NODE_ENV === "development" ? error.message : undefined,
       });
     }
   } finally {

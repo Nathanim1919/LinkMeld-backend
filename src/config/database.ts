@@ -20,3 +20,6 @@ export const connectMongo = async () => {
     process.exit(1);
   }
 };
+
+
+export const mongooseConnection = mongoose.connection;

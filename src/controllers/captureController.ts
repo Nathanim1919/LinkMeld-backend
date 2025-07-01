@@ -164,10 +164,28 @@ export const saveCapture = async (
             .map((link) => ({
               type: "link",
               url: sanitizeHtml(link.href, { allowedTags: [] }),
-              title: sanitizeHtml(link.text || "", { allowedTags: [] }),
+              title: sanitizeHtml(link.text || "errorText", { allowedTags: [] }),
             }))
         : [],
     };
+
+    // Ensure their is no dublicate capture using the unque slug and content hash
+    const existingCapture = await Capture.findOne({
+      $or: [
+        { slug: captureData.slug },
+        { contentHash: captureData.contentHash },
+      ],
+    });
+
+    if (existingCapture) {
+      console.log("Capture already exists:", existingCapture._id);
+      res.status(409).json({
+        success: false,
+        error: "This Webpage has already been captured",
+        captureId: existingCapture._id,
+      });
+      return;
+    }
 
     // 5. Save to Database
     const capture = await new Capture(captureData).save();
@@ -212,9 +230,10 @@ export const saveCapture = async (
       },
     });
   } catch (error) {
+    console.error("[LinkMeld] Error saving capture:", error);
     res.status(500).json({
       success: false,
-      error: "Internal server error",
+      error: "Already captured or an error occurred",
       ...(process.env.NODE_ENV === "development" && {
         details: error instanceof Error ? error.message : "Unknown error",
       }),
@@ -228,7 +247,7 @@ export const getCaptures = async (
 ): Promise<void> => {
   try {
     const captures = await Capture.find()
-      .sort({ timestamp: -1 })
+     
       .populate("collection", "name")
       .exec();
     res.status(200).json(captures);

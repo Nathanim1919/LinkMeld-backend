@@ -5,7 +5,7 @@ const UserSchema: Schema = new Schema(
   {
     name: { type: String, required: true }, // Changed from username to name to match frontend
     email: { type: String, required: true, unique: true },
-    password: { type: String, required: true }, // Changed to password
+    password: { type: String }, // Changed to password
     emailVerified: {
       type: Boolean,
       default: false,
