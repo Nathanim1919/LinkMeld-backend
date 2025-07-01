@@ -1,8 +1,20 @@
 // models/UserProfile.ts
-import mongoose, { Schema } from "mongoose";
+import mongoose, { Document, Schema } from "mongoose";
 import { encrypt, decrypt } from "../security/crypto";
 
-const UserProfileSchema: Schema = new Schema(
+
+export interface IUserProfile extends Document {
+    userId: string;
+    externalServices: {
+      gemini: {
+        apiKey?: string;
+      };
+    };
+    getGeminiKey(): string | undefined;
+    setGeminiKey(apiKey: string): void;
+  }
+
+const UserProfileSchema = new Schema<IUserProfile>(
   {
     userId: { type: String, required: true, unique: true }, // BetterAuth user ID (usr_xyz)
     
