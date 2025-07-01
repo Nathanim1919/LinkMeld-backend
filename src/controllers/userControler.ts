@@ -54,6 +54,9 @@ export const addGeminiApiKey = async (
     const { user } = req;
     const { geminiApiKey } = req.body;
 
+    console.info(`[UserProfile] Adding Gemini API key for user: ${user?.id}`);
+    console.info(`[UserProfile] Gemini API key: ${geminiApiKey ? "provided" : "not provided"}`);
+
     if (!user || !user.id) {
       res.status(401).json({ message: "Unauthorized: user not found" });
       return;
