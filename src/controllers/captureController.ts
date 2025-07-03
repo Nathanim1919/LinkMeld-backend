@@ -248,7 +248,9 @@ export const getCaptures = async (
   res: Response
 ): Promise<void> => {
   try {
-    const captures = await Capture.find()
+    const captures = await Capture.find({
+      owner: req.user.id,
+    })
 
       .populate("collection", "name")
       .exec();
@@ -275,7 +277,10 @@ export const bookmarkOrUnbookmarkCapture = async (
   }
 
   try {
-    const capture = await Capture.findById(captureId);
+    const capture = await Capture.findById({
+      _id: captureId,
+      owner: req.user.id,
+    });
     if (!capture) {
       res.status(404).json({ message: "Capture not found" });
       return;
@@ -303,7 +308,10 @@ export const getBookmarkedCaptures = async (
   res: Response
 ): Promise<void> => {
   try {
-    const captures = await Capture.find({ bookmarked: true })
+    const captures = await Capture.find({
+      owner: req.user.id,
+      bookmarked: true,
+    })
       .sort({ timestamp: -1 })
       .populate("collection", "name")
       .exec();
@@ -331,8 +339,11 @@ export const searchCaptures = async (
   const pageSize = parseInt(limit as string, 10);
 
   try {
+    const testCaptures = await Capture.find({ owner: req.user.id });
+    console.log("Test captures by owner only:", testCaptures.length);
     // Primary full-text search
     let captures = await Capture.find({
+      owner: req.user.id,
       $text: { $search: query },
     })
       .sort({ createdAt: -1 })
@@ -340,6 +351,8 @@ export const searchCaptures = async (
       .limit(pageSize)
       .populate("collection", "name")
       .exec();
+
+    console.log("Captures found with full-text search:", captures.length);
 
     // If no results, fallback to regex search on `searchTokens`
     if (captures.length === 0) {
@@ -371,7 +384,12 @@ export const searchCaptures = async (
 export const getCaptureById = async (req: Request, res: Response) => {
   try {
     const { captureId } = req.params;
-    const capture = await Capture.findById(captureId);
+    const capture = await Capture.find({
+      _id: captureId,
+      owner: req.user.id, // Ensure the capture belongs to the authenticated user
+    })
+      .populate("collection", "name")
+      .exec();
     if (!capture) {
       res.status(404).json({ message: "Capture not found" });
       return;

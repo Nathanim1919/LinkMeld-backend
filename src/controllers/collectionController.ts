@@ -16,7 +16,6 @@ export const createCollection = async (
     }
 
 
-
     if (!name) {
       res.status(400).json({ message: "Collection name is required" });
       return;
@@ -60,7 +59,9 @@ export const getFolders = async (
   res: Response
 ): Promise<void> => {
   try {
-    const collections = await Collection.find().populate("captures");
+    const collections = await Collection.find({
+      user: req.user.id,
+    }).populate("captures");
     res.status(200).json(collections);
   } catch (error) {
     res
@@ -81,7 +82,10 @@ export const getFolderById = async (
       return;
     }
 
-    const collection = await Collection.findById(id).populate("captures");
+    const collection = await Collection.find({
+      _id: id,
+      user: req.user.id, // Ensure the folder belongs to the authenticated user
+    }).populate("captures");
     if (!collection) {
       res.status(404).json({ message: "Collection not found" });
       return;

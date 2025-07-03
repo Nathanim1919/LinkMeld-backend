@@ -1,24 +1,23 @@
 import { Request, Response } from "express";
 import { Capture } from "../models/Capture";
+import { Types } from "mongoose"; // import ObjectId converter
 
-// Get all distinct sources from the Capture model (siteName)
-export const getAllDistinctSiteName = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
+export const getAllDistinctSiteName = async (req: Request, res: Response): Promise<void> => {
   try {
-    // Fetch distinct site names from the metadata.siteName field
-    const siteNames = await Capture.distinct("metadata.siteName");
+    const userId = new Types.ObjectId(req.user.id); // convert to ObjectId
+
+    const siteNames = await Capture.distinct("metadata.siteName", {
+      owner: userId, // filter by owner
+    });
 
     if (!siteNames || siteNames.length === 0) {
-      res.status(404).json({
-        message: "No distinct site names found",
-      });
+      res.status(404).json({ message: "No distinct site names found" });
       return;
     }
 
-    // get the number of captures for each site name
+    // Add $match stage to aggregation to filter by owner
     const siteNameCounts = await Capture.aggregate([
+      { $match: { owner: userId } },
       {
         $group: {
           _id: "$metadata.siteName",
@@ -33,14 +32,11 @@ export const getAllDistinctSiteName = async (
         },
       },
     ]);
-    // Convert the counts to a map for easier access
-    const siteNameCountMap = siteNameCounts.reduce(
-      (acc, { siteName, count }) => {
-        acc[siteName] = count;
-        return acc;
-      },
-      {}
-    );
+
+    const siteNameCountMap = siteNameCounts.reduce((acc, { siteName, count }) => {
+      acc[siteName] = count;
+      return acc;
+    }, {});
 
     res.status(200).json({
       message: "Successfully fetched all distinct site names",
@@ -48,38 +44,32 @@ export const getAllDistinctSiteName = async (
       siteNameCounts: siteNameCountMap,
     });
   } catch (error) {
-    res.status(500).json({
-      message: "Error fetching distinct site names",
-    });
+    console.error(error);
+    res.status(500).json({ message: "Error fetching distinct site names" });
   }
 };
 
-export const getCapturesWithSiteName = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
+export const getCapturesWithSiteName = async (req: Request, res: Response): Promise<void> => {
   const { siteName } = req.query;
 
   if (!siteName || typeof siteName !== "string") {
-    res.status(400).json({
-      message: "Invalid or missing siteName query parameter",
-    });
+    res.status(400).json({ message: "Invalid or missing siteName query parameter" });
     return;
   }
 
   try {
-    // Fetch captures with the specified siteName
+    const userId = new Types.ObjectId(req.user.id);
+
     const captures = await Capture.find({
       "metadata.siteName": siteName,
+      owner: userId, // filter by owner
     })
-      .sort({ timestamp: -1 }) // Sort by timestamp in descending order
-      .populate("collection", "name") // Populate collection name
+      .sort({ timestamp: -1 })
+      .populate("collection", "name")
       .exec();
 
     if (!captures || captures.length === 0) {
-      res.status(404).json({
-        message: `No captures found for siteName: ${siteName}`,
-      });
+      res.status(404).json({ message: `No captures found for siteName: ${siteName}` });
       return;
     }
 
@@ -88,45 +78,38 @@ export const getCapturesWithSiteName = async (
       captures,
     });
   } catch (error) {
-    res.status(500).json({
-      message: "Error fetching captures by site name",
-    });
+    console.error(error);
+    res.status(500).json({ message: "Error fetching captures by site name" });
   }
 };
 
-export const getCapturesWithSpecificSiteName = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
+export const getCapturesWithSpecificSiteName = async (req: Request, res: Response): Promise<void> => {
   const { siteName } = req.params;
 
   if (!siteName || typeof siteName !== "string") {
-    res.status(400).json({
-      message: "Invalid or missing siteName parameter",
-    });
+    res.status(400).json({ message: "Invalid or missing siteName parameter" });
     return;
   }
 
   try {
-    // Fetch captures with the specified siteName
+    const userId = new Types.ObjectId(req.user.id);
+
     const captures = await Capture.find({
       "metadata.siteName": siteName,
+      owner: userId, // **Add this filter**
     })
-      .sort({ timestamp: -1 }) // Sort by timestamp in descending order
-      .populate("collection", "name") // Populate folder name
+      .sort({ timestamp: -1 })
+      .populate("collection", "name")
       .exec();
 
     if (!captures || captures.length === 0) {
-      res.status(404).json({
-        message: `No captures found for siteName: ${siteName}`,
-      });
+      res.status(404).json({ message: `No captures found for siteName: ${siteName}` });
       return;
     }
 
     res.status(200).json(captures);
   } catch (error) {
-    res.status(500).json({
-      message: "Error fetching captures by site name",
-    });
+    console.error(error);
+    res.status(500).json({ message: "Error fetching captures by site name" });
   }
 };

@@ -1,16 +1,20 @@
-import { Router } from "express";
+import express from "express";
 import {
   getAllDistinctSiteName,
   getCapturesWithSiteName,
   getCapturesWithSpecificSiteName
 } from "../controllers/sourceController";
 
-const sourceRouter = Router();
+import { authentication } from "../middleware/authMiddleware";
+
+const router = express.Router();
+
+router.use(authentication);
 
 // Route to get all distinct site names
-sourceRouter.get("/", getAllDistinctSiteName);
+router.get("/captures-by-site-name", getCapturesWithSiteName);
+router.get("/", getAllDistinctSiteName);
 // Route to get captures with a specific site name
-sourceRouter.get("/captures-by-site-name", getCapturesWithSiteName);
-sourceRouter.get("/:siteName/captures", getCapturesWithSpecificSiteName);
+router.get("/:siteName/captures", getCapturesWithSpecificSiteName);
 
-export default sourceRouter;
+export default router;
