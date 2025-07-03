@@ -17,10 +17,10 @@ if (key.length !== 32) {
   throw new Error("ENCRYPTION_KEY must be a 64-character hex string (32 bytes).");
 }
 
-export function encrypt(plainText: string): string {
+export function encrypt(plainText: string | undefined | null): string {
   try {
-    if (typeof plainText !== "string") {
-      throw new Error("encrypt(): input must be a string.");
+    if (!plainText || typeof plainText !== "string") {
+      return ""; // gracefully skip encryption
     }
 
     const iv = crypto.randomBytes(IV_LENGTH);
@@ -38,8 +38,13 @@ export function encrypt(plainText: string): string {
   }
 }
 
-export function decrypt(encryptedText: string): string {
+
+export function decrypt(encryptedText: string | undefined | null): string {
   try {
+    if (!encryptedText || typeof encryptedText !== "string") {
+      return ""; // gracefully skip decryption
+    }
+
     const [ivHex, tagHex, encryptedHex] = encryptedText.split(":");
     if (!ivHex || !tagHex || !encryptedHex) {
       throw new Error("decrypt(): Malformed input string.");
@@ -60,6 +65,6 @@ export function decrypt(encryptedText: string): string {
     return decrypted.toString("utf8");
   } catch (err) {
     console.error("[decrypt] Failed to decrypt data:", err);
-    throw err;
+    return ""; // return empty string instead of throwing
   }
 }

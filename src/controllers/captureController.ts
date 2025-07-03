@@ -164,7 +164,9 @@ export const saveCapture = async (
             .map((link) => ({
               type: "link",
               url: sanitizeHtml(link.href, { allowedTags: [] }),
-              title: sanitizeHtml(link.text || "errorText", { allowedTags: [] }),
+              title: sanitizeHtml(link.text || "errorText", {
+                allowedTags: [],
+              }),
             }))
         : [],
     };
@@ -247,7 +249,7 @@ export const getCaptures = async (
 ): Promise<void> => {
   try {
     const captures = await Capture.find()
-     
+
       .populate("collection", "name")
       .exec();
     res.status(200).json(captures);
@@ -310,6 +312,77 @@ export const getBookmarkedCaptures = async (
     res.status(500).json({
       message: "Error fetching bookmarked captures",
       error: error.message,
+    });
+  }
+};
+
+export const searchCaptures = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  const { query, page = "1", limit = "10" } = req.query;
+
+  if (!query || typeof query !== "string") {
+    res.status(400).json({ message: "Invalid search query" });
+    return;
+  }
+
+  const currentPage = parseInt(page as string, 10);
+  const pageSize = parseInt(limit as string, 10);
+
+  try {
+    // Primary full-text search
+    let captures = await Capture.find({
+      $text: { $search: query },
+    })
+      .sort({ createdAt: -1 })
+      .skip((currentPage - 1) * pageSize)
+      .limit(pageSize)
+      .populate("collection", "name")
+      .exec();
+
+    // If no results, fallback to regex search on `searchTokens`
+    if (captures.length === 0) {
+      captures = await Capture.find({
+        searchTokens: { $regex: query, $options: "i" },
+      })
+        .sort({ createdAt: -1 })
+        .skip((currentPage - 1) * pageSize)
+        .limit(pageSize)
+        .populate("collection", "name")
+        .exec();
+    }
+
+    res.status(200).json({
+      data: captures,
+      page: currentPage,
+      limit: pageSize,
+      hasMore: captures.length === pageSize,
+    });
+  } catch (error) {
+    console.error("[LinkMeld] Error searching captures:", error);
+    res.status(500).json({
+      message: "Error searching captures",
+      error: error instanceof Error ? error.message : "Unknown error",
+    });
+  }
+};
+
+export const getCaptureById = async (req: Request, res: Response) => {
+  try {
+    const { captureId } = req.params;
+    const capture = await Capture.findById(captureId);
+    if (!capture) {
+      res.status(404).json({ message: "Capture not found" });
+      return;
+    }
+
+    res.status(200).json(capture);
+  } catch (error) {
+    console.error("[LinkMeld] Error fetching capture by ID:", error);
+    res.status(500).json({
+      message: "Error fetching capture",
+      error: error instanceof Error ? error.message : "Unknown error",
     });
   }
 };
