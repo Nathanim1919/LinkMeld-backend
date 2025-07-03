@@ -384,7 +384,7 @@ export const searchCaptures = async (
 export const getCaptureById = async (req: Request, res: Response) => {
   try {
     const { captureId } = req.params;
-    const capture = await Capture.find({
+    const capture = await Capture.findOne({
       _id: captureId,
       owner: req.user.id, // Ensure the capture belongs to the authenticated user
     })
