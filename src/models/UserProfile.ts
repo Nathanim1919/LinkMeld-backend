@@ -12,6 +12,8 @@ export interface IUserProfile extends Document {
     };
     getGeminiKey(): string | undefined;
     setGeminiKey(apiKey: string): void;
+    createdAt: Date;
+    updatedAt: Date;
   }
 
 const UserProfileSchema = new Schema<IUserProfile>(

@@ -1,0 +1,976 @@
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-05 00:53:00:530'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-05 00:53:00:530'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-05 00:53:00:530'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-05 00:53:00:530'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-05 00:53:44:5344'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-05 00:53:44:5344'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-05 00:53:44:5344'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-05 00:53:44:5344'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-05 00:54:09:549'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-05 00:54:09:549'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-05 00:54:09:549'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-05 00:54:09:549'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:resetAllData',
+  timestamp: '2025-07-05 00:54:18:5418'
+}
+{
+  service: 'api-service',
+  level: 'error',
+  message: "UserProfileService:resetAllData:error Cannot read properties of undefined (reading 'clearUserCaptures')",
+  stack: "TypeError: Cannot read properties of undefined (reading 'clearUserCaptures')\n" +
+    '    at resetAllData (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/controllers/userControler.ts:39:14)\n' +
+    '    at Layer.handleRequest (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at next (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/route.js:157:13)\n' +
+    '    at Route.dispatch (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/route.js:117:3)\n' +
+    '    at handle (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:435:11)\n' +
+    '    at Layer.handleRequest (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at /home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:295:15\n' +
+    '    at processParams (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:582:12)\n' +
+    '    at next (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:291:5)\n' +
+    '    at /home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/express-rate-limit/dist/index.cjs:807:7',
+  timestamp: '2025-07-05 00:54:18:5418'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: null,
+  error: "Cannot read properties of undefined (reading 'clearUserCaptures')",
+  level: 'error',
+  message: 'ErrorResponse: Failed to reset user data',
+  timestamp: '2025-07-05 00:54:18:5418'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:resetAllData',
+  timestamp: '2025-07-05 00:56:36:5636'
+}
+{
+  service: 'api-service',
+  level: 'error',
+  message: "UserProfileService:resetAllData:error Cannot read properties of undefined (reading 'clearUserCaptures')",
+  stack: "TypeError: Cannot read properties of undefined (reading 'clearUserCaptures')\n" +
+    '    at resetAllData (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/controllers/userControler.ts:39:14)\n' +
+    '    at Layer.handleRequest (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at next (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/route.js:157:13)\n' +
+    '    at Route.dispatch (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/route.js:117:3)\n' +
+    '    at handle (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:435:11)\n' +
+    '    at Layer.handleRequest (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at /home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:295:15\n' +
+    '    at processParams (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:582:12)\n' +
+    '    at next (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:291:5)\n' +
+    '    at /home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/express-rate-limit/dist/index.cjs:807:7',
+  timestamp: '2025-07-05 00:56:36:5636'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: null,
+  error: "Cannot read properties of undefined (reading 'clearUserCaptures')",
+  level: 'error',
+  message: 'ErrorResponse: Failed to reset user data',
+  timestamp: '2025-07-05 00:56:36:5636'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:resetAllData',
+  timestamp: '2025-07-05 00:57:48:5748'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Success',
+  timestamp: '2025-07-05 00:57:49:5749'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-05 00:58:22:5822'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-05 00:58:22:5822'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-05 00:58:23:5823'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-05 00:58:23:5823'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:resetAllData',
+  timestamp: '2025-07-05 00:58:25:5825'
+}
+{
+  service: 'api-service',
+  level: 'error',
+  message: "UserProfileService:resetAllData:error Cannot read properties of undefined (reading 'clearUserCollections')",
+  stack: "TypeError: Cannot read properties of undefined (reading 'clearUserCollections')\n" +
+    '    at resetAllData (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/controllers/userControler.ts:40:14)\n' +
+    '    at Layer.handleRequest (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at next (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/route.js:157:13)\n' +
+    '    at Route.dispatch (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/route.js:117:3)\n' +
+    '    at handle (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:435:11)\n' +
+    '    at Layer.handleRequest (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at /home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:295:15\n' +
+    '    at processParams (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:582:12)\n' +
+    '    at next (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:291:5)\n' +
+    '    at /home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/express-rate-limit/dist/index.cjs:807:7',
+  timestamp: '2025-07-05 00:58:25:5825'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: null,
+  error: "Cannot read properties of undefined (reading 'clearUserCollections')",
+  level: 'error',
+  message: 'ErrorResponse: Failed to reset user data',
+  timestamp: '2025-07-05 00:58:25:5825'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:resetAllData',
+  timestamp: '2025-07-05 00:59:18:5918'
+}
+{
+  service: 'api-service',
+  level: 'error',
+  message: "UserProfileService:resetAllData:error Cannot read properties of undefined (reading 'clearUserCaptures')",
+  stack: "TypeError: Cannot read properties of undefined (reading 'clearUserCaptures')\n" +
+    '    at resetAllData (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/controllers/userControler.ts:39:14)\n' +
+    '    at Layer.handleRequest (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at next (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/route.js:157:13)\n' +
+    '    at Route.dispatch (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/route.js:117:3)\n' +
+    '    at handle (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:435:11)\n' +
+    '    at Layer.handleRequest (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at /home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:295:15\n' +
+    '    at processParams (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:582:12)\n' +
+    '    at next (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:291:5)\n' +
+    '    at /home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/express-rate-limit/dist/index.cjs:807:7',
+  timestamp: '2025-07-05 00:59:18:5918'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: null,
+  error: "Cannot read properties of undefined (reading 'clearUserCaptures')",
+  level: 'error',
+  message: 'ErrorResponse: Failed to reset user data',
+  timestamp: '2025-07-05 00:59:18:5918'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:resetAllData',
+  timestamp: '2025-07-05 01:01:00:10'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  deletedCount: 1,
+  level: 'info',
+  message: 'UserProfileService:clearUserCollections',
+  timestamp: '2025-07-05 01:01:00:10'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  deletedCount: 6,
+  level: 'info',
+  message: 'UserProfileService:clearUserCaptures',
+  timestamp: '2025-07-05 01:01:00:10'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Success',
+  timestamp: '2025-07-05 01:01:00:10'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-05 01:01:36:136'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-05 01:01:36:136'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-05 01:01:36:136'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-05 01:01:36:136'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-05 01:03:08:38'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-05 01:03:08:38'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-05 01:03:08:38'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-05 01:03:08:38'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-05 01:03:57:357'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-05 01:03:57:357'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-05 01:03:57:357'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-05 01:03:57:357'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-05 01:04:40:440'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-05 01:04:40:440'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-05 01:04:40:440'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-05 01:04:40:440'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Invalid Gemini API key format',
+  timestamp: '2025-07-05 01:04:50:450'
+}
+{
+  service: 'api-service',
+  level: 'error',
+  message: 'UserProfileService:upsertGeminiApiKey:error config is not defined',
+  stack: 'ReferenceError: config is not defined\n' +
+    '    at ErrorResponse (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/utils/responseHandlers.ts:60:9)\n' +
+    '    at upsertGeminiApiKey (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/controllers/userControler.ts:133:22)\n' +
+    '    at Layer.handleRequest (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at next (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/route.js:157:13)\n' +
+    '    at Route.dispatch (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/route.js:117:3)\n' +
+    '    at handle (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:435:11)\n' +
+    '    at Layer.handleRequest (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at /home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:295:15\n' +
+    '    at processParams (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:582:12)\n' +
+    '    at next (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:291:5)',
+  timestamp: '2025-07-05 01:04:50:450'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: null,
+  error: 'config is not defined',
+  level: 'error',
+  message: 'ErrorResponse: Failed to upsert Gemini API key',
+  timestamp: '2025-07-05 01:04:50:450'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Invalid Gemini API key format',
+  timestamp: '2025-07-05 01:04:53:453'
+}
+{
+  service: 'api-service',
+  level: 'error',
+  message: 'UserProfileService:upsertGeminiApiKey:error config is not defined',
+  stack: 'ReferenceError: config is not defined\n' +
+    '    at ErrorResponse (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/utils/responseHandlers.ts:60:9)\n' +
+    '    at upsertGeminiApiKey (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/controllers/userControler.ts:133:22)\n' +
+    '    at Layer.handleRequest (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at next (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/route.js:157:13)\n' +
+    '    at Route.dispatch (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/route.js:117:3)\n' +
+    '    at handle (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:435:11)\n' +
+    '    at Layer.handleRequest (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at /home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:295:15\n' +
+    '    at processParams (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:582:12)\n' +
+    '    at next (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:291:5)',
+  timestamp: '2025-07-05 01:04:53:453'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: null,
+  error: 'config is not defined',
+  level: 'error',
+  message: 'ErrorResponse: Failed to upsert Gemini API key',
+  timestamp: '2025-07-05 01:04:53:453'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Invalid Gemini API key format',
+  timestamp: '2025-07-05 01:04:54:454'
+}
+{
+  service: 'api-service',
+  level: 'error',
+  message: 'UserProfileService:upsertGeminiApiKey:error config is not defined',
+  stack: 'ReferenceError: config is not defined\n' +
+    '    at ErrorResponse (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/utils/responseHandlers.ts:60:9)\n' +
+    '    at upsertGeminiApiKey (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/controllers/userControler.ts:133:22)\n' +
+    '    at Layer.handleRequest (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at next (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/route.js:157:13)\n' +
+    '    at Route.dispatch (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/route.js:117:3)\n' +
+    '    at handle (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:435:11)\n' +
+    '    at Layer.handleRequest (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at /home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:295:15\n' +
+    '    at processParams (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:582:12)\n' +
+    '    at next (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:291:5)',
+  timestamp: '2025-07-05 01:04:54:454'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: null,
+  error: 'config is not defined',
+  level: 'error',
+  message: 'ErrorResponse: Failed to upsert Gemini API key',
+  timestamp: '2025-07-05 01:04:54:454'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-05 02:02:36:236'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-05 02:02:36:236'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-05 02:02:36:236'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-05 02:02:36:236'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Invalid Gemini API key format',
+  timestamp: '2025-07-05 02:02:49:249'
+}
+{
+  service: 'api-service',
+  level: 'error',
+  message: 'UserProfileService:upsertGeminiApiKey:error config is not defined',
+  stack: 'ReferenceError: config is not defined\n' +
+    '    at ErrorResponse (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/utils/responseHandlers.ts:60:9)\n' +
+    '    at upsertGeminiApiKey (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/controllers/userControler.ts:133:22)\n' +
+    '    at Layer.handleRequest (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at next (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/route.js:157:13)\n' +
+    '    at Route.dispatch (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/route.js:117:3)\n' +
+    '    at handle (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:435:11)\n' +
+    '    at Layer.handleRequest (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at /home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:295:15\n' +
+    '    at processParams (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:582:12)\n' +
+    '    at next (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:291:5)',
+  timestamp: '2025-07-05 02:02:49:249'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: null,
+  error: 'config is not defined',
+  level: 'error',
+  message: 'ErrorResponse: Failed to upsert Gemini API key',
+  timestamp: '2025-07-05 02:02:49:249'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Invalid Gemini API key format',
+  timestamp: '2025-07-05 02:03:20:320'
+}
+{
+  service: 'api-service',
+  level: 'error',
+  message: 'UserProfileService:upsertGeminiApiKey:error config is not defined',
+  stack: 'ReferenceError: config is not defined\n' +
+    '    at ErrorResponse (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/utils/responseHandlers.ts:60:9)\n' +
+    '    at upsertGeminiApiKey (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/controllers/userControler.ts:133:22)\n' +
+    '    at Layer.handleRequest (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at next (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/route.js:157:13)\n' +
+    '    at Route.dispatch (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/route.js:117:3)\n' +
+    '    at handle (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:435:11)\n' +
+    '    at Layer.handleRequest (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at /home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:295:15\n' +
+    '    at processParams (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:582:12)\n' +
+    '    at next (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:291:5)',
+  timestamp: '2025-07-05 02:03:20:320'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: null,
+  error: 'config is not defined',
+  level: 'error',
+  message: 'ErrorResponse: Failed to upsert Gemini API key',
+  timestamp: '2025-07-05 02:03:20:320'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Invalid Gemini API key format',
+  timestamp: '2025-07-05 02:04:16:416'
+}
+{
+  service: 'api-service',
+  level: 'error',
+  message: 'UserProfileService:upsertGeminiApiKey:error config is not defined',
+  stack: 'ReferenceError: config is not defined\n' +
+    '    at ErrorResponse (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/utils/responseHandlers.ts:60:9)\n' +
+    '    at upsertGeminiApiKey (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/controllers/userControler.ts:133:22)\n' +
+    '    at Layer.handleRequest (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at next (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/route.js:157:13)\n' +
+    '    at Route.dispatch (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/route.js:117:3)\n' +
+    '    at handle (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:435:11)\n' +
+    '    at Layer.handleRequest (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at /home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:295:15\n' +
+    '    at processParams (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:582:12)\n' +
+    '    at next (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:291:5)',
+  timestamp: '2025-07-05 02:04:16:416'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: null,
+  error: 'config is not defined',
+  level: 'error',
+  message: 'ErrorResponse: Failed to upsert Gemini API key',
+  timestamp: '2025-07-05 02:04:16:416'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Invalid Gemini API key format',
+  timestamp: '2025-07-05 02:04:18:418'
+}
+{
+  service: 'api-service',
+  level: 'error',
+  message: 'UserProfileService:upsertGeminiApiKey:error config is not defined',
+  stack: 'ReferenceError: config is not defined\n' +
+    '    at ErrorResponse (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/utils/responseHandlers.ts:60:9)\n' +
+    '    at upsertGeminiApiKey (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/controllers/userControler.ts:133:22)\n' +
+    '    at Layer.handleRequest (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at next (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/route.js:157:13)\n' +
+    '    at Route.dispatch (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/route.js:117:3)\n' +
+    '    at handle (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:435:11)\n' +
+    '    at Layer.handleRequest (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/lib/layer.js:152:17)\n' +
+    '    at /home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:295:15\n' +
+    '    at processParams (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:582:12)\n' +
+    '    at next (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/router/index.js:291:5)',
+  timestamp: '2025-07-05 02:04:18:418'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: null,
+  error: 'config is not defined',
+  level: 'error',
+  message: 'ErrorResponse: Failed to upsert Gemini API key',
+  timestamp: '2025-07-05 02:04:18:418'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Invalid Gemini API key format',
+  timestamp: '2025-07-05 02:06:29:629'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  keyPresent: true,
+  level: 'info',
+  message: 'UserProfileService:upsertGeminiApiKey',
+  timestamp: '2025-07-05 02:07:04:74'
+}
+{
+  service: 'api-service',
+  statusCode: 201,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Success',
+  timestamp: '2025-07-05 02:07:04:74'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Invalid Gemini API key format',
+  timestamp: '2025-07-05 02:07:17:717'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  keyPresent: true,
+  level: 'info',
+  message: 'UserProfileService:upsertGeminiApiKey',
+  timestamp: '2025-07-05 02:07:20:720'
+}
+{
+  service: 'api-service',
+  statusCode: 201,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Success',
+  timestamp: '2025-07-05 02:07:20:720'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-05 02:07:26:726'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-05 02:07:26:726'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-05 02:07:26:726'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-05 02:07:26:726'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:resetAllData',
+  timestamp: '2025-07-05 02:07:34:734'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  deletedCount: 0,
+  level: 'info',
+  message: 'UserProfileService:clearUserCollections',
+  timestamp: '2025-07-05 02:07:34:734'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  deletedCount: 0,
+  level: 'info',
+  message: 'UserProfileService:clearUserCaptures',
+  timestamp: '2025-07-05 02:07:34:734'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Success',
+  timestamp: '2025-07-05 02:07:34:734'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:resetAllData',
+  timestamp: '2025-07-05 02:07:38:738'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  deletedCount: 0,
+  level: 'info',
+  message: 'UserProfileService:clearUserCaptures',
+  timestamp: '2025-07-05 02:07:38:738'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  deletedCount: 0,
+  level: 'info',
+  message: 'UserProfileService:clearUserCollections',
+  timestamp: '2025-07-05 02:07:38:738'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Success',
+  timestamp: '2025-07-05 02:07:38:738'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:resetAllData',
+  timestamp: '2025-07-05 02:07:47:747'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  deletedCount: 0,
+  level: 'info',
+  message: 'UserProfileService:clearUserCollections',
+  timestamp: '2025-07-05 02:07:47:747'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  deletedCount: 0,
+  level: 'info',
+  message: 'UserProfileService:clearUserCaptures',
+  timestamp: '2025-07-05 02:07:47:747'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Success',
+  timestamp: '2025-07-05 02:07:47:747'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:resetAllData',
+  timestamp: '2025-07-05 02:07:53:753'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  deletedCount: 0,
+  level: 'info',
+  message: 'UserProfileService:clearUserCaptures',
+  timestamp: '2025-07-05 02:07:53:753'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  deletedCount: 0,
+  level: 'info',
+  message: 'UserProfileService:clearUserCollections',
+  timestamp: '2025-07-05 02:07:53:753'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Success',
+  timestamp: '2025-07-05 02:07:53:753'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:resetAllData',
+  timestamp: '2025-07-05 02:07:57:757'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  deletedCount: 0,
+  level: 'info',
+  message: 'UserProfileService:clearUserCaptures',
+  timestamp: '2025-07-05 02:07:57:757'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  deletedCount: 0,
+  level: 'info',
+  message: 'UserProfileService:clearUserCollections',
+  timestamp: '2025-07-05 02:07:57:757'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Success',
+  timestamp: '2025-07-05 02:07:57:757'
+}
+{
+  service: 'api-service',
+  ip: '::1',
+  method: 'POST',
+  path: '/',
+  level: 'warn',
+  message: 'Rate limit exceeded',
+  timestamp: '2025-07-05 02:08:00:80'
+}
+{
+  service: 'api-service',
+  statusCode: 429,
+  errorCode: 'RATE_LIMIT_EXCEEDED',
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Internal Server Error',
+  timestamp: '2025-07-05 02:08:00:80'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-05 02:09:42:942'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-05 02:09:42:942'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-05 02:09:42:942'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-05 02:09:42:942'
+}

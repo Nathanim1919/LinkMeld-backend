@@ -1,15 +1,20 @@
 import { Router } from "express";
-
-import { resetAllData, addGeminiApiKey, getUserProfileInfo } from "../controllers/userControler";
+import { UserProfileController } from "../controllers/userControler";
 import { authentication } from "../middleware/authMiddleware";
+import { rateLimiter } from "../middleware/rateLimiter";
 
 const router = Router();
 
-router.use(authentication); // Apply authentication middleware to all routes in this router
+// Apply authentication middleware to all routes
+router.use(authentication);
 
-// Route to reset all user data
-router.post("/reset", resetAllData);
-router.post("/setGeminiApiKey", addGeminiApiKey);
-router.get("/profile", getUserProfileInfo);
+// Apply rate limiting to sensitive operations
+router.use("/reset", rateLimiter("strict"));
+router.use("/setGeminiApiKey", rateLimiter("strict"));
 
-export default router;
+// Route definitions
+router.post("/reset", UserProfileController.resetAllData);
+router.post("/setGeminiApiKey", UserProfileController.upsertGeminiApiKey);
+router.get("/profile", UserProfileController.getUserProfile);
+
+export const userProfileRoutes = router;

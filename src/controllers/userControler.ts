@@ -2,144 +2,239 @@ import { Request, Response } from "express";
 import { Capture } from "../models/Capture";
 import Collection from "../models/Collection";
 import UserProfile, { IUserProfile } from "../models/UserProfile";
+import { logger } from "../utils/logger";
+import { IUser } from "../types/userTypes";
+import { ErrorResponse, SuccessResponse } from "../utils/responseHandlers";
+import { validateApiKey } from "../utils/validators";
 
-// reset ll user captures, folders, and all data
-export const resetAllData = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
-  try {
-    const { user } = req;
-    if (!user) {
-      res.status(400).json({ message: "User not found" });
-      return;
-    }
+// Constants
+const SERVICE_NAME = "UserProfileService";
+const GEMINI_SERVICE = "gemini";
 
-    console.log(`Resetting all data for user: ${user}`);
+/**
+ * @class UserProfileController
+ * @description Handles all user profile related operations
+ */
+export class UserProfileController {
+  /**
+   * @method resetAllData
+   * @description Resets all user data including captures and collections
+   */
+  static async resetAllData(req: Request, res: Response): Promise<void> {
+    try {
+      const user = req.user as IUser;
+      if (!user?.id) {
+        ErrorResponse({
+          res,
+          statusCode: 401,
+          message: "Unauthorized: Invalid user credentials",
+        });
+        return;
+      }
 
-    await clearCaptures(user);
-    await clearFolders(user);
+      logger.info(`${SERVICE_NAME}:resetAllData`, { userId: user.id });
 
-    res
-      .status(200)
-      .json({ message: "All user captures and folders have been reset." });
-  } catch (error) {
-    res
-      .status(500)
-      .json({ message: "An error occurred", error: error.message });
-  }
-};
+      // Execute in parallel for better performance
+      await Promise.all([
+        UserProfileController.clearUserCaptures(user.id),
+        UserProfileController.clearUserCollections(user.id),
+      ]);
 
-export const clearCaptures = async (user: any): Promise<void> => {
-  try {
-    await Capture.deleteMany({ owner: user.id });
-  } catch (error) {
-    throw new Error(`Failed to clear captures: ${error.message}`);
-  }
-};
-
-export const clearFolders = async (user: any): Promise<void> => {
-  try {
-    await Collection.deleteMany({ user: user.id });
-  } catch (error) {
-    throw new Error(`Failed to clear folders: ${error.message}`);
-  }
-};
-
-export const addGeminiApiKey = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
-  try {
-    const { user } = req;
-    const { geminiApiKey } = req.body;
-
-    console.info(`[UserProfile] Adding Gemini API key for user: ${user?.id}`);
-    console.info(`[UserProfile] Gemini API key: ${geminiApiKey ? "provided" : "not provided"}`);
-
-    if (!user || !user.id) {
-      res.status(401).json({ message: "Unauthorized: user not found" });
-      return;
-    }
-
-    if (!geminiApiKey) {
-      res.status(400).json({ message: "Gemini API key is required" });
-      return;
-    }
-
-    const userId = user.id;
-
-    let profile = (await UserProfile.findOne({
-      userId,
-    })) as IUserProfile | null;
-
-    if (!profile) {
-      console.info(`[UserProfile] Creating new profile for ${userId}`);
-      profile = new UserProfile({ userId });
-    } else {
-      console.info(`[UserProfile] Updating Gemini API key for ${userId}`);
-    }
-
-    profile.setGeminiKey(geminiApiKey); // Automatically encrypted
-    await profile.save();
-
-    res.status(profile.isNew ? 201 : 200).json({
-      message: profile.isNew
-        ? "User profile created with Gemini API key"
-        : "Gemini API key updated successfully",
-    });
-  } catch (error) {
-    console.error("[UserProfile] Error adding Gemini API key:", error);
-    res.status(500).json({
-      message: "Internal server error while saving Gemini API key",
-      error: (error as Error).message || error,
-    });
-  }
-};
-
-
-
-export const getUserProfileInfo = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
-  try {
-    const { user } = req;
-
-    if (!user || !user.id) {
-      res.status(401).json({ message: "Unauthorized: user not found" });
-      return;
-    }
-
-    let userProfile = await UserProfile.findOne({ userId: user.id })
-  .select('+externalServices.gemini.apiKey');
-
-    // Create an empty profile if one doesn't exist
-    if (!userProfile) {
-      userProfile = await UserProfile.create({ userId: user.id });
-      res.status(201).json({
-        message: "User profile created",
-        userId: userProfile.userId,
-        externalServices: {
-          gemini: {
-            hasApiKey: false,
-          },
+      SuccessResponse({
+        res,
+        statusCode: 200,
+        data: {
+          message: "All user data has been successfully reset",
+          resetItems: ["captures", "collections"],
         },
       });
-      return;
+    } catch (error) {
+      logger.error(`${SERVICE_NAME}:resetAllData:error`, error);
+      ErrorResponse({
+        res,
+        statusCode: 500,
+        message: "Failed to reset user data",
+        error: error instanceof Error ? error.message : "Unknown error",
+      });
     }
-
-    // You can safely return only public-facing data
-    res.status(200).json({
-      userId: userProfile.userId,
-      externalServices: {
-        gemini: {
-          hasApiKey: !!userProfile.externalServices?.gemini?.apiKey,
-        },
-      },
-    });
-  } catch (error) {
-    console.error("[getUserProfileInfo] Failed to fetch user profile:", error);
-    res.status(500).json({ message: "Failed to get user profile", error });
   }
-};
+
+  /**
+   * @method clearUserCaptures
+   * @description Clears all captures for a user
+   * @param userId - The user ID
+   */
+  static async clearUserCaptures(userId: string): Promise<void> {
+    try {
+      const result = await Capture.deleteMany({ owner: userId });
+      logger.info(`${SERVICE_NAME}:clearUserCaptures`, {
+        userId,
+        deletedCount: result.deletedCount,
+      });
+    } catch (error) {
+      logger.error(`${SERVICE_NAME}:clearUserCaptures:error`, {
+        userId,
+        error,
+      });
+      throw new Error("Failed to clear user captures");
+    }
+  }
+
+  /**
+   * @method clearUserCollections
+   * @description Clears all collections for a user
+   * @param userId - The user ID
+   */
+  static async clearUserCollections(userId: string): Promise<void> {
+    try {
+      const result = await Collection.deleteMany({ user: userId });
+      logger.info(`${SERVICE_NAME}:clearUserCollections`, {
+        userId,
+        deletedCount: result.deletedCount,
+      });
+    } catch (error) {
+      logger.error(`${SERVICE_NAME}:clearUserCollections:error`, {
+        userId,
+        error,
+      });
+      throw new Error("Failed to clear user collections");
+    }
+  }
+
+  /**
+   * @method upsertGeminiApiKey
+   * @description Adds or updates a Gemini API key for the user
+   */
+  static async upsertGeminiApiKey(req: Request, res: Response): Promise<void> {
+    try {
+      const user = req.user as IUser;
+      const { geminiApiKey } = req.body;
+
+      // Input validation
+      if (!user?.id) {
+        ErrorResponse({
+          res,
+          statusCode: 401,
+          message: "Unauthorized: Invalid user credentials",
+        });
+        return;
+      }
+
+      if (!geminiApiKey) {
+        ErrorResponse({
+          res,
+          statusCode: 400,
+          message: "Gemini API key is required",
+        });
+        return;
+      }
+
+      if (!validateApiKey.gemini(geminiApiKey)) {
+        ErrorResponse({
+          res,
+          statusCode: 400,
+          message: "Invalid Gemini API key format",
+        });
+        return;
+      }
+
+      logger.info(`${SERVICE_NAME}:upsertGeminiApiKey`, {
+        userId: user.id,
+        keyPresent: !!geminiApiKey,
+      });
+
+      // Find or create profile
+      const profile = await UserProfile.findOneAndUpdate(
+        { userId: user.id },
+        {
+          $set: { [`externalServices.${GEMINI_SERVICE}.apiKey`]: geminiApiKey },
+        },
+        { new: true, upsert: true, runValidators: true }
+      );
+
+      SuccessResponse({
+        res,
+        statusCode: 201,
+        data: {
+          message: "Gemini API key updated successfully",
+          hasApiKey: true,
+        },
+      });
+    } catch (error) {
+      logger.error(`${SERVICE_NAME}:upsertGeminiApiKey:error`, error);
+      
+      ErrorResponse({
+        res,
+        statusCode: 500,
+        message: "Failed to upsert Gemini API key",
+        error: error instanceof Error ? error.message : "Unknown error",
+      });
+    }
+  }
+
+  /**
+   * @method getUserProfile
+   * @description Retrieves user profile information
+   */
+  static async getUserProfile(req: Request, res: Response): Promise<void> {
+    try {
+      const user = req.user as IUser;
+
+      if (!user?.id) {
+        ErrorResponse({
+          res,
+          statusCode: 401,
+          message: "Unauthorized: Invalid user credentials",
+        });
+        return;
+      }
+
+      logger.info(`${SERVICE_NAME}:getUserProfile`, { userId: user.id });
+
+      // Type the profile explicitly
+      let profile: (IUserProfile & { _id: any }) | null =
+        await UserProfile.findOne({ userId: user.id })
+          .select(`+externalServices.${GEMINI_SERVICE}.apiKey`)
+          .lean<IUserProfile & { _id: any }>()
+          .exec();
+
+      // Create profile if it doesn't exist
+      if (!profile) {
+        const newProfile = await UserProfile.create({ userId: user.id });
+        logger.info(`${SERVICE_NAME}:getUserProfile:created`, {
+          userId: user.id,
+        });
+
+        // Convert to plain object and cast to the correct type
+        profile = newProfile.toObject() as IUserProfile & { _id: any };
+      }
+
+      // Sanitize response with proper typing
+      const response = {
+        userId: profile.userId,
+        externalServices: {
+          [GEMINI_SERVICE]: {
+            hasApiKey: !!profile.externalServices?.[GEMINI_SERVICE]?.apiKey,
+          },
+        },
+        createdAt: profile.createdAt,
+        updatedAt: profile.updatedAt,
+      };
+
+      SuccessResponse({
+        res,
+        statusCode: 200,
+        data: response,
+        message: "User profile retrieved successfully",
+      });
+    } catch (error) {
+      logger.error(`${SERVICE_NAME}:getUserProfile:error`, error);
+      ErrorResponse({
+        res,
+        statusCode: 500,
+        message: "Failed to retrieve user profile",
+        error: error instanceof Error ? error.message : "Unknown error",
+      });
+    }
+  }
+}

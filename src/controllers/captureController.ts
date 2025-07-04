@@ -4,7 +4,6 @@ import { hashContent } from "../utils/hashing";
 import { sanitizeHtml } from "../utils/sanitization";
 import { generateSlug } from "../utils/slugify";
 import { normalizeUrl } from "../utils/urls";
-import { processContent } from "../ai/services/aiService";
 import Conversation from "../models/Conversation";
 import mongoose from "mongoose";
 
@@ -200,19 +199,10 @@ export const saveCapture = async (
       return;
     }
 
-    const result = await processContent(capture.content.clean);
-
-    if (result.success && result.data) {
-      capture.ai.summary = result.data.summary || "";
-      capture.ai.embeddings = result.data.embeddings || [];
-    }
-
     // Create Conversation
     const conversation = await Conversation.create({
       captureId: capture._id,
     });
-
-    console.log("Conversation created:", conversation);
 
     capture.conversation = new mongoose.Types.ObjectId(conversation._id);
 

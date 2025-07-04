@@ -18,7 +18,7 @@ const MAX_INPUT_LENGTH = 10000; // Characters
 const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000; // 15 minutes
 const RATE_LIMIT_MAX_REQUESTS = 100;
 
-interface ConversationRequest {
+export interface ConversationRequest {
   captureId: string;
   messages: Message[];
   model?: string;
@@ -333,7 +333,7 @@ export const conversationRateLimiter = rateLimit({
   message: "Too many requests, please try again later.",
 });
 
-const validateRequest = (
+export const validateRequest = (
   req: Request
 ): { isValid: boolean; error?: string } => {
   if (!req.body) return { isValid: false, error: "Request body is missing" };
@@ -371,7 +371,7 @@ const validateRequest = (
   return { isValid: true };
 };
 
-const buildConversationPrompt = (
+export const buildConversationPrompt = (
   content: string,
   messages: Message[]
 ): string => {
@@ -423,7 +423,7 @@ ASSISTANT'S RESPONSE (follow all rules above):
 `.trim();
 };
 
-const processConversation = async (
+export const processConversation = async (
   content: string,
   messages: Message[],
   model: string = DEFAULT_MODEL,
@@ -509,76 +509,5 @@ const processConversation = async (
   } catch (error) {
     console.error("Conversation processing failed:", error);
     throw error;
-  }
-};
-
-export const converseWithAI = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
-  // Validate request
-  // console.log('Request Body:', req.body);
-  const { isValid, error } = validateRequest(req);
-  if (!isValid) {
-    res.status(400).json({ success: false, error });
-    return;
-  }
-  const { captureId, messages, model } = req.body as ConversationRequest;
-
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 10000); // 10s timeout
-
-  try {
-    // In a real implementation, you would fetch the content associated with captureId
-    const content = await Capture.findById(captureId)
-      .select("content") // Assuming content is stored in the Capture model
-      .lean()
-      .exec();
-
-    if (!content) {
-      res.status(404).json({ success: false, error: "Content not found" });
-      return;
-    }
-
-    // Process conversation
-    const { message, tokensUsed, modelUsed } = await processConversation(
-      content.content.raw,
-      messages,
-      model,
-      controller.signal
-    );
-
-    // console.log(`Conversation processed for captureId and content of: ${content.content.raw}`);
-
-    // In production, you might want to:
-    // 1. Store the conversation in a database
-    // 2. Update usage analytics
-    // 3. Cache frequent queries
-    // 4. Implement cost tracking per user/organization
-
-    res.status(200).json({
-      success: true,
-      data: {
-        response: message,
-        modelUsed,
-        tokensUsed,
-        captureId,
-        timestamp: new Date().toISOString(),
-      },
-    });
-  } catch (error) {
-    if (error.name === "AbortError") {
-      res.status(504).json({ success: false, error: "Request timeout" });
-    } else {
-      console.error("Conversation error:", error);
-      res.status(500).json({
-        success: false,
-        error: "Internal server error",
-        details:
-          process.env.NODE_ENV === "development" ? error.message : undefined,
-      });
-    }
-  } finally {
-    clearTimeout(timeout);
   }
 };
