@@ -92,6 +92,7 @@ export class AIController {
   static async chat(req: Request, res: Response): Promise<void> {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+    const {user} = req;
 
     try {
       // Validate request
@@ -127,6 +128,7 @@ export class AIController {
 
       // Process conversation
       const { message, tokensUsed, modelUsed } = await processConversation(
+        user.name,
         content.content.clean,
         messages,
         model,

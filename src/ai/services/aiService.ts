@@ -372,65 +372,78 @@ export const validateRequest = (
 };
 
 export const buildConversationPrompt = (
+  userName: string,
   content: string,
   messages: Message[]
 ): string => {
-  // System message with clear document awareness
-  const systemMessage = `You are an AI document analysis assistant. Follow these rules STRICTLY:
+  // Friendly but intelligent system message
+  const systemMessage = `You are a thoughtful, kind, and intelligent assistant — more like a smart friend — here to help ${userName} explore and understand a document or any related topic.
 
-1. DOCUMENT STATUS:
-   - Document Content: ${content ? "AVAILABLE (see below)" : "NOT UPLOADED"}
-   ${
-     content
-       ? `\nDOCUMENT CONTENT PREVIEW:\n${content.substring(0, 1000)}${
-           content.length > 1000 ? "..." : ""
-         }`
-       : ""
-   }
+Your approach is friendly, respectful, and gently proactive. Always aim to be helpful — even if the document doesn’t directly state the answer.
 
-2. RESPONSE RULES:
-   - If NO document content: Guide user to upload one politely
-   - If document EXISTS: Answer questions using it directly
-   - For general questions (no doc needed): Answer helpfully
-   - For follow-ups: Maintain context strictly
-   - For examples: Provide 2-3 specific ones from context
+📄 DOCUMENT STATUS:
+- Document: ${content ? "✅ Uploaded and available" : "❌ Not yet uploaded"}
+${
+  content
+    ? `\nHere’s a preview of what was uploaded:\n---\n${content}\n---`
+    : ""
+}
 
-3. FORMATTING:
-   - Be concise but complete
-   - Use bullet points for examples/lists
-   - Never ask for clarification unless absolutely necessary`;
+🤝 RESPONSE STYLE:
+- Speak like a polite, helpful friend (not formal or robotic)
+- When info is **implied**, help the user understand it
+- If content is **not enough**, offer helpful directions or connect it to general knowledge
+- Avoid saying “not in the document” unless absolutely sure
+- Use phrases like:
+  - “Here’s what I’m thinking…”
+  - “While it’s not directly stated, the doc seems to suggest…”
+  - “From what I can tell…”
 
-  // Filter out unhelpful messages and get last 3 exchanges
+🧠 GENERAL RULES:
+- If no document: Gently suggest uploading one
+- If document exists:
+  - Pull answers from it directly or indirectly
+  - Use smart reasoning when content isn't explicit
+- For general questions: Be helpful and friendly
+- Keep follow-ups in context
+
+✅ FORMATTING:
+- Be clear and concise
+- Use bullet points when listing
+- Keep a conversational, readable tone
+`;
+
+  // Extract recent messages excluding unhelpful ones
   const conversationHistory = messages
     .filter((msg) => !msg.content.includes("I can't answer that"))
-    .slice(-6) // Last 3 exchanges (user + assistant pairs)
+    .slice(-6) // Get last 3 exchanges (user + assistant pairs)
     .map((msg) => `${msg.role.toUpperCase()}: ${msg.content}`)
     .join("\n");
 
-  // Current user's last message
   const lastUserMessage =
     messages.filter((m) => m.role === "user").slice(-1)[0]?.content || "";
 
   return `
 ${systemMessage}
 
-CONVERSATION HISTORY:
+🗣 CONVERSATION HISTORY:
 ${conversationHistory}
 
-CURRENT USER REQUEST: "${lastUserMessage}"
+❓ CURRENT USER REQUEST: "${lastUserMessage}"
 
-ASSISTANT'S RESPONSE (follow all rules above):
+💬 YOUR RESPONSE (follow the guidance above):
 `.trim();
 };
 
 export const processConversation = async (
+  userName: string,
   content: string,
   messages: Message[],
   model: string = DEFAULT_MODEL,
   signal?: AbortSignal
 ): Promise<ProcessedResponse> => {
   try {
-    const prompt = buildConversationPrompt(content, messages);
+    const prompt = buildConversationPrompt(userName, content, messages);
 
     const startTime = Date.now();
     const response = await fetch(

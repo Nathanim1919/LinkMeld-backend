@@ -1406,3 +1406,39 @@
   message: 'ErrorResponse: Failed to submit feedback.',
   timestamp: '2025-07-06 23:14:30:1430'
 }
+{
+  service: 'api-service',
+  statusCode: 409,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture already exists in this collection',
+  timestamp: '2025-07-07 00:33:42:3342'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: 'INVALID_REQUEST',
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Invalid or missing captureId',
+  timestamp: '2025-07-07 00:41:11:4111'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: 'INVALID_REQUEST',
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Invalid or missing captureId',
+  timestamp: '2025-07-07 00:55:50:5550'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: 'INVALID_REQUEST',
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Invalid or missing captureId',
+  timestamp: '2025-07-07 00:57:31:5731'
+}

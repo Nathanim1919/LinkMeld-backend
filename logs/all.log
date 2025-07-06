@@ -18117,3 +18117,4334 @@
   message: 'SuccessResponse: Feedback submitted successfully.',
   timestamp: '2025-07-06 23:19:48:1948'
 }
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Feedback submitted successfully.',
+  timestamp: '2025-07-06 23:25:47:2547'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-06 23:35:02:352'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-06 23:35:02:352'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-06 23:35:02:352'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-06 23:35:02:352'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-06 23:35:04:354'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-06 23:35:04:354'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-06 23:35:06:356'
+}
+{
+  service: 'api-service',
+  statusCode: 201,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture saved successfully',
+  timestamp: '2025-07-06 23:49:05:495'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Bookmarked captures retrieved successfully',
+  timestamp: '2025-07-06 23:49:13:4913'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Bookmarked captures retrieved successfully',
+  timestamp: '2025-07-06 23:49:13:4913'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-06 23:49:14:4914'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-06 23:49:14:4914'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-06 23:49:18:4918'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection captures retrieved successfully',
+  timestamp: '2025-07-07 00:11:13:1113'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection retrieved successfully',
+  timestamp: '2025-07-07 00:11:13:1113'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection retrieved successfully',
+  timestamp: '2025-07-07 00:11:13:1113'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection captures retrieved successfully',
+  timestamp: '2025-07-07 00:11:13:1113'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 00:11:16:1116'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 00:33:08:338'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 00:33:09:339'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection captures retrieved successfully',
+  timestamp: '2025-07-07 00:33:12:3312'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection retrieved successfully',
+  timestamp: '2025-07-07 00:33:12:3312'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 00:33:13:3313'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 00:33:18:3318'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 00:33:18:3318'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 00:33:19:3319'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection retrieved successfully',
+  timestamp: '2025-07-07 00:33:22:3322'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection captures retrieved successfully',
+  timestamp: '2025-07-07 00:33:22:3322'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection retrieved successfully',
+  timestamp: '2025-07-07 00:33:22:3322'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection captures retrieved successfully',
+  timestamp: '2025-07-07 00:33:22:3322'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 00:33:23:3323'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-07 00:33:28:3328'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-07 00:33:28:3328'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-07 00:33:28:3328'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-07 00:33:28:3328'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 00:33:34:3334'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 00:33:34:3334'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 00:33:35:3335'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection captures retrieved successfully',
+  timestamp: '2025-07-07 00:33:38:3338'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection retrieved successfully',
+  timestamp: '2025-07-07 00:33:38:3338'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection retrieved successfully',
+  timestamp: '2025-07-07 00:33:38:3338'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection captures retrieved successfully',
+  timestamp: '2025-07-07 00:33:38:3338'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 00:33:39:3339'
+}
+{
+  service: 'api-service',
+  statusCode: 409,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture already exists in this collection',
+  timestamp: '2025-07-07 00:33:42:3342'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection captures retrieved successfully',
+  timestamp: '2025-07-07 00:38:06:386'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection retrieved successfully',
+  timestamp: '2025-07-07 00:38:06:386'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 00:38:06:386'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 00:38:06:386'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection captures retrieved successfully',
+  timestamp: '2025-07-07 00:38:06:386'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 00:38:06:386'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 00:38:06:386'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection retrieved successfully',
+  timestamp: '2025-07-07 00:38:06:386'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 00:38:06:386'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 00:38:06:386'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection captures retrieved successfully',
+  timestamp: '2025-07-07 00:38:30:3830'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection retrieved successfully',
+  timestamp: '2025-07-07 00:38:30:3830'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 00:38:30:3830'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 00:38:30:3830'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 00:38:31:3831'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection captures retrieved successfully',
+  timestamp: '2025-07-07 00:38:31:3831'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection retrieved successfully',
+  timestamp: '2025-07-07 00:38:31:3831'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 00:38:31:3831'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 00:38:31:3831'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 00:38:31:3831'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection captures retrieved successfully',
+  timestamp: '2025-07-07 00:38:39:3839'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 00:38:39:3839'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection retrieved successfully',
+  timestamp: '2025-07-07 00:38:39:3839'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 00:38:39:3839'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 00:38:39:3839'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection captures retrieved successfully',
+  timestamp: '2025-07-07 00:38:40:3840'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 00:38:40:3840'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 00:38:40:3840'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection retrieved successfully',
+  timestamp: '2025-07-07 00:38:40:3840'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 00:38:40:3840'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection captures retrieved successfully',
+  timestamp: '2025-07-07 00:40:01:401'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection retrieved successfully',
+  timestamp: '2025-07-07 00:40:01:401'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 00:40:01:401'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 00:40:01:401'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 00:40:01:401'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection retrieved successfully',
+  timestamp: '2025-07-07 00:40:01:401'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection captures retrieved successfully',
+  timestamp: '2025-07-07 00:40:01:401'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 00:40:01:401'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 00:40:01:401'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 00:40:01:401'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection captures retrieved successfully',
+  timestamp: '2025-07-07 00:40:20:4020'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection retrieved successfully',
+  timestamp: '2025-07-07 00:40:20:4020'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 00:40:20:4020'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 00:40:20:4020'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 00:40:20:4020'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 00:40:20:4020'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection captures retrieved successfully',
+  timestamp: '2025-07-07 00:40:20:4020'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection retrieved successfully',
+  timestamp: '2025-07-07 00:40:20:4020'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 00:40:20:4020'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 00:40:20:4020'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: 'INVALID_REQUEST',
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Invalid or missing captureId',
+  timestamp: '2025-07-07 00:41:11:4111'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 00:41:17:4117'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 00:41:17:4117'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 00:41:18:4118'
+}
+{
+  service: 'api-service',
+  captureId: '68686332457b7e9263471842',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 00:41:21:4121'
+}
+{
+  service: 'api-service',
+  captureId: '68686332457b7e9263471842',
+  tokensUsed: 412,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 00:41:23:4123'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 00:41:23:4123'
+}
+{
+  service: 'api-service',
+  captureId: '68686332457b7e9263471842',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 00:41:25:4125'
+}
+{
+  service: 'api-service',
+  captureId: '68686332457b7e9263471842',
+  tokensUsed: 574,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 00:41:27:4127'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 00:41:27:4127'
+}
+{
+  service: 'api-service',
+  captureId: '68686332457b7e9263471842',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 00:53:19:5319'
+}
+{
+  service: 'api-service',
+  captureId: '68686332457b7e9263471842',
+  tokensUsed: 493,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 00:53:21:5321'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 00:53:21:5321'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 00:55:45:5545'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 00:55:45:5545'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 00:55:45:5545'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 00:55:45:5545'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 00:55:45:5545'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 00:55:45:5545'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 00:55:45:5545'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 00:55:45:5545'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: 'INVALID_REQUEST',
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Invalid or missing captureId',
+  timestamp: '2025-07-07 00:55:50:5550'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: 'INVALID_REQUEST',
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Invalid or missing captureId',
+  timestamp: '2025-07-07 00:57:31:5731'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 00:57:43:5743'
+}
+{
+  service: 'api-service',
+  captureId: '68687212ea78403745b9f74e',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 00:57:46:5746'
+}
+{
+  service: 'api-service',
+  captureId: '68687212ea78403745b9f74e',
+  tokensUsed: 572,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 00:57:48:5748'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 00:57:48:5748'
+}
+{
+  service: 'api-service',
+  captureId: '68687212ea78403745b9f74e',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 00:57:51:5751'
+}
+{
+  service: 'api-service',
+  captureId: '68687212ea78403745b9f74e',
+  tokensUsed: 685,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 00:57:53:5753'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 00:57:53:5753'
+}
+{
+  service: 'api-service',
+  captureId: '68687212ea78403745b9f74e',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 00:59:50:5950'
+}
+{
+  service: 'api-service',
+  captureId: '68687212ea78403745b9f74e',
+  tokensUsed: 419,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 00:59:51:5951'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 00:59:51:5951'
+}
+{
+  service: 'api-service',
+  captureId: '68687212ea78403745b9f74e',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 01:16:17:1617'
+}
+{
+  service: 'api-service',
+  captureId: '68687212ea78403745b9f74e',
+  tokensUsed: 526,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 01:16:19:1619'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 01:16:19:1619'
+}
+{
+  service: 'api-service',
+  captureId: '68687212ea78403745b9f74e',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 01:16:50:1650'
+}
+{
+  service: 'api-service',
+  captureId: '68687212ea78403745b9f74e',
+  tokensUsed: 474,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 01:16:51:1651'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 01:16:51:1651'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:27:33:2733'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:27:33:2733'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:27:33:2733'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:27:33:2733'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:27:33:2733'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:27:33:2733'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:27:33:2733'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:27:33:2733'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:28:10:2810'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:28:10:2810'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:28:10:2810'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:28:10:2810'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:28:10:2810'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:28:10:2810'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:28:10:2810'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:28:10:2810'
+}
+{
+  service: 'api-service',
+  captureId: '68687212ea78403745b9f74e',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 01:28:14:2814'
+}
+{
+  service: 'api-service',
+  captureId: '68687212ea78403745b9f74e',
+  tokensUsed: 554,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 01:28:17:2817'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 01:28:17:2817'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:28:22:2822'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:28:23:2823'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:28:23:2823'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:28:23:2823'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:28:23:2823'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:28:23:2823'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:28:23:2823'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:28:23:2823'
+}
+{
+  service: 'api-service',
+  captureId: '68687212ea78403745b9f74e',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 01:28:27:2827'
+}
+{
+  service: 'api-service',
+  captureId: '68687212ea78403745b9f74e',
+  tokensUsed: 479,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 01:28:28:2828'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 01:28:28:2828'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:28:35:2835'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:28:36:2836'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:28:39:2839'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:28:39:2839'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:28:39:2839'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:28:39:2839'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:28:39:2839'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:28:39:2839'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:28:39:2839'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:28:39:2839'
+}
+{
+  service: 'api-service',
+  captureId: '68685fccccc983093c9a0181',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 01:28:43:2843'
+}
+{
+  service: 'api-service',
+  captureId: '68685fccccc983093c9a0181',
+  tokensUsed: 489,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 01:28:45:2845'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 01:28:45:2845'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Search results retrieved successfully',
+  timestamp: '2025-07-07 01:30:45:3045'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:30:47:3047'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:30:47:3047'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:30:47:3047'
+}
+{
+  service: 'api-service',
+  captureId: '6869bebe6b486746a41b1771',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 01:30:51:3051'
+}
+{
+  service: 'api-service',
+  captureId: '6869bebe6b486746a41b1771',
+  tokensUsed: 599,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 01:30:53:3053'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 01:30:53:3053'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:32:01:321'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:32:02:322'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:32:03:323'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:32:05:325'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:32:06:326'
+}
+{
+  service: 'api-service',
+  captureId: '6869c8107025d3cdfd574380',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 01:32:10:3210'
+}
+{
+  service: 'api-service',
+  captureId: '6869c8107025d3cdfd574380',
+  tokensUsed: 634,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 01:32:12:3212'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 01:32:12:3212'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:35:48:3548'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:35:48:3548'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:35:48:3548'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:35:48:3548'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:35:48:3548'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:35:48:3548'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:35:48:3548'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:35:48:3548'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:36:16:3616'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:36:17:3617'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:36:18:3618'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:36:19:3619'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:36:20:3620'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:36:21:3621'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:36:23:3623'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Bookmarked captures retrieved successfully',
+  timestamp: '2025-07-07 01:36:26:3626'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Bookmarked captures retrieved successfully',
+  timestamp: '2025-07-07 01:36:26:3626'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection captures retrieved successfully',
+  timestamp: '2025-07-07 01:36:34:3634'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection retrieved successfully',
+  timestamp: '2025-07-07 01:36:34:3634'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection captures retrieved successfully',
+  timestamp: '2025-07-07 01:36:34:3634'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection retrieved successfully',
+  timestamp: '2025-07-07 01:36:34:3634'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:36:35:3635'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Search results retrieved successfully',
+  timestamp: '2025-07-07 01:36:51:3651'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Search results retrieved successfully',
+  timestamp: '2025-07-07 01:37:03:373'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Search results retrieved successfully',
+  timestamp: '2025-07-07 01:37:06:376'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:37:21:3721'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:37:21:3721'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:37:21:3721'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Feedback submitted successfully.',
+  timestamp: '2025-07-07 01:38:13:3813'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:38:41:3841'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:38:41:3841'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:38:42:3842'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:38:42:3842'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-07 01:39:12:3912'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-07 01:39:12:3912'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-07 01:39:12:3912'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-07 01:39:12:3912'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: "SuccessResponse: Captures for site 'ForeSee Medical ' retrieved successfully",
+  timestamp: '2025-07-07 01:39:18:3918'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: "SuccessResponse: Captures for site 'ForeSee Medical ' retrieved successfully",
+  timestamp: '2025-07-07 01:39:18:3918'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:39:19:3919'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:39:26:3926'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:39:27:3927'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:39:28:3928'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:39:29:3929'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:39:29:3929'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:39:30:3930'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:39:31:3931'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:39:33:3933'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:45:36:4536'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:45:36:4536'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:45:36:4536'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:45:36:4536'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:45:36:4536'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:45:36:4536'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:45:36:4536'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:45:36:4536'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:45:47:4547'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:45:47:4547'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:45:47:4547'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:45:47:4547'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:45:47:4547'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:45:47:4547'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:45:47:4547'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:45:47:4547'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:45:49:4549'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:45:49:4549'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:45:49:4549'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:45:49:4549'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:45:49:4549'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:45:49:4549'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:45:49:4549'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:45:49:4549'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:45:50:4550'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:45:50:4550'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:45:50:4550'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:45:50:4550'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:45:50:4550'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:45:50:4550'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:45:50:4550'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:45:51:4551'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:45:53:4553'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:45:53:4553'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:45:53:4553'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:45:53:4553'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:45:53:4553'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:45:53:4553'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:45:53:4553'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:45:53:4553'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:45:57:4557'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:45:57:4557'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:45:57:4557'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:45:57:4557'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:45:57:4557'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:45:57:4557'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:45:57:4557'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:45:57:4557'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:46:25:4625'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:46:25:4625'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:46:25:4625'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:46:25:4625'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:46:25:4625'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:46:25:4625'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:46:25:4625'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:46:25:4625'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:46:31:4631'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:46:31:4631'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:46:31:4631'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:46:31:4631'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:47:07:477'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:47:07:477'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:47:07:477'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:47:07:477'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:47:11:4711'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:47:11:4711'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:47:11:4711'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:47:11:4711'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:47:11:4711'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:47:11:4711'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:47:11:4711'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:47:11:4711'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:47:18:4718'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:47:18:4718'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:47:18:4718'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:47:18:4718'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:47:18:4718'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:47:18:4718'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:47:18:4718'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:47:18:4718'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:47:20:4720'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:47:20:4720'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:47:20:4720'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:47:20:4720'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:47:20:4720'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:47:20:4720'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:47:20:4720'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:47:21:4721'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:47:25:4725'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:47:25:4725'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:47:25:4725'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:47:25:4725'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:47:25:4725'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:47:25:4725'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:47:25:4725'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:47:25:4725'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:47:26:4726'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:47:26:4726'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:47:26:4726'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:47:26:4726'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:47:39:4739'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:47:39:4739'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:47:39:4739'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:47:39:4739'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:47:39:4739'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:47:39:4739'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:47:39:4739'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:47:39:4739'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:47:40:4740'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:47:40:4740'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:47:40:4740'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:47:41:4741'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:47:41:4741'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:47:41:4741'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:47:41:4741'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:47:41:4741'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:58:05:585'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:58:05:585'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:58:05:585'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:58:05:585'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:58:05:585'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:58:05:585'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:58:05:585'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:58:05:585'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:58:08:588'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:58:08:588'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:58:08:588'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:58:08:588'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:58:08:588'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:58:08:588'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:58:08:588'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:58:08:588'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:58:15:5815'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:58:15:5815'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:58:15:5815'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:58:15:5815'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:58:15:5815'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:58:15:5815'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:58:15:5815'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:58:15:5815'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:58:19:5819'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:58:19:5819'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:58:19:5819'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:58:19:5819'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:58:19:5819'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:58:20:5820'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:58:20:5820'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:58:20:5820'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:58:35:5835'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:58:35:5835'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:58:35:5835'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:58:35:5835'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:58:35:5835'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:58:35:5835'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:58:35:5835'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:58:36:5836'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:59:26:5926'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:59:26:5926'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:59:26:5926'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:59:26:5926'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 01:59:26:5926'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 01:59:26:5926'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 01:59:26:5926'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 01:59:26:5926'
+}
+{
+  service: 'api-service',
+  captureId: '68686332457b7e9263471842',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 02:00:10:010'
+}
+{
+  service: 'api-service',
+  captureId: '68686332457b7e9263471842',
+  tokensUsed: 481,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 02:00:12:012'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 02:00:12:012'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 02:00:17:017'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 02:00:17:017'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 02:00:17:017'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 02:00:17:017'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 02:00:17:017'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 02:00:17:017'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 02:00:17:017'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 02:00:17:017'
+}
+{
+  service: 'api-service',
+  captureId: '68686332457b7e9263471842',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 02:00:27:027'
+}
+{
+  service: 'api-service',
+  captureId: '68686332457b7e9263471842',
+  tokensUsed: 359,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 02:00:28:028'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 02:00:28:028'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 02:00:57:057'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture added to collection successfully',
+  timestamp: '2025-07-07 02:01:05:15'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection retrieved successfully',
+  timestamp: '2025-07-07 02:01:10:110'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection captures retrieved successfully',
+  timestamp: '2025-07-07 02:01:10:110'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection retrieved successfully',
+  timestamp: '2025-07-07 02:01:10:110'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection captures retrieved successfully',
+  timestamp: '2025-07-07 02:01:10:110'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 02:01:12:112'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: "SuccessResponse: Captures for site 'Apple Machine Learning Research' retrieved successfully",
+  timestamp: '2025-07-07 02:01:17:117'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: "SuccessResponse: Captures for site 'Apple Machine Learning Research' retrieved successfully",
+  timestamp: '2025-07-07 02:01:17:117'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 02:01:19:119'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: "SuccessResponse: Captures for site 'Apple Machine Learning Research' retrieved successfully",
+  timestamp: '2025-07-07 02:01:40:140'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 02:01:40:140'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 02:01:40:140'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 02:01:40:140'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: "SuccessResponse: Captures for site 'Apple Machine Learning Research' retrieved successfully",
+  timestamp: '2025-07-07 02:01:40:140'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 02:01:41:141'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-07 02:01:41:141'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-07 02:01:41:141'
+}
+{
+  service: 'api-service',
+  captureId: '68686332457b7e9263471842',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 02:11:53:1153'
+}
+{
+  service: 'api-service',
+  captureId: '68686332457b7e9263471842',
+  tokensUsed: 407,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 02:11:54:1154'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 02:11:54:1154'
+}
+{
+  service: 'api-service',
+  captureId: '68686332457b7e9263471842',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 02:12:37:1237'
+}
+{
+  service: 'api-service',
+  captureId: '68686332457b7e9263471842',
+  tokensUsed: 465,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 02:12:38:1238'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 02:12:38:1238'
+}
+{
+  service: 'api-service',
+  captureId: '68686332457b7e9263471842',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 02:12:44:1244'
+}
+{
+  service: 'api-service',
+  captureId: '68686332457b7e9263471842',
+  tokensUsed: 523,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 02:12:45:1245'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 02:12:45:1245'
+}
+{
+  service: 'api-service',
+  captureId: '68686332457b7e9263471842',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 02:12:54:1254'
+}
+{
+  service: 'api-service',
+  captureId: '68686332457b7e9263471842',
+  tokensUsed: 570,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 02:12:56:1256'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 02:12:56:1256'
+}
+{
+  service: 'api-service',
+  captureId: '68686332457b7e9263471842',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 02:23:36:2336'
+}
+{
+  service: 'api-service',
+  captureId: '68686332457b7e9263471842',
+  tokensUsed: 573,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 02:23:38:2338'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 02:23:38:2338'
+}
+{
+  service: 'api-service',
+  captureId: '68686332457b7e9263471842',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 02:23:48:2348'
+}
+{
+  service: 'api-service',
+  captureId: '68686332457b7e9263471842',
+  tokensUsed: 621,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 02:23:50:2350'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 02:23:50:2350'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 02:24:02:242'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 02:24:02:242'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 02:24:04:244'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 02:24:06:246'
+}
+{
+  service: 'api-service',
+  captureId: '6869bebe6b486746a41b1771',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 02:24:14:2414'
+}
+{
+  service: 'api-service',
+  captureId: '6869bebe6b486746a41b1771',
+  tokensUsed: 535,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 02:24:15:2415'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 02:24:15:2415'
+}
+{
+  service: 'api-service',
+  captureId: '6869bebe6b486746a41b1771',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 02:24:20:2420'
+}
+{
+  service: 'api-service',
+  captureId: '6869bebe6b486746a41b1771',
+  tokensUsed: 568,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 02:24:21:2421'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 02:24:21:2421'
+}
+{
+  service: 'api-service',
+  captureId: '6869bebe6b486746a41b1771',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 02:24:23:2423'
+}
+{
+  service: 'api-service',
+  captureId: '6869bebe6b486746a41b1771',
+  tokensUsed: 604,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 02:24:24:2424'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 02:24:24:2424'
+}
+{
+  service: 'api-service',
+  captureId: '6869bebe6b486746a41b1771',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 02:24:25:2425'
+}
+{
+  service: 'api-service',
+  captureId: '6869bebe6b486746a41b1771',
+  tokensUsed: 626,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 02:24:26:2426'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 02:24:26:2426'
+}
+{
+  service: 'api-service',
+  captureId: '6869bebe6b486746a41b1771',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 02:26:25:2625'
+}
+{
+  service: 'api-service',
+  captureId: '6869bebe6b486746a41b1771',
+  tokensUsed: 7752,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 02:26:29:2629'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 02:26:29:2629'
+}
+{
+  service: 'api-service',
+  captureId: '6869bebe6b486746a41b1771',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 02:26:37:2637'
+}
+{
+  service: 'api-service',
+  captureId: '6869bebe6b486746a41b1771',
+  tokensUsed: 7930,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 02:26:40:2640'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 02:26:40:2640'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 02:26:45:2645'
+}
+{
+  service: 'api-service',
+  captureId: '6868772b40a805c021875cef',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 02:26:50:2650'
+}
+{
+  service: 'api-service',
+  captureId: '6868772b40a805c021875cef',
+  tokensUsed: 2684,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 02:26:52:2652'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 02:26:52:2652'
+}
+{
+  service: 'api-service',
+  captureId: '6868772b40a805c021875cef',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 02:27:00:270'
+}
+{
+  service: 'api-service',
+  captureId: '6868772b40a805c021875cef',
+  tokensUsed: 2921,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 02:27:03:273'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 02:27:03:273'
+}
+{
+  service: 'api-service',
+  captureId: '6868772b40a805c021875cef',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 02:32:19:3219'
+}
+{
+  service: 'api-service',
+  captureId: '6868772b40a805c021875cef',
+  tokensUsed: 1056,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 02:32:22:3222'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 02:32:22:3222'
+}
+{
+  service: 'api-service',
+  captureId: '6868772b40a805c021875cef',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 02:32:33:3233'
+}
+{
+  service: 'api-service',
+  captureId: '6868772b40a805c021875cef',
+  tokensUsed: 1080,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 02:32:35:3235'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 02:32:35:3235'
+}
+{
+  service: 'api-service',
+  captureId: '6868772b40a805c021875cef',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 02:32:44:3244'
+}
+{
+  service: 'api-service',
+  captureId: '6868772b40a805c021875cef',
+  tokensUsed: 1059,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 02:32:46:3246'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 02:32:46:3246'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Bookmarked captures retrieved successfully',
+  timestamp: '2025-07-07 02:33:16:3316'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Bookmarked captures retrieved successfully',
+  timestamp: '2025-07-07 02:33:17:3317'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: "SuccessResponse: Captures for site 'ForeSee Medical ' retrieved successfully",
+  timestamp: '2025-07-07 02:33:24:3324'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: "SuccessResponse: Captures for site 'ForeSee Medical ' retrieved successfully",
+  timestamp: '2025-07-07 02:33:24:3324'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 02:33:25:3325'
+}
+{
+  service: 'api-service',
+  captureId: '686ae1408534cb4eab5b7cd9',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 02:33:31:3331'
+}
+{
+  service: 'api-service',
+  captureId: '686ae1408534cb4eab5b7cd9',
+  tokensUsed: 571,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 02:33:32:3332'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 02:33:32:3332'
+}
+{
+  service: 'api-service',
+  captureId: '686ae1408534cb4eab5b7cd9',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 02:33:48:3348'
+}
+{
+  service: 'api-service',
+  captureId: '686ae1408534cb4eab5b7cd9',
+  tokensUsed: 634,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 02:33:49:3349'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 02:33:49:3349'
+}
+{
+  service: 'api-service',
+  captureId: '686ae1408534cb4eab5b7cd9',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 02:34:08:348'
+}
+{
+  service: 'api-service',
+  captureId: '686ae1408534cb4eab5b7cd9',
+  tokensUsed: 829,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 02:34:10:3410'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 02:34:10:3410'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 02:34:31:3431'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-07 02:34:31:3431'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 02:34:32:3432'
+}
+{
+  service: 'api-service',
+  captureId: '68687212ea78403745b9f74e',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 02:34:37:3437'
+}
+{
+  service: 'api-service',
+  captureId: '68687212ea78403745b9f74e',
+  tokensUsed: 1143,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 02:34:40:3440'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 02:34:40:3440'
+}
+{
+  service: 'api-service',
+  captureId: '68687212ea78403745b9f74e',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 02:37:26:3726'
+}
+{
+  service: 'api-service',
+  captureId: '68687212ea78403745b9f74e',
+  tokensUsed: 745,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 02:37:29:3729'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 02:37:29:3729'
+}
+{
+  service: 'api-service',
+  captureId: '68687212ea78403745b9f74e',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 02:38:10:3810'
+}
+{
+  service: 'api-service',
+  captureId: '68687212ea78403745b9f74e',
+  tokensUsed: 824,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 02:38:12:3812'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 02:38:12:3812'
+}
+{
+  service: 'api-service',
+  captureId: '68687212ea78403745b9f74e',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 02:38:34:3834'
+}
+{
+  service: 'api-service',
+  captureId: '68687212ea78403745b9f74e',
+  tokensUsed: 938,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 02:38:35:3835'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 02:38:35:3835'
+}
+{
+  service: 'api-service',
+  captureId: '68687212ea78403745b9f74e',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 02:39:10:3910'
+}
+{
+  service: 'api-service',
+  captureId: '68687212ea78403745b9f74e',
+  tokensUsed: 1013,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 02:39:12:3912'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 02:39:12:3912'
+}
+{
+  service: 'api-service',
+  captureId: '68687212ea78403745b9f74e',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 02:39:26:3926'
+}
+{
+  service: 'api-service',
+  captureId: '68687212ea78403745b9f74e',
+  tokensUsed: 1022,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 02:39:28:3928'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 02:39:28:3928'
+}
+{
+  service: 'api-service',
+  captureId: '68687212ea78403745b9f74e',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 02:39:52:3952'
+}
+{
+  service: 'api-service',
+  captureId: '68687212ea78403745b9f74e',
+  tokensUsed: 905,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 02:39:55:3955'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 02:39:55:3955'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 02:41:11:4111'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 02:41:13:4113'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-07 02:41:14:4114'
+}
+{
+  service: 'api-service',
+  captureId: '686ae1408534cb4eab5b7cd9',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-07 02:41:18:4118'
+}
+{
+  service: 'api-service',
+  captureId: '686ae1408534cb4eab5b7cd9',
+  tokensUsed: 5314,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-07 02:41:21:4121'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-07 02:41:21:4121'
+}
