@@ -5,7 +5,8 @@ import { Capture } from "../models/Capture";
 import { ErrorResponse, SuccessResponse } from "../utils/responseHandlers";
 
 // Utility functions
-const validateObjectId = (id: string): boolean => mongoose.Types.ObjectId.isValid(id);
+const validateObjectId = (id: string): boolean =>
+  mongoose.Types.ObjectId.isValid(id);
 
 // Standardized response structure
 interface ApiResponse<T> {
@@ -27,7 +28,7 @@ export default {
         return ErrorResponse({
           res,
           statusCode: 401,
-          message: "User not authenticated"
+          message: "User not authenticated",
         });
       }
 
@@ -36,7 +37,7 @@ export default {
         return ErrorResponse({
           res,
           statusCode: 400,
-          message: "Collection name is required"
+          message: "Collection name is required",
         });
       }
 
@@ -44,21 +45,21 @@ export default {
         return ErrorResponse({
           res,
           statusCode: 400,
-          message: "Invalid parent collection ID"
+          message: "Invalid parent collection ID",
         });
       }
 
       // Check for existing collection
       const existingCollection = await Collection.findOne({
         name: name.trim(),
-        user: user.id
+        user: user.id,
       });
 
       if (existingCollection) {
         return ErrorResponse({
           res,
           statusCode: 409,
-          message: "Collection with this name already exists"
+          message: "Collection with this name already exists",
         });
       }
 
@@ -66,23 +67,22 @@ export default {
       const collection = await Collection.create({
         user: user.id,
         name: name.trim(),
-        parentCollection: parentCollection || null
+        parentCollection: parentCollection || null,
       });
 
       return SuccessResponse({
         res,
         statusCode: 201,
         data: collection,
-        message: "Collection created successfully"
+        message: "Collection created successfully",
       });
-
     } catch (error) {
       console.error("[Collection] Create error:", error);
       return ErrorResponse({
         res,
         statusCode: 500,
         message: "Failed to create collection",
-        error: error instanceof Error ? error.message : "Unknown error"
+        error: error instanceof Error ? error.message : "Unknown error",
       });
     }
   },
@@ -93,22 +93,21 @@ export default {
   async getCollections(req: Request, res: Response): Promise<void> {
     try {
       const collections = await Collection.find({
-        user: req.user?.id
+        user: req.user?.id,
       }).populate("captures");
 
       return SuccessResponse({
         res,
         data: collections,
-        message: "Collections retrieved successfully"
+        message: "Collections retrieved successfully",
       });
-
     } catch (error) {
       console.error("[Collection] Fetch all error:", error);
       return ErrorResponse({
         res,
         statusCode: 500,
         message: "Failed to fetch collections",
-        error: error instanceof Error ? error.message : "Unknown error"
+        error: error instanceof Error ? error.message : "Unknown error",
       });
     }
   },
@@ -124,36 +123,35 @@ export default {
         return ErrorResponse({
           res,
           statusCode: 400,
-          message: "Invalid collection ID"
+          message: "Invalid collection ID",
         });
       }
 
       const collection = await Collection.findOne({
         _id: id,
-        user: req.user?.id
+        user: req.user?.id,
       }).populate("captures");
 
       if (!collection) {
         return ErrorResponse({
           res,
           statusCode: 404,
-          message: "Collection not found"
+          message: "Collection not found",
         });
       }
 
       return SuccessResponse({
         res,
         data: collection,
-        message: "Collection retrieved successfully"
+        message: "Collection retrieved successfully",
       });
-
     } catch (error) {
       console.error("[Collection] Fetch by ID error:", error);
       return ErrorResponse({
         res,
         statusCode: 500,
         message: "Failed to fetch collection",
-        error: error instanceof Error ? error.message : "Unknown error"
+        error: error instanceof Error ? error.message : "Unknown error",
       });
     }
   },
@@ -171,7 +169,7 @@ export default {
         return ErrorResponse({
           res,
           statusCode: 400,
-          message: "Collection ID and Capture ID are required"
+          message: "Collection ID and Capture ID are required",
         });
       }
 
@@ -179,21 +177,21 @@ export default {
         return ErrorResponse({
           res,
           statusCode: 400,
-          message: "Invalid ID format"
+          message: "Invalid ID format",
         });
       }
 
       // Check resources exist
       const [collection, capture] = await Promise.all([
         Collection.findById(id),
-        Capture.findById(captureId)
+        Capture.findById(captureId),
       ]);
 
       if (!collection) {
         return ErrorResponse({
           res,
           statusCode: 404,
-          message: "Collection not found"
+          message: "Collection not found",
         });
       }
 
@@ -201,53 +199,53 @@ export default {
         return ErrorResponse({
           res,
           statusCode: 404,
-          message: "Capture not found"
+          message: "Capture not found",
         });
       }
 
       // Check if capture already in collection
-      if (collection.captures?.some(id => id.equals(capture._id))) {
+      if (collection.captures?.some((id) => id.equals(capture._id))) {
         return ErrorResponse({
           res,
           statusCode: 409,
-          message: "Capture already exists in this collection"
+          message: "Capture already exists in this collection",
         });
       }
 
-
       // Check if capture already has a collection, if so, remove it from that collection
-        if (capture.collection) {
-          await Collection.findByIdAndUpdate(capture.collection, {
-            $pull: { captures: capture._id }
-          });
-        }
+      if (capture.collection) {
+        await Collection.findByIdAndUpdate(capture.collection, {
+          $pull: { captures: capture._id },
+        });
+      }
 
       // Update both collection and capture
       await Promise.all([
         Collection.findByIdAndUpdate(id, {
-          $addToSet: { captures: capture._id }
+          $addToSet: { captures: capture._id },
         }),
         Capture.findByIdAndUpdate(captureId, {
-          collection: collection._id
-        })
+          collection: collection._id,
+        }),
       ]);
 
       // Return the updated collection
-      const updatedCollection = await Collection.findById(id).populate("captures");
+      const updatedCollection = await Collection.findById(id).populate(
+        "captures"
+      );
 
       return SuccessResponse({
         res,
         data: updatedCollection,
-        message: "Capture added to collection successfully"
+        message: "Capture added to collection successfully",
       });
-
     } catch (error) {
       console.error("[Collection] Add capture error:", error);
       return ErrorResponse({
         res,
         statusCode: 500,
         message: "Failed to add capture to collection",
-        error: error instanceof Error ? error.message : "Unknown error"
+        error: error instanceof Error ? error.message : "Unknown error",
       });
     }
   },
@@ -255,7 +253,10 @@ export default {
   /**
    * Remove capture from collection
    */
-  async removeCaptureFromCollection(req: Request, res: Response): Promise<void> {
+  async removeCaptureFromCollection(
+    req: Request,
+    res: Response
+  ): Promise<void> {
     try {
       const { collectionId, captureId } = req.body;
 
@@ -264,7 +265,7 @@ export default {
         return ErrorResponse({
           res,
           statusCode: 400,
-          message: "Collection ID and Capture ID are required"
+          message: "Collection ID and Capture ID are required",
         });
       }
 
@@ -272,7 +273,7 @@ export default {
         return ErrorResponse({
           res,
           statusCode: 400,
-          message: "Invalid ID format"
+          message: "Invalid ID format",
         });
       }
 
@@ -282,7 +283,7 @@ export default {
         return ErrorResponse({
           res,
           statusCode: 404,
-          message: "Collection not found"
+          message: "Collection not found",
         });
       }
 
@@ -291,36 +292,37 @@ export default {
         return ErrorResponse({
           res,
           statusCode: 404,
-          message: "Capture not found in this collection"
+          message: "Capture not found in this collection",
         });
       }
 
       // Update both collection and capture
       await Promise.all([
         Collection.findByIdAndUpdate(collectionId, {
-          $pull: { captures: captureId }
+          $pull: { captures: captureId },
         }),
         Capture.findByIdAndUpdate(captureId, {
-          $unset: { collection: "" }
-        })
+          $unset: { collection: "" },
+        }),
       ]);
 
       // Return the updated collection
-      const updatedCollection = await Collection.findById(collectionId).populate("captures");
+      const updatedCollection = await Collection.findById(
+        collectionId
+      ).populate("captures");
 
       return SuccessResponse({
         res,
         data: updatedCollection,
-        message: "Capture removed from collection successfully"
+        message: "Capture removed from collection successfully",
       });
-
     } catch (error) {
       console.error("[Collection] Remove capture error:", error);
       return ErrorResponse({
         res,
         statusCode: 500,
         message: "Failed to remove capture from collection",
-        error: error instanceof Error ? error.message : "Unknown error"
+        error: error instanceof Error ? error.message : "Unknown error",
       });
     }
   },
@@ -336,7 +338,7 @@ export default {
         return ErrorResponse({
           res,
           statusCode: 400,
-          message: "Invalid collection ID"
+          message: "Invalid collection ID",
         });
       }
 
@@ -351,23 +353,22 @@ export default {
         return ErrorResponse({
           res,
           statusCode: 404,
-          message: "Collection not found"
+          message: "Collection not found",
         });
       }
 
       return SuccessResponse({
         res,
         data: { id: deletedCollection._id },
-        message: "Collection deleted successfully"
+        message: "Collection deleted successfully",
       });
-
     } catch (error) {
       console.error("[Collection] Delete error:", error);
       return ErrorResponse({
         res,
         statusCode: 500,
         message: "Failed to delete collection",
-        error: error instanceof Error ? error.message : "Unknown error"
+        error: error instanceof Error ? error.message : "Unknown error",
       });
     }
   },
@@ -384,7 +385,7 @@ export default {
         return ErrorResponse({
           res,
           statusCode: 400,
-          message: "Invalid collection ID"
+          message: "Invalid collection ID",
         });
       }
 
@@ -396,7 +397,7 @@ export default {
           return ErrorResponse({
             res,
             statusCode: 400,
-            message: "Invalid parent collection ID"
+            message: "Invalid parent collection ID",
           });
         }
         updates.parentCollection = parentCollection;
@@ -412,23 +413,22 @@ export default {
         return ErrorResponse({
           res,
           statusCode: 404,
-          message: "Collection not found"
+          message: "Collection not found",
         });
       }
 
       return SuccessResponse({
         res,
         data: updatedCollection,
-        message: "Collection updated successfully"
+        message: "Collection updated successfully",
       });
-
     } catch (error) {
       console.error("[Collection] Update error:", error);
       return ErrorResponse({
         res,
         statusCode: 500,
         message: "Failed to update collection",
-        error: error instanceof Error ? error.message : "Unknown error"
+        error: error instanceof Error ? error.message : "Unknown error",
       });
     }
   },
@@ -444,7 +444,7 @@ export default {
         return ErrorResponse({
           res,
           statusCode: 400,
-          message: "Invalid collection ID"
+          message: "Invalid collection ID",
         });
       }
 
@@ -452,32 +452,31 @@ export default {
         path: "captures",
         populate: {
           path: "collection",
-          model: "Collection"
-        }
+          model: "Collection",
+        },
       });
 
       if (!collection) {
         return ErrorResponse({
           res,
           statusCode: 404,
-          message: "Collection not found"
+          message: "Collection not found",
         });
       }
 
       return SuccessResponse({
         res,
         data: collection.captures || [],
-        message: "Collection captures retrieved successfully"
+        message: "Collection captures retrieved successfully",
       });
-
     } catch (error) {
       console.error("[Collection] Get captures error:", error);
       return ErrorResponse({
         res,
         statusCode: 500,
         message: "Failed to retrieve collection captures",
-        error: error instanceof Error ? error.message : "Unknown error"
+        error: error instanceof Error ? error.message : "Unknown error",
       });
     }
-  }
+  },
 };

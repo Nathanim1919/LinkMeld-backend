@@ -1085,3 +1085,180 @@
   message: 'ErrorResponse: Capture already exists in this collection',
   timestamp: '2025-07-06 03:45:36:4536'
 }
+{
+  service: 'api-service',
+  statusCode: 409,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Collection with this name already exists',
+  timestamp: '2025-07-06 03:54:33:5433'
+}
+{
+  service: 'api-service',
+  statusCode: 409,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Collection with this name already exists',
+  timestamp: '2025-07-06 03:54:38:5438'
+}
+{
+  service: 'api-service',
+  statusCode: 409,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Collection with this name already exists',
+  timestamp: '2025-07-06 03:55:33:5533'
+}
+{
+  service: 'api-service',
+  level: 'error',
+  message: 'AIController:converse:error fetch failed',
+  stack: 'TypeError: fetch failed\n' +
+    '    at node:internal/deps/undici/undici:13502:13\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at processConversation (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/ai/services/aiService.ts:436:22)\n' +
+    '    at chat (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/controllers/aiController.ts:129:50)',
+  cause: Error: getaddrinfo EAI_AGAIN generativelanguage.googleapis.com
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+    errno: -3001,
+    code: 'EAI_AGAIN',
+    syscall: 'getaddrinfo',
+    hostname: 'generativelanguage.googleapis.com'
+  },
+  timestamp: '2025-07-06 10:50:30:5030'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'AI_CONVERSATION_FAILED',
+  error: 'fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: AI conversation failed',
+  timestamp: '2025-07-06 10:50:30:5030'
+}
+{
+  service: 'api-service',
+  statusCode: 409,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture already exists in this collection',
+  timestamp: '2025-07-06 20:34:07:347'
+}
+{
+  service: 'api-service',
+  statusCode: 409,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture already exists in this collection',
+  timestamp: '2025-07-06 20:59:19:5919'
+}
+{
+  service: 'api-service',
+  level: 'error',
+  message: 'AIController:converse:error fetch failed',
+  stack: 'TypeError: fetch failed\n' +
+    '    at node:internal/deps/undici/undici:13502:13\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at processConversation (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/ai/services/aiService.ts:436:22)\n' +
+    '    at chat (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/controllers/aiController.ts:129:50)',
+  cause: AggregateError: 
+      at internalConnectMultiple (node:net:1139:18)
+      at internalConnectMultiple (node:net:1215:5)
+      at Timeout.internalConnectMultipleTimeout (node:net:1739:5)
+      at listOnTimeout (node:internal/timers:616:11)
+      at processTimers (node:internal/timers:549:7) {
+    code: 'ETIMEDOUT',
+    [errors]: [
+      Error: connect ETIMEDOUT 172.217.170.202:443
+          at createConnectionError (node:net:1675:14)
+          at Timeout.internalConnectMultipleTimeout (node:net:1734:38)
+          at listOnTimeout (node:internal/timers:616:11)
+          at processTimers (node:internal/timers:549:7) {
+        errno: -110,
+        code: 'ETIMEDOUT',
+        syscall: 'connect',
+        address: '172.217.170.202',
+        port: 443
+      },
+      Error: connect ENETUNREACH 2a00:1450:401a:801::200a:443 - Local (:::0)
+          at internalConnectMultiple (node:net:1211:16)
+          at Timeout.internalConnectMultipleTimeout (node:net:1739:5)
+          at listOnTimeout (node:internal/timers:616:11)
+          at processTimers (node:internal/timers:549:7) {
+        errno: -101,
+        code: 'ENETUNREACH',
+        syscall: 'connect',
+        address: '2a00:1450:401a:801::200a',
+        port: 443
+      },
+      Error: connect ETIMEDOUT 216.58.223.74:443
+          at createConnectionError (node:net:1675:14)
+          at Timeout.internalConnectMultipleTimeout (node:net:1734:38)
+          at listOnTimeout (node:internal/timers:616:11)
+          at processTimers (node:internal/timers:549:7) {
+        errno: -110,
+        code: 'ETIMEDOUT',
+        syscall: 'connect',
+        address: '216.58.223.74',
+        port: 443
+      },
+      Error: connect ENETUNREACH 2a00:1450:401a:804::200a:443 - Local (:::0)
+          at internalConnectMultiple (node:net:1211:16)
+          at Timeout.internalConnectMultipleTimeout (node:net:1739:5)
+          at listOnTimeout (node:internal/timers:616:11)
+          at processTimers (node:internal/timers:549:7) {
+        errno: -101,
+        code: 'ENETUNREACH',
+        syscall: 'connect',
+        address: '2a00:1450:401a:804::200a',
+        port: 443
+      },
+      Error: connect ETIMEDOUT 172.217.170.170:443
+          at createConnectionError (node:net:1675:14)
+          at Timeout.internalConnectMultipleTimeout (node:net:1734:38)
+          at listOnTimeout (node:internal/timers:616:11)
+          at processTimers (node:internal/timers:549:7) {
+        errno: -110,
+        code: 'ETIMEDOUT',
+        syscall: 'connect',
+        address: '172.217.170.170',
+        port: 443
+      },
+      Error: connect ENETUNREACH 2a00:1450:401a:800::200a:443 - Local (:::0)
+          at internalConnectMultiple (node:net:1211:16)
+          at Timeout.internalConnectMultipleTimeout (node:net:1739:5)
+          at listOnTimeout (node:internal/timers:616:11)
+          at processTimers (node:internal/timers:549:7) {
+        errno: -101,
+        code: 'ENETUNREACH',
+        syscall: 'connect',
+        address: '2a00:1450:401a:800::200a',
+        port: 443
+      }
+    ]
+  },
+  timestamp: '2025-07-06 20:59:29:5929'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'AI_CONVERSATION_FAILED',
+  error: 'fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: AI conversation failed',
+  timestamp: '2025-07-06 20:59:29:5929'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Invalid Gemini API key format',
+  timestamp: '2025-07-06 21:00:38:038'
+}

@@ -7,6 +7,7 @@ import collectionRoutes from "./routes/collectionRoute";
 import sourceRoutes from "./routes/sourceRoute"; // Import source routes
 import { userProfileRoutes } from './routes/userRoute';
 import aiChatRoutes from "./routes/chatRoutes";
+import feedbackRoutes from "./routes/feedbackRoutes";
 import { auth } from "./lib/auth";
 import { fromNodeHeaders, toNodeHandler } from "better-auth/node";
 import { Request, Response } from "express";
@@ -48,6 +49,7 @@ app.use("/api/v1/folders", collectionRoutes);
 app.use("/api/v1/sources", sourceRoutes); // Use source routes
 app.use("/api/v1/account", userProfileRoutes);
 app.use("/api/v1/ai", aiChatRoutes);
+app.use("/api/v1/feedback", feedbackRoutes);
 
 app.get("/api/me", async (req: Request, res: Response) => {
   const session = await auth.api.getSession({
