@@ -7,10 +7,11 @@ export const submitFeedback = async (
   res: Response
 ): Promise<void> => {
   try {
-    const { feedback, name } = req.body;
+    const { feedbackData } = req.body;
+    console.log("[Feedback] Received data:", feedbackData);
 
     // Validate input
-    if (!feedback || typeof feedback !== "string") {
+    if (!feedbackData.feedback || typeof feedbackData.feedback !== "string") {
       return ErrorResponse({
         res,
         statusCode: 400,
@@ -20,8 +21,12 @@ export const submitFeedback = async (
 
     // Create new feedback entry
     const newFeedback = new Feedback({
-      feedback: feedback.trim(),
-      name: name ? name.trim() : "Anonymous",
+      feedback: feedbackData.feedback.trim(),
+      name: feedbackData.name ? feedbackData.name.trim() : "Anonymous",
+      profession: feedbackData.profession
+        ? feedbackData.profession.trim()
+        : "Unknown",
+      createdAt: new Date(),
     });
 
     await newFeedback.save();

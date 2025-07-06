@@ -12,7 +12,7 @@ const router = express.Router();
  * @desc    Submit user feedback
  * @access  Public
  */
-router.post("/", rateLimiter("strict"), submitFeedback);
+router.post("/",  submitFeedback);
 /**
  * @route   GET /api/feedback
  * @desc    Get all user feedback

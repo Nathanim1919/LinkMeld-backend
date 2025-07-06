@@ -17841,3 +17841,271 @@
   message: 'SuccessResponse: Captures retrieved successfully',
   timestamp: '2025-07-06 21:04:52:452'
 }
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-06 22:44:28:4428'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-06 22:44:28:4428'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-06 22:44:28:4428'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-06 22:44:28:4428'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-06 22:44:30:4430'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-06 22:44:30:4430'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-06 22:44:31:4431'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture added to collection successfully',
+  timestamp: '2025-07-06 22:44:35:4435'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Feedback submitted successfully.',
+  timestamp: '2025-07-06 22:47:52:4752'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Feedback is required and must be a string.',
+  timestamp: '2025-07-06 22:55:51:5551'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Feedback is required and must be a string.',
+  timestamp: '2025-07-06 22:55:55:5555'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Feedback is required and must be a string.',
+  timestamp: '2025-07-06 23:04:10:410'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Feedback is required and must be a string.',
+  timestamp: '2025-07-06 23:04:13:413'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Feedback is required and must be a string.',
+  timestamp: '2025-07-06 23:04:20:420'
+}
+{
+  service: 'api-service',
+  ip: '::1',
+  method: 'POST',
+  path: '/',
+  level: 'warn',
+  message: 'Rate limit exceeded',
+  timestamp: '2025-07-06 23:04:58:458'
+}
+{
+  service: 'api-service',
+  statusCode: 429,
+  errorCode: 'RATE_LIMIT_EXCEEDED',
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Internal Server Error',
+  timestamp: '2025-07-06 23:04:58:458'
+}
+{
+  service: 'api-service',
+  ip: '::1',
+  method: 'POST',
+  path: '/',
+  level: 'warn',
+  message: 'Rate limit exceeded',
+  timestamp: '2025-07-06 23:07:59:759'
+}
+{
+  service: 'api-service',
+  statusCode: 429,
+  errorCode: 'RATE_LIMIT_EXCEEDED',
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Internal Server Error',
+  timestamp: '2025-07-06 23:07:59:759'
+}
+{
+  service: 'api-service',
+  ip: '::1',
+  method: 'POST',
+  path: '/',
+  level: 'warn',
+  message: 'Rate limit exceeded',
+  timestamp: '2025-07-06 23:08:00:80'
+}
+{
+  service: 'api-service',
+  statusCode: 429,
+  errorCode: 'RATE_LIMIT_EXCEEDED',
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Internal Server Error',
+  timestamp: '2025-07-06 23:08:00:80'
+}
+{
+  service: 'api-service',
+  ip: '::1',
+  method: 'POST',
+  path: '/',
+  level: 'warn',
+  message: 'Rate limit exceeded',
+  timestamp: '2025-07-06 23:08:12:812'
+}
+{
+  service: 'api-service',
+  statusCode: 429,
+  errorCode: 'RATE_LIMIT_EXCEEDED',
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Internal Server Error',
+  timestamp: '2025-07-06 23:08:12:812'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Feedback is required and must be a string.',
+  timestamp: '2025-07-06 23:08:44:844'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Feedback is required and must be a string.',
+  timestamp: '2025-07-06 23:08:51:851'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Feedback is required and must be a string.',
+  timestamp: '2025-07-06 23:10:15:1015'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Feedback is required and must be a string.',
+  timestamp: '2025-07-06 23:10:21:1021'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Feedback is required and must be a string.',
+  timestamp: '2025-07-06 23:11:09:119'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: null,
+  error: "Cannot read properties of undefined (reading 'feedback')",
+  level: 'error',
+  message: 'ErrorResponse: Failed to submit feedback.',
+  timestamp: '2025-07-06 23:13:56:1356'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: null,
+  error: "Cannot read properties of undefined (reading 'feedback')",
+  level: 'error',
+  message: 'ErrorResponse: Failed to submit feedback.',
+  timestamp: '2025-07-06 23:14:30:1430'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Feedback submitted successfully.',
+  timestamp: '2025-07-06 23:14:58:1458'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Feedback submitted successfully.',
+  timestamp: '2025-07-06 23:15:05:155'
+}

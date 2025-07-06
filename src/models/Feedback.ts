@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 interface IFeedback {
   feedback: string;
   name?: string;
+  profession?: string;
   createdAt?: Date;
 }
 
@@ -16,6 +17,11 @@ const FeedbackSchema = new mongoose.Schema<IFeedback>({
     type: String,
     trim: true,
     default: "Anonymous",
+  },
+  profession: {
+    type: String,
+    trim: true,
+    default: "Unknown",
   },
   createdAt: {
     type: Date,
