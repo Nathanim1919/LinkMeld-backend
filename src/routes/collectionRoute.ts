@@ -1,25 +1,66 @@
 import { Router } from "express";
-import {
-  createCollection,
-  getFolders,
-  getFolderById,
-  appendCaptureToFolder,
-  getCapturesWithSpecificFolder,
-} from "../controllers/collectionController";
 import { authentication } from "../middleware/authMiddleware";
+import collectionController from "../controllers/collectionController";
 
 const router = Router();
 
-router.use(authentication); // Apply authentication middleware to all routes in this router
+// Apply authentication middleware to all collection routes
+router.use(authentication);
 
-// Route to create a new folder
-router.post("/", createCollection);
-// Route to get all folders
-router.get("/", getFolders);
-// Route to get a folder by ID
-router.get("/:id", getFolderById);
-// Route to append a capture to a folder
-router.post("/:id/capture", appendCaptureToFolder);
-router.get("/:id/captures", getCapturesWithSpecificFolder); // Assuming this is to get captures in a folder
+/**
+ * @route POST /collections
+ * @desc Create a new collection
+ * @access Private
+ */
+router.post("/", collectionController.createCollection);
+
+/**
+ * @route GET /collections
+ * @desc Get all collections for authenticated user
+ * @access Private
+ */
+router.get("/", collectionController.getCollections);
+
+/**
+ * @route GET /collections/:id
+ * @desc Get a specific collection by ID
+ * @access Private
+ */
+router.get("/:id", collectionController.getCollectionById);
+
+/**
+ * @route POST /collections/:id/captures
+ * @desc Add a capture to a collection
+ * @access Private
+ */
+router.post("/:id/captures", collectionController.addCaptureToCollection);
+
+/**
+ * @route DELETE /collections/captures
+ * @desc Remove a capture from a collection
+ * @access Private
+ */
+router.delete("/captures", collectionController.removeCaptureFromCollection);
+
+/**
+ * @route GET /collections/:id/captures
+ * @desc Get all captures in a specific collection
+ * @access Private
+ */
+router.get("/:id/captures", collectionController.getCollectionCaptures);
+
+/**
+ * @route PUT /collections/:id
+ * @desc Update collection details
+ * @access Private
+ */
+router.put("/:id", collectionController.updateCollection);
+
+/**
+ * @route DELETE /collections/:id
+ * @desc Delete a collection
+ * @access Private
+ */
+router.delete("/:id", collectionController.deleteCollection);
 
 export default router;

@@ -374,3 +374,714 @@
   message: 'ErrorResponse: Internal Server Error',
   timestamp: '2025-07-05 02:08:00:80'
 }
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: 'INVALID_REQUEST',
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Invalid or missing captureId',
+  timestamp: '2025-07-05 02:45:37:4537'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture not found',
+  timestamp: '2025-07-05 14:40:01:401'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture not found',
+  timestamp: '2025-07-05 14:40:03:403'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture not found',
+  timestamp: '2025-07-05 15:47:23:4723'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture not found',
+  timestamp: '2025-07-05 15:47:25:4725'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture not found',
+  timestamp: '2025-07-05 15:47:25:4725'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture not found',
+  timestamp: '2025-07-05 15:47:46:4746'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture not found',
+  timestamp: '2025-07-05 15:49:26:4926'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture not found',
+  timestamp: '2025-07-05 15:49:32:4932'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture not found',
+  timestamp: '2025-07-05 15:49:44:4944'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture not found',
+  timestamp: '2025-07-05 15:52:54:5254'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture not found',
+  timestamp: '2025-07-05 15:52:54:5254'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture not found',
+  timestamp: '2025-07-05 15:53:08:538'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture not found',
+  timestamp: '2025-07-05 15:53:13:5313'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture not found',
+  timestamp: '2025-07-05 15:53:59:5359'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture not found',
+  timestamp: '2025-07-05 15:53:59:5359'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture not found',
+  timestamp: '2025-07-05 15:53:59:5359'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture not found',
+  timestamp: '2025-07-05 15:53:59:5359'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture not found',
+  timestamp: '2025-07-05 15:54:00:540'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture not found',
+  timestamp: '2025-07-05 15:54:00:540'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture not found',
+  timestamp: '2025-07-05 15:54:05:545'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture not found',
+  timestamp: '2025-07-05 15:54:05:545'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture not found',
+  timestamp: '2025-07-05 15:54:05:545'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture not found',
+  timestamp: '2025-07-05 15:54:05:545'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture not found',
+  timestamp: '2025-07-05 15:54:06:546'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture not found',
+  timestamp: '2025-07-05 15:54:07:547'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture not found',
+  timestamp: '2025-07-05 15:54:10:5410'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture not found',
+  timestamp: '2025-07-05 15:54:10:5410'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture not found',
+  timestamp: '2025-07-05 15:54:10:5410'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture not found',
+  timestamp: '2025-07-05 15:54:10:5410'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture not found',
+  timestamp: '2025-07-05 15:54:11:5411'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture not found',
+  timestamp: '2025-07-05 15:54:11:5411'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture not found',
+  timestamp: '2025-07-05 15:56:27:5627'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture not found',
+  timestamp: '2025-07-05 15:56:58:5658'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture not found',
+  timestamp: '2025-07-05 15:56:58:5658'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture not found',
+  timestamp: '2025-07-05 15:59:16:5916'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture not found',
+  timestamp: '2025-07-05 15:59:18:5918'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture not found',
+  timestamp: '2025-07-05 16:02:28:228'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: null,
+  error: "Cannot read properties of undefined (reading 'prepareCaptureData')",
+  level: 'error',
+  message: 'ErrorResponse: An error occurred while saving capture',
+  timestamp: '2025-07-05 17:36:21:3621'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: null,
+  error: "Cannot read properties of undefined (reading 'prepareCaptureData')",
+  level: 'error',
+  message: 'ErrorResponse: An error occurred while saving capture',
+  timestamp: '2025-07-05 17:36:32:3632'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: null,
+  error: "Cannot read properties of undefined (reading 'prepareCaptureData')",
+  level: 'error',
+  message: 'ErrorResponse: An error occurred while saving capture',
+  timestamp: '2025-07-05 21:44:14:4414'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: null,
+  error: "Cannot read properties of undefined (reading 'prepareCaptureData')",
+  level: 'error',
+  message: 'ErrorResponse: An error occurred while saving capture',
+  timestamp: '2025-07-05 21:44:21:4421'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: null,
+  error: "Cannot read properties of undefined (reading 'prepareCaptureData')",
+  level: 'error',
+  message: 'ErrorResponse: An error occurred while saving capture',
+  timestamp: '2025-07-05 22:52:26:5226'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: null,
+  error: "Cannot read properties of undefined (reading 'prepareCaptureData')",
+  level: 'error',
+  message: 'ErrorResponse: An error occurred while saving capture',
+  timestamp: '2025-07-05 22:52:55:5255'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Invalid Gemini API key format',
+  timestamp: '2025-07-05 23:10:23:1023'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Invalid Gemini API key format',
+  timestamp: '2025-07-05 23:10:27:1027'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: null,
+  error: "Cannot read properties of undefined (reading 'findCapturesBySite')",
+  level: 'error',
+  message: 'ErrorResponse: Failed to retrieve captures by site name',
+  timestamp: '2025-07-05 23:42:28:4228'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: null,
+  error: "Cannot read properties of undefined (reading 'findCapturesBySite')",
+  level: 'error',
+  message: 'ErrorResponse: Failed to retrieve captures by site name',
+  timestamp: '2025-07-05 23:42:28:4228'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: null,
+  error: "Cannot read properties of undefined (reading 'findCapturesBySite')",
+  level: 'error',
+  message: 'ErrorResponse: Failed to retrieve captures by site name',
+  timestamp: '2025-07-06 01:53:17:5317'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: null,
+  error: "Cannot read properties of undefined (reading 'findCapturesBySite')",
+  level: 'error',
+  message: 'ErrorResponse: Failed to retrieve captures by site name',
+  timestamp: '2025-07-06 01:53:18:5318'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: null,
+  error: "Cannot read properties of undefined (reading 'findCapturesBySite')",
+  level: 'error',
+  message: 'ErrorResponse: Failed to retrieve captures by site name',
+  timestamp: '2025-07-06 02:04:50:450'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: null,
+  error: "Cannot read properties of undefined (reading 'findCapturesBySite')",
+  level: 'error',
+  message: 'ErrorResponse: Failed to retrieve captures by site name',
+  timestamp: '2025-07-06 02:04:50:450'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-06 02:08:07:87'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-06 02:08:07:87'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Invalid Gemini API key format',
+  timestamp: '2025-07-06 02:08:32:832'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: null,
+  error: "Cannot read properties of undefined (reading 'findCapturesBySite')",
+  level: 'error',
+  message: 'ErrorResponse: Failed to retrieve captures by site name',
+  timestamp: '2025-07-06 02:09:10:910'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: null,
+  error: "Cannot read properties of undefined (reading 'findCapturesBySite')",
+  level: 'error',
+  message: 'ErrorResponse: Failed to retrieve captures by site name',
+  timestamp: '2025-07-06 02:09:10:910'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: null,
+  error: "Cannot read properties of undefined (reading 'findCapturesBySite')",
+  level: 'error',
+  message: 'ErrorResponse: Failed to retrieve captures by site name',
+  timestamp: '2025-07-06 02:11:01:111'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: null,
+  error: "Cannot read properties of undefined (reading 'findCapturesBySite')",
+  level: 'error',
+  message: 'ErrorResponse: Failed to retrieve captures by site name',
+  timestamp: '2025-07-06 02:11:01:111'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: null,
+  error: "Cannot read properties of undefined (reading 'findCapturesBySite')",
+  level: 'error',
+  message: 'ErrorResponse: Failed to retrieve captures by site name',
+  timestamp: '2025-07-06 02:11:12:1112'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: null,
+  error: "Cannot read properties of undefined (reading 'findCapturesBySite')",
+  level: 'error',
+  message: 'ErrorResponse: Failed to retrieve captures by site name',
+  timestamp: '2025-07-06 02:11:12:1112'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: null,
+  error: "Cannot read properties of undefined (reading 'findCapturesBySite')",
+  level: 'error',
+  message: 'ErrorResponse: Failed to retrieve captures by site name',
+  timestamp: '2025-07-06 02:11:44:1144'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: null,
+  error: "Cannot read properties of undefined (reading 'findCapturesBySite')",
+  level: 'error',
+  message: 'ErrorResponse: Failed to retrieve captures by site name',
+  timestamp: '2025-07-06 02:11:44:1144'
+}
+{
+  service: 'api-service',
+  statusCode: 409,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Collection with this name already exists',
+  timestamp: '2025-07-06 02:55:04:554'
+}
+{
+  service: 'api-service',
+  statusCode: 409,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Collection with this name already exists',
+  timestamp: '2025-07-06 02:55:08:558'
+}
+{
+  service: 'api-service',
+  statusCode: 409,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Collection with this name already exists',
+  timestamp: '2025-07-06 02:55:08:558'
+}
+{
+  service: 'api-service',
+  statusCode: 409,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Collection with this name already exists',
+  timestamp: '2025-07-06 02:55:09:559'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: null,
+  error: "Cannot read properties of undefined (reading 'prepareCaptureData')",
+  level: 'error',
+  message: 'ErrorResponse: An error occurred while saving capture',
+  timestamp: '2025-07-06 02:57:07:577'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: null,
+  error: "Cannot read properties of undefined (reading 'prepareCaptureData')",
+  level: 'error',
+  message: 'ErrorResponse: An error occurred while saving capture',
+  timestamp: '2025-07-06 02:57:12:5712'
+}
+{
+  service: 'api-service',
+  statusCode: 409,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture already exists in this collection',
+  timestamp: '2025-07-06 03:35:46:3546'
+}
+{
+  service: 'api-service',
+  statusCode: 409,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture already exists in this collection',
+  timestamp: '2025-07-06 03:37:17:3717'
+}
+{
+  service: 'api-service',
+  statusCode: 409,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture already exists in this collection',
+  timestamp: '2025-07-06 03:37:18:3718'
+}
+{
+  service: 'api-service',
+  statusCode: 409,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture already exists in this collection',
+  timestamp: '2025-07-06 03:37:59:3759'
+}
+{
+  service: 'api-service',
+  statusCode: 409,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture already exists in this collection',
+  timestamp: '2025-07-06 03:38:04:384'
+}
+{
+  service: 'api-service',
+  statusCode: 409,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture already exists in this collection',
+  timestamp: '2025-07-06 03:38:13:3813'
+}
+{
+  service: 'api-service',
+  statusCode: 409,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture already exists in this collection',
+  timestamp: '2025-07-06 03:38:34:3834'
+}
+{
+  service: 'api-service',
+  statusCode: 409,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture already exists in this collection',
+  timestamp: '2025-07-06 03:44:56:4456'
+}
+{
+  service: 'api-service',
+  statusCode: 409,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture already exists in this collection',
+  timestamp: '2025-07-06 03:45:29:4529'
+}
+{
+  service: 'api-service',
+  statusCode: 409,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture already exists in this collection',
+  timestamp: '2025-07-06 03:45:36:4536'
+}

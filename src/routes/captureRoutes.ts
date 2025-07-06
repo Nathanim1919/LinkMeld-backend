@@ -1,23 +1,66 @@
 import express from "express";
-import {
-  saveCapture,
-  getCaptures,
-  bookmarkOrUnbookmarkCapture,
-  getBookmarkedCaptures,
-  searchCaptures,
-  getCaptureById
-} from "../controllers/captureController";
 import { authentication } from "../middleware/authMiddleware";
+import { rateLimiter } from "../middleware/rateLimiter";
+import {
+  getBookmarkedCaptures,
+  getCaptureById,
+  getCaptures,
+  saveCapture,
+  searchCaptures,
+  toggleBookmark,
+} from "../controllers/captureController";
 
 const router = express.Router();
 
-router.use(authentication); // Apply authentication middleware to all routes in this router
+// Apply authentication middleware to all capture routes
+router.use(authentication);
 
+/**
+ * @route   GET /api/captures
+ * @desc    Get all captures for authenticated user
+ * @access  Private
+ */
 router.get("/", getCaptures);
-router.post("/save", saveCapture);
-router.get("/search", searchCaptures); // Route to search captures
+
+/**
+ * @route   POST /api/captures
+ * @desc    Save a new capture
+ * @access  Private
+ * @rate    Limited (15 requests/minute)
+ */
+router.post("/save", rateLimiter("standard"), saveCapture);
+
+/**
+ * @route   GET /api/captures/search
+ * @desc    Search captures with pagination
+ * @access  Private
+ * @query   {string} query - Search term
+ * @query   {number} [page=1] - Page number
+ * @query   {number} [limit=10] - Items per page
+ */
+router.get("/search", searchCaptures);
+
+/**
+ * @route   GET /api/captures/bookmarked
+ * @desc    Get all bookmarked captures
+ * @access  Private
+ */
 router.get("/bookmarked", getBookmarkedCaptures);
+
+/**
+ * @route   GET /api/captures/:id
+ * @desc    Get a specific capture by ID
+ * @access  Private
+ * @params  {string} id - Capture ID
+ */
 router.get("/:captureId", getCaptureById);
-router.post("/:captureId/bookmark", bookmarkOrUnbookmarkCapture); // Route to bookmark or unbookmark a capture
+
+/**
+ * @route   PATCH /api/captures/:id/bookmark
+ * @desc    Toggle bookmark status for a capture
+ * @access  Private
+ * @params  {string} id - Capture ID
+ */
+router.patch("/:captureId/bookmark", rateLimiter("standard"), toggleBookmark);
 
 export default router;

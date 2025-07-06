@@ -6,22 +6,31 @@ import { generateSlug } from "../utils/slugify";
 import { normalizeUrl } from "../utils/urls";
 import Conversation from "../models/Conversation";
 import mongoose from "mongoose";
+import { ErrorResponse, SuccessResponse } from "../utils/responseHandlers";
 
-export const saveCapture = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
+// Constants
+const MIN_CONTENT_LENGTH = 50;
+const DEFAULT_PAGE_SIZE = 10;
+const MAX_DOCUMENTS = 20;
+const MAX_LINKS = 100;
+
+/**
+ * Saves a new webpage capture with full content processing
+ * @param req Express request with capture data
+ * @param res Express response
+ */
+export const saveCapture = async (req: Request, res: Response): Promise<void> => {
   try {
     // 1. Input Validation
     const requiredFields = ["url", "timestamp"];
     const missingFields = requiredFields.filter((field) => !req.body[field]);
 
     if (missingFields.length > 0) {
-      res.status(400).json({
-        success: false,
-        error: `Missing required fields: ${missingFields.join(", ")}`,
+      return ErrorResponse({
+        res,
+        statusCode: 400,
+        message: `Missing required fields: ${missingFields.join(", ")}`
       });
-      return;
     }
 
     const {
@@ -42,175 +51,48 @@ export const saveCapture = async (
       userAgent,
     } = req.body;
 
-    // 2. Content Preparation
+    // 2. Content Validation
     const contentToSave = selectedText?.trim() || mainText?.trim() || "";
-    if (contentToSave.length < 50) {
-      res.status(400).json({
-        success: false,
-        error: "Content too short (minimum 50 characters required)",
+    if (contentToSave.length < MIN_CONTENT_LENGTH) {
+      return ErrorResponse({
+        res,
+        statusCode: 400,
+        message: `Content too short (minimum ${MIN_CONTENT_LENGTH} characters required)`
       });
-      return;
     }
 
-    // 3. Core Processing
-    const isPdf = !!url.match(/\.pdf($|\?)/i);
-    const wordCount = contentToSave.split(/\s+/).filter(Boolean).length; // More accurate word count
-    const readingTime = Math.ceil(wordCount / 200);
+    // 3. Process Capture Data
+    const captureData = prepareCaptureData(req, contentToSave);
 
-    const normalizeLanguage = (lang: string): string => {
-      const supportedLanguages = [
-        "none",
-        "da",
-        "nl",
-        "english",
-        "fi",
-        "french",
-        "german",
-        "hungarian",
-        "italian",
-        "nb",
-        "pt",
-        "ro",
-        "ru",
-        "es",
-        "sv",
-        "tr",
-      ];
-
-      if (!lang) return "english";
-
-      const langMap: Record<string, string> = {
-        en: "english",
-        "en-US": "english",
-        "en-GB": "english",
-        es: "spanish",
-        fr: "french",
-        de: "german",
-        pt: "portuguese",
-        it: "italian",
-        ru: "russian",
-      };
-
-      const baseLang = lang.split("-")[0].toLowerCase();
-      const normalized = langMap[baseLang] || langMap[lang.toLowerCase()];
-
-      return supportedLanguages.includes(normalized) ? normalized : "english";
-    };
-
-    // 4. Build Capture Object
-    const captureData: Partial<ICapture> = {
-      owner: req.user.id,
-      url: normalizeUrl(url),
-      title: sanitizeHtml(title || "Untitled", { allowedTags: [] }),
-      slug: generateSlug(title || url),
-      contentHash: hashContent(contentToSave),
-
-      content: {
-        raw: contentToSave,
-        clean: sanitizeHtml(contentToSave, {
-          allowedTags: [],
-          allowedAttributes: {},
-        }),
-        highlights: [],
-        attachments: [],
-      },
-
-      metadata: {
-        description: sanitizeHtml(description || "", { allowedTags: [] }),
-        favicon: sanitizeHtml(favicon || "", { allowedTags: [] }),
-        siteName: sanitizeHtml(siteName || "", { allowedTags: [] }),
-        publishedAt: sanitizeHtml(publishedTime || "", { allowedTags: [] }),
-        author: sanitizeHtml(author || "", { allowedTags: [] }),
-        keywords: Array.isArray(keywords)
-          ? keywords.map((k) => sanitizeHtml(k, { allowedTags: [] }))
-          : [sanitizeHtml(keywords || "", { allowedTags: [] })],
-        viewport: sanitizeHtml(viewport || "", { allowedTags: [] }),
-        language: normalizeLanguage(language),
-        isPdf,
-        type: isPdf ? "document" : "article",
-        wordCount,
-        readingTime,
-      },
-
-      documents: Array.isArray(documents)
-        ? documents
-            .filter((doc) => doc?.url && doc?.type)
-            .slice(0, 20)
-            .map((doc) => ({
-              url: sanitizeHtml(doc.url, { allowedTags: [] }),
-              type: sanitizeHtml(doc.type.toLowerCase(), { allowedTags: [] }),
-            }))
-        : [],
-
-      status: "active",
-      version: 1,
-      source: {
-        ip: req.ip,
-        userAgent: sanitizeHtml(userAgent || "", { allowedTags: [] }),
-        extensionVersion:
-          req.headers["x-extension-version"]?.toString() || "1.0.0",
-      },
-
-      searchTokens: [
-        ...(title?.toLowerCase().split(/\s+/) || []),
-        ...(description?.toLowerCase().split(/\s+/) || []),
-      ],
-
-      references: Array.isArray(links)
-        ? links
-            .filter((link) => link?.href)
-            .slice(0, 100)
-            .map((link) => ({
-              type: "link",
-              url: sanitizeHtml(link.href, { allowedTags: [] }),
-              title: sanitizeHtml(link.text || "errorText", {
-                allowedTags: [],
-              }),
-            }))
-        : [],
-    };
-
-    // Ensure their is no dublicate capture using the unque slug and content hash
+    // 4. Check for Duplicates
     const existingCapture = await Capture.findOne({
       $or: [
         { slug: captureData.slug },
-        { contentHash: captureData.contentHash },
-      ],
+        { contentHash: captureData.contentHash }
+      ]
     });
 
     if (existingCapture) {
-      console.log("Capture already exists:", existingCapture._id);
-      res.status(409).json({
-        success: false,
-        error: "This Webpage has already been captured",
-        captureId: existingCapture._id,
+      return ErrorResponse({
+        res,
+        statusCode: 409,
+        message: "This webpage has already been captured",
+        data: { captureId: existingCapture._id }
       });
-      return;
     }
 
     // 5. Save to Database
     const capture = await new Capture(captureData).save();
-    console.log("Capture saved:", capture._id);
-    if (!capture) {
-      res.status(500).json({
-        success: false,
-        error: "Failed to save capture",
-      });
-      return;
-    }
-
-    // Create Conversation
-    const conversation = await Conversation.create({
-      captureId: capture._id,
-    });
-
+    const conversation = await Conversation.create({ captureId: capture._id });
+    
     capture.conversation = new mongoose.Types.ObjectId(conversation._id);
-
     await capture.save();
 
-    // 6. Response
-    res.status(201).json({
-      success: true,
+    // 6. Return Success Response
+    return SuccessResponse({
+      res,
+      statusCode: 201,
+      message: "Capture saved successfully",
       data: {
         id: capture._id,
         url: capture.url,
@@ -219,122 +101,217 @@ export const saveCapture = async (
         documents: capture.documents?.length || 0,
         timestamp: capture.metadata.capturedAt,
         ai: capture.ai,
-      },
+      }
     });
+
   } catch (error) {
-    console.error("[LinkMeld] Error saving capture:", error);
-    res.status(500).json({
-      success: false,
-      error: "Already captured or an error occurred",
-      ...(process.env.NODE_ENV === "development" && {
-        details: error instanceof Error ? error.message : "Unknown error",
-      }),
+    console.error("[Capture] Save error:", error);
+    return ErrorResponse({
+      res,
+      statusCode: 500,
+      message: "An error occurred while saving capture",
+      error: error instanceof Error ? error.message : "Unknown error",
+      ...(process.env.NODE_ENV === "development" && { stack: error.stack })
     });
   }
 };
 
-export const getCaptures = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
-  try {
-    const captures = await Capture.find({
-      owner: req.user.id,
-    })
+/**
+ * Helper function to prepare capture data
+ */
+const prepareCaptureData = (req: Request, content: string): Partial<ICapture> => {
+  const {
+    url,
+    title,
+    description,
+    documents = [],
+    links = [],
+    favicon,
+    siteName,
+    publishedTime,
+    author,
+    keywords,
+    viewport,
+    language = "en",
+    userAgent
+  } = req.body;
 
+  const isPdf = !!url.match(/\.pdf($|\?)/i);
+  const wordCount = content.split(/\s+/).filter(Boolean).length;
+
+  return {
+    owner: req.user.id,
+    url: normalizeUrl(url),
+    title: sanitizeHtml(title || "Untitled", { allowedTags: [] }),
+    slug: generateSlug(title || url),
+    contentHash: hashContent(content),
+
+    content: {
+      raw: content,
+      clean: sanitizeHtml(content, { allowedTags: [], allowedAttributes: {} }),
+      highlights: [],
+      attachments: []
+    },
+
+    metadata: {
+      description: sanitizeHtml(description || "", { allowedTags: [] }),
+      favicon: sanitizeHtml(favicon || "", { allowedTags: [] }),
+      siteName: sanitizeHtml(siteName || "", { allowedTags: [] }),
+      publishedAt: sanitizeHtml(publishedTime || "", { allowedTags: [] }),
+      author: sanitizeHtml(author || "", { allowedTags: [] }),
+      keywords: prepareKeywords(keywords),
+      viewport: sanitizeHtml(viewport || "", { allowedTags: [] }),
+      language: normalizeLanguage(language),
+      isPdf,
+      type: isPdf ? "document" : "article",
+      wordCount,
+      readingTime: Math.ceil(wordCount / 200)
+    },
+
+    documents: prepareDocuments(documents),
+    references: prepareLinks(links),
+
+    status: "active",
+    version: 1,
+    source: {
+      ip: req.ip,
+      userAgent: sanitizeHtml(userAgent || "", { allowedTags: [] }),
+      extensionVersion: req.headers["x-extension-version"]?.toString() || "1.0.0"
+    },
+
+    searchTokens: [
+      ...(title?.toLowerCase().split(/\s+/) || []),
+      ...(description?.toLowerCase().split(/\s+/) || [])
+    ]
+  };
+};
+
+/**
+ * Gets all captures for the authenticated user
+ */
+export const getCaptures = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const captures = await Capture.find({ owner: req.user.id })
       .populate("collection", "name")
       .exec();
-    res.status(200).json(captures);
+
+    return SuccessResponse({
+      res,
+      message: "Captures retrieved successfully",
+      data: captures
+    });
+
   } catch (error) {
-    console.error("[LinkMeld] Error fetching captures:", error);
-    res
-      .status(500)
-      .json({ message: "Error fetching captures", error: error.message });
+    console.error("[Capture] Fetch error:", error);
+    return ErrorResponse({
+      res,
+      statusCode: 500,
+      message: "Failed to fetch captures",
+      error: error instanceof Error ? error.message : "Unknown error"
+    });
   }
 };
 
-export const bookmarkOrUnbookmarkCapture = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
-  const { captureId } = req.params;
-
-  if (!captureId) {
-    res.status(400).json({
-      message: "Invalid request. Please provide captureId and isBookmarked.",
-    });
-    return;
-  }
-
+/**
+ * Toggles bookmark status for a capture
+ */
+export const toggleBookmark = async (req: Request, res: Response): Promise<void> => {
   try {
-    const capture = await Capture.findById({
+    const { captureId } = req.params;
+
+    if (!captureId) {
+      return ErrorResponse({
+        res,
+        statusCode: 400,
+        message: "Capture ID is required"
+      });
+    }
+
+    const capture = await Capture.findOne({
       _id: captureId,
-      owner: req.user.id,
+      owner: req.user.id
     });
+
     if (!capture) {
-      res.status(404).json({ message: "Capture not found" });
-      return;
+      return ErrorResponse({
+        res,
+        statusCode: 404,
+        message: "Capture not found"
+      });
     }
 
     capture.bookmarked = !capture.bookmarked;
     await capture.save();
 
-    res.status(200).json({
-      message: `Capture ${
-        capture.bookmarked ? "bookmarked" : "unbookmarked"
-      } successfully`,
-      captureId: capture._id,
+    return SuccessResponse({
+      res,
+      message: `Capture ${capture.bookmarked ? "bookmarked" : "unbookmarked"} successfully`,
+      data: { captureId: capture._id }
     });
+
   } catch (error) {
-    res.status(500).json({
-      message: "Error bookmarking/unbookmarking capture",
-      error: error.message,
+    console.error("[Capture] Bookmark error:", error);
+    return ErrorResponse({
+      res,
+      statusCode: 500,
+      message: "Failed to update bookmark status",
+      error: error instanceof Error ? error.message : "Unknown error"
     });
   }
 };
 
-export const getBookmarkedCaptures = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
+/**
+ * Gets all bookmarked captures for the authenticated user
+ */
+export const getBookmarkedCaptures = async (req: Request, res: Response): Promise<void> => {
   try {
     const captures = await Capture.find({
       owner: req.user.id,
-      bookmarked: true,
+      bookmarked: true
     })
       .sort({ timestamp: -1 })
       .populate("collection", "name")
       .exec();
-    res.status(200).json(captures);
+
+    return SuccessResponse({
+      res,
+      message: "Bookmarked captures retrieved successfully",
+      data: captures
+    });
+
   } catch (error) {
-    res.status(500).json({
-      message: "Error fetching bookmarked captures",
-      error: error.message,
+    console.error("[Capture] Bookmarked fetch error:", error);
+    return ErrorResponse({
+      res,
+      statusCode: 500,
+      message: "Failed to fetch bookmarked captures",
+      error: error instanceof Error ? error.message : "Unknown error"
     });
   }
 };
 
-export const searchCaptures = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
-  const { query, page = "1", limit = "10" } = req.query;
-
-  if (!query || typeof query !== "string") {
-    res.status(400).json({ message: "Invalid search query" });
-    return;
-  }
-
-  const currentPage = parseInt(page as string, 10);
-  const pageSize = parseInt(limit as string, 10);
-
+/**
+ * Searches captures with pagination support
+ */
+export const searchCaptures = async (req: Request, res: Response): Promise<void> => {
   try {
-    const testCaptures = await Capture.find({ owner: req.user.id });
-    console.log("Test captures by owner only:", testCaptures.length);
+    const { query, page = "1", limit = DEFAULT_PAGE_SIZE.toString() } = req.query;
+
+    if (!query || typeof query !== "string") {
+      return ErrorResponse({
+        res,
+        statusCode: 400,
+        message: "Search query is required"
+      });
+    }
+
+    const currentPage = parseInt(page, 10);
+    const pageSize = parseInt(limit, 10);
+
     // Primary full-text search
     let captures = await Capture.find({
       owner: req.user.id,
-      $text: { $search: query },
+      $text: { $search: query }
     })
       .sort({ createdAt: -1 })
       .skip((currentPage - 1) * pageSize)
@@ -342,12 +319,11 @@ export const searchCaptures = async (
       .populate("collection", "name")
       .exec();
 
-    console.log("Captures found with full-text search:", captures.length);
-
-    // If no results, fallback to regex search on `searchTokens`
+    // Fallback to regex search if no results
     if (captures.length === 0) {
       captures = await Capture.find({
-        searchTokens: { $regex: query, $options: "i" },
+        owner: req.user.id,
+        searchTokens: { $regex: query, $options: "i" }
       })
         .sort({ createdAt: -1 })
         .skip((currentPage - 1) * pageSize)
@@ -356,41 +332,114 @@ export const searchCaptures = async (
         .exec();
     }
 
-    res.status(200).json({
-      data: captures,
-      page: currentPage,
-      limit: pageSize,
-      hasMore: captures.length === pageSize,
+    return SuccessResponse({
+      res,
+      message: "Search results retrieved successfully",
+      data: captures
     });
+
   } catch (error) {
-    console.error("[LinkMeld] Error searching captures:", error);
-    res.status(500).json({
-      message: "Error searching captures",
-      error: error instanceof Error ? error.message : "Unknown error",
+    console.error("[Capture] Search error:", error);
+    return ErrorResponse({
+      res,
+      statusCode: 500,
+      message: "Failed to search captures",
+      error: error instanceof Error ? error.message : "Unknown error"
     });
   }
 };
 
-export const getCaptureById = async (req: Request, res: Response) => {
+/**
+ * Gets a single capture by ID
+ */
+export const getCaptureById = async (req: Request, res: Response): Promise<void> => {
   try {
     const { captureId } = req.params;
+
     const capture = await Capture.findOne({
       _id: captureId,
-      owner: req.user.id, // Ensure the capture belongs to the authenticated user
+      owner: req.user.id
     })
       .populate("collection", "name")
       .exec();
+
     if (!capture) {
-      res.status(404).json({ message: "Capture not found" });
-      return;
+      return ErrorResponse({
+        res,
+        statusCode: 404,
+        message: "Capture not found"
+      });
     }
 
-    res.status(200).json(capture);
+    return SuccessResponse({
+      res,
+      message: "Capture retrieved successfully",
+      data: capture
+    });
+
   } catch (error) {
-    console.error("[LinkMeld] Error fetching capture by ID:", error);
-    res.status(500).json({
-      message: "Error fetching capture",
-      error: error instanceof Error ? error.message : "Unknown error",
+    console.error("[Capture] Fetch by ID error:", error);
+    return ErrorResponse({
+      res,
+      statusCode: 500,
+      message: "Failed to fetch capture",
+      error: error instanceof Error ? error.message : "Unknown error"
     });
   }
+};
+
+// Helper functions
+const normalizeLanguage = (lang: string): string => {
+  const supportedLanguages = [
+    "none", "da", "nl", "english", "fi", "french", 
+    "german", "hungarian", "italian", "nb", "pt", 
+    "ro", "ru", "es", "sv", "tr"
+  ];
+
+  const languageMap: Record<string, string> = {
+    en: "english",
+    "en-US": "english",
+    "en-GB": "english",
+    es: "spanish",
+    fr: "french",
+    de: "german",
+    pt: "portuguese",
+    it: "italian",
+    ru: "russian"
+  };
+
+  if (!lang) return "english";
+
+  const baseLang = lang.split("-")[0].toLowerCase();
+  const normalized = languageMap[baseLang] || languageMap[lang.toLowerCase()];
+  
+  return supportedLanguages.includes(normalized) ? normalized : "english";
+};
+
+const prepareKeywords = (keywords: string | string[]): string[] => {
+  if (Array.isArray(keywords)) {
+    return keywords.map(k => sanitizeHtml(k, { allowedTags: [] }));
+  }
+  return [sanitizeHtml(keywords || "", { allowedTags: [] })];
+};
+
+const prepareDocuments = (documents: any[]): Array<{ url: string; type: string }> => {
+  return documents
+    .filter(doc => doc?.url && doc?.type)
+    .slice(0, MAX_DOCUMENTS)
+    .map(doc => ({
+      url: sanitizeHtml(doc.url, { allowedTags: [] }),
+      type: sanitizeHtml(doc.type.toLowerCase(), { allowedTags: [] })
+    }));
+};
+
+const prepareLinks = (links: any[]): Array<{ type: string; url: string; title: string }> => {
+  return links
+    .filter(link => link?.href)
+    .slice(0, MAX_LINKS)
+    .map(link => ({
+      type: "link",
+      url: sanitizeHtml(link.href, { allowedTags: [] }),
+      title: sanitizeHtml(link.text || "No title", { allowedTags: [] })
+    }));
 };

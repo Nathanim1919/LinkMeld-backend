@@ -1,301 +1,483 @@
-import mongoose from "mongoose";
-import Collection, { ICollection } from "../models/Collection";
+import mongoose, { Types } from "mongoose";
 import { Request, Response } from "express";
+import Collection, { ICollection } from "../models/Collection";
 import { Capture } from "../models/Capture";
+import { ErrorResponse, SuccessResponse } from "../utils/responseHandlers";
 
-export const createCollection = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
-  try {
-    const { name, parentCollection } = req.body;
-    const {user} = req;
-    if (!user) {
-      res.status(401).json({ message: "User not authenticated" });
-      return;
-    }
+// Utility functions
+const validateObjectId = (id: string): boolean => mongoose.Types.ObjectId.isValid(id);
 
+// Standardized response structure
+interface ApiResponse<T> {
+  data: T;
+  message?: string;
+}
 
-    if (!name) {
-      res.status(400).json({ message: "Collection name is required" });
-      return;
-    }
-    const folderData: Partial<ICollection> = {
-      user: user.id, // Assuming user is available in req
-      name: name.trim(),
-    };
+export default {
+  /**
+   * Create a new collection
+   */
+  async createCollection(req: Request, res: Response): Promise<void> {
+    try {
+      const { name, parentCollection } = req.body;
+      const { user } = req;
 
-    if (
-      parentCollection &&
-      !mongoose.Types.ObjectId.isValid(parentCollection)
-    ) {
-      res.status(400).json({ message: "Invalid parent collection ID" });
-      return;
-    }
-    // Check if collection with the same name already exists in the user's collections
-    const existingCollection = await Collection.findOne({
-      name: folderData.name,
-      user: user.id,
-    });
-    if (existingCollection) {
-      res.status(409).json({
-        message:
-          "Collection with this name already exists in the specified parent collection",
+      // Authentication check
+      if (!user) {
+        return ErrorResponse({
+          res,
+          statusCode: 401,
+          message: "User not authenticated"
+        });
+      }
+
+      // Validation
+      if (!name) {
+        return ErrorResponse({
+          res,
+          statusCode: 400,
+          message: "Collection name is required"
+        });
+      }
+
+      if (parentCollection && !validateObjectId(parentCollection)) {
+        return ErrorResponse({
+          res,
+          statusCode: 400,
+          message: "Invalid parent collection ID"
+        });
+      }
+
+      // Check for existing collection
+      const existingCollection = await Collection.findOne({
+        name: name.trim(),
+        user: user.id
       });
-      return;
+
+      if (existingCollection) {
+        return ErrorResponse({
+          res,
+          statusCode: 409,
+          message: "Collection with this name already exists"
+        });
+      }
+
+      // Create new collection
+      const collection = await Collection.create({
+        user: user.id,
+        name: name.trim(),
+        parentCollection: parentCollection || null
+      });
+
+      return SuccessResponse({
+        res,
+        statusCode: 201,
+        data: collection,
+        message: "Collection created successfully"
+      });
+
+    } catch (error) {
+      console.error("[Collection] Create error:", error);
+      return ErrorResponse({
+        res,
+        statusCode: 500,
+        message: "Failed to create collection",
+        error: error instanceof Error ? error.message : "Unknown error"
+      });
     }
+  },
 
-    const newCollection = await Collection.create(folderData);
-    res.status(201).json(newCollection);
-  } catch (error) {
-    res
-      .status(500)
-      .json({ message: "An error occurred", error: error.message });
-  }
-};
+  /**
+   * Get all collections for user
+   */
+  async getCollections(req: Request, res: Response): Promise<void> {
+    try {
+      const collections = await Collection.find({
+        user: req.user?.id
+      }).populate("captures");
 
-export const getFolders = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
-  try {
-    const collections = await Collection.find({
-      user: req.user.id,
-    }).populate("captures");
-    res.status(200).json(collections);
-  } catch (error) {
-    res
-      .status(500)
-      .json({ message: "An error occurred", error: error.message });
-  }
-};
+      return SuccessResponse({
+        res,
+        data: collections,
+        message: "Collections retrieved successfully"
+      });
 
-export const getFolderById = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
-  try {
-    const { id } = req.params;
-
-    if (!mongoose.Types.ObjectId.isValid(id)) {
-      res.status(400).json({ message: "Invalid folder ID" });
-      return;
+    } catch (error) {
+      console.error("[Collection] Fetch all error:", error);
+      return ErrorResponse({
+        res,
+        statusCode: 500,
+        message: "Failed to fetch collections",
+        error: error instanceof Error ? error.message : "Unknown error"
+      });
     }
+  },
 
-    const collection = await Collection.find({
-      _id: id,
-      user: req.user.id, // Ensure the folder belongs to the authenticated user
-    }).populate("captures");
-    if (!collection) {
-      res.status(404).json({ message: "Collection not found" });
-      return;
+  /**
+   * Get collection by ID
+   */
+  async getCollectionById(req: Request, res: Response): Promise<void> {
+    try {
+      const { id } = req.params;
+
+      if (!validateObjectId(id)) {
+        return ErrorResponse({
+          res,
+          statusCode: 400,
+          message: "Invalid collection ID"
+        });
+      }
+
+      const collection = await Collection.findOne({
+        _id: id,
+        user: req.user?.id
+      }).populate("captures");
+
+      if (!collection) {
+        return ErrorResponse({
+          res,
+          statusCode: 404,
+          message: "Collection not found"
+        });
+      }
+
+      return SuccessResponse({
+        res,
+        data: collection,
+        message: "Collection retrieved successfully"
+      });
+
+    } catch (error) {
+      console.error("[Collection] Fetch by ID error:", error);
+      return ErrorResponse({
+        res,
+        statusCode: 500,
+        message: "Failed to fetch collection",
+        error: error instanceof Error ? error.message : "Unknown error"
+      });
     }
+  },
 
-    res.status(200).json(collection);
-  } catch (error) {
-    res
-      .status(500)
-      .json({ message: "An error occurred", error: error.message });
-  }
-};
+  /**
+   * Add capture to collection
+   */
+  async addCaptureToCollection(req: Request, res: Response): Promise<void> {
+    try {
+      const { id } = req.params;
+      const { captureId } = req.body;
 
-export const appendCaptureToFolder = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
-  try {
-    const { captureId } = req.body;
-    const { id } = req.params;
-    if (!id || !captureId) {
-      res
-        .status(400)
-        .json({ message: "Folder ID and Capture ID are required" });
-      return;
+      // Validation
+      if (!id || !captureId) {
+        return ErrorResponse({
+          res,
+          statusCode: 400,
+          message: "Collection ID and Capture ID are required"
+        });
+      }
+
+      if (!validateObjectId(id) || !validateObjectId(captureId)) {
+        return ErrorResponse({
+          res,
+          statusCode: 400,
+          message: "Invalid ID format"
+        });
+      }
+
+      // Check resources exist
+      const [collection, capture] = await Promise.all([
+        Collection.findById(id),
+        Capture.findById(captureId)
+      ]);
+
+      if (!collection) {
+        return ErrorResponse({
+          res,
+          statusCode: 404,
+          message: "Collection not found"
+        });
+      }
+
+      if (!capture) {
+        return ErrorResponse({
+          res,
+          statusCode: 404,
+          message: "Capture not found"
+        });
+      }
+
+      // Check if capture already in collection
+      if (collection.captures?.some(id => id.equals(capture._id))) {
+        return ErrorResponse({
+          res,
+          statusCode: 409,
+          message: "Capture already exists in this collection"
+        });
+      }
+
+
+      // Check if capture already has a collection, if so, remove it from that collection
+        if (capture.collection) {
+          await Collection.findByIdAndUpdate(capture.collection, {
+            $pull: { captures: capture._id }
+          });
+        }
+
+      // Update both collection and capture
+      await Promise.all([
+        Collection.findByIdAndUpdate(id, {
+          $addToSet: { captures: capture._id }
+        }),
+        Capture.findByIdAndUpdate(captureId, {
+          collection: collection._id
+        })
+      ]);
+
+      // Return the updated collection
+      const updatedCollection = await Collection.findById(id).populate("captures");
+
+      return SuccessResponse({
+        res,
+        data: updatedCollection,
+        message: "Capture added to collection successfully"
+      });
+
+    } catch (error) {
+      console.error("[Collection] Add capture error:", error);
+      return ErrorResponse({
+        res,
+        statusCode: 500,
+        message: "Failed to add capture to collection",
+        error: error instanceof Error ? error.message : "Unknown error"
+      });
     }
+  },
 
-    if (!mongoose.Types.ObjectId.isValid(id)) {
-      res.status(400).json({ message: "Invalid folder ID" });
-      return;
+  /**
+   * Remove capture from collection
+   */
+  async removeCaptureFromCollection(req: Request, res: Response): Promise<void> {
+    try {
+      const { collectionId, captureId } = req.body;
+
+      // Validation
+      if (!collectionId || !captureId) {
+        return ErrorResponse({
+          res,
+          statusCode: 400,
+          message: "Collection ID and Capture ID are required"
+        });
+      }
+
+      if (!validateObjectId(collectionId) || !validateObjectId(captureId)) {
+        return ErrorResponse({
+          res,
+          statusCode: 400,
+          message: "Invalid ID format"
+        });
+      }
+
+      // Check collection exists
+      const collection = await Collection.findById(collectionId);
+      if (!collection) {
+        return ErrorResponse({
+          res,
+          statusCode: 404,
+          message: "Collection not found"
+        });
+      }
+
+      // Check capture exists in collection
+      if (!collection.captures?.includes(new Types.ObjectId(captureId))) {
+        return ErrorResponse({
+          res,
+          statusCode: 404,
+          message: "Capture not found in this collection"
+        });
+      }
+
+      // Update both collection and capture
+      await Promise.all([
+        Collection.findByIdAndUpdate(collectionId, {
+          $pull: { captures: captureId }
+        }),
+        Capture.findByIdAndUpdate(captureId, {
+          $unset: { collection: "" }
+        })
+      ]);
+
+      // Return the updated collection
+      const updatedCollection = await Collection.findById(collectionId).populate("captures");
+
+      return SuccessResponse({
+        res,
+        data: updatedCollection,
+        message: "Capture removed from collection successfully"
+      });
+
+    } catch (error) {
+      console.error("[Collection] Remove capture error:", error);
+      return ErrorResponse({
+        res,
+        statusCode: 500,
+        message: "Failed to remove capture from collection",
+        error: error instanceof Error ? error.message : "Unknown error"
+      });
     }
+  },
 
-    if (!mongoose.Types.ObjectId.isValid(captureId)) {
-      res.status(400).json({ message: "Invalid capture ID" });
-      return;
+  /**
+   * Delete collection
+   */
+  async deleteCollection(req: Request, res: Response): Promise<void> {
+    try {
+      const { id } = req.params;
+
+      if (!validateObjectId(id)) {
+        return ErrorResponse({
+          res,
+          statusCode: 400,
+          message: "Invalid collection ID"
+        });
+      }
+
+      // First remove collection reference from all captures
+      await Capture.updateMany(
+        { collection: id },
+        { $unset: { collection: "" } }
+      );
+
+      const deletedCollection = await Collection.findByIdAndDelete(id);
+      if (!deletedCollection) {
+        return ErrorResponse({
+          res,
+          statusCode: 404,
+          message: "Collection not found"
+        });
+      }
+
+      return SuccessResponse({
+        res,
+        data: { id: deletedCollection._id },
+        message: "Collection deleted successfully"
+      });
+
+    } catch (error) {
+      console.error("[Collection] Delete error:", error);
+      return ErrorResponse({
+        res,
+        statusCode: 500,
+        message: "Failed to delete collection",
+        error: error instanceof Error ? error.message : "Unknown error"
+      });
     }
+  },
 
-    const collection = await Collection.findById(id);
-    if (!collection) {
-      res.status(404).json({ message: "collection not found" });
-      return;
+  /**
+   * Update collection
+   */
+  async updateCollection(req: Request, res: Response): Promise<void> {
+    try {
+      const { id } = req.params;
+      const { name, parentCollection } = req.body;
+
+      if (!validateObjectId(id)) {
+        return ErrorResponse({
+          res,
+          statusCode: 400,
+          message: "Invalid collection ID"
+        });
+      }
+
+      const updates: Partial<ICollection> = {};
+
+      if (name) updates.name = name.trim();
+      if (parentCollection) {
+        if (!validateObjectId(parentCollection)) {
+          return ErrorResponse({
+            res,
+            statusCode: 400,
+            message: "Invalid parent collection ID"
+          });
+        }
+        updates.parentCollection = parentCollection;
+      }
+
+      const updatedCollection = await Collection.findByIdAndUpdate(
+        id,
+        updates,
+        { new: true }
+      ).populate("captures");
+
+      if (!updatedCollection) {
+        return ErrorResponse({
+          res,
+          statusCode: 404,
+          message: "Collection not found"
+        });
+      }
+
+      return SuccessResponse({
+        res,
+        data: updatedCollection,
+        message: "Collection updated successfully"
+      });
+
+    } catch (error) {
+      console.error("[Collection] Update error:", error);
+      return ErrorResponse({
+        res,
+        statusCode: 500,
+        message: "Failed to update collection",
+        error: error instanceof Error ? error.message : "Unknown error"
+      });
     }
-    if (!collection) {
-      res.status(404).json({ message: "collection not found" });
-      return;
+  },
+
+  /**
+   * Get all captures in a specific collection
+   */
+  async getCollectionCaptures(req: Request, res: Response): Promise<void> {
+    try {
+      const { id } = req.params;
+
+      if (!id || !validateObjectId(id)) {
+        return ErrorResponse({
+          res,
+          statusCode: 400,
+          message: "Invalid collection ID"
+        });
+      }
+
+      const collection = await Collection.findById(id).populate({
+        path: "captures",
+        populate: {
+          path: "collection",
+          model: "Collection"
+        }
+      });
+
+      if (!collection) {
+        return ErrorResponse({
+          res,
+          statusCode: 404,
+          message: "Collection not found"
+        });
+      }
+
+      return SuccessResponse({
+        res,
+        data: collection.captures || [],
+        message: "Collection captures retrieved successfully"
+      });
+
+    } catch (error) {
+      console.error("[Collection] Get captures error:", error);
+      return ErrorResponse({
+        res,
+        statusCode: 500,
+        message: "Failed to retrieve collection captures",
+        error: error instanceof Error ? error.message : "Unknown error"
+      });
     }
-
-    // Check if capture exists
-    const capture = await Capture.findById(captureId);
-    if (!capture) {
-      res.status(404).json({ message: "Capture not found" });
-      return;
-    }
-    // Check if capture already exists in the folder
-    if (collection.captures && collection.captures.includes(captureId)) {
-      res
-        .status(409)
-        .json({ message: "Capture already exists in this folder" });
-      return;
-    }
-    // Append capture to the folder's captures array
-    collection.captures = collection.captures || [];
-    collection.captures.push(captureId);
-    await collection.save();
-    // Optionally, you can also update the capture's folder reference
-    capture.collection = collection._id as any;
-    await capture.save();
-    // Return success response
-    res.status(200).json({ message: "Capture added to folder successfully" });
-  } catch (error) {
-    res
-      .status(500)
-      .json({ message: "An error occurred", error: error.message });
-  }
-};
-export const removeCaptureFromFolder = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
-  try {
-    const { folderId, captureId } = req.body;
-
-    if (!mongoose.Types.ObjectId.isValid(folderId)) {
-      res.status(400).json({ message: "Invalid folder ID" });
-      return;
-    }
-
-    if (!mongoose.Types.ObjectId.isValid(captureId)) {
-      res.status(400).json({ message: "Invalid capture ID" });
-      return;
-    }
-
-    const collection = await Collection.findById(folderId);
-    if (!collection) {
-      res.status(404).json({ message: "Folder not found" });
-      return;
-    }
-    // Check if capture exists in the collection
-    if (!collection.captures || !collection.captures.includes(captureId)) {
-      res.status(404).json({ message: "Capture not found in this folder" });
-      return;
-    }
-    // Remove capture from the collection's captures array
-    collection.captures = collection.captures.filter(
-      (id) => id.toString() !== captureId.toString()
-    );
-    await collection.save();
-    res
-      .status(200)
-      .json({ message: "Capture removed from folder successfully" });
-  } catch (error) {
-    res
-      .status(500)
-      .json({ message: "An error occurred", error: error.message });
-  }
-};
-export const deleteFolder = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
-  try {
-    const { id } = req.params;
-
-    if (!mongoose.Types.ObjectId.isValid(id)) {
-      res.status(400).json({ message: "Invalid folder ID" });
-      return;
-    }
-
-    const collection = await Collection.findByIdAndDelete(id);
-    if (!collection) {
-      res.status(404).json({ message: "Collection not found" });
-      return;
-    }
-
-    res.status(200).json({ message: "Collection deleted successfully" });
-  } catch (error) {
-    res
-      .status(500)
-      .json({ message: "An error occurred", error: error.message });
-  }
-};
-export const updateFolder = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
-  try {
-    const { id } = req.params;
-    const { name, parentFolder } = req.body;
-
-    if (!mongoose.Types.ObjectId.isValid(id)) {
-      res.status(400).json({ message: "Invalid folder ID" });
-      return;
-    }
-
-    const collection = await Collection.findById(id);
-    if (!collection) {
-      res.status(404).json({ message: "Collection not found" });
-      return;
-    }
-
-    if (name) {
-      collection.name = name.trim();
-    }
-
-    if (parentFolder && !mongoose.Types.ObjectId.isValid(parentFolder)) {
-      res.status(400).json({ message: "Invalid parent folder ID" });
-      return;
-    }
-
-    collection.parentCollection = parentFolder || null;
-
-    await collection.save();
-    res.status(200).json(collection);
-  } catch (error) {
-    res
-      .status(500)
-      .json({ message: "An error occurred", error: error.message });
-  }
-};
-
-export const getCapturesWithSpecificFolder = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
-  try {
-    const { id } = req.params;
-    if (!id || !mongoose.Types.ObjectId.isValid(id as string)) {
-      res.status(400).json({ message: "Invalid or missing folder ID" });
-      return;
-    }
-
-    // i get array of captures in the folder but also each capture has an id of collection so let's populate the captures
-    const collection = await Collection.findById(id)
-                                                    .populate({
-                                                      path: 'captures',
-                                                      populate: {
-                                                        path: 'collection',
-                                                        model: 'Collection',
-                                                      }
-                                                    });
-
-
-    if (!collection) {
-      res.status(404).json({ message: "Collection not found" });
-      return;
-    }
-
-    res.status(200).json(collection.captures);
-  } catch (error) {
-    console.error("[LinkMeld] Error fetching captures by folder:", error);
-    res.status(500).json({ message: "Error fetching captures by folder" });
   }
 };

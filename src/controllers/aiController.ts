@@ -1,118 +1,178 @@
 import { Request, Response } from "express";
+import { Capture } from "../models/Capture";
+import { logger } from "../utils/logger";
+import { ErrorResponse, SuccessResponse } from "../utils/responseHandlers";
 import {
   ConversationRequest,
   processContent,
   processConversation,
   validateRequest,
 } from "../ai/services/aiService";
-import { Capture } from "../models/Capture";
 
-export const generateAiSummary = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
-  try {
-    const { captureId } = req.body;
+// Constants
+const SERVICE_NAME = "AIController";
+const REQUEST_TIMEOUT_MS = 10000; // 10 seconds
 
-    // Validate input
-    if (!captureId) {
-      res.status(400).json({ error: "Capture ID required." });
-      return;
-    }
+/**
+ * @class AIController
+ * @description Handles all AI-related operations including summarization and conversations
+ */
+export class AIController {
+  /**
+   * @method generateSummary
+   * @description Generates AI summary for a capture
+   */
+  static async generateSummary(req: Request, res: Response): Promise<void> {
+    try {
+      const { captureId } = req.body;
 
-    // Find the capture by ID
-    const capture = await Capture.findById(captureId);
-    if (!capture) {
-      res.status(404).json({ error: "Capture not found." });
-      return;
-    }
+      // Validate input
+      if (!captureId) {
+        ErrorResponse({
+          res,
+          statusCode: 400,
+          message: "Capture ID is required",
+          errorCode: "MISSING_CAPTURE_ID"
+        });
+        return;
+      }
 
-    const result = await processContent(capture.content.clean);
+      logger.info(`${SERVICE_NAME}:generateSummary`, { captureId });
 
-    if (result.success && result.data) {
-      capture.ai.summary = result.data.summary || "";
-      // capture.ai.embeddings = result.data.embeddings || [];
-    }
+      // Find the capture by ID
+      const capture = await Capture.findById(captureId);
+      if (!capture) {
+        ErrorResponse({
+          res,
+          statusCode: 404,
+          message: "Capture not found",
+          errorCode: "CAPTURE_NOT_FOUND"
+        });
+        return;
+      }
 
-    await capture.save();
+      // Process content and generate summary
+      const result = await processContent(capture.content.clean);
 
-    res.status(200).json({
-      message: "Summary updated successfully.",
-      summary: result?.data?.summary,
-    });
-  } catch (error) {
-    console.error("Error updating summary:", error);
-    res.status(500).json({ error: "Internal server error." });
-  }
-};
+      if (result.success && result.data) {
+        capture.ai.summary = result.data.summary || "";
+        await capture.save();
+        
+        logger.info(`${SERVICE_NAME}:generateSummary:success`, { 
+          captureId,
+          summaryLength: result.data.summary?.length 
+        });
+      }
 
-export const converseWithAI = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
-  // Validate request
-  // console.log('Request Body:', req.body);
-  const { isValid, error } = validateRequest(req);
-  if (!isValid) {
-    res.status(400).json({ success: false, error });
-    return;
-  }
-  const { captureId, messages, model } = req.body as ConversationRequest;
-
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 10000); // 10s timeout
-
-  try {
-    // In a real implementation, you would fetch the content associated with captureId
-    const content = await Capture.findById(captureId)
-      .select("content") // Assuming content is stored in the Capture model
-      .lean()
-      .exec();
-
-    if (!content) {
-      res.status(404).json({ success: false, error: "Content not found" });
-      return;
-    }
-
-    // Process conversation
-    const { message, tokensUsed, modelUsed } = await processConversation(
-      content.content.clean,
-      messages,
-      model,
-      controller.signal
-    );
-
-    // console.log(`Conversation processed for captureId and content of: ${content.content.raw}`);
-
-    // In production, you might want to:
-    // 1. Store the conversation in a database
-    // 2. Update usage analytics
-    // 3. Cache frequent queries
-    // 4. Implement cost tracking per user/organization
-
-    res.status(200).json({
-      success: true,
-      data: {
-        response: message,
-        modelUsed,
-        tokensUsed,
-        captureId,
-        timestamp: new Date().toISOString(),
-      },
-    });
-  } catch (error) {
-    if (error.name === "AbortError") {
-      res.status(504).json({ success: false, error: "Request timeout" });
-    } else {
-      console.error("Conversation error:", error);
-      res.status(500).json({
-        success: false,
-        error: "Internal server error",
-        details:
-          process.env.NODE_ENV === "development" ? error.message : undefined,
+      SuccessResponse({
+        res,
+        statusCode: 200,
+        data: {
+          summary: result?.data?.summary,
+          captureId
+        },
+        message: "AI summary generated successfully"
+      });
+    } catch (error) {
+      logger.error(`${SERVICE_NAME}:generateSummary:error`, error);
+      ErrorResponse({
+        res,
+        statusCode: 500,
+        message: "Failed to generate AI summary",
+        error: error instanceof Error ? error.message : "Unknown error",
+        errorCode: "AI_SUMMARY_FAILED"
       });
     }
-  } finally {
-    clearTimeout(timeout);
   }
-};
+
+  /**
+   * @method converse
+   * @description Handles AI conversation with context from a capture
+   */
+  static async chat(req: Request, res: Response): Promise<void> {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+
+    try {
+      // Validate request
+      const { isValid, error } = validateRequest(req);
+      if (!isValid) {
+        ErrorResponse({
+          res,
+          statusCode: 400,
+          message: error || "Invalid request",
+          errorCode: "INVALID_REQUEST"
+        });
+        return;
+      }
+
+      const { captureId, messages, model } = req.body as ConversationRequest;
+      logger.info(`${SERVICE_NAME}:converse`, { captureId, model });
+
+      // Fetch content
+      const content = await Capture.findById(captureId)
+        .select("content")
+        .lean()
+        .exec();
+
+      if (!content) {
+        ErrorResponse({
+          res,
+          statusCode: 404,
+          message: "Content not found",
+          errorCode: "CONTENT_NOT_FOUND"
+        });
+        return;
+      }
+
+      // Process conversation
+      const { message, tokensUsed, modelUsed } = await processConversation(
+        content.content.clean,
+        messages,
+        model,
+        controller.signal
+      );
+
+      logger.info(`${SERVICE_NAME}:converse:success`, { 
+        captureId,
+        tokensUsed,
+        modelUsed
+      });
+
+      SuccessResponse({
+        res,
+        statusCode: 200,
+        data: {
+          response: message,
+          modelUsed,
+          tokensUsed,
+          captureId,
+          timestamp: new Date().toISOString(),
+        },
+        message: "AI conversation completed successfully"
+      });
+    } catch (error) {
+      if (error.name === "AbortError") {
+        logger.warn(`${SERVICE_NAME}:converse:timeout`);
+        ErrorResponse({
+          res,
+          statusCode: 504,
+          message: "Request timeout",
+          errorCode: "REQUEST_TIMEOUT"
+        });
+      } else {
+        logger.error(`${SERVICE_NAME}:converse:error`, error);
+        ErrorResponse({
+          res,
+          statusCode: 500,
+          message: "AI conversation failed",
+          error: error instanceof Error ? error.message : "Unknown error",
+          errorCode: "AI_CONVERSATION_FAILED",
+          ...(process.env.NODE_ENV === 'development' && { stack: error.stack })
+        });
+      }
+    } finally {
+      clearTimeout(timeout);
+    }
+  }
+}

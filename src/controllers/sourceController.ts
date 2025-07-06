@@ -1,21 +1,46 @@
 import { Request, Response } from "express";
 import { Capture } from "../models/Capture";
-import { Types } from "mongoose"; // import ObjectId converter
+import { Types } from "mongoose";
+import { ErrorResponse, SuccessResponse } from "../utils/responseHandlers";
 
-export const getAllDistinctSiteName = async (req: Request, res: Response): Promise<void> => {
+/**
+ * Helper method to find captures by site name
+ */
+const findCapturesBySite = async (userId: Types.ObjectId, siteName: string) => {
+  return await Capture.find({
+    "metadata.siteName": siteName,
+    owner: userId,
+  })
+    .sort({ timestamp: -1 })
+    .populate("collection", "name")
+    .exec();
+};
+
+/**
+ * Get all distinct site names with counts
+ */
+export const getAllDistinctSites = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
   try {
-    const userId = new Types.ObjectId(req.user.id); // convert to ObjectId
+    const userId = new Types.ObjectId(req.user.id);
 
+    // Get distinct site names
     const siteNames = await Capture.distinct("metadata.siteName", {
-      owner: userId, // filter by owner
+      owner: userId,
+      "metadata.siteName": { $ne: "" } // Exclude empty strings
     });
 
     if (!siteNames || siteNames.length === 0) {
-      res.status(404).json({ message: "No distinct site names found" });
-      return;
+      return ErrorResponse({
+        res,
+        statusCode: 404,
+        message: "No distinct site names found for user",
+      });
     }
 
-    // Add $match stage to aggregation to filter by owner
+    // Get counts per site name
     const siteNameCounts = await Capture.aggregate([
       { $match: { owner: userId } },
       {
@@ -33,83 +58,111 @@ export const getAllDistinctSiteName = async (req: Request, res: Response): Promi
       },
     ]);
 
-    const siteNameCountMap = siteNameCounts.reduce((acc, { siteName, count }) => {
+    // Convert to map for easier client-side usage
+    const siteNameMap = siteNameCounts.reduce((acc, { siteName, count }) => {
       acc[siteName] = count;
       return acc;
-    }, {});
+    }, {} as Record<string, number>);
 
-    res.status(200).json({
-      message: "Successfully fetched all distinct site names",
-      siteNames,
-      siteNameCounts: siteNameCountMap,
+    return SuccessResponse({
+      res,
+      message: "Distinct site names retrieved successfully",
+      data: {
+        siteNames,
+        counts: siteNameMap,
+      },
     });
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Error fetching distinct site names" });
+    console.error("[Capture] Distinct sites error:", error);
+    return ErrorResponse({
+      res,
+      statusCode: 500,
+      message: "Failed to retrieve distinct site names",
+      error: error instanceof Error ? error.message : "Unknown error",
+    });
   }
 };
 
-export const getCapturesWithSiteName = async (req: Request, res: Response): Promise<void> => {
-  const { siteName } = req.query;
-
-  if (!siteName || typeof siteName !== "string") {
-    res.status(400).json({ message: "Invalid or missing siteName query parameter" });
-    return;
-  }
-
+/**
+ * Get captures by site name from query parameter
+ */
+export const getCapturesBySiteQuery = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
   try {
-    const userId = new Types.ObjectId(req.user.id);
+    const { siteName } = req.query;
 
-    const captures = await Capture.find({
-      "metadata.siteName": siteName,
-      owner: userId, // filter by owner
-    })
-      .sort({ timestamp: -1 })
-      .populate("collection", "name")
-      .exec();
-
-    if (!captures || captures.length === 0) {
-      res.status(404).json({ message: `No captures found for siteName: ${siteName}` });
-      return;
+    // Validate input
+    if (!siteName || typeof siteName !== "string") {
+      return ErrorResponse({
+        res,
+        statusCode: 400,
+        message: "Valid siteName query parameter is required",
+      });
     }
 
-    res.status(200).json({
-      message: `Successfully fetched captures for siteName: ${siteName}`,
-      captures,
+    const userId = new Types.ObjectId(req.user.id);
+    const captures = await findCapturesBySite(userId, siteName);
+
+    return SuccessResponse({
+      res,
+      message: `Captures for site '${siteName}' retrieved successfully`,
+      data: captures,
     });
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Error fetching captures by site name" });
+    console.error("[Capture] Site query error:", error);
+    return ErrorResponse({
+      res,
+      statusCode: 500,
+      message: "Failed to retrieve captures by site name",
+      error: error instanceof Error ? error.message : "Unknown error",
+    });
   }
 };
 
-export const getCapturesWithSpecificSiteName = async (req: Request, res: Response): Promise<void> => {
-  const { siteName } = req.params;
-
-  if (!siteName || typeof siteName !== "string") {
-    res.status(400).json({ message: "Invalid or missing siteName parameter" });
-    return;
-  }
-
+/**
+ * Get captures by site name from route parameter
+ */
+export const getCapturesBySiteParam = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
   try {
-    const userId = new Types.ObjectId(req.user.id);
+    const { siteName } = req.params;
 
-    const captures = await Capture.find({
-      "metadata.siteName": siteName,
-      owner: userId, // **Add this filter**
-    })
-      .sort({ timestamp: -1 })
-      .populate("collection", "name")
-      .exec();
-
-    if (!captures || captures.length === 0) {
-      res.status(404).json({ message: `No captures found for siteName: ${siteName}` });
-      return;
+    // Validate input
+    if (!siteName) {
+      return ErrorResponse({
+        res,
+        statusCode: 400,
+        message: "Site name parameter is required",
+      });
     }
 
-    res.status(200).json(captures);
+    const userId = new Types.ObjectId(req.user.id);
+    const captures = await findCapturesBySite(userId, siteName);
+
+    return SuccessResponse({
+      res,
+      message: `Captures for site '${siteName}' retrieved successfully`,
+      data: captures,
+    });
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Error fetching captures by site name" });
+    console.error("[Capture] Site param error:", error);
+    return ErrorResponse({
+      res,
+      statusCode: 500,
+      message: "Failed to retrieve captures by site name",
+      error: error instanceof Error ? error.message : "Unknown error",
+    });
   }
+};
+
+// Export all functions as an object if you need to maintain the previous structure
+export default {
+  getAllDistinctSites,
+  getCapturesBySiteQuery,
+  getCapturesBySiteParam,
+  findCapturesBySite,
 };
