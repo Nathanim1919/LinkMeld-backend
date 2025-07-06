@@ -8,7 +8,6 @@ export const submitFeedback = async (
 ): Promise<void> => {
   try {
     const { feedbackData } = req.body;
-    console.log("[Feedback] Received data:", feedbackData);
 
     // Validate input
     if (!feedbackData.feedback || typeof feedbackData.feedback !== "string") {
