@@ -26,7 +26,7 @@ export class AIController {
   static async generateSummary(req: Request, res: Response): Promise<void> {
     try {
       const { captureId } = req.body;
-      const {user} = req;
+      const { user } = req;
 
       // Validate input
       if (!captureId) {
@@ -55,6 +55,15 @@ export class AIController {
 
       // Process content and generate summary
       const apiKey = await UserService.getGeminiApiKey(user.id);
+      if (!apiKey) {
+        ErrorResponse({
+          res,
+          statusCode: 403,
+          message: "API key is required for AI operations",
+          errorCode: "API_KEY_REQUIRED",
+        });
+        return;
+      }
       const result = await processContent(capture.content.clean, apiKey);
 
       if (result.success && result.data) {

@@ -1680,3 +1680,120 @@
   message: 'ErrorResponse: AI conversation failed',
   timestamp: '2025-07-07 17:45:33:4533'
 }
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Gemini API key is required',
+  timestamp: '2025-07-07 22:28:20:2820'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: 'MISSING_CAPTURE_ID',
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture ID is required',
+  timestamp: '2025-07-07 23:54:44:5444'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: 'MISSING_CAPTURE_ID',
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture ID is required',
+  timestamp: '2025-07-07 23:54:48:5448'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: 'MISSING_CAPTURE_ID',
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture ID is required',
+  timestamp: '2025-07-07 23:55:04:554'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: 'MISSING_CAPTURE_ID',
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture ID is required',
+  timestamp: '2025-07-08 00:24:52:2452'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: 'MISSING_CAPTURE_ID',
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture ID is required',
+  timestamp: '2025-07-08 00:25:01:251'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: 'MISSING_CAPTURE_ID',
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture ID is required',
+  timestamp: '2025-07-08 00:25:08:258'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: 'MISSING_CAPTURE_ID',
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture ID is required',
+  timestamp: '2025-07-08 00:26:24:2624'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: 'MISSING_CAPTURE_ID',
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture ID is required',
+  timestamp: '2025-07-08 00:27:45:2745'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: 'MISSING_CAPTURE_ID',
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture ID is required',
+  timestamp: '2025-07-08 00:27:55:2755'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: 'MISSING_CAPTURE_ID',
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture ID is required',
+  timestamp: '2025-07-08 00:29:36:2936'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: 'MISSING_CAPTURE_ID',
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture ID is required',
+  timestamp: '2025-07-08 00:29:48:2948'
+}
+{
+  service: 'api-service',
+  statusCode: 409,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: This webpage has already been captured',
+  timestamp: '2025-07-08 00:36:35:3635'
+}
