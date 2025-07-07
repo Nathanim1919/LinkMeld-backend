@@ -1797,3 +1797,33 @@
   message: 'ErrorResponse: This webpage has already been captured',
   timestamp: '2025-07-08 00:36:35:3635'
 }
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Summary generation failed: Summary API Error 503: {\n' +
+    '  "error": {\n' +
+    '    "code": 503,\n' +
+    '    "message": "The model is overloaded. Please try again later.",\n' +
+    '    "status": "UNAVAILABLE"\n' +
+    '  }\n' +
+    '}\n',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-08 01:30:37:3037'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Summary generation failed: Summary API Error 503: {\n' +
+    '  "error": {\n' +
+    '    "code": 503,\n' +
+    '    "message": "The model is overloaded. Please try again later.",\n' +
+    '    "status": "UNAVAILABLE"\n' +
+    '  }\n' +
+    '}\n',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-08 01:30:41:3041'
+}

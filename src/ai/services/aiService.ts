@@ -41,7 +41,7 @@ const GEMINI_CONFIG = {
 };
 
 // Main function to process content
-export const processContent = async (content: string, apiKey: string): Promise<AIResponse> => {
+export const processContent = async (content: string, existingSummary: string, apiKey: string): Promise<AIResponse> => {
   try {
     if (!content || content.trim().length < 100) {
       return {
@@ -55,7 +55,7 @@ export const processContent = async (content: string, apiKey: string): Promise<A
     // Use Promise.allSettled to allow one promise to fail without stopping the other
     // and provide more granular error handling.
     const [summaryResult, embeddingResult] = await Promise.allSettled([
-      generateSummary(cleanText, apiKey),
+      generateSummary(cleanText, existingSummary, apiKey),
       generateEmbedding(cleanText, apiKey),
     ]);
 
@@ -107,8 +107,9 @@ export const processContent = async (content: string, apiKey: string): Promise<A
 };
 
 // Generate summary using Gemini API
-const generateSummary = async (
+export const generateSummary = async (
   text: string,
+  existingSummary: string = "", // This is now crucial
   apiKey: string
 ): Promise<string> => {
   const controller = new AbortController();
@@ -118,6 +119,91 @@ const generateSummary = async (
   );
 
   try {
+    let promptContent: string;
+
+    if (existingSummary) {
+      // If an existing summary is provided, we guide the AI to refine it.
+      promptContent = `You are an expert AI summarizer that creates structured knowledge summaries.
+        
+        A previous summary for the following content exists, but the user is requesting a regeneration. Your task is to **refine, improve, or re-structure** the existing summary based on the original content and the strict format guidelines provided below. Do not simply repeat the existing summary if it doesn't fully adhere to the rules or if there's an opportunity for improvement.
+
+        **Existing Summary to Refine:**
+        ${existingSummary}
+
+        **Strictly follow this exact format for the NEW/REFINED summary**:
+
+        # Context
+        [1 short line about content type/source/perspective when relevant]
+
+        # Overview
+        [2-3 sentences capturing core content]
+        - Focus on main thesis/argument
+        - Maintain neutral tone
+        - Omit examples/details
+
+        # Takeaways
+        - [3-5 maximum bullet points]
+        - Prioritize actionable insights
+        - Mark opinions as (Opinion)
+        - Use parallel verb structures
+        - Include both why and how
+
+        # Suggested Questions
+        - [3 minimum, 5 maximum questions]
+        - Each under 12 words
+        - Start with "How", "Why", or "What"
+        - Avoid yes/no questions
+        - Focus on logical extensions
+
+        **Critical Rules (apply to the NEW/REFINED summary)**:
+        1. NEVER add external commentary
+        2. Preserve technical terms
+        3. Never invent facts
+        4. Adapt depth to input quality
+        5. Flag controversial claims with (Claim)
+
+        Original Content:
+        ${text}`;
+    } else {
+      // If no existing summary, generate a fresh one.
+      promptContent = `You are an expert AI summarizer that creates structured knowledge summaries.
+
+        **Strictly follow this exact format**:
+
+        # Context
+        [1 short line about content type/source/perspective when relevant]
+
+        # Overview
+        [2-3 sentences capturing core content]
+        - Focus on main thesis/argument
+        - Maintain neutral tone
+        - Omit examples/details
+
+        # Takeaways
+        - [3-5 maximum bullet points]
+        - Prioritize actionable insights
+        - Mark opinions as (Opinion)
+        - Use parallel verb structures
+        - Include both why and how
+
+        # Suggested Questions
+        - [3 minimum, 5 maximum questions]
+        - Each under 12 words
+        - Start with "How", "Why", or "What"
+        - Avoid yes/no questions
+        - Focus on logical extensions
+
+        **Critical Rules**:
+        1. NEVER add external commentary
+        2. Preserve technical terms
+        3. Never invent facts
+        4. Adapt depth to input quality
+        5. Flag controversial claims with (Claim)
+
+        Original Content:
+        ${text}`;
+    }
+
     const response = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
       {
@@ -128,43 +214,7 @@ const generateSummary = async (
             {
               parts: [
                 {
-                  text: `You are an expert AI summarizer that creates structured knowledge summaries.
-
-**Strictly follow this exact format**:
-
-# Context
-[1 short line about content type/source/perspective when relevant]
-
-# Overview
-[2-3 sentences capturing core content]
-- Focus on main thesis/argument
-- Maintain neutral tone
-- Omit examples/details
-
-# Takeaways
-- [3-5 maximum bullet points]
-- Prioritize actionable insights
-- Mark opinions as (Opinion)
-- Use parallel verb structures
-- Include both why and how
-
-
-# Suggested Questions
-- [3 minimum, 5 maximum questions]
-- Each under 12 words
-- Start with "How", "Why", or "What"
-- Avoid yes/no questions
-- Focus on logical extensions
-
-**Critical Rules**:
-1. NEVER add external commentary
-2. Preserve technical terms
-3. Never invent facts
-4. Adapt depth to input quality
-5. Flag controversial claims with (Claim)
-
-Original Content:
-${text}`,
+                  text: promptContent,
                 },
               ],
             },
@@ -376,6 +426,7 @@ export const validateRequest = (
 export const buildConversationPrompt = (
   userName: string,
   content: string,
+
   messages: Message[]
 ): string => {
   // Friendly but intelligent system message
@@ -449,7 +500,6 @@ export const processConversation = async (
   try {
     const prompt = buildConversationPrompt(user.name, content, messages);
 
-    const startTime = Date.now();
     const response = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
       {

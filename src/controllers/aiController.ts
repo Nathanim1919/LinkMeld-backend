@@ -64,7 +64,7 @@ export class AIController {
         });
         return;
       }
-      const result = await processContent(capture.content.clean, apiKey);
+      const result = await processContent(capture.content.clean, capture.ai.summary || "", apiKey);
 
       if (result.success && result.data) {
         capture.ai.summary = result.data.summary || "";
@@ -73,6 +73,14 @@ export class AIController {
         logger.info(`${SERVICE_NAME}:generateSummary:success`, {
           captureId,
           summaryLength: result.data.summary?.length,
+        });
+      } else {
+        return ErrorResponse({
+          res,
+          statusCode: 500,
+          message: "Failed to generate summary",
+          error: result.error,
+          errorCode: "SUMMARY_GENERATION_FAILED",
         });
       }
 
@@ -139,6 +147,16 @@ export class AIController {
       }
 
       const apiKey = await UserService.getGeminiApiKey(user.id);
+
+      if (!apiKey) {
+        ErrorResponse({
+          res,
+          statusCode: 403,
+          message: "API key is required for AI operations",
+          errorCode: "API_KEY_REQUIRED",
+        });
+        return;
+      }
 
       // Process conversation
       const { message, tokensUsed, modelUsed } = await processConversation(
