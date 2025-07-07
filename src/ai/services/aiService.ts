@@ -1,8 +1,10 @@
 import { AIResponse } from "../types";
-import { Request, Response } from "express";
-import { Capture } from "../../models/Capture";
+import { Request } from "express";
 // import { validate as uuidValidate } from 'uuid';
 import { rateLimit } from "express-rate-limit";
+import { IUser } from "../../models/User";
+import { UserService } from "../../services/user.service";
+import { User } from "better-auth/types";
 
 // Type definitions
 interface Message {
@@ -39,7 +41,7 @@ const GEMINI_CONFIG = {
 };
 
 // Main function to process content
-export const processContent = async (content: string): Promise<AIResponse> => {
+export const processContent = async (content: string, apiKey: string): Promise<AIResponse> => {
   try {
     if (!content || content.trim().length < 100) {
       return {
@@ -53,8 +55,8 @@ export const processContent = async (content: string): Promise<AIResponse> => {
     // Use Promise.allSettled to allow one promise to fail without stopping the other
     // and provide more granular error handling.
     const [summaryResult, embeddingResult] = await Promise.allSettled([
-      generateSummary(cleanText, process.env.GEMINI_API_KEY!),
-      generateEmbedding(cleanText, process.env.GEMINI_API_KEY!),
+      generateSummary(cleanText, apiKey),
+      generateEmbedding(cleanText, apiKey),
     ]);
 
     let summary: string | undefined;
@@ -382,7 +384,7 @@ export const buildConversationPrompt = (
 Your approach is friendly, respectful, and gently proactive. Always aim to be helpful — even if the document doesn’t directly state the answer.
 
 📄 DOCUMENT STATUS:
-- Document: ${content ? "✅ Uploaded and available" : "❌ Not yet uploaded"}
+- Document: ${content ? "✅ Content Selected and available" : "❌ Not yet Selected"}
 ${
   content
     ? `\nHere’s a preview of what was uploaded:\n---\n${content}\n---`
@@ -398,13 +400,14 @@ ${
   - “Here’s what I’m thinking…”
   - “While it’s not directly stated, the doc seems to suggest…”
   - “From what I can tell…”
+- If you can’t find an answer, suggest the user select a document or ask a different question
 
 🧠 GENERAL RULES:
-- If no document: Gently suggest uploading one
-- If document exists:
+- If no document selected: Gently suggest selecting one 
+- If selected document exists:
   - Pull answers from it directly or indirectly
-  - Use smart reasoning when content isn't explicit
-- For general questions: Be helpful and friendly
+  - Use smart reasoning when content isn't explicit(but do not invent facts or make assumptions )
+- For general questions: Be helpful and friendly but do not invent facts 
 - Keep follow-ups in context
 
 ✅ FORMATTING:
@@ -436,18 +439,19 @@ ${conversationHistory}
 };
 
 export const processConversation = async (
-  userName: string,
+  user: User,
+  apiKey: string,
   content: string,
   messages: Message[],
   model: string = DEFAULT_MODEL,
   signal?: AbortSignal
 ): Promise<ProcessedResponse> => {
   try {
-    const prompt = buildConversationPrompt(userName, content, messages);
+    const prompt = buildConversationPrompt(user.name, content, messages);
 
     const startTime = Date.now();
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${process.env.GEMINI_API_KEY}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
       {
         method: "POST",
         headers: {
@@ -488,8 +492,6 @@ export const processConversation = async (
       }
     );
 
-    const latency = Date.now() - startTime;
-    // console.log(`API call latency: ${latency}ms`);
 
     if (!response.ok) {
       const errorData = await response.json();

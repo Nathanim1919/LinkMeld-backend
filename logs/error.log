@@ -1442,3 +1442,241 @@
   message: 'ErrorResponse: Invalid or missing captureId',
   timestamp: '2025-07-07 00:57:31:5731'
 }
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Gemini API key is required',
+  timestamp: '2025-07-07 04:55:54:5554'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Invalid Gemini API key format',
+  timestamp: '2025-07-07 04:55:58:5558'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Invalid Gemini API key format',
+  timestamp: '2025-07-07 04:56:00:560'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Invalid Gemini API key format',
+  timestamp: '2025-07-07 04:56:01:561'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-07 05:37:12:3712'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-07 05:37:12:3712'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-07 07:59:26:5926'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-07 07:59:26:5926'
+}
+{
+  service: 'api-service',
+  level: 'error',
+  message: 'AIController:converse:error fetch failed',
+  stack: 'TypeError: fetch failed\n' +
+    '    at node:internal/deps/undici/undici:13502:13\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at processConversation (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/ai/services/aiService.ts:449:22)\n' +
+    '    at chat (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/controllers/aiController.ts:130:50)',
+  cause: Error: getaddrinfo EAI_AGAIN generativelanguage.googleapis.com
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+    errno: -3001,
+    code: 'EAI_AGAIN',
+    syscall: 'getaddrinfo',
+    hostname: 'generativelanguage.googleapis.com'
+  },
+  timestamp: '2025-07-07 15:58:11:5811'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'AI_CONVERSATION_FAILED',
+  error: 'fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: AI conversation failed',
+  timestamp: '2025-07-07 15:58:11:5811'
+}
+{
+  service: 'api-service',
+  level: 'error',
+  message: 'AIController:converse:error GEMINI_SERVICE is not defined',
+  stack: 'ReferenceError: GEMINI_SERVICE is not defined\n' +
+    '    at Function.getGeminiApiKey (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/services/user.service.ts:8:29)\n' +
+    '    at processConversation (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/ai/services/aiService.ts:449:38)\n' +
+    '    at chat (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/controllers/aiController.ts:130:75)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:105:5)',
+  timestamp: '2025-07-07 17:35:05:355'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'AI_CONVERSATION_FAILED',
+  error: 'GEMINI_SERVICE is not defined',
+  level: 'error',
+  message: 'ErrorResponse: AI conversation failed',
+  timestamp: '2025-07-07 17:35:05:355'
+}
+{
+  service: 'api-service',
+  level: 'error',
+  message: 'AIController:converse:error Gemini API key not found for user',
+  stack: 'Error: Gemini API key not found for user\n' +
+    '    at Function.getGeminiApiKey (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/services/user.service.ts:12:15)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at processConversation (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/ai/services/aiService.ts:449:20)\n' +
+    '    at chat (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/controllers/aiController.ts:130:50)',
+  timestamp: '2025-07-07 17:36:08:368'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'AI_CONVERSATION_FAILED',
+  error: 'Gemini API key not found for user',
+  level: 'error',
+  message: 'ErrorResponse: AI conversation failed',
+  timestamp: '2025-07-07 17:36:08:368'
+}
+{
+  service: 'api-service',
+  level: 'error',
+  message: 'AIController:converse:error Gemini API key not found for user',
+  stack: 'Error: Gemini API key not found for user\n' +
+    '    at Function.getGeminiApiKey (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/services/user.service.ts:14:15)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at processConversation (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/ai/services/aiService.ts:449:20)\n' +
+    '    at chat (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/controllers/aiController.ts:130:50)',
+  timestamp: '2025-07-07 17:36:36:3636'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'AI_CONVERSATION_FAILED',
+  error: 'Gemini API key not found for user',
+  level: 'error',
+  message: 'ErrorResponse: AI conversation failed',
+  timestamp: '2025-07-07 17:36:36:3636'
+}
+{
+  service: 'api-service',
+  level: 'error',
+  message: 'AIController:converse:error Gemini API key not found for user',
+  stack: 'Error: Gemini API key not found for user\n' +
+    '    at Function.getGeminiApiKey (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/services/user.service.ts:14:15)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at processConversation (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/ai/services/aiService.ts:449:20)\n' +
+    '    at chat (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/controllers/aiController.ts:130:50)',
+  timestamp: '2025-07-07 17:37:50:3750'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'AI_CONVERSATION_FAILED',
+  error: 'Gemini API key not found for user',
+  level: 'error',
+  message: 'ErrorResponse: AI conversation failed',
+  timestamp: '2025-07-07 17:37:50:3750'
+}
+{
+  service: 'api-service',
+  level: 'error',
+  message: 'AIController:converse:error Gemini API key not found for user',
+  stack: 'Error: Gemini API key not found for user\n' +
+    '    at Function.getGeminiApiKey (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/services/user.service.ts:14:15)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at processConversation (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/ai/services/aiService.ts:449:20)\n' +
+    '    at chat (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/controllers/aiController.ts:130:50)',
+  timestamp: '2025-07-07 17:43:48:4348'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'AI_CONVERSATION_FAILED',
+  error: 'Gemini API key not found for user',
+  level: 'error',
+  message: 'ErrorResponse: AI conversation failed',
+  timestamp: '2025-07-07 17:43:48:4348'
+}
+{
+  service: 'api-service',
+  level: 'error',
+  message: 'AIController:converse:error API Error 400: API key not valid. Please pass a valid API key.',
+  stack: 'Error: API Error 400: API key not valid. Please pass a valid API key.\n' +
+    '    at processConversation (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/ai/services/aiService.ts:505:13)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at chat (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/controllers/aiController.ts:130:50)',
+  timestamp: '2025-07-07 17:44:42:4442'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'AI_CONVERSATION_FAILED',
+  error: 'API Error 400: API key not valid. Please pass a valid API key.',
+  level: 'error',
+  message: 'ErrorResponse: AI conversation failed',
+  timestamp: '2025-07-07 17:44:42:4442'
+}
+{
+  service: 'api-service',
+  level: 'error',
+  message: 'AIController:converse:error profile.getGeminiKey is not a function',
+  stack: 'TypeError: profile.getGeminiKey is not a function\n' +
+    '    at Function.getGeminiApiKey (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/services/user.service.ts:17:22)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at processConversation (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/ai/services/aiService.ts:450:20)\n' +
+    '    at chat (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/controllers/aiController.ts:130:50)',
+  timestamp: '2025-07-07 17:45:33:4533'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'AI_CONVERSATION_FAILED',
+  error: 'profile.getGeminiKey is not a function',
+  level: 'error',
+  message: 'ErrorResponse: AI conversation failed',
+  timestamp: '2025-07-07 17:45:33:4533'
+}

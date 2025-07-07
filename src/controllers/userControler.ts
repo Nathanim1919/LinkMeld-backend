@@ -162,7 +162,7 @@ export class UserProfileController {
       });
     } catch (error) {
       logger.error(`${SERVICE_NAME}:upsertGeminiApiKey:error`, error);
-      
+
       ErrorResponse({
         res,
         statusCode: 500,
@@ -233,6 +233,66 @@ export class UserProfileController {
         res,
         statusCode: 500,
         message: "Failed to retrieve user profile",
+        error: error instanceof Error ? error.message : "Unknown error",
+      });
+    }
+  }
+
+  static async getUserGeminiApiKey(req: Request, res: Response): Promise<void> {
+    try {
+      const user = req.user as IUser;
+
+      if (!user?.id) {
+        ErrorResponse({
+          res,
+          statusCode: 401,
+          message: "Unauthorized: Invalid user credentials",
+        });
+        return;
+      }
+
+      logger.info(`${SERVICE_NAME}:getUserGeminiApiKey`, { userId: user.id });
+
+      // Find the user profile
+      const profile = await UserProfile.findOne(
+        { userId: user.id },
+        `externalServices.${GEMINI_SERVICE}.apiKey`
+      ).lean<IUserProfile & { _id: any }>();
+
+      if (!profile) {
+        ErrorResponse({
+          res,
+          statusCode: 404,
+          message: "User profile not found",
+        });
+        return;
+      }
+
+      const geminiApiKey = profile.externalServices?.[GEMINI_SERVICE]?.apiKey;
+      if (!geminiApiKey) {
+        ErrorResponse({
+          res,
+          statusCode: 404,
+          message: "Gemini API key not found",
+        });
+        return;
+      }
+
+      // Return the Gemini API key
+      SuccessResponse({
+        res,
+        statusCode: 200,
+        data: {
+          geminiApiKey,
+        },
+        message: "Gemini API key retrieved successfully",
+      });
+    } catch (error) {
+      logger.error(`${SERVICE_NAME}:getUserGeminiApiKey:error`, error);
+      ErrorResponse({
+        res,
+        statusCode: 500,
+        message: "Failed to retrieve Gemini API key",
         error: error instanceof Error ? error.message : "Unknown error",
       });
     }

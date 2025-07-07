@@ -1,7 +1,16 @@
 import mongoose, { Schema } from "mongoose";
-import { decrypt, encrypt } from "../security/crypto";
 
-const UserSchema: Schema = new Schema(
+export type IUser = {
+  _id: string;
+  name: string;
+  email: string;
+  emailVerified?: boolean;
+  password?: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+const UserSchema: Schema = new Schema<IUser>(
   {
     name: { type: String, required: true }, // Changed from username to name to match frontend
     email: { type: String, required: true, unique: true },
@@ -12,16 +21,6 @@ const UserSchema: Schema = new Schema(
     },
     createdAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now },
-    externalServices: {
-      gemini: {
-        apiKey: {
-          type: String,
-          set: (value: string) => encrypt(value), // Always encrypt at rest
-          get: (value: string) => decrypt(value),
-          select: false, // Do not return this field by default
-        },
-      },
-    },
   },
   {
     timestamps: true, // Automatically updates createdAt, updatedAt

@@ -5,10 +5,10 @@ import { Document } from "mongoose";
  */
 export interface IUser extends Document {
   _id: string;
+  name: string;
   email: string;
   password?: string;
   isVerified: boolean;
-  role: "user" | "admin" | "moderator";
   createdAt: Date;
   updatedAt: Date;
   comparePassword(candidatePassword: string): Promise<boolean>;

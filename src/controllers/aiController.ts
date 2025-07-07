@@ -8,6 +8,7 @@ import {
   processConversation,
   validateRequest,
 } from "../ai/services/aiService";
+import { UserService } from "../services/user.service";
 
 // Constants
 const SERVICE_NAME = "AIController";
@@ -25,6 +26,7 @@ export class AIController {
   static async generateSummary(req: Request, res: Response): Promise<void> {
     try {
       const { captureId } = req.body;
+      const {user} = req;
 
       // Validate input
       if (!captureId) {
@@ -32,7 +34,7 @@ export class AIController {
           res,
           statusCode: 400,
           message: "Capture ID is required",
-          errorCode: "MISSING_CAPTURE_ID"
+          errorCode: "MISSING_CAPTURE_ID",
         });
         return;
       }
@@ -46,21 +48,22 @@ export class AIController {
           res,
           statusCode: 404,
           message: "Capture not found",
-          errorCode: "CAPTURE_NOT_FOUND"
+          errorCode: "CAPTURE_NOT_FOUND",
         });
         return;
       }
 
       // Process content and generate summary
-      const result = await processContent(capture.content.clean);
+      const apiKey = await UserService.getGeminiApiKey(user.id);
+      const result = await processContent(capture.content.clean, apiKey);
 
       if (result.success && result.data) {
         capture.ai.summary = result.data.summary || "";
         await capture.save();
-        
-        logger.info(`${SERVICE_NAME}:generateSummary:success`, { 
+
+        logger.info(`${SERVICE_NAME}:generateSummary:success`, {
           captureId,
-          summaryLength: result.data.summary?.length 
+          summaryLength: result.data.summary?.length,
         });
       }
 
@@ -69,9 +72,9 @@ export class AIController {
         statusCode: 200,
         data: {
           summary: result?.data?.summary,
-          captureId
+          captureId,
         },
-        message: "AI summary generated successfully"
+        message: "AI summary generated successfully",
       });
     } catch (error) {
       logger.error(`${SERVICE_NAME}:generateSummary:error`, error);
@@ -80,7 +83,7 @@ export class AIController {
         statusCode: 500,
         message: "Failed to generate AI summary",
         error: error instanceof Error ? error.message : "Unknown error",
-        errorCode: "AI_SUMMARY_FAILED"
+        errorCode: "AI_SUMMARY_FAILED",
       });
     }
   }
@@ -92,7 +95,7 @@ export class AIController {
   static async chat(req: Request, res: Response): Promise<void> {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
-    const {user} = req;
+    const { user } = req;
 
     try {
       // Validate request
@@ -102,7 +105,7 @@ export class AIController {
           res,
           statusCode: 400,
           message: error || "Invalid request",
-          errorCode: "INVALID_REQUEST"
+          errorCode: "INVALID_REQUEST",
         });
         return;
       }
@@ -121,24 +124,27 @@ export class AIController {
           res,
           statusCode: 404,
           message: "Content not found",
-          errorCode: "CONTENT_NOT_FOUND"
+          errorCode: "CONTENT_NOT_FOUND",
         });
         return;
       }
 
+      const apiKey = await UserService.getGeminiApiKey(user.id);
+
       // Process conversation
       const { message, tokensUsed, modelUsed } = await processConversation(
-        user.name,
+        user,
+        apiKey,
         content.content.clean,
         messages,
         model,
         controller.signal
       );
 
-      logger.info(`${SERVICE_NAME}:converse:success`, { 
+      logger.info(`${SERVICE_NAME}:converse:success`, {
         captureId,
         tokensUsed,
-        modelUsed
+        modelUsed,
       });
 
       SuccessResponse({
@@ -151,7 +157,7 @@ export class AIController {
           captureId,
           timestamp: new Date().toISOString(),
         },
-        message: "AI conversation completed successfully"
+        message: "AI conversation completed successfully",
       });
     } catch (error) {
       if (error.name === "AbortError") {
@@ -160,7 +166,7 @@ export class AIController {
           res,
           statusCode: 504,
           message: "Request timeout",
-          errorCode: "REQUEST_TIMEOUT"
+          errorCode: "REQUEST_TIMEOUT",
         });
       } else {
         logger.error(`${SERVICE_NAME}:converse:error`, error);
@@ -170,7 +176,7 @@ export class AIController {
           message: "AI conversation failed",
           error: error instanceof Error ? error.message : "Unknown error",
           errorCode: "AI_CONVERSATION_FAILED",
-          ...(process.env.NODE_ENV === 'development' && { stack: error.stack })
+          ...(process.env.NODE_ENV === "development" && { stack: error.stack }),
         });
       }
     } finally {
