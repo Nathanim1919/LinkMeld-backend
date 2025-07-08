@@ -1827,3 +1827,30 @@
   message: 'ErrorResponse: Failed to generate summary',
   timestamp: '2025-07-08 01:30:41:3041'
 }
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Content must be at least 100 characters long.',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-08 02:21:01:211'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Content must be at least 100 characters long.',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-08 02:21:04:214'
+}
+{
+  service: 'api-service',
+  statusCode: 409,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture already exists in this collection',
+  timestamp: '2025-07-08 02:47:49:4749'
+}

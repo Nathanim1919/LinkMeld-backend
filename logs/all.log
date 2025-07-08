@@ -53797,3 +53797,7002 @@
   message: 'SuccessResponse: AI summary generated successfully',
   timestamp: '2025-07-08 02:15:25:1525'
 }
+{
+  service: 'api-service',
+  statusCode: 201,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture saved successfully',
+  timestamp: '2025-07-08 02:17:17:1717'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:17:22:1722'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:17:22:1722'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:17:22:1722'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:17:22:1722'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:17:22:1722'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Bookmarked captures retrieved successfully',
+  timestamp: '2025-07-08 02:17:24:1724'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Bookmarked captures retrieved successfully',
+  timestamp: '2025-07-08 02:17:24:1724'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 02:17:25:1725'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 02:17:25:1725'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:17:27:1727'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:17:27:1727'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:17:27:1727'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:17:27:1727'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:17:27:1727'
+}
+{
+  service: 'api-service',
+  captureId: '686c557d559ab73733a71232',
+  level: 'info',
+  message: 'AIController:generateSummary',
+  timestamp: '2025-07-08 02:17:34:1734'
+}
+{
+  service: 'api-service',
+  captureId: '686c557d559ab73733a71232',
+  summaryLength: 1237,
+  level: 'info',
+  message: 'AIController:generateSummary:success',
+  timestamp: '2025-07-08 02:17:40:1740'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI summary generated successfully',
+  timestamp: '2025-07-08 02:17:40:1740'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:17:57:1757'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:17:57:1757'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:17:57:1757'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:17:57:1757'
+}
+{
+  service: 'api-service',
+  captureId: '686c557d559ab73733a71232',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-08 02:17:59:1759'
+}
+{
+  service: 'api-service',
+  captureId: '686c557d559ab73733a71232',
+  tokensUsed: 32856,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-08 02:18:06:186'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-08 02:18:06:186'
+}
+{
+  service: 'api-service',
+  captureId: '686c557d559ab73733a71232',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-08 02:18:13:1813'
+}
+{
+  service: 'api-service',
+  captureId: '686c557d559ab73733a71232',
+  tokensUsed: 33008,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-08 02:18:17:1817'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-08 02:18:17:1817'
+}
+{
+  service: 'api-service',
+  captureId: '686c557d559ab73733a71232',
+  level: 'info',
+  message: 'AIController:generateSummary',
+  timestamp: '2025-07-08 02:18:29:1829'
+}
+{
+  service: 'api-service',
+  captureId: '686c557d559ab73733a71232',
+  summaryLength: 1100,
+  level: 'info',
+  message: 'AIController:generateSummary:success',
+  timestamp: '2025-07-08 02:18:34:1834'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI summary generated successfully',
+  timestamp: '2025-07-08 02:18:34:1834'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:18:38:1838'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:18:38:1838'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:18:38:1838'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:18:38:1838'
+}
+{
+  service: 'api-service',
+  captureId: '686c557d559ab73733a71232',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-08 02:18:45:1845'
+}
+{
+  service: 'api-service',
+  captureId: '686c557d559ab73733a71232',
+  tokensUsed: 33240,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-08 02:18:50:1850'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-08 02:18:50:1850'
+}
+{
+  service: 'api-service',
+  captureId: '686c557d559ab73733a71232',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-08 02:19:24:1924'
+}
+{
+  service: 'api-service',
+  captureId: '686c557d559ab73733a71232',
+  tokensUsed: 33306,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-08 02:19:27:1927'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-08 02:19:27:1927'
+}
+{
+  service: 'api-service',
+  captureId: '686c557d559ab73733a71232',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-08 02:19:53:1953'
+}
+{
+  service: 'api-service',
+  captureId: '686c557d559ab73733a71232',
+  tokensUsed: 33273,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-08 02:19:58:1958'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-08 02:19:58:1958'
+}
+{
+  service: 'api-service',
+  captureId: '686c557d559ab73733a71232',
+  model: undefined,
+  level: 'info',
+  message: 'AIController:converse',
+  timestamp: '2025-07-08 02:20:27:2027'
+}
+{
+  service: 'api-service',
+  captureId: '686c557d559ab73733a71232',
+  tokensUsed: 33491,
+  modelUsed: 'gemini-2.0-flash',
+  level: 'info',
+  message: 'AIController:converse:success',
+  timestamp: '2025-07-08 02:20:32:2032'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI conversation completed successfully',
+  timestamp: '2025-07-08 02:20:32:2032'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:20:56:2056'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:20:56:2056'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:20:56:2056'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:20:56:2056'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:20:56:2056'
+}
+{
+  service: 'api-service',
+  captureId: '686c3ac795a2d0b4b5b71712',
+  level: 'info',
+  message: 'AIController:generateSummary',
+  timestamp: '2025-07-08 02:21:01:211'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Content must be at least 100 characters long.',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-08 02:21:01:211'
+}
+{
+  service: 'api-service',
+  captureId: '686c3ac795a2d0b4b5b71712',
+  level: 'info',
+  message: 'AIController:generateSummary',
+  timestamp: '2025-07-08 02:21:04:214'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Content must be at least 100 characters long.',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-08 02:21:04:214'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:21:12:2112'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:21:12:2112'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:21:12:2112'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:21:12:2112'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:21:12:2112'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:21:14:2114'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:21:14:2114'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:21:14:2114'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:21:14:2114'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:21:14:2114'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:21:16:2116'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:21:16:2116'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:21:16:2116'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:21:16:2116'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:21:16:2116'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:21:18:2118'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:21:18:2118'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:21:18:2118'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:21:18:2118'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:21:18:2118'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:21:20:2120'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:21:20:2120'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:21:20:2120'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:21:20:2120'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:21:20:2120'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: "SuccessResponse: Captures for site 'ForeSee Medical ' retrieved successfully",
+  timestamp: '2025-07-08 02:21:24:2124'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: "SuccessResponse: Captures for site 'ForeSee Medical ' retrieved successfully",
+  timestamp: '2025-07-08 02:21:25:2125'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:21:25:2125'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:21:25:2125'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:21:26:2126'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:21:26:2126'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:21:26:2126'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection retrieved successfully',
+  timestamp: '2025-07-08 02:21:30:2130'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection captures retrieved successfully',
+  timestamp: '2025-07-08 02:21:30:2130'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection retrieved successfully',
+  timestamp: '2025-07-08 02:21:30:2130'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection captures retrieved successfully',
+  timestamp: '2025-07-08 02:21:30:2130'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 02:21:34:2134'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 02:21:34:2134'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection retrieved successfully',
+  timestamp: '2025-07-08 02:21:36:2136'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection captures retrieved successfully',
+  timestamp: '2025-07-08 02:21:36:2136'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection retrieved successfully',
+  timestamp: '2025-07-08 02:21:36:2136'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection captures retrieved successfully',
+  timestamp: '2025-07-08 02:21:36:2136'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:21:37:2137'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:21:37:2137'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:21:37:2137'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:21:37:2137'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:21:37:2137'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection retrieved successfully',
+  timestamp: '2025-07-08 02:21:42:2142'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection captures retrieved successfully',
+  timestamp: '2025-07-08 02:21:42:2142'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 02:23:12:2312'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:23:12:2312'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 02:23:12:2312'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 02:23:12:2312'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 02:23:13:2313'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:23:13:2313'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 02:23:13:2313'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:23:13:2313'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:23:13:2313'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 02:23:13:2313'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:23:13:2313'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:23:13:2313'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:23:13:2313'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 02:23:13:2313'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 02:23:13:2313'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 02:23:13:2313'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:23:13:2313'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 02:23:13:2313'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 02:23:13:2313'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:23:13:2313'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:23:13:2313'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 02:23:13:2313'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:23:13:2313'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:23:13:2313'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:23:19:2319'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:23:19:2319'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:23:19:2319'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:23:19:2319'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:23:22:2322'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:23:22:2322'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:23:22:2322'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:23:22:2322'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 02:23:31:2331'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 02:23:31:2331'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:23:32:2332'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:23:33:2333'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:23:33:2333'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:23:33:2333'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:23:33:2333'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection captures retrieved successfully',
+  timestamp: '2025-07-08 02:23:38:2338'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection retrieved successfully',
+  timestamp: '2025-07-08 02:23:38:2338'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection captures retrieved successfully',
+  timestamp: '2025-07-08 02:23:38:2338'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection retrieved successfully',
+  timestamp: '2025-07-08 02:23:38:2338'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:23:52:2352'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:23:52:2352'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:23:52:2352'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:23:52:2352'
+}
+{
+  service: 'api-service',
+  captureId: '6869bebe6b486746a41b1771',
+  level: 'info',
+  message: 'AIController:generateSummary',
+  timestamp: '2025-07-08 02:36:42:3642'
+}
+{
+  service: 'api-service',
+  captureId: '6869bebe6b486746a41b1771',
+  summaryLength: 1117,
+  level: 'info',
+  message: 'AIController:generateSummary:success',
+  timestamp: '2025-07-08 02:36:46:3646'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI summary generated successfully',
+  timestamp: '2025-07-08 02:36:46:3646'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:40:13:4013'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:40:13:4013'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:40:13:4013'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:40:13:4013'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:40:13:4013'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:40:14:4014'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:40:14:4014'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:40:14:4014'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:40:14:4014'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:40:14:4014'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:40:15:4015'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:40:15:4015'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:40:15:4015'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:40:15:4015'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:40:15:4015'
+}
+{
+  service: 'api-service',
+  captureId: '68687212ea78403745b9f74e',
+  level: 'info',
+  message: 'AIController:generateSummary',
+  timestamp: '2025-07-08 02:40:22:4022'
+}
+{
+  service: 'api-service',
+  captureId: '68687212ea78403745b9f74e',
+  summaryLength: 1272,
+  level: 'info',
+  message: 'AIController:generateSummary:success',
+  timestamp: '2025-07-08 02:40:25:4025'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI summary generated successfully',
+  timestamp: '2025-07-08 02:40:25:4025'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 02:40:28:4028'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 02:40:28:4028'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:40:30:4030'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:40:30:4030'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:40:30:4030'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:40:30:4030'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:40:30:4030'
+}
+{
+  service: 'api-service',
+  captureId: '68686332457b7e9263471842',
+  level: 'info',
+  message: 'AIController:generateSummary',
+  timestamp: '2025-07-08 02:40:31:4031'
+}
+{
+  service: 'api-service',
+  captureId: '68686332457b7e9263471842',
+  summaryLength: 1239,
+  level: 'info',
+  message: 'AIController:generateSummary:success',
+  timestamp: '2025-07-08 02:40:34:4034'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI summary generated successfully',
+  timestamp: '2025-07-08 02:40:34:4034'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture bookmarked successfully',
+  timestamp: '2025-07-08 02:40:39:4039'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture bookmarked successfully',
+  timestamp: '2025-07-08 02:40:42:4042'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture bookmarked successfully',
+  timestamp: '2025-07-08 02:40:43:4043'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Bookmarked captures retrieved successfully',
+  timestamp: '2025-07-08 02:40:45:4045'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Bookmarked captures retrieved successfully',
+  timestamp: '2025-07-08 02:40:45:4045'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 02:40:46:4046'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 02:40:46:4046'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 02:40:54:4054'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 02:40:54:4054'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:40:57:4057'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:40:57:4057'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:40:57:4057'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:40:57:4057'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:40:57:4057'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:43:29:4329'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:43:29:4329'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:43:29:4329'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:43:29:4329'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:43:29:4329'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:43:33:4333'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:43:33:4333'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:43:33:4333'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:43:33:4333'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:43:33:4333'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:43:34:4334'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:43:34:4334'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:43:34:4334'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:43:34:4334'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:43:34:4334'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:43:36:4336'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:43:36:4336'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:43:36:4336'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:43:36:4336'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:43:36:4336'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:43:38:4338'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:43:38:4338'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:43:38:4338'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:43:38:4338'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:43:38:4338'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:43:43:4343'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:43:43:4343'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:43:43:4343'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:43:43:4343'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:43:43:4343'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:43:44:4344'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:43:44:4344'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:43:44:4344'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:43:44:4344'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:43:44:4344'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:44:52:4452'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:44:52:4452'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:44:52:4452'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:44:52:4452'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:44:52:4452'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:44:54:4454'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:44:54:4454'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:44:54:4454'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:44:54:4454'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:44:54:4454'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:44:55:4455'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:44:55:4455'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:44:55:4455'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:44:55:4455'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:44:55:4455'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:44:57:4457'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:44:57:4457'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:44:57:4457'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:44:57:4457'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:44:57:4457'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:44:59:4459'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:44:59:4459'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:44:59:4459'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:44:59:4459'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:44:59:4459'
+}
+{
+  service: 'api-service',
+  captureId: '68686332457b7e9263471842',
+  level: 'info',
+  message: 'AIController:generateSummary',
+  timestamp: '2025-07-08 02:45:05:455'
+}
+{
+  service: 'api-service',
+  captureId: '68686332457b7e9263471842',
+  summaryLength: 1253,
+  level: 'info',
+  message: 'AIController:generateSummary:success',
+  timestamp: '2025-07-08 02:45:07:457'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI summary generated successfully',
+  timestamp: '2025-07-08 02:45:07:457'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 02:46:07:467'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:46:07:467'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 02:46:07:467'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 02:46:07:467'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 02:46:07:467'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:46:07:467'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 02:46:07:467'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 02:46:07:467'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:46:07:467'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:46:07:467'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:46:07:467'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:46:07:467'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection retrieved successfully',
+  timestamp: '2025-07-08 02:46:52:4652'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection captures retrieved successfully',
+  timestamp: '2025-07-08 02:46:52:4652'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection retrieved successfully',
+  timestamp: '2025-07-08 02:46:52:4652'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection captures retrieved successfully',
+  timestamp: '2025-07-08 02:46:52:4652'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 02:46:54:4654'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 02:46:54:4654'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:46:55:4655'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:46:55:4655'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:46:55:4655'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:46:56:4656'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:46:56:4656'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:46:58:4658'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:46:58:4658'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:46:58:4658'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:46:58:4658'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:46:58:4658'
+}
+{
+  service: 'api-service',
+  statusCode: 409,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture already exists in this collection',
+  timestamp: '2025-07-08 02:47:49:4749'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection captures retrieved successfully',
+  timestamp: '2025-07-08 02:47:55:4755'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection retrieved successfully',
+  timestamp: '2025-07-08 02:47:55:4755'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection captures retrieved successfully',
+  timestamp: '2025-07-08 02:47:55:4755'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection retrieved successfully',
+  timestamp: '2025-07-08 02:47:55:4755'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:47:57:4757'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:47:58:4758'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:47:58:4758'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:47:58:4758'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:47:58:4758'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:47:59:4759'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:47:59:4759'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:47:59:4759'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:47:59:4759'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:47:59:4759'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 02:56:20:5620'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:56:20:5620'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 02:56:20:5620'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 02:56:20:5620'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 02:56:20:5620'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:56:20:5620'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 02:56:20:5620'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 02:56:20:5620'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:56:20:5620'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:56:20:5620'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:56:20:5620'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:56:20:5620'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 02:56:24:5624'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:56:24:5624'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 02:56:24:5624'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 02:56:24:5624'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 02:56:24:5624'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 02:56:24:5624'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 02:56:24:5624'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:56:24:5624'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:56:24:5624'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:56:24:5624'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:56:24:5624'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:56:24:5624'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 02:56:26:5626'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 02:56:26:5626'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:56:26:5626'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 02:56:26:5626'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 02:56:26:5626'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:56:26:5626'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 02:56:26:5626'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 02:56:26:5626'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:56:27:5627'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:56:27:5627'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:56:27:5627'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:56:27:5627'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 02:56:28:5628'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:56:28:5628'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 02:56:28:5628'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 02:56:28:5628'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 02:56:28:5628'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:56:28:5628'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 02:56:28:5628'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 02:56:29:5629'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:56:29:5629'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:56:29:5629'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:56:29:5629'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:56:29:5629'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:57:01:571'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 02:57:01:571'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 02:57:01:571'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 02:57:01:571'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 02:57:01:571'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 02:57:01:571'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 02:57:01:571'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:57:01:571'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 02:57:01:571'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 02:57:01:571'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:57:01:571'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 02:57:01:571'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection captures retrieved successfully',
+  timestamp: '2025-07-08 03:01:41:141'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:01:41:141'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection retrieved successfully',
+  timestamp: '2025-07-08 03:01:41:141'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:01:41:141'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:01:42:142'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection captures retrieved successfully',
+  timestamp: '2025-07-08 03:01:42:142'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:01:42:142'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection retrieved successfully',
+  timestamp: '2025-07-08 03:01:42:142'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:01:42:142'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:01:42:142'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:01:42:142'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:01:42:142'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:01:42:142'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:01:42:142'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:01:42:142'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:01:42:142'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:01:42:142'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:01:42:142'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:01:42:142'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:01:42:142'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:01:42:142'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:01:42:142'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:01:42:142'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:01:42:142'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:01:43:143'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:01:43:143'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:01:43:143'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:01:43:143'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:01:43:143'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:01:43:143'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection captures retrieved successfully',
+  timestamp: '2025-07-08 03:01:45:145'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:01:45:145'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection retrieved successfully',
+  timestamp: '2025-07-08 03:01:45:145'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:01:45:145'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:01:45:145'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection retrieved successfully',
+  timestamp: '2025-07-08 03:01:45:145'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:01:45:145'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection captures retrieved successfully',
+  timestamp: '2025-07-08 03:01:45:145'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:01:45:145'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:01:45:145'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:01:45:145'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:01:45:145'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:01:45:145'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:01:45:145'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:01:45:145'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:01:45:145'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:01:45:145'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:01:46:146'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:01:46:146'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:01:46:146'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:01:46:146'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:01:46:146'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:01:46:146'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:01:46:146'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:01:46:146'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:01:46:146'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:01:46:146'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:01:46:146'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:01:46:146'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:01:46:146'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:01:46:146'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:01:46:146'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:01:46:146'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:01:46:146'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:01:46:146'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:01:46:146'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:01:47:147'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:01:47:147'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection captures retrieved successfully',
+  timestamp: '2025-07-08 03:05:34:534'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:05:34:534'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection retrieved successfully',
+  timestamp: '2025-07-08 03:05:34:534'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:05:34:534'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:05:34:534'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection captures retrieved successfully',
+  timestamp: '2025-07-08 03:05:34:534'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collection retrieved successfully',
+  timestamp: '2025-07-08 03:05:34:534'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:05:34:534'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:05:34:534'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:05:34:534'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:05:34:534'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:05:34:534'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:05:34:534'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:05:34:534'
+}
+{
+  service: 'api-service',
+  captureId: '68687212ea78403745b9f74e',
+  level: 'info',
+  message: 'AIController:generateSummary',
+  timestamp: '2025-07-08 03:06:16:616'
+}
+{
+  service: 'api-service',
+  captureId: '68687212ea78403745b9f74e',
+  summaryLength: 1363,
+  level: 'info',
+  message: 'AIController:generateSummary:success',
+  timestamp: '2025-07-08 03:06:19:619'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: AI summary generated successfully',
+  timestamp: '2025-07-08 03:06:19:619'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:08:40:840'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:08:40:840'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:08:42:842'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:08:42:842'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:08:42:842'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:08:42:842'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:08:42:842'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:08:48:848'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:08:48:848'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:08:48:848'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:08:48:848'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:08:48:848'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:30:930'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:30:930'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:30:930'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:30:930'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:30:930'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:30:930'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:30:930'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:30:930'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:30:930'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:30:930'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:30:930'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:30:930'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:30:930'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:30:930'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:30:930'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:30:930'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:30:930'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:30:930'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:30:930'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:30:930'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:30:930'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:30:930'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:30:930'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:30:930'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:35:935'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:35:935'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:35:935'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:35:935'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:35:935'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:35:935'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:35:935'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:35:935'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:35:935'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:35:935'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:35:935'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:35:935'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:35:935'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:35:935'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:35:935'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:35:935'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:35:935'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:35:935'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:35:935'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:35:935'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:35:935'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:35:935'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:35:935'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:35:935'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:35:935'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:35:935'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:35:935'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:35:935'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:35:935'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:35:935'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:35:935'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:35:935'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:35:935'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:35:935'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:35:935'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:35:935'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:37:937'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:37:937'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:37:937'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:37:937'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:37:937'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:37:937'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:37:937'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:37:937'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:37:937'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:37:937'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:37:937'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:37:937'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:38:938'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:38:938'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:38:938'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:38:938'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:38:938'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:38:938'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:38:938'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:38:938'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:38:938'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:38:938'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:38:938'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:39:939'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:39:939'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:39:939'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:39:939'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:39:939'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:39:939'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:39:939'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:39:939'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:39:939'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:39:939'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:39:939'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:39:939'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:39:939'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:39:939'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:39:939'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:39:939'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:39:939'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:39:939'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:39:939'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:39:939'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:39:939'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:39:939'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:39:939'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:39:939'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:39:939'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:39:939'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:39:939'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:39:939'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:39:939'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:39:939'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:39:939'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:39:939'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:39:939'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:39:939'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:40:940'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:40:940'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:40:940'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:40:940'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:40:940'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:40:940'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:40:940'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:40:940'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:40:940'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:40:940'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:40:940'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:40:940'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:40:940'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:40:940'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:40:940'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:43:943'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:43:943'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:43:943'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:43:943'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:43:943'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:43:943'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:43:943'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:43:943'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:43:943'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:43:943'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:43:943'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:43:943'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:44:944'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:44:944'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:44:944'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:44:944'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:44:944'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:44:944'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:44:944'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:44:944'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:44:944'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:44:944'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:44:944'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:44:944'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:44:944'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:44:944'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:44:944'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:44:944'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:44:944'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:44:944'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:44:944'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:44:944'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:44:944'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:44:944'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:44:944'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:44:944'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:45:945'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:45:945'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:45:945'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:45:945'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:45:945'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:45:945'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:45:945'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:45:945'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:45:945'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:45:945'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:45:945'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:45:945'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:45:945'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:45:945'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:45:945'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:45:945'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:45:945'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:45:945'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:45:945'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:45:945'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:45:945'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:45:945'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:45:945'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:45:945'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:46:946'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:46:946'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:46:946'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:46:946'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:46:946'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:46:946'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:46:946'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:46:946'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:46:946'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:46:946'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:46:946'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:46:946'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:47:947'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:47:947'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:47:947'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:47:947'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:47:947'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:47:947'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:47:947'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:47:947'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:47:947'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:47:947'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:47:947'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:47:947'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:47:947'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:47:947'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:47:947'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:47:947'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:47:947'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:47:947'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:47:947'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:47:947'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:47:947'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:47:947'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:47:947'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:47:947'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:47:947'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:47:947'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:47:947'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:47:947'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:47:947'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:47:947'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:47:947'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:47:947'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:47:947'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:47:947'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:47:947'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:48:948'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:54:954'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:54:954'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:54:954'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:54:954'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:54:954'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:54:954'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:54:954'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:54:954'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:54:954'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:54:954'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:54:954'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:54:954'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:54:954'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:54:954'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:54:954'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:54:954'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:54:954'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:54:954'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:54:954'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:54:954'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:54:954'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:54:954'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:54:954'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:54:954'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:54:954'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:54:954'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:54:954'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:54:954'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:54:954'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:55:955'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:55:955'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:55:955'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:55:955'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:55:955'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:55:955'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:55:955'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:57:957'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:57:957'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:57:957'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:57:957'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:57:957'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:57:957'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:57:957'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:57:957'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:57:957'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:57:957'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:57:957'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:57:957'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:58:958'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:58:958'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:58:958'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:58:958'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:58:958'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:58:958'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:58:958'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:58:958'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:58:958'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:58:958'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:58:958'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:58:958'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:58:958'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:09:58:958'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:58:958'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:58:958'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:09:58:958'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:58:958'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:09:59:959'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:09:59:959'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:59:959'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:59:959'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:09:59:959'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:09:59:959'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:10:01:101'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:10:01:101'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:10:01:101'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:10:01:101'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:10:01:101'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:10:01:101'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:10:01:101'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:10:01:101'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:10:01:101'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:10:01:101'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:10:01:101'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:10:01:101'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:10:02:102'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:10:02:102'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:10:02:102'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:10:02:102'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:10:02:102'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:10:02:102'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:10:02:102'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:10:02:102'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:10:02:102'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:10:02:102'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:10:02:102'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:10:02:102'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:10:02:102'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:10:02:102'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:10:02:102'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:10:02:102'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:10:02:102'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:10:02:102'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:10:02:102'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:10:02:102'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:10:02:102'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:10:02:102'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:10:02:102'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:10:02:102'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:10:08:108'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:10:08:108'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:10:08:108'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:10:08:108'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:10:08:108'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:10:08:108'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:10:09:109'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:10:09:109'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:10:09:109'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:10:09:109'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:10:09:109'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:10:09:109'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:10:09:109'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:10:09:109'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:10:09:109'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:10:09:109'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:10:09:109'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:10:09:109'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:10:09:109'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:10:09:109'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:10:09:109'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:10:09:109'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:10:09:109'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:10:09:109'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:10:09:109'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:10:09:109'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:10:09:109'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:10:09:109'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:10:09:109'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:10:09:109'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:10:09:109'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:10:09:109'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:10:09:109'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:10:09:109'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:10:09:109'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:10:09:109'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:10:11:1011'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:10:11:1011'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:10:11:1011'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:10:11:1011'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:10:11:1011'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:10:11:1011'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:10:11:1011'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:10:11:1011'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:10:11:1011'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:10:11:1011'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:10:11:1011'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:10:11:1011'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:10:11:1011'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:10:11:1011'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:10:11:1011'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:10:11:1011'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:10:11:1011'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:10:11:1011'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:10:11:1011'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:10:11:1011'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:10:11:1011'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:10:11:1011'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:10:11:1011'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:10:11:1011'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:10:12:1012'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:10:12:1012'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:10:12:1012'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:10:12:1012'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Capture retrieved successfully',
+  timestamp: '2025-07-08 03:10:12:1012'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Captures retrieved successfully',
+  timestamp: '2025-07-08 03:10:12:1012'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Distinct site names retrieved successfully',
+  timestamp: '2025-07-08 03:10:12:1012'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: Collections retrieved successfully',
+  timestamp: '2025-07-08 03:10:12:1012'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:10:12:1012'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:10:12:1012'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:10:12:1012'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:10:12:1012'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:10:36:1036'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:10:36:1036'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:10:36:1036'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:10:36:1036'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:10:37:1037'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:10:37:1037'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:10:41:1041'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:10:41:1041'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:10:41:1041'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:10:41:1041'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:10:41:1041'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:10:41:1041'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:10:56:1056'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:10:56:1056'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:10:56:1056'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:10:56:1056'
+}
+{
+  service: 'api-service',
+  userId: '685fe4d7b0369feb976544c0',
+  level: 'info',
+  message: 'UserProfileService:getUserProfile',
+  timestamp: '2025-07-08 03:10:57:1057'
+}
+{
+  service: 'api-service',
+  statusCode: 200,
+  metadata: {},
+  level: 'info',
+  message: 'SuccessResponse: User profile retrieved successfully',
+  timestamp: '2025-07-08 03:10:57:1057'
+}
