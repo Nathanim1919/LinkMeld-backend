@@ -8,7 +8,6 @@ export class UserService {
         `externalServices.gemini.apiKey`
       ); // Removed .lean()
   
-      console.log(`User profile for ${userId}:`, profile);
   
       if (!profile?.externalServices?.gemini?.apiKey) {
         throw new Error("Gemini API key not found for user");

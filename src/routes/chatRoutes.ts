@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { authentication } from "../middleware/authMiddleware";
 import { AIController } from "../controllers/aiController";
+import { rateLimiter } from "../middleware/rateLimiter";
 
 const router = Router();
 
@@ -9,7 +10,7 @@ router.use(authentication);
 
 // Route to converse with AI
 router.post("/converse", AIController.chat);
-router.post("/summary", AIController.generateSummary);
+router.post("/summary", rateLimiter("strict"), AIController.generateSummary);
 
 // Export the router
 export default router;

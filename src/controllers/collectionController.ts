@@ -204,7 +204,7 @@ export default {
       }
 
       // Check if capture already in collection
-      if (collection.captures?.some((id) => id.equals(capture._id))) {
+      if (collection.captures?.some((id) => id.equals(captureId))) {
         return ErrorResponse({
           res,
           statusCode: 409,

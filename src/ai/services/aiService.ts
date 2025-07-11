@@ -562,9 +562,7 @@ export const processConversation = async (
 
     // Log token usage for cost monitoring
     const tokensUsed = data?.usageMetadata?.totalTokenCount;
-    if (tokensUsed) {
-      console.log(`Tokens used: ${tokensUsed}`);
-    }
+  
 
     return {
       message: messageText,

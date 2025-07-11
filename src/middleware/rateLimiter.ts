@@ -16,6 +16,12 @@ const commonOptions = {
     message:
       "Too many sensitive operations from this IP, please try again later",
   },
+  // lets create very strict rate limit to prevent abuse
+  // veryStrict: {
+  //   max: 2, // Limit each IP to 2 requests per windowMs. it is 2 requests per 15 minutes
+  //   message: "Too many requests, please try again later",
+  // },
+  
 };
 
 // Custom handler for rate limit exceeded

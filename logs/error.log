@@ -1854,3 +1854,1763 @@
   message: 'ErrorResponse: Capture already exists in this collection',
   timestamp: '2025-07-08 02:47:49:4749'
 }
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Summary generation failed: fetch failed AND Embedding generation failed: fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-08 16:37:44:3744'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Summary generation failed: fetch failed AND Embedding generation failed: fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-08 16:37:47:3747'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Summary generation failed: fetch failed AND Embedding generation failed: fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-08 16:37:48:3748'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Summary generation failed: fetch failed AND Embedding generation failed: fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-08 16:37:49:3749'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Summary generation failed: fetch failed AND Embedding generation failed: fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-08 16:37:50:3750'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Summary generation failed: fetch failed AND Embedding generation failed: fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-08 16:37:51:3751'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Summary generation failed: fetch failed AND Embedding generation failed: fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-08 16:38:44:3844'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Summary generation failed: fetch failed AND Embedding generation failed: fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-08 16:38:45:3845'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Summary generation failed: fetch failed AND Embedding generation failed: fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-08 16:38:46:3846'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Summary generation failed: fetch failed AND Embedding generation failed: fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-08 16:38:46:3846'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Summary generation failed: fetch failed AND Embedding generation failed: fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-08 16:38:47:3847'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Summary generation failed: fetch failed AND Embedding generation failed: fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-08 16:38:47:3847'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Summary generation failed: fetch failed AND Embedding generation failed: fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-08 16:38:47:3847'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Summary generation failed: fetch failed AND Embedding generation failed: fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-08 16:38:47:3847'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Summary generation failed: fetch failed AND Embedding generation failed: fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-08 16:38:47:3847'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Summary generation failed: fetch failed AND Embedding generation failed: fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-08 16:38:47:3847'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Summary generation failed: fetch failed AND Embedding generation failed: fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-08 16:38:48:3848'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Summary generation failed: fetch failed AND Embedding generation failed: fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-08 16:38:48:3848'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Summary generation failed: fetch failed AND Embedding generation failed: fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-08 16:38:48:3848'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Summary generation failed: fetch failed AND Embedding generation failed: fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-08 16:38:48:3848'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Summary generation failed: fetch failed AND Embedding generation failed: fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-08 16:38:48:3848'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Summary generation failed: fetch failed AND Embedding generation failed: fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-08 16:38:48:3848'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Summary generation failed: fetch failed AND Embedding generation failed: fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-08 16:38:49:3849'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Summary generation failed: fetch failed AND Embedding generation failed: fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-08 16:38:51:3851'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Summary generation failed: fetch failed AND Embedding generation failed: fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-08 16:52:00:520'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Summary generation failed: fetch failed AND Embedding generation failed: fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-08 21:26:51:2651'
+}
+{
+  service: 'api-service',
+  statusCode: 504,
+  errorCode: 'REQUEST_TIMEOUT',
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Request timeout',
+  timestamp: '2025-07-08 22:27:10:2710'
+}
+{
+  service: 'api-service',
+  statusCode: 504,
+  errorCode: 'REQUEST_TIMEOUT',
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Request timeout',
+  timestamp: '2025-07-08 22:27:31:2731'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Summary generation failed: fetch failed AND Embedding generation failed: fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-08 22:39:41:3941'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Summary generation failed: fetch failed AND Embedding generation failed: fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-08 22:40:16:4016'
+}
+{
+  service: 'api-service',
+  statusCode: 504,
+  errorCode: 'REQUEST_TIMEOUT',
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Request timeout',
+  timestamp: '2025-07-08 22:40:57:4057'
+}
+{
+  service: 'api-service',
+  statusCode: 504,
+  errorCode: 'REQUEST_TIMEOUT',
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Request timeout',
+  timestamp: '2025-07-08 22:51:16:5116'
+}
+{
+  service: 'api-service',
+  statusCode: 504,
+  errorCode: 'REQUEST_TIMEOUT',
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Request timeout',
+  timestamp: '2025-07-08 22:51:44:5144'
+}
+{
+  service: 'api-service',
+  statusCode: 409,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: This webpage has already been captured',
+  timestamp: '2025-07-09 01:00:40:040'
+}
+{
+  service: 'api-service',
+  statusCode: 409,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: This webpage has already been captured',
+  timestamp: '2025-07-09 01:50:24:5024'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Content too short (minimum 50 characters required)',
+  timestamp: '2025-07-09 01:54:19:5419'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Content too short (minimum 50 characters required)',
+  timestamp: '2025-07-09 01:54:30:5430'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Content too short (minimum 50 characters required)',
+  timestamp: '2025-07-09 01:54:41:5441'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Content too short (minimum 50 characters required)',
+  timestamp: '2025-07-09 01:54:47:5447'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Content too short (minimum 50 characters required)',
+  timestamp: '2025-07-09 02:00:26:026'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Content too short (minimum 50 characters required)',
+  timestamp: '2025-07-09 02:00:46:046'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Content too short (minimum 50 characters required)',
+  timestamp: '2025-07-09 02:01:16:116'
+}
+{
+  service: 'api-service',
+  statusCode: 409,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: This webpage has already been captured',
+  timestamp: '2025-07-09 02:02:43:243'
+}
+{
+  service: 'api-service',
+  statusCode: 409,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: This webpage has already been captured',
+  timestamp: '2025-07-09 02:11:09:119'
+}
+{
+  service: 'api-service',
+  statusCode: 409,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: This webpage has already been captured',
+  timestamp: '2025-07-09 02:21:31:2131'
+}
+{
+  service: 'api-service',
+  statusCode: 409,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: This webpage has already been captured',
+  timestamp: '2025-07-09 02:42:56:4256'
+}
+{
+  service: 'api-service',
+  statusCode: 409,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: This webpage has already been captured',
+  timestamp: '2025-07-09 02:42:57:4257'
+}
+{
+  service: 'api-service',
+  statusCode: 409,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: This webpage has already been captured',
+  timestamp: '2025-07-09 02:52:51:5251'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-09 03:21:23:2123'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-09 03:21:24:2124'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture not found',
+  timestamp: '2025-07-09 03:22:49:2249'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture not found',
+  timestamp: '2025-07-09 03:22:50:2250'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture not found',
+  timestamp: '2025-07-09 03:22:56:2256'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture not found',
+  timestamp: '2025-07-09 03:22:56:2256'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Summary generation failed: fetch failed AND Embedding generation failed: fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-09 08:44:14:4414'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Summary generation failed: fetch failed AND Embedding generation failed: fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-09 08:44:16:4416'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Summary generation failed: fetch failed AND Embedding generation failed: fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-09 08:44:17:4417'
+}
+{
+  service: 'api-service',
+  statusCode: 409,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture already exists in this collection',
+  timestamp: '2025-07-09 08:44:53:4453'
+}
+{
+  service: 'api-service',
+  level: 'error',
+  message: 'AIController:converse:error fetch failed',
+  stack: 'TypeError: fetch failed\n' +
+    '    at node:internal/deps/undici/undici:13502:13\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at processConversation (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/ai/services/aiService.ts:503:22)\n' +
+    '    at chat (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/controllers/aiController.ts:162:50)',
+  cause: Error: getaddrinfo EAI_AGAIN generativelanguage.googleapis.com
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+    errno: -3001,
+    code: 'EAI_AGAIN',
+    syscall: 'getaddrinfo',
+    hostname: 'generativelanguage.googleapis.com'
+  },
+  timestamp: '2025-07-09 08:45:11:4511'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'AI_CONVERSATION_FAILED',
+  error: 'fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: AI conversation failed',
+  timestamp: '2025-07-09 08:45:11:4511'
+}
+{
+  service: 'api-service',
+  level: 'error',
+  message: 'AIController:converse:error fetch failed',
+  stack: 'TypeError: fetch failed\n' +
+    '    at node:internal/deps/undici/undici:13502:13\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at processConversation (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/ai/services/aiService.ts:503:22)\n' +
+    '    at chat (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/controllers/aiController.ts:162:50)',
+  cause: Error: getaddrinfo EAI_AGAIN generativelanguage.googleapis.com
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+    errno: -3001,
+    code: 'EAI_AGAIN',
+    syscall: 'getaddrinfo',
+    hostname: 'generativelanguage.googleapis.com'
+  },
+  timestamp: '2025-07-09 08:45:19:4519'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'AI_CONVERSATION_FAILED',
+  error: 'fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: AI conversation failed',
+  timestamp: '2025-07-09 08:45:19:4519'
+}
+{
+  service: 'api-service',
+  level: 'error',
+  message: 'AIController:converse:error fetch failed',
+  stack: 'TypeError: fetch failed\n' +
+    '    at node:internal/deps/undici/undici:13502:13\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at processConversation (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/ai/services/aiService.ts:503:22)\n' +
+    '    at chat (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/controllers/aiController.ts:162:50)',
+  cause: Error: getaddrinfo EAI_AGAIN generativelanguage.googleapis.com
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+    errno: -3001,
+    code: 'EAI_AGAIN',
+    syscall: 'getaddrinfo',
+    hostname: 'generativelanguage.googleapis.com'
+  },
+  timestamp: '2025-07-09 08:45:23:4523'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'AI_CONVERSATION_FAILED',
+  error: 'fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: AI conversation failed',
+  timestamp: '2025-07-09 08:45:23:4523'
+}
+{
+  service: 'api-service',
+  level: 'error',
+  message: 'AIController:converse:error fetch failed',
+  stack: 'TypeError: fetch failed\n' +
+    '    at node:internal/deps/undici/undici:13502:13\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at processConversation (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/ai/services/aiService.ts:503:22)\n' +
+    '    at chat (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/controllers/aiController.ts:162:50)',
+  cause: Error: getaddrinfo EAI_AGAIN generativelanguage.googleapis.com
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+    errno: -3001,
+    code: 'EAI_AGAIN',
+    syscall: 'getaddrinfo',
+    hostname: 'generativelanguage.googleapis.com'
+  },
+  timestamp: '2025-07-09 08:45:26:4526'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'AI_CONVERSATION_FAILED',
+  error: 'fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: AI conversation failed',
+  timestamp: '2025-07-09 08:45:26:4526'
+}
+{
+  service: 'api-service',
+  level: 'error',
+  message: 'AIController:converse:error fetch failed',
+  stack: 'TypeError: fetch failed\n' +
+    '    at node:internal/deps/undici/undici:13502:13\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at processConversation (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/ai/services/aiService.ts:503:22)\n' +
+    '    at chat (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/controllers/aiController.ts:162:50)',
+  cause: Error: getaddrinfo EAI_AGAIN generativelanguage.googleapis.com
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+    errno: -3001,
+    code: 'EAI_AGAIN',
+    syscall: 'getaddrinfo',
+    hostname: 'generativelanguage.googleapis.com'
+  },
+  timestamp: '2025-07-09 08:45:30:4530'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'AI_CONVERSATION_FAILED',
+  error: 'fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: AI conversation failed',
+  timestamp: '2025-07-09 08:45:30:4530'
+}
+{
+  service: 'api-service',
+  statusCode: 409,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture already exists in this collection',
+  timestamp: '2025-07-09 10:09:36:936'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Content must be at least 100 characters long.',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-09 10:15:17:1517'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Content must be at least 100 characters long.',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-09 10:15:20:1520'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Content must be at least 100 characters long.',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-09 10:15:32:1532'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Content must be at least 100 characters long.',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-09 10:15:37:1537'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Content must be at least 100 characters long.',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-09 10:15:39:1539'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Content must be at least 100 characters long.',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-09 10:15:40:1540'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Content must be at least 100 characters long.',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-09 10:15:41:1541'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Content must be at least 100 characters long.',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-09 10:15:42:1542'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Content must be at least 100 characters long.',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-09 10:15:53:1553'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Content must be at least 100 characters long.',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-09 10:53:56:5356'
+}
+{
+  service: 'api-service',
+  statusCode: 429,
+  errorCode: 'RATE_LIMIT_EXCEEDED',
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Internal Server Error',
+  timestamp: '2025-07-09 11:52:29:5229'
+}
+{
+  service: 'api-service',
+  level: 'error',
+  message: 'AIController:converse:error fetch failed',
+  stack: 'TypeError: fetch failed\n' +
+    '    at node:internal/deps/undici/undici:13502:13\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at processConversation (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/ai/services/aiService.ts:503:22)\n' +
+    '    at chat (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/controllers/aiController.ts:162:50)',
+  cause: Error: getaddrinfo EAI_AGAIN generativelanguage.googleapis.com
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+    errno: -3001,
+    code: 'EAI_AGAIN',
+    syscall: 'getaddrinfo',
+    hostname: 'generativelanguage.googleapis.com'
+  },
+  timestamp: '2025-07-09 13:12:41:1241'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'AI_CONVERSATION_FAILED',
+  error: 'fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: AI conversation failed',
+  timestamp: '2025-07-09 13:12:41:1241'
+}
+{
+  service: 'api-service',
+  level: 'error',
+  message: 'AIController:converse:error fetch failed',
+  stack: 'TypeError: fetch failed\n' +
+    '    at node:internal/deps/undici/undici:13502:13\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at processConversation (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/ai/services/aiService.ts:503:22)\n' +
+    '    at chat (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/controllers/aiController.ts:162:50)',
+  cause: Error: getaddrinfo EAI_AGAIN generativelanguage.googleapis.com
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+    errno: -3001,
+    code: 'EAI_AGAIN',
+    syscall: 'getaddrinfo',
+    hostname: 'generativelanguage.googleapis.com'
+  },
+  timestamp: '2025-07-09 13:15:56:1556'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'AI_CONVERSATION_FAILED',
+  error: 'fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: AI conversation failed',
+  timestamp: '2025-07-09 13:15:56:1556'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Summary generation failed: fetch failed AND Embedding generation failed: fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-09 21:57:35:5735'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Summary generation failed: fetch failed AND Embedding generation failed: fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-09 21:57:40:5740'
+}
+{
+  service: 'api-service',
+  level: 'error',
+  message: 'AIController:converse:error fetch failed',
+  stack: 'TypeError: fetch failed\n' +
+    '    at node:internal/deps/undici/undici:13502:13\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at processConversation (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/ai/services/aiService.ts:503:22)\n' +
+    '    at chat (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/controllers/aiController.ts:162:50)',
+  cause: AggregateError: 
+      at internalConnectMultiple (node:net:1139:18)
+      at internalConnectMultiple (node:net:1215:5)
+      at Timeout.internalConnectMultipleTimeout (node:net:1739:5)
+      at listOnTimeout (node:internal/timers:616:11)
+      at processTimers (node:internal/timers:549:7) {
+    code: 'ETIMEDOUT',
+    [errors]: [
+      Error: connect ETIMEDOUT 172.217.170.202:443
+          at createConnectionError (node:net:1675:14)
+          at Timeout.internalConnectMultipleTimeout (node:net:1734:38)
+          at listOnTimeout (node:internal/timers:616:11)
+          at processTimers (node:internal/timers:549:7) {
+        errno: -110,
+        code: 'ETIMEDOUT',
+        syscall: 'connect',
+        address: '172.217.170.202',
+        port: 443
+      },
+      Error: connect ENETUNREACH 2a00:1450:401a:800::200a:443 - Local (:::0)
+          at internalConnectMultiple (node:net:1211:16)
+          at Timeout.internalConnectMultipleTimeout (node:net:1739:5)
+          at listOnTimeout (node:internal/timers:616:11)
+          at processTimers (node:internal/timers:549:7) {
+        errno: -101,
+        code: 'ENETUNREACH',
+        syscall: 'connect',
+        address: '2a00:1450:401a:800::200a',
+        port: 443
+      },
+      Error: connect ETIMEDOUT 172.217.170.170:443
+          at createConnectionError (node:net:1675:14)
+          at Timeout.internalConnectMultipleTimeout (node:net:1734:38)
+          at listOnTimeout (node:internal/timers:616:11)
+          at processTimers (node:internal/timers:549:7) {
+        errno: -110,
+        code: 'ETIMEDOUT',
+        syscall: 'connect',
+        address: '172.217.170.170',
+        port: 443
+      },
+      Error: connect ENETUNREACH 2a00:1450:401a:801::200a:443 - Local (:::0)
+          at internalConnectMultiple (node:net:1211:16)
+          at Timeout.internalConnectMultipleTimeout (node:net:1739:5)
+          at listOnTimeout (node:internal/timers:616:11)
+          at processTimers (node:internal/timers:549:7) {
+        errno: -101,
+        code: 'ENETUNREACH',
+        syscall: 'connect',
+        address: '2a00:1450:401a:801::200a',
+        port: 443
+      }
+    ]
+  },
+  timestamp: '2025-07-09 21:58:07:587'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'AI_CONVERSATION_FAILED',
+  error: 'fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: AI conversation failed',
+  timestamp: '2025-07-09 21:58:07:587'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: 'INVALID_REQUEST',
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Invalid message content',
+  timestamp: '2025-07-09 21:59:04:594'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: 'INVALID_REQUEST',
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Invalid message content',
+  timestamp: '2025-07-09 21:59:18:5918'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: 'INVALID_REQUEST',
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Invalid message content',
+  timestamp: '2025-07-09 21:59:40:5940'
+}
+{
+  service: 'api-service',
+  level: 'error',
+  message: 'AIController:converse:error fetch failed',
+  stack: 'TypeError: fetch failed\n' +
+    '    at node:internal/deps/undici/undici:13502:13\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at processConversation (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/ai/services/aiService.ts:503:22)\n' +
+    '    at chat (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/controllers/aiController.ts:162:50)',
+  cause: AggregateError: 
+      at internalConnectMultiple (node:net:1139:18)
+      at internalConnectMultiple (node:net:1215:5)
+      at Timeout.internalConnectMultipleTimeout (node:net:1739:5)
+      at listOnTimeout (node:internal/timers:616:11)
+      at processTimers (node:internal/timers:549:7) {
+    code: 'ETIMEDOUT',
+    [errors]: [
+      Error: connect ETIMEDOUT 172.217.170.170:443
+          at createConnectionError (node:net:1675:14)
+          at Timeout.internalConnectMultipleTimeout (node:net:1734:38)
+          at listOnTimeout (node:internal/timers:616:11)
+          at processTimers (node:internal/timers:549:7) {
+        errno: -110,
+        code: 'ETIMEDOUT',
+        syscall: 'connect',
+        address: '172.217.170.170',
+        port: 443
+      },
+      Error: connect ENETUNREACH 2a00:1450:401a:801::200a:443 - Local (:::0)
+          at internalConnectMultiple (node:net:1211:16)
+          at Timeout.internalConnectMultipleTimeout (node:net:1739:5)
+          at listOnTimeout (node:internal/timers:616:11)
+          at processTimers (node:internal/timers:549:7) {
+        errno: -101,
+        code: 'ENETUNREACH',
+        syscall: 'connect',
+        address: '2a00:1450:401a:801::200a',
+        port: 443
+      },
+      Error: connect ETIMEDOUT 172.217.170.202:443
+          at createConnectionError (node:net:1675:14)
+          at Timeout.internalConnectMultipleTimeout (node:net:1734:38)
+          at listOnTimeout (node:internal/timers:616:11)
+          at processTimers (node:internal/timers:549:7) {
+        errno: -110,
+        code: 'ETIMEDOUT',
+        syscall: 'connect',
+        address: '172.217.170.202',
+        port: 443
+      },
+      Error: connect ENETUNREACH 2a00:1450:401a:800::200a:443 - Local (:::0)
+          at internalConnectMultiple (node:net:1211:16)
+          at Timeout.internalConnectMultipleTimeout (node:net:1739:5)
+          at listOnTimeout (node:internal/timers:616:11)
+          at processTimers (node:internal/timers:549:7) {
+        errno: -101,
+        code: 'ENETUNREACH',
+        syscall: 'connect',
+        address: '2a00:1450:401a:800::200a',
+        port: 443
+      }
+    ]
+  },
+  timestamp: '2025-07-09 22:03:49:349'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'AI_CONVERSATION_FAILED',
+  error: 'fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: AI conversation failed',
+  timestamp: '2025-07-09 22:03:49:349'
+}
+{
+  service: 'api-service',
+  level: 'error',
+  message: 'AIController:converse:error fetch failed',
+  stack: 'TypeError: fetch failed\n' +
+    '    at node:internal/deps/undici/undici:13502:13\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at processConversation (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/ai/services/aiService.ts:503:22)\n' +
+    '    at chat (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/controllers/aiController.ts:162:50)',
+  cause: AggregateError: 
+      at internalConnectMultiple (node:net:1139:18)
+      at internalConnectMultiple (node:net:1215:5)
+      at internalConnectMultiple (node:net:1215:5)
+      at Timeout.internalConnectMultipleTimeout (node:net:1739:5)
+      at listOnTimeout (node:internal/timers:616:11)
+      at processTimers (node:internal/timers:549:7) {
+    code: 'ETIMEDOUT',
+    [errors]: [
+      Error: connect ETIMEDOUT 172.217.170.202:443
+          at createConnectionError (node:net:1675:14)
+          at Timeout.internalConnectMultipleTimeout (node:net:1734:38)
+          at listOnTimeout (node:internal/timers:616:11)
+          at processTimers (node:internal/timers:549:7) {
+        errno: -110,
+        code: 'ETIMEDOUT',
+        syscall: 'connect',
+        address: '172.217.170.202',
+        port: 443
+      },
+      Error: connect ENETUNREACH 2a00:1450:401a:801::200a:443 - Local (:::0)
+          at internalConnectMultiple (node:net:1211:16)
+          at Timeout.internalConnectMultipleTimeout (node:net:1739:5)
+          at listOnTimeout (node:internal/timers:616:11)
+          at processTimers (node:internal/timers:549:7) {
+        errno: -101,
+        code: 'ENETUNREACH',
+        syscall: 'connect',
+        address: '2a00:1450:401a:801::200a',
+        port: 443
+      },
+      Error: connect ETIMEDOUT 172.217.170.170:443
+          at createConnectionError (node:net:1675:14)
+          at Timeout.internalConnectMultipleTimeout (node:net:1734:38)
+          at listOnTimeout (node:internal/timers:616:11)
+          at processTimers (node:internal/timers:549:7) {
+        errno: -110,
+        code: 'ETIMEDOUT',
+        syscall: 'connect',
+        address: '172.217.170.170',
+        port: 443
+      },
+      Error: connect ENETUNREACH 2a00:1450:401a:804::200a:443 - Local (:::0)
+          at internalConnectMultiple (node:net:1211:16)
+          at Timeout.internalConnectMultipleTimeout (node:net:1739:5)
+          at listOnTimeout (node:internal/timers:616:11)
+          at processTimers (node:internal/timers:549:7) {
+        errno: -101,
+        code: 'ENETUNREACH',
+        syscall: 'connect',
+        address: '2a00:1450:401a:804::200a',
+        port: 443
+      },
+      Error: connect ENETUNREACH 2a00:1450:401a:800::200a:443 - Local (:::0)
+          at internalConnectMultiple (node:net:1211:16)
+          at internalConnectMultiple (node:net:1215:5)
+          at Timeout.internalConnectMultipleTimeout (node:net:1739:5)
+          at listOnTimeout (node:internal/timers:616:11)
+          at processTimers (node:internal/timers:549:7) {
+        errno: -101,
+        code: 'ENETUNREACH',
+        syscall: 'connect',
+        address: '2a00:1450:401a:800::200a',
+        port: 443
+      }
+    ]
+  },
+  timestamp: '2025-07-09 22:16:17:1617'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'AI_CONVERSATION_FAILED',
+  error: 'fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: AI conversation failed',
+  timestamp: '2025-07-09 22:16:17:1617'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Summary generation failed: fetch failed AND Embedding generation failed: fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-09 22:59:43:5943'
+}
+{
+  service: 'api-service',
+  level: 'error',
+  message: 'AIController:converse:error fetch failed',
+  stack: 'TypeError: fetch failed\n' +
+    '    at node:internal/deps/undici/undici:13502:13\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at processConversation (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/ai/services/aiService.ts:503:22)\n' +
+    '    at chat (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/controllers/aiController.ts:162:50)',
+  cause: AggregateError: 
+      at internalConnectMultiple (node:net:1139:18)
+      at internalConnectMultiple (node:net:1215:5)
+      at Timeout.internalConnectMultipleTimeout (node:net:1739:5)
+      at listOnTimeout (node:internal/timers:616:11)
+      at processTimers (node:internal/timers:549:7) {
+    code: 'ETIMEDOUT',
+    [errors]: [
+      Error: connect ETIMEDOUT 216.58.223.74:443
+          at createConnectionError (node:net:1675:14)
+          at Timeout.internalConnectMultipleTimeout (node:net:1734:38)
+          at listOnTimeout (node:internal/timers:616:11)
+          at processTimers (node:internal/timers:549:7) {
+        errno: -110,
+        code: 'ETIMEDOUT',
+        syscall: 'connect',
+        address: '216.58.223.74',
+        port: 443
+      },
+      Error: connect ENETUNREACH 2a00:1450:401a:804::200a:443 - Local (:::0)
+          at internalConnectMultiple (node:net:1211:16)
+          at Timeout.internalConnectMultipleTimeout (node:net:1739:5)
+          at listOnTimeout (node:internal/timers:616:11)
+          at processTimers (node:internal/timers:549:7) {
+        errno: -101,
+        code: 'ENETUNREACH',
+        syscall: 'connect',
+        address: '2a00:1450:401a:804::200a',
+        port: 443
+      },
+      Error: connect ETIMEDOUT 172.217.170.202:443
+          at createConnectionError (node:net:1675:14)
+          at Timeout.internalConnectMultipleTimeout (node:net:1734:38)
+          at listOnTimeout (node:internal/timers:616:11)
+          at processTimers (node:internal/timers:549:7) {
+        errno: -110,
+        code: 'ETIMEDOUT',
+        syscall: 'connect',
+        address: '172.217.170.202',
+        port: 443
+      },
+      Error: connect ENETUNREACH 2a00:1450:401a:801::200a:443 - Local (:::0)
+          at internalConnectMultiple (node:net:1211:16)
+          at Timeout.internalConnectMultipleTimeout (node:net:1739:5)
+          at listOnTimeout (node:internal/timers:616:11)
+          at processTimers (node:internal/timers:549:7) {
+        errno: -101,
+        code: 'ENETUNREACH',
+        syscall: 'connect',
+        address: '2a00:1450:401a:801::200a',
+        port: 443
+      },
+      Error: connect ETIMEDOUT 172.217.170.170:443
+          at createConnectionError (node:net:1675:14)
+          at Timeout.internalConnectMultipleTimeout (node:net:1734:38)
+          at listOnTimeout (node:internal/timers:616:11)
+          at processTimers (node:internal/timers:549:7) {
+        errno: -110,
+        code: 'ETIMEDOUT',
+        syscall: 'connect',
+        address: '172.217.170.170',
+        port: 443
+      },
+      Error: connect ENETUNREACH 2a00:1450:401a:800::200a:443 - Local (:::0)
+          at internalConnectMultiple (node:net:1211:16)
+          at Timeout.internalConnectMultipleTimeout (node:net:1739:5)
+          at listOnTimeout (node:internal/timers:616:11)
+          at processTimers (node:internal/timers:549:7) {
+        errno: -101,
+        code: 'ENETUNREACH',
+        syscall: 'connect',
+        address: '2a00:1450:401a:800::200a',
+        port: 443
+      }
+    ]
+  },
+  timestamp: '2025-07-09 23:02:39:239'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'AI_CONVERSATION_FAILED',
+  error: 'fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: AI conversation failed',
+  timestamp: '2025-07-09 23:02:39:239'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Summary generation failed: fetch failed AND Embedding generation failed: fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-09 23:29:09:299'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Summary generation failed: fetch failed AND Embedding generation failed: fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-09 23:47:47:4747'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'SUMMARY_GENERATION_FAILED',
+  error: 'Summary generation failed: fetch failed AND Embedding generation failed: fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: Failed to generate summary',
+  timestamp: '2025-07-09 23:47:59:4759'
+}
+{
+  service: 'api-service',
+  statusCode: 409,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture already exists in this collection',
+  timestamp: '2025-07-10 00:30:49:3049'
+}
+{
+  service: 'api-service',
+  statusCode: 504,
+  errorCode: 'REQUEST_TIMEOUT',
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Request timeout',
+  timestamp: '2025-07-10 00:36:29:3629'
+}
+{
+  service: 'api-service',
+  level: 'error',
+  message: 'AIController:converse:error API Error 503: The model is overloaded. Please try again later.',
+  stack: 'Error: API Error 503: The model is overloaded. Please try again later.\n' +
+    '    at processConversation (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/ai/services/aiService.ts:553:13)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at chat (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/controllers/aiController.ts:162:50)',
+  timestamp: '2025-07-10 00:36:40:3640'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'AI_CONVERSATION_FAILED',
+  error: 'API Error 503: The model is overloaded. Please try again later.',
+  level: 'error',
+  message: 'ErrorResponse: AI conversation failed',
+  timestamp: '2025-07-10 00:36:40:3640'
+}
+{
+  service: 'api-service',
+  statusCode: 409,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Capture already exists in this collection',
+  timestamp: '2025-07-10 00:40:01:401'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-10 03:45:56:4556'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-10 03:45:57:4557'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-10 03:46:54:4654'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-10 03:46:54:4654'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: null,
+  error: `Capture validation failed: url: Cast to string failed for value "Promise { 'https://www.better-auth.com/docs/authentication/google' }" (type Promise) at path "url"`,
+  level: 'error',
+  message: 'ErrorResponse: An error occurred while saving capture',
+  timestamp: '2025-07-10 03:47:51:4751'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-10 03:48:08:488'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-10 03:48:09:489'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-10 03:53:20:5320'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-10 03:53:21:5321'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-10 03:53:37:5337'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-10 03:53:38:5338'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-10 03:55:26:5526'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-10 03:55:27:5527'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-10 03:57:27:5727'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-10 03:57:28:5728'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-10 04:01:00:10'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-10 04:01:11:111'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-10 04:01:12:112'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-10 04:02:53:253'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-10 04:02:53:253'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: null,
+  error: 'Capture validation failed: url: Cast to string failed for value "Promise {\n' +
+    "  'https://digitalpromise.org/initiative/artificial-intelligence-in-education?gad_campaignid=20185001884&gad_source=1&gbraid=0AAAAAppQu-pFLnjKyiFLtxr1QFn2iZwaV'\n" +
+    '}" (type Promise) at path "url"',
+  level: 'error',
+  message: 'ErrorResponse: An error occurred while saving capture',
+  timestamp: '2025-07-10 04:03:29:329'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-10 05:00:12:012'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-10 05:00:12:012'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-10 05:10:30:1030'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-10 05:10:34:1034'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-10 05:10:39:1039'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-10 05:11:35:1135'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-10 05:11:35:1135'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-10 05:16:46:1646'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-10 05:16:46:1646'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-10 05:17:02:172'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-10 05:17:02:172'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-10 05:18:10:1810'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-10 05:18:10:1810'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-10 05:19:09:199'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-10 05:19:10:1910'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-10 05:19:55:1955'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-10 05:19:56:1956'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-10 05:28:39:2839'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-10 05:28:40:2840'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-10 05:42:27:4227'
+}
+{
+  service: 'api-service',
+  statusCode: 404,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: No distinct site names found for user',
+  timestamp: '2025-07-10 05:42:27:4227'
+}
+{
+  service: 'api-service',
+  level: 'error',
+  message: 'AIController:converse:error fetch failed',
+  stack: 'TypeError: fetch failed\n' +
+    '    at node:internal/deps/undici/undici:13502:13\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at processConversation (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/ai/services/aiService.ts:503:22)\n' +
+    '    at chat (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/controllers/aiController.ts:162:50)',
+  cause: Error: getaddrinfo EAI_AGAIN generativelanguage.googleapis.com
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+    errno: -3001,
+    code: 'EAI_AGAIN',
+    syscall: 'getaddrinfo',
+    hostname: 'generativelanguage.googleapis.com'
+  },
+  timestamp: '2025-07-10 05:45:49:4549'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'AI_CONVERSATION_FAILED',
+  error: 'fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: AI conversation failed',
+  timestamp: '2025-07-10 05:45:49:4549'
+}
+{
+  service: 'api-service',
+  level: 'error',
+  message: 'AIController:converse:error fetch failed',
+  stack: 'TypeError: fetch failed\n' +
+    '    at node:internal/deps/undici/undici:13502:13\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at processConversation (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/ai/services/aiService.ts:503:22)\n' +
+    '    at chat (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/controllers/aiController.ts:162:50)',
+  cause: Error: getaddrinfo EAI_AGAIN generativelanguage.googleapis.com
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26) {
+    errno: -3001,
+    code: 'EAI_AGAIN',
+    syscall: 'getaddrinfo',
+    hostname: 'generativelanguage.googleapis.com'
+  },
+  timestamp: '2025-07-10 05:46:47:4647'
+}
+{
+  service: 'api-service',
+  statusCode: 500,
+  errorCode: 'AI_CONVERSATION_FAILED',
+  error: 'fetch failed',
+  level: 'error',
+  message: 'ErrorResponse: AI conversation failed',
+  timestamp: '2025-07-10 05:46:47:4647'
+}
+{
+  service: 'api-service',
+  statusCode: 400,
+  errorCode: null,
+  error: null,
+  level: 'error',
+  message: 'ErrorResponse: Gemini API key is required',
+  timestamp: '2025-07-10 05:46:56:4656'
+}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Capture already exists in this collection","service":"api-service","statusCode":409,"timestamp":"2025-07-10 08:05:29:529"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-07-10 22:10:07:107"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-07-10 22:10:07:107"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-07-10 22:12:49:1249"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-07-10 22:12:50:1250"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-07-10 22:32:23:3223"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-07-10 22:32:23:3223"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-07-10 22:33:00:330"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-07-10 22:33:00:330"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-07-10 22:33:08:338"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-07-10 22:33:08:338"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-07-10 22:37:36:3736"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-07-10 22:37:36:3736"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-07-10 22:37:44:3744"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-07-10 22:37:44:3744"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-07-10 22:38:17:3817"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-07-10 22:38:17:3817"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-07-10 22:39:44:3944"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-07-10 22:39:44:3944"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-07-10 23:12:32:1232"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-07-10 23:12:32:1232"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Capture not found","service":"api-service","statusCode":404,"timestamp":"2025-07-11 03:41:28:4128"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Capture not found","service":"api-service","statusCode":404,"timestamp":"2025-07-11 03:41:29:4129"}
+{"cause":{"code":"EAI_AGAIN","errno":-3001,"hostname":"generativelanguage.googleapis.com","syscall":"getaddrinfo"},"level":"error","message":"AIController:converse:error fetch failed","service":"api-service","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:13502:13\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at processConversation (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/ai/services/aiService.ts:503:22)\n    at chat (/home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/src/controllers/aiController.ts:162:50)","timestamp":"2025-07-11 08:15:36:1536"}
+{"error":"fetch failed","errorCode":"AI_CONVERSATION_FAILED","level":"error","message":"ErrorResponse: AI conversation failed","service":"api-service","statusCode":500,"timestamp":"2025-07-11 08:15:36:1536"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Capture already exists in this collection","service":"api-service","statusCode":409,"timestamp":"2025-07-11 09:13:20:1320"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Capture already exists in this collection","service":"api-service","statusCode":409,"timestamp":"2025-07-11 09:13:37:1337"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Capture already exists in this collection","service":"api-service","statusCode":409,"timestamp":"2025-07-11 09:39:37:3937"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Capture already exists in this collection","service":"api-service","statusCode":409,"timestamp":"2025-07-11 09:41:57:4157"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Capture already exists in this collection","service":"api-service","statusCode":409,"timestamp":"2025-07-11 09:43:10:4310"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Capture already exists in this collection","service":"api-service","statusCode":409,"timestamp":"2025-07-11 09:43:25:4325"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Capture already exists in this collection","service":"api-service","statusCode":409,"timestamp":"2025-07-11 09:43:46:4346"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Capture already exists in this collection","service":"api-service","statusCode":409,"timestamp":"2025-07-11 09:44:09:449"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Capture already exists in this collection","service":"api-service","statusCode":409,"timestamp":"2025-07-11 09:45:14:4514"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Capture already exists in this collection","service":"api-service","statusCode":409,"timestamp":"2025-07-11 09:50:44:5044"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Capture already exists in this collection","service":"api-service","statusCode":409,"timestamp":"2025-07-11 09:50:50:5050"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Capture already exists in this collection","service":"api-service","statusCode":409,"timestamp":"2025-07-11 10:01:25:125"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Capture already exists in this collection","service":"api-service","statusCode":409,"timestamp":"2025-07-11 10:01:29:129"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-07-11 21:11:10:1110"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-07-11 21:11:10:1110"}

@@ -1,87 +1,132 @@
 import { URL } from 'url';
-import { parseDomain, fromUrl } from 'parse-domain';
 
-/**
- * Normalizes URLs for consistent storage and comparison
- */
-export const normalizeUrl = (inputUrl: string): string => {
+interface UrlNormalizationOptions {
+  forceHttps?: boolean;
+  removeTrackingParams?: boolean;
+  sortQueryParams?: boolean;
+  stripTrailingSlash?: boolean;
+}
+
+interface ParsedHostname {
+  subDomains: string[];
+  domain: string | null;
+  topLevelDomains: string[];
+}
+
+const DEFAULT_TRACKING_PARAMS = [
+  'utm_source',
+  'utm_medium',
+  'utm_campaign',
+  'fbclid',
+  'gclid',
+  'utm_term',
+  'utm_content',
+  'ref'
+];
+
+export const normalizeUrl = async (
+  inputUrl: string,
+  options: UrlNormalizationOptions = {
+    forceHttps: true,
+    removeTrackingParams: true,
+    sortQueryParams: true,
+    stripTrailingSlash: true
+  }
+): Promise<string> => {
   if (!inputUrl?.trim()) return '';
 
   try {
-    const url = new URL(inputUrl);
+    // Ensure URL has protocol for proper parsing
+    const urlToParse = inputUrl.includes('://') ? inputUrl : `https://${inputUrl}`;
+    const url = new URL(urlToParse);
 
-    // Force HTTPS if possible
-    if (url.protocol === 'http:' && canUpgradeToHttps(url.hostname)) {
+    // Protocol normalization
+    if (options.forceHttps && await shouldUpgradeToHttps(url)) {
       url.protocol = 'https:';
     }
 
-    // Standardize hostname (www removal)
+    // Hostname normalization
     url.hostname = normalizeHostname(url.hostname);
 
-    // Remove tracking params and fragments
-    url.hash = '';
-    const cleanSearch = new URLSearchParams(url.search);
-    [
-      'utm_source',
-      'utm_medium',
-      'utm_campaign',
-      'fbclid',
-      'gclid'
-    ].forEach(param => cleanSearch.delete(param));
-    url.search = cleanSearch.toString();
-
-    // Sort query params
+    // Query string processing
     if (url.search) {
-      const params = Array.from(new URLSearchParams(url.search));
-      params.sort((a, b) => a[0].localeCompare(b[0]));
-      url.search = new URLSearchParams(params).toString();
+      const searchParams = new URLSearchParams(url.search);
+      
+      if (options.removeTrackingParams) {
+        DEFAULT_TRACKING_PARAMS.forEach(param => searchParams.delete(param));
+      }
+
+      if (options.sortQueryParams) {
+        const sortedParams = Array.from(searchParams.entries())
+          .sort(([a], [b]) => a.localeCompare(b));
+        url.search = new URLSearchParams(sortedParams).toString();
+      } else {
+        url.search = searchParams.toString();
+      }
     }
 
-    // Remove trailing slashes
-    url.pathname = url.pathname.replace(/\/+$/, '') || '/';
+    // Path normalization
+    if (options.stripTrailingSlash) {
+      url.pathname = url.pathname.replace(/\/+$/, '') || '/';
+    }
+
+    // Clean empty search string
+    if (!url.search) {
+      url.search = '';
+    }
 
     return url.toString();
   } catch (err) {
-    console.warn(`URL normalization failed for: ${inputUrl}`);
+    console.warn(`URL normalization failed for: ${inputUrl}`, err);
     return inputUrl;
   }
 };
 
-const normalizeHostname = (hostname: string): string => {
-  const parsed = parseDomain(fromUrl(hostname));
-  if (!parsed) return hostname;
-
-  // Remove www and similar prefixes
-  const { subDomains, domain, topLevelDomains } = parsed;
-  const mainSub = subDomains.filter(s => !['www', 'm'].includes(s)).pop();
+const shouldUpgradeToHttps = async (url: URL): Promise<boolean> => {
+  // Skip for localhost and non-HTTP protocols
+  if (!['http:', 'https:'].includes(url.protocol)) return false;
   
-  return [
-    mainSub,
-    domain,
-    ...topLevelDomains
-  ].filter(Boolean).join('.');
+  const localHosts = new Set(['localhost', '127.0.0.1', '::1', '0.0.0.0']);
+  if (localHosts.has(url.hostname)) return false;
+
+  // Additional checks could be added here for known HTTP-only hosts
+  return true;
 };
 
-const canUpgradeToHttps = async (hostname: string): Promise<boolean> => {
-  // In production, you might want to actually check if HTTPS is available
-  // For now, we'll assume most modern sites support HTTPS
-  return ![
-    'localhost',
-    '127.0.0.1',
-    '::1'
-  ].includes(hostname);
+const normalizeHostname = (hostname: string): string => {
+  try {
+    const parsed = parseHostname(hostname);
+    
+    if (!isPublicSuffixDomain(parsed)) {
+      return hostname;
+    }
+
+    // Remove common subdomains like www, m, mobile
+    const meaningfulSubdomains = parsed.subDomains.filter(
+      sub => !['www', 'm', 'mobile', 'amp'].includes(sub)
+    );
+
+    return [
+      ...meaningfulSubdomains,
+      parsed.domain,
+      ...parsed.topLevelDomains
+    ].filter(Boolean).join('.');
+  } catch {
+    return hostname;
+  }
 };
 
-/**
- * Extracts root domain for grouping related content
- */
 export const getRootDomain = (url: string): string | null => {
   try {
-    const parsed = parseDomain(fromUrl(url));
-    if (!parsed) return null;
-
+    const parsed = parseHostname(new URL(url).hostname);
+    if (!isPublicSuffixDomain(parsed)) return null;
+    
     return [parsed.domain, ...parsed.topLevelDomains].join('.');
   } catch {
     return null;
   }
 };
+
+// Helper functions would need to be implemented or imported
+declare function parseHostname(hostname: string): ParsedHostname;
+declare function isPublicSuffixDomain(parsed: ParsedHostname): boolean;

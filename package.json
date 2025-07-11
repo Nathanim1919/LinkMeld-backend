@@ -34,7 +34,7 @@
     "express": "^5.1.0",
     "express-rate-limit": "^7.5.1",
     "mongoose": "^8.15.0",
-    "parse-domain": "^8.2.2",
+    "parse-domain": "^4.1.0",
     "pdfjs-dist": "^5.3.31",
     "sanitize-html": "^2.17.0",
     "transliteration": "^2.3.5",

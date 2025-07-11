@@ -19,7 +19,10 @@ const MAX_LINKS = 100;
  * @param req Express request with capture data
  * @param res Express response
  */
-export const saveCapture = async (req: Request, res: Response): Promise<void> => {
+export const saveCapture = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
   try {
     // 1. Input Validation
     const requiredFields = ["url", "timestamp"];
@@ -29,7 +32,7 @@ export const saveCapture = async (req: Request, res: Response): Promise<void> =>
       return ErrorResponse({
         res,
         statusCode: 400,
-        message: `Missing required fields: ${missingFields.join(", ")}`
+        message: `Missing required fields: ${missingFields.join(", ")}`,
       });
     }
 
@@ -42,6 +45,7 @@ export const saveCapture = async (req: Request, res: Response): Promise<void> =>
       documents = [],
       links = [],
       favicon,
+      headings,
       siteName,
       publishedTime,
       author,
@@ -57,7 +61,7 @@ export const saveCapture = async (req: Request, res: Response): Promise<void> =>
       return ErrorResponse({
         res,
         statusCode: 400,
-        message: `Content too short (minimum ${MIN_CONTENT_LENGTH} characters required)`
+        message: `Content too short (minimum ${MIN_CONTENT_LENGTH} characters required)`,
       });
     }
 
@@ -68,8 +72,8 @@ export const saveCapture = async (req: Request, res: Response): Promise<void> =>
     const existingCapture = await Capture.findOne({
       $or: [
         { slug: captureData.slug },
-        { contentHash: captureData.contentHash }
-      ]
+        { contentHash: captureData.contentHash },
+      ],
     });
 
     if (existingCapture) {
@@ -77,14 +81,14 @@ export const saveCapture = async (req: Request, res: Response): Promise<void> =>
         res,
         statusCode: 409,
         message: "This webpage has already been captured",
-        data: { captureId: existingCapture._id }
+        data: { captureId: existingCapture._id },
       });
     }
 
     // 5. Save to Database
     const capture = await new Capture(captureData).save();
     const conversation = await Conversation.create({ captureId: capture._id });
-    
+
     capture.conversation = new mongoose.Types.ObjectId(conversation._id);
     await capture.save();
 
@@ -101,9 +105,8 @@ export const saveCapture = async (req: Request, res: Response): Promise<void> =>
         documents: capture.documents?.length || 0,
         timestamp: capture.metadata.capturedAt,
         ai: capture.ai,
-      }
+      },
     });
-
   } catch (error) {
     console.error("[Capture] Save error:", error);
     return ErrorResponse({
@@ -111,7 +114,7 @@ export const saveCapture = async (req: Request, res: Response): Promise<void> =>
       statusCode: 500,
       message: "An error occurred while saving capture",
       error: error instanceof Error ? error.message : "Unknown error",
-      ...(process.env.NODE_ENV === "development" && { stack: error.stack })
+      ...(process.env.NODE_ENV === "development" && { stack: error.stack }),
     });
   }
 };
@@ -119,7 +122,10 @@ export const saveCapture = async (req: Request, res: Response): Promise<void> =>
 /**
  * Helper function to prepare capture data
  */
-const prepareCaptureData = (req: Request, content: string): Partial<ICapture> => {
+const prepareCaptureData = (
+  req: Request,
+  content: string
+): Partial<ICapture> => {
   const {
     url,
     title,
@@ -128,12 +134,13 @@ const prepareCaptureData = (req: Request, content: string): Partial<ICapture> =>
     links = [],
     favicon,
     siteName,
+    headings,
     publishedTime,
     author,
     keywords,
     viewport,
     language = "en",
-    userAgent
+    userAgent,
   } = req.body;
 
   const isPdf = !!url.match(/\.pdf($|\?)/i);
@@ -145,12 +152,12 @@ const prepareCaptureData = (req: Request, content: string): Partial<ICapture> =>
     title: sanitizeHtml(title || "Untitled", { allowedTags: [] }),
     slug: generateSlug(title || url),
     contentHash: hashContent(content),
-
+    headings,
     content: {
       raw: content,
       clean: sanitizeHtml(content, { allowedTags: [], allowedAttributes: {} }),
       highlights: [],
-      attachments: []
+      attachments: [],
     },
 
     metadata: {
@@ -165,7 +172,7 @@ const prepareCaptureData = (req: Request, content: string): Partial<ICapture> =>
       isPdf,
       type: isPdf ? "document" : "article",
       wordCount,
-      readingTime: Math.ceil(wordCount / 200)
+      readingTime: Math.ceil(wordCount / 200),
     },
 
     documents: prepareDocuments(documents),
@@ -176,46 +183,53 @@ const prepareCaptureData = (req: Request, content: string): Partial<ICapture> =>
     source: {
       ip: req.ip,
       userAgent: sanitizeHtml(userAgent || "", { allowedTags: [] }),
-      extensionVersion: req.headers["x-extension-version"]?.toString() || "1.0.0"
+      extensionVersion:
+        req.headers["x-extension-version"]?.toString() || "1.0.0",
     },
 
     searchTokens: [
       ...(title?.toLowerCase().split(/\s+/) || []),
-      ...(description?.toLowerCase().split(/\s+/) || [])
-    ]
+      ...(description?.toLowerCase().split(/\s+/) || []),
+    ],
   };
 };
 
 /**
  * Gets all captures for the authenticated user
  */
-export const getCaptures = async (req: Request, res: Response): Promise<void> => {
+export const getCaptures = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
   try {
     const captures = await Capture.find({ owner: req.user.id })
       .populate("collection", "name")
+      .sort({ "metadata.capturedAt": -1 })
+      .select("-content.raw -content.clean") // Exclude raw content for performance
       .exec();
 
     return SuccessResponse({
       res,
       message: "Captures retrieved successfully",
-      data: captures
+      data: captures,
     });
-
   } catch (error) {
     console.error("[Capture] Fetch error:", error);
     return ErrorResponse({
       res,
       statusCode: 500,
       message: "Failed to fetch captures",
-      error: error instanceof Error ? error.message : "Unknown error"
+      error: error instanceof Error ? error.message : "Unknown error",
     });
   }
 };
-
 /**
  * Toggles bookmark status for a capture
  */
-export const toggleBookmark = async (req: Request, res: Response): Promise<void> => {
+export const toggleBookmark = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
   try {
     const { captureId } = req.params;
 
@@ -223,20 +237,20 @@ export const toggleBookmark = async (req: Request, res: Response): Promise<void>
       return ErrorResponse({
         res,
         statusCode: 400,
-        message: "Capture ID is required"
+        message: "Capture ID is required",
       });
     }
 
     const capture = await Capture.findOne({
       _id: captureId,
-      owner: req.user.id
+      owner: req.user.id,
     });
 
     if (!capture) {
       return ErrorResponse({
         res,
         statusCode: 404,
-        message: "Capture not found"
+        message: "Capture not found",
       });
     }
 
@@ -245,17 +259,18 @@ export const toggleBookmark = async (req: Request, res: Response): Promise<void>
 
     return SuccessResponse({
       res,
-      message: `Capture ${capture.bookmarked ? "bookmarked" : "unbookmarked"} successfully`,
-      data: { captureId: capture._id }
+      message: `Capture ${
+        capture.bookmarked ? "bookmarked" : "unbookmarked"
+      } successfully`,
+      data: { captureId: capture._id },
     });
-
   } catch (error) {
     console.error("[Capture] Bookmark error:", error);
     return ErrorResponse({
       res,
       statusCode: 500,
       message: "Failed to update bookmark status",
-      error: error instanceof Error ? error.message : "Unknown error"
+      error: error instanceof Error ? error.message : "Unknown error",
     });
   }
 };
@@ -263,29 +278,31 @@ export const toggleBookmark = async (req: Request, res: Response): Promise<void>
 /**
  * Gets all bookmarked captures for the authenticated user
  */
-export const getBookmarkedCaptures = async (req: Request, res: Response): Promise<void> => {
+export const getBookmarkedCaptures = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
   try {
     const captures = await Capture.find({
       owner: req.user.id,
-      bookmarked: true
+      bookmarked: true,
     })
-      .sort({ timestamp: -1 })
+      .sort({ "metadata.capturedAt": -1 })
       .populate("collection", "name")
       .exec();
 
     return SuccessResponse({
       res,
       message: "Bookmarked captures retrieved successfully",
-      data: captures
+      data: captures,
     });
-
   } catch (error) {
     console.error("[Capture] Bookmarked fetch error:", error);
     return ErrorResponse({
       res,
       statusCode: 500,
       message: "Failed to fetch bookmarked captures",
-      error: error instanceof Error ? error.message : "Unknown error"
+      error: error instanceof Error ? error.message : "Unknown error",
     });
   }
 };
@@ -293,29 +310,27 @@ export const getBookmarkedCaptures = async (req: Request, res: Response): Promis
 /**
  * Searches captures with pagination support
  */
-export const searchCaptures = async (req: Request, res: Response): Promise<void> => {
+export const searchCaptures = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
   try {
-    const { query, page = "1", limit = DEFAULT_PAGE_SIZE.toString() } = req.query;
+    const { query } = req.query;
 
     if (!query || typeof query !== "string") {
       return ErrorResponse({
         res,
         statusCode: 400,
-        message: "Search query is required"
+        message: "Search query is required",
       });
     }
-
-    const currentPage = parseInt(page, 10);
-    const pageSize = parseInt(limit, 10);
 
     // Primary full-text search
     let captures = await Capture.find({
       owner: req.user.id,
-      $text: { $search: query }
+      $text: { $search: query },
     })
-      .sort({ createdAt: -1 })
-      .skip((currentPage - 1) * pageSize)
-      .limit(pageSize)
+      .sort({ "metadata.capturedAt": -1 })
       .populate("collection", "name")
       .exec();
 
@@ -323,11 +338,9 @@ export const searchCaptures = async (req: Request, res: Response): Promise<void>
     if (captures.length === 0) {
       captures = await Capture.find({
         owner: req.user.id,
-        searchTokens: { $regex: query, $options: "i" }
+        searchTokens: { $regex: query, $options: "i" },
       })
-        .sort({ createdAt: -1 })
-        .skip((currentPage - 1) * pageSize)
-        .limit(pageSize)
+        .sort({ "metadata.capturedAt": -1 })
         .populate("collection", "name")
         .exec();
     }
@@ -335,16 +348,14 @@ export const searchCaptures = async (req: Request, res: Response): Promise<void>
     return SuccessResponse({
       res,
       message: "Search results retrieved successfully",
-      data: captures
+      data: captures,
     });
-
   } catch (error) {
-    console.error("[Capture] Search error:", error);
     return ErrorResponse({
       res,
       statusCode: 500,
       message: "Failed to search captures",
-      error: error instanceof Error ? error.message : "Unknown error"
+      error: error instanceof Error ? error.message : "Unknown error",
     });
   }
 };
@@ -352,13 +363,16 @@ export const searchCaptures = async (req: Request, res: Response): Promise<void>
 /**
  * Gets a single capture by ID
  */
-export const getCaptureById = async (req: Request, res: Response): Promise<void> => {
+export const getCaptureById = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
   try {
     const { captureId } = req.params;
 
     const capture = await Capture.findOne({
       _id: captureId,
-      owner: req.user.id
+      owner: req.user.id,
     })
       .populate("collection", "name")
       .exec();
@@ -367,23 +381,22 @@ export const getCaptureById = async (req: Request, res: Response): Promise<void>
       return ErrorResponse({
         res,
         statusCode: 404,
-        message: "Capture not found"
+        message: "Capture not found",
       });
     }
 
     return SuccessResponse({
       res,
       message: "Capture retrieved successfully",
-      data: capture
+      data: capture,
     });
-
   } catch (error) {
     console.error("[Capture] Fetch by ID error:", error);
     return ErrorResponse({
       res,
       statusCode: 500,
       message: "Failed to fetch capture",
-      error: error instanceof Error ? error.message : "Unknown error"
+      error: error instanceof Error ? error.message : "Unknown error",
     });
   }
 };
@@ -391,9 +404,22 @@ export const getCaptureById = async (req: Request, res: Response): Promise<void>
 // Helper functions
 const normalizeLanguage = (lang: string): string => {
   const supportedLanguages = [
-    "none", "da", "nl", "english", "fi", "french", 
-    "german", "hungarian", "italian", "nb", "pt", 
-    "ro", "ru", "es", "sv", "tr"
+    "none",
+    "da",
+    "nl",
+    "english",
+    "fi",
+    "french",
+    "german",
+    "hungarian",
+    "italian",
+    "nb",
+    "pt",
+    "ro",
+    "ru",
+    "es",
+    "sv",
+    "tr",
   ];
 
   const languageMap: Record<string, string> = {
@@ -405,41 +431,45 @@ const normalizeLanguage = (lang: string): string => {
     de: "german",
     pt: "portuguese",
     it: "italian",
-    ru: "russian"
+    ru: "russian",
   };
 
   if (!lang) return "english";
 
   const baseLang = lang.split("-")[0].toLowerCase();
   const normalized = languageMap[baseLang] || languageMap[lang.toLowerCase()];
-  
+
   return supportedLanguages.includes(normalized) ? normalized : "english";
 };
 
 const prepareKeywords = (keywords: string | string[]): string[] => {
   if (Array.isArray(keywords)) {
-    return keywords.map(k => sanitizeHtml(k, { allowedTags: [] }));
+    return keywords.map((k) => sanitizeHtml(k, { allowedTags: [] }));
   }
   return [sanitizeHtml(keywords || "", { allowedTags: [] })];
 };
 
-const prepareDocuments = (documents: any[]): Array<{ url: string; type: string }> => {
+const prepareDocuments = (
+  documents: any[]
+): Array<{ url: string; type: string }> => {
   return documents
-    .filter(doc => doc?.url && doc?.type)
+    .filter((doc) => doc?.url && doc?.type)
     .slice(0, MAX_DOCUMENTS)
-    .map(doc => ({
+    .map((doc) => ({
       url: sanitizeHtml(doc.url, { allowedTags: [] }),
-      type: sanitizeHtml(doc.type.toLowerCase(), { allowedTags: [] })
+      type: sanitizeHtml(doc.type.toLowerCase(), { allowedTags: [] }),
     }));
 };
 
-const prepareLinks = (links: any[]): Array<{ type: string; url: string; title: string }> => {
+const prepareLinks = (
+  links: any[]
+): Array<{ type: string; url: string; title: string }> => {
   return links
-    .filter(link => link?.href)
+    .filter((link) => link?.href)
     .slice(0, MAX_LINKS)
-    .map(link => ({
+    .map((link) => ({
       type: "link",
       url: sanitizeHtml(link.href, { allowedTags: [] }),
-      title: sanitizeHtml(link.text || "No title", { allowedTags: [] })
+      title: sanitizeHtml(link.text || "No title", { allowedTags: [] }),
     }));
 };
