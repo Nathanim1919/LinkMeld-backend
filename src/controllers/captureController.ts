@@ -5,14 +5,14 @@ import { sanitizeHtml } from "../utils/sanitization";
 import { generateSlug } from "../utils/slugify";
 import { normalizeUrl } from "../utils/urls";
 import Conversation from "../models/Conversation";
-import mongoose from "mongoose";
+import { Types } from "mongoose";
 import { ErrorResponse, SuccessResponse } from "../utils/responseHandlers";
 import { ICapture } from "src/types/capureTypes";
 
 // Constants
 const MIN_CONTENT_LENGTH = 50;
-const DEFAULT_PAGE_SIZE = 10;
-const MAX_DOCUMENTS = 20;
+// const DEFAULT_PAGE_SIZE = 10;
+// const MAX_DOCUMENTS = 20;
 const MAX_LINKS = 100;
 
 /**
@@ -79,27 +79,15 @@ export const saveCapture = async (
 
     const capture = await new Capture(captureData).save();
 
-    // // Create conversation if it's a webpage (optional for other formats)
-    // if (isWebpage) {
-    //   const conversation = await Conversation.create({ captureId: capture._id });
-    //   capture.conversation = conversation._id;
-    //   await capture.save();
-    // }
+    const conversation = await Conversation.create({ captureId: capture._id });
+    capture.conversation = new Types.ObjectId(conversation._id);
+    await capture.save();
+ 
 
     return SuccessResponse({
       res,
       statusCode: 201,
       message: "Capture saved successfully",
-      data: {
-        id: capture._id,
-        url: capture.url,
-        title: capture.title,
-        format: capture.format,
-        contentLength: capture.metadata.wordCount,
-        timestamp: capture.metadata.capturedAt,
-        ai: capture.ai,
-        processingStatus: capture.processingStatus,
-      },
     });
   } catch (error) {
     console.error("[Capture] Save error:", error);
@@ -133,7 +121,7 @@ const prepareCaptureData = async (
     keywords,
     language = "english",
     userAgent,
-    documents = [],
+    // documents = [],
     links = [],
   } = req.body;
 
@@ -151,7 +139,7 @@ const prepareCaptureData = async (
     contentHash: isWebpage ? hashContent(content) : undefined,
     headings: isWebpage ? headings : [],
 
-    format,
+    format: format as ICapture["format"],
     processingStatus: isWebpage ? "complete" : "pending",
 
     content: {
@@ -409,45 +397,45 @@ export const getCaptureById = async (
 };
 
 // Helper functions
-const normalizeLanguage = (lang: string): string => {
-  const supportedLanguages = [
-    "none",
-    "da",
-    "nl",
-    "english",
-    "fi",
-    "french",
-    "german",
-    "hungarian",
-    "italian",
-    "nb",
-    "pt",
-    "ro",
-    "ru",
-    "es",
-    "sv",
-    "tr",
-  ];
+// const normalizeLanguage = (lang: string): string => {
+//   const supportedLanguages = [
+//     "none",
+//     "da",
+//     "nl",
+//     "english",
+//     "fi",
+//     "french",
+//     "german",
+//     "hungarian",
+//     "italian",
+//     "nb",
+//     "pt",
+//     "ro",
+//     "ru",
+//     "es",
+//     "sv",
+//     "tr",
+//   ];
 
-  const languageMap: Record<string, string> = {
-    en: "english",
-    "en-US": "english",
-    "en-GB": "english",
-    es: "spanish",
-    fr: "french",
-    de: "german",
-    pt: "portuguese",
-    it: "italian",
-    ru: "russian",
-  };
+//   const languageMap: Record<string, string> = {
+//     en: "english",
+//     "en-US": "english",
+//     "en-GB": "english",
+//     es: "spanish",
+//     fr: "french",
+//     de: "german",
+//     pt: "portuguese",
+//     it: "italian",
+//     ru: "russian",
+//   };
 
-  if (!lang) return "english";
+//   if (!lang) return "english";
 
-  const baseLang = lang.split("-")[0].toLowerCase();
-  const normalized = languageMap[baseLang] || languageMap[lang.toLowerCase()];
+//   const baseLang = lang.split("-")[0].toLowerCase();
+//   const normalized = languageMap[baseLang] || languageMap[lang.toLowerCase()];
 
-  return supportedLanguages.includes(normalized) ? normalized : "english";
-};
+//   return supportedLanguages.includes(normalized) ? normalized : "english";
+// };
 
 const prepareKeywords = (keywords: string | string[]): string[] => {
   if (Array.isArray(keywords)) {
@@ -456,26 +444,26 @@ const prepareKeywords = (keywords: string | string[]): string[] => {
   return [sanitizeHtml(keywords || "", { allowedTags: [] })];
 };
 
-const prepareDocuments = (
-  documents: any[]
-): Array<{ url: string; type: string }> => {
-  return documents
-    .filter((doc) => doc?.url && doc?.type)
-    .slice(0, MAX_DOCUMENTS)
-    .map((doc) => ({
-      url: sanitizeHtml(doc.url, { allowedTags: [] }),
-      type: sanitizeHtml(doc.type.toLowerCase(), { allowedTags: [] }),
-    }));
-};
+// const prepareDocuments = (
+//   documents: any[]
+// ): Array<{ url: string; type: string }> => {
+//   return documents
+//     .filter((doc) => doc?.url && doc?.type)
+//     .slice(0, MAX_DOCUMENTS)
+//     .map((doc) => ({
+//       url: sanitizeHtml(doc.url, { allowedTags: [] }),
+//       type: sanitizeHtml(doc.type.toLowerCase(), { allowedTags: [] }),
+//     }));
+// };
 
 const prepareLinks = (
   links: any[]
-): Array<{ type: string; url: string; title: string }> => {
+): Array<{ type: "link"; url: string; title: string }> => {
   return links
     .filter((link) => link?.href)
     .slice(0, MAX_LINKS)
     .map((link) => ({
-      type: "link",
+      type: "link" as const,
       url: sanitizeHtml(link.href, { allowedTags: [] }),
       title: sanitizeHtml(link.text || "No title", { allowedTags: [] }),
     }));

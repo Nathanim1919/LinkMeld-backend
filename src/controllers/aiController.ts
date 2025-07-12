@@ -64,7 +64,7 @@ export class AIController {
         });
         return;
       }
-      const result = await processContent(capture.content.clean, capture.ai.summary || "", apiKey);
+      const result = await processContent(capture.content.clean || "", capture.ai.summary || "", apiKey);
 
       if (result.success && result.data) {
         capture.ai.summary = result.data.summary || "";
@@ -162,7 +162,7 @@ export class AIController {
       const { message, tokensUsed, modelUsed } = await processConversation(
         user,
         apiKey,
-        content.content.clean,
+        content.content.clean || "",
         messages,
         model,
         controller.signal
