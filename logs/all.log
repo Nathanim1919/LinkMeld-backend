@@ -106114,3 +106114,735 @@
 {"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:11:20:1120"}
 {"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:11:23:1123"}
 {"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:11:23:1123"}
+{"level":"info","message":"SuccessResponse: Distinct site names retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:14:21:1421"}
+{"level":"info","message":"SuccessResponse: Collections retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:14:22:1422"}
+{"level":"info","message":"SuccessResponse: Collections retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:14:22:1422"}
+{"level":"info","message":"SuccessResponse: Distinct site names retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:14:22:1422"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:14:24:1424"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:14:24:1424"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:14:26:1426"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 21:14:26:1426","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:14:26:1426"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 21:14:26:1426","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:14:26:1426"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 21:14:30:1430","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:14:30:1430"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 21:14:30:1430","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:14:30:1430"}
+{"level":"info","message":"SuccessResponse: Capture added to collection successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:15:01:151"}
+{"level":"info","message":"SuccessResponse: Collection captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:15:05:155"}
+{"level":"info","message":"SuccessResponse: Collection retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:15:05:155"}
+{"level":"info","message":"SuccessResponse: Collection captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:15:05:155"}
+{"level":"info","message":"SuccessResponse: Collection retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:15:05:155"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:15:06:156"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 21:15:06:156","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:15:06:156"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 21:15:06:156","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:15:06:156"}
+{"level":"info","message":"SuccessResponse: Search results retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:15:12:1512"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:15:14:1514"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:15:14:1514"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:15:14:1514"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 21:15:14:1514","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:15:14:1514"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 21:15:14:1514","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:15:14:1514"}
+{"captureId":"68687212ea78403745b9f74e","level":"info","message":"AIController:generateSummary","service":"api-service","timestamp":"2025-07-11 21:15:17:1517"}
+{"captureId":"68687212ea78403745b9f74e","level":"info","message":"AIController:generateSummary:success","service":"api-service","summaryLength":1277,"timestamp":"2025-07-11 21:15:20:1520"}
+{"level":"info","message":"SuccessResponse: AI summary generated successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:15:20:1520"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 21:15:43:1543","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:15:43:1543"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 21:15:43:1543","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:15:43:1543"}
+{"captureId":"68687212ea78403745b9f74e","level":"info","message":"AIController:converse","service":"api-service","timestamp":"2025-07-11 21:15:45:1545"}
+{"captureId":"68687212ea78403745b9f74e","level":"info","message":"AIController:converse:success","modelUsed":"gemini-2.0-flash","service":"api-service","timestamp":"2025-07-11 21:15:49:1549","tokensUsed":2353}
+{"level":"info","message":"SuccessResponse: AI conversation completed successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:15:49:1549"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 21:15:57:1557","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:15:57:1557"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 21:15:57:1557","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:15:57:1557"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:16:03:163"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 21:16:04:164","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:16:04:164"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 21:16:04:164","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:16:04:164"}
+{"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:16:05:165"}
+{"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:16:05:165"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:16:06:166"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 21:16:07:167","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 21:16:07:167","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:16:07:167"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:16:07:167"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:16:08:168"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 21:16:08:168","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:16:08:168"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 21:16:08:168","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:16:08:168"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:16:10:1610"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 21:16:10:1610","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:16:10:1610"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 21:16:10:1610","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:16:10:1610"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:35:16:3516"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 21:35:16:3516","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:35:16:3516"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 21:35:16:3516","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:35:16:3516"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 21:35:19:3519","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:35:19:3519"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 21:35:19:3519","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:35:19:3519"}
+{"level":"info","message":"SuccessResponse: Capture unbookmarked successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:35:25:3525"}
+{"level":"info","message":"SuccessResponse: Collection captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:35:33:3533"}
+{"level":"info","message":"SuccessResponse: Collection retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:35:33:3533"}
+{"level":"info","message":"SuccessResponse: Collection retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:35:34:3534"}
+{"level":"info","message":"SuccessResponse: Collection captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:35:34:3534"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:35:36:3536"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:35:36:3536"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:35:38:3538"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 21:35:38:3538","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:35:38:3538"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 21:35:38:3538","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:35:38:3538"}
+{"level":"info","message":"SuccessResponse: Collection captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:35:45:3545"}
+{"level":"info","message":"SuccessResponse: Collection retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:35:45:3545"}
+{"level":"info","message":"SuccessResponse: Collection retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:35:45:3545"}
+{"level":"info","message":"SuccessResponse: Collection captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:35:45:3545"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:35:47:3547"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 21:35:47:3547","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:35:47:3547"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 21:35:47:3547","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:35:47:3547"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 21:35:57:3557","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:35:57:3557"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 21:35:57:3557","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:35:57:3557"}
+{"captureId":"686e11e1fb49bb9f4f1ea59f","level":"info","message":"AIController:converse","service":"api-service","timestamp":"2025-07-11 21:36:00:360"}
+{"captureId":"686e11e1fb49bb9f4f1ea59f","level":"info","message":"AIController:converse:success","modelUsed":"gemini-2.0-flash","service":"api-service","timestamp":"2025-07-11 21:36:04:364","tokensUsed":3665}
+{"level":"info","message":"SuccessResponse: AI conversation completed successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:36:04:364"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 21:36:08:368","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:36:08:368"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 21:36:08:368","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:36:08:368"}
+{"level":"info","message":"SuccessResponse: Collection retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:36:27:3627"}
+{"level":"info","message":"SuccessResponse: Collection captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:36:27:3627"}
+{"level":"info","message":"SuccessResponse: Collection captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:36:27:3627"}
+{"level":"info","message":"SuccessResponse: Collection retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:36:27:3627"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:36:28:3628"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 21:36:28:3628","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:36:28:3628"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 21:36:28:3628","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:36:28:3628"}
+{"level":"info","message":"SuccessResponse: Collection captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:36:46:3646"}
+{"level":"info","message":"SuccessResponse: Collection retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:36:46:3646"}
+{"level":"info","message":"SuccessResponse: Collection captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:36:46:3646"}
+{"level":"info","message":"SuccessResponse: Collection retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:36:46:3646"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:36:47:3647"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 21:36:47:3647","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:36:47:3647"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 21:36:47:3647","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:36:47:3647"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:36:51:3651"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 21:36:51:3651","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 21:36:51:3651","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:36:51:3651"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:36:51:3651"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:36:52:3652"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 21:36:52:3652","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:36:52:3652"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 21:36:52:3652","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 21:36:52:3652"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Content too short (minimum 50 characters required)","service":"api-service","statusCode":400,"timestamp":"2025-07-11 21:41:08:418"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Content too short (minimum 50 characters required)","service":"api-service","statusCode":400,"timestamp":"2025-07-11 21:42:31:4231"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Content too short (minimum 50 characters required)","service":"api-service","statusCode":400,"timestamp":"2025-07-11 21:44:17:4417"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Content too short (minimum 50 characters required)","service":"api-service","statusCode":400,"timestamp":"2025-07-11 21:58:36:5836"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Content too short (minimum 50 characters required)","service":"api-service","statusCode":400,"timestamp":"2025-07-11 21:58:41:5841"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Content too short (minimum 50 characters required)","service":"api-service","statusCode":400,"timestamp":"2025-07-11 21:58:43:5843"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Content too short (minimum 50 characters required)","service":"api-service","statusCode":400,"timestamp":"2025-07-11 22:01:12:112"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Content too short (minimum 50 characters required)","service":"api-service","statusCode":400,"timestamp":"2025-07-11 22:01:29:129"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Content too short (minimum 50 characters required)","service":"api-service","statusCode":400,"timestamp":"2025-07-11 22:02:13:213"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Content too short (minimum 50 characters required)","service":"api-service","statusCode":400,"timestamp":"2025-07-11 22:03:10:310"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Content too short (minimum 50 characters required)","service":"api-service","statusCode":400,"timestamp":"2025-07-11 23:09:27:927"}
+{"level":"info","message":"SuccessResponse: Collections retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 23:10:31:1031"}
+{"level":"info","message":"SuccessResponse: Distinct site names retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 23:10:31:1031"}
+{"level":"info","message":"SuccessResponse: Distinct site names retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 23:10:31:1031"}
+{"level":"info","message":"SuccessResponse: Collections retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 23:10:31:1031"}
+{"level":"info","message":"SuccessResponse: Collection created successfully","metadata":{},"service":"api-service","statusCode":201,"timestamp":"2025-07-11 23:10:45:1045"}
+{"level":"info","message":"SuccessResponse: Collection created successfully","metadata":{},"service":"api-service","statusCode":201,"timestamp":"2025-07-11 23:10:52:1052"}
+{"level":"info","message":"SuccessResponse: Collection created successfully","metadata":{},"service":"api-service","statusCode":201,"timestamp":"2025-07-11 23:11:00:110"}
+{"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 23:11:25:1125"}
+{"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 23:11:25:1125"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 23:11:26:1126"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 23:11:26:1126","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 23:11:26:1126"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 23:11:26:1126","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 23:11:26:1126"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 23:11:36:1136","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 23:11:36:1136"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 23:11:36:1136","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 23:11:36:1136"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 23:11:39:1139","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 23:11:39:1139"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 23:11:39:1139","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 23:11:39:1139"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 23:11:43:1143","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 23:11:43:1143"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-11 23:11:43:1143","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 23:11:43:1143"}
+{"captureId":"686c4b1f06f4a360f1e02d1f","level":"info","message":"AIController:converse","service":"api-service","timestamp":"2025-07-11 23:11:48:1148"}
+{"captureId":"686c4b1f06f4a360f1e02d1f","level":"info","message":"AIController:converse:success","modelUsed":"gemini-2.0-flash","service":"api-service","timestamp":"2025-07-11 23:11:52:1152","tokensUsed":2689}
+{"level":"info","message":"SuccessResponse: AI conversation completed successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-11 23:11:52:1152"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-07-12 00:26:16:2616"}
+{"level":"info","message":"SuccessResponse: Collections retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:26:16:2616"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-07-12 00:26:16:2616"}
+{"level":"info","message":"SuccessResponse: Collections retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:26:16:2616"}
+{"error":"Capture validation failed: url: Cast to string failed for value \"Promise {\n  'https://www.producthunt.com/products/hellocv-ai-2?launch=hellocv-ai-2'\n}\" (type Promise) at path \"url\"","errorCode":null,"level":"error","message":"ErrorResponse: An error occurred while saving capture","service":"api-service","statusCode":500,"timestamp":"2025-07-12 00:26:21:2621"}
+{"error":"Capture validation failed: url: Cast to string failed for value \"Promise {\n  'https://www.producthunt.com/products/hellocv-ai-2?launch=hellocv-ai-2'\n}\" (type Promise) at path \"url\"","errorCode":null,"level":"error","message":"ErrorResponse: An error occurred while saving capture","service":"api-service","statusCode":500,"timestamp":"2025-07-12 00:26:29:2629"}
+{"error":"Capture validation failed: metadata.publishedAt: Cast to date failed for value \"Invalid Date\" (type Date) at path \"metadata.publishedAt\"","errorCode":null,"level":"error","message":"ErrorResponse: An error occurred while saving capture","service":"api-service","statusCode":500,"timestamp":"2025-07-12 00:32:31:3231"}
+{"level":"info","message":"SuccessResponse: Capture saved successfully","metadata":{},"service":"api-service","statusCode":201,"timestamp":"2025-07-12 00:36:49:3649"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:36:55:3655"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:36:55:3655"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:36:58:3658"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 00:36:58:3658","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:36:58:3658"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 00:36:58:3658","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:36:58:3658"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 00:37:14:3714","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:37:14:3714"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 00:37:14:3714","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:37:14:3714"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:37:19:3719"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:37:19:3719"}
+{"level":"info","message":"SuccessResponse: Collection captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:37:23:3723"}
+{"level":"info","message":"SuccessResponse: Collection retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:37:23:3723"}
+{"level":"info","message":"SuccessResponse: Collection captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:37:23:3723"}
+{"level":"info","message":"SuccessResponse: Collection retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:37:23:3723"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:37:25:3725"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:37:25:3725"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:37:26:3726"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 00:37:26:3726","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:37:26:3726"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 00:37:26:3726","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:37:26:3726"}
+{"level":"info","message":"SuccessResponse: Capture added to collection successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:37:28:3728"}
+{"level":"info","message":"SuccessResponse: Collection captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:37:35:3735"}
+{"level":"info","message":"SuccessResponse: Collection retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:37:35:3735"}
+{"level":"info","message":"SuccessResponse: Collection captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:37:35:3735"}
+{"level":"info","message":"SuccessResponse: Collection retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:37:35:3735"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:37:36:3736"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 00:37:36:3736","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:37:36:3736"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 00:37:36:3736","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:37:36:3736"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:37:42:3742"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 00:37:42:3742","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:37:42:3742"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 00:37:42:3742","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:37:42:3742"}
+{"level":"info","message":"SuccessResponse: Capture bookmarked successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:37:44:3744"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 00:37:47:3747","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:37:47:3747"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 00:37:47:3747","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:37:47:3747"}
+{"level":"info","message":"SuccessResponse: Collection retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:37:54:3754"}
+{"level":"info","message":"SuccessResponse: Collection captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:37:54:3754"}
+{"level":"info","message":"SuccessResponse: Collection retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:37:54:3754"}
+{"level":"info","message":"SuccessResponse: Collection captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:37:54:3754"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:37:55:3755"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 00:37:55:3755","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:37:55:3755"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 00:37:55:3755","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:37:55:3755"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:37:57:3757"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:37:57:3757"}
+{"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:37:59:3759"}
+{"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:37:59:3759"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:38:05:385"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:38:05:385"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:38:06:386"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 00:38:06:386","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:38:06:386"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 00:38:06:386","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:38:06:386"}
+{"level":"info","message":"SuccessResponse: Collection captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:40:12:4012"}
+{"level":"info","message":"SuccessResponse: Collection retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:40:12:4012"}
+{"level":"info","message":"SuccessResponse: Collection captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:40:12:4012"}
+{"level":"info","message":"SuccessResponse: Collection retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:40:12:4012"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:40:13:4013"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 00:40:13:4013","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:40:13:4013"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 00:40:13:4013","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:40:13:4013"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:40:17:4017"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:40:17:4017"}
+{"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:40:18:4018"}
+{"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:40:18:4018"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 00:40:22:4022","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:40:22:4022"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 00:40:22:4022","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:40:22:4022"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:40:55:4055"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:40:55:4055"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:40:56:4056"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 00:40:56:4056","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:40:56:4056"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 00:40:56:4056","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:40:56:4056"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 00:41:13:4113","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:41:13:4113"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 00:41:13:4113","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:41:13:4113"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:41:31:4131"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:41:31:4131"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:41:33:4133"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 00:41:33:4133","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:41:33:4133"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 00:41:33:4133","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 00:41:33:4133"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Capture already exists in this collection","service":"api-service","statusCode":409,"timestamp":"2025-07-12 00:41:47:4147"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 01:03:14:314","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:03:14:314"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 01:03:14:314","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:03:14:314"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:03:17:317"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:03:17:317"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:03:18:318"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 01:03:18:318","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:03:18:318"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 01:03:18:318","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:03:18:318"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 01:03:19:319","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:03:19:319"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 01:03:19:319","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:03:19:319"}
+{"keyPresent":true,"level":"info","message":"UserProfileService:upsertGeminiApiKey","service":"api-service","timestamp":"2025-07-12 01:03:37:337","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: Success","metadata":{},"service":"api-service","statusCode":201,"timestamp":"2025-07-12 01:03:37:337"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:03:39:339"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:03:39:339"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:03:40:340"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 01:03:40:340","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:03:40:340"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 01:03:40:340","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:03:40:340"}
+{"captureId":"687183f1dfe62757b4063d8a","level":"info","message":"AIController:generateSummary","service":"api-service","timestamp":"2025-07-12 01:03:42:342"}
+{"captureId":"687183f1dfe62757b4063d8a","level":"info","message":"AIController:generateSummary:success","service":"api-service","summaryLength":1348,"timestamp":"2025-07-12 01:03:47:347"}
+{"level":"info","message":"SuccessResponse: AI summary generated successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:03:47:347"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 01:04:08:48","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:04:08:48"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 01:04:08:48","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:04:08:48"}
+{"captureId":"687183f1dfe62757b4063d8a","level":"info","message":"AIController:converse","service":"api-service","timestamp":"2025-07-12 01:04:10:410"}
+{"captureId":"687183f1dfe62757b4063d8a","level":"info","message":"AIController:converse:success","modelUsed":"gemini-2.0-flash","service":"api-service","timestamp":"2025-07-12 01:04:12:412","tokensUsed":2087}
+{"level":"info","message":"SuccessResponse: AI conversation completed successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:04:12:412"}
+{"captureId":"687183f1dfe62757b4063d8a","level":"info","message":"AIController:converse","service":"api-service","timestamp":"2025-07-12 01:04:36:436"}
+{"captureId":"687183f1dfe62757b4063d8a","level":"info","message":"AIController:converse:success","modelUsed":"gemini-2.0-flash","service":"api-service","timestamp":"2025-07-12 01:04:39:439","tokensUsed":2255}
+{"level":"info","message":"SuccessResponse: AI conversation completed successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:04:39:439"}
+{"level":"info","message":"SuccessResponse: Collection retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:05:05:55"}
+{"level":"info","message":"SuccessResponse: Collection captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:05:05:55"}
+{"level":"info","message":"SuccessResponse: Collection retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:05:05:55"}
+{"level":"info","message":"SuccessResponse: Collection captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:05:05:55"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:05:09:59"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 01:05:09:59","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:05:09:59"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 01:05:09:59","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:05:09:59"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:05:10:510"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:05:10:510"}
+{"level":"info","message":"SuccessResponse: Capture saved successfully","metadata":{},"service":"api-service","statusCode":201,"timestamp":"2025-07-12 01:06:50:650"}
+{"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:07:30:730"}
+{"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:07:30:730"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:07:31:731"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:07:31:731"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:07:33:733"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 01:07:33:733","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:07:33:733"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 01:07:33:733","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:07:33:733"}
+{"captureId":"68718afadfe62757b4063e75","level":"info","message":"AIController:generateSummary","service":"api-service","timestamp":"2025-07-12 01:07:51:751"}
+{"captureId":"68718afadfe62757b4063e75","level":"info","message":"AIController:generateSummary:success","service":"api-service","summaryLength":1090,"timestamp":"2025-07-12 01:07:54:754"}
+{"level":"info","message":"SuccessResponse: AI summary generated successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:07:54:754"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 01:08:57:857","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:08:57:857"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 01:08:57:857","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:08:57:857"}
+{"captureId":"68718afadfe62757b4063e75","level":"info","message":"AIController:converse","service":"api-service","timestamp":"2025-07-12 01:08:59:859"}
+{"captureId":"68718afadfe62757b4063e75","level":"info","message":"AIController:converse:success","modelUsed":"gemini-2.0-flash","service":"api-service","timestamp":"2025-07-12 01:09:01:91","tokensUsed":1199}
+{"level":"info","message":"SuccessResponse: AI conversation completed successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:09:01:91"}
+{"captureId":"68718afadfe62757b4063e75","level":"info","message":"AIController:converse","service":"api-service","timestamp":"2025-07-12 01:09:33:933"}
+{"captureId":"68718afadfe62757b4063e75","level":"info","message":"AIController:converse:success","modelUsed":"gemini-2.0-flash","service":"api-service","timestamp":"2025-07-12 01:09:35:935","tokensUsed":1362}
+{"level":"info","message":"SuccessResponse: AI conversation completed successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:09:35:935"}
+{"captureId":"68718afadfe62757b4063e75","level":"info","message":"AIController:converse","service":"api-service","timestamp":"2025-07-12 01:10:07:107"}
+{"captureId":"68718afadfe62757b4063e75","level":"info","message":"AIController:converse:success","modelUsed":"gemini-2.0-flash","service":"api-service","timestamp":"2025-07-12 01:10:09:109","tokensUsed":1290}
+{"level":"info","message":"SuccessResponse: AI conversation completed successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:10:09:109"}
+{"captureId":"68718afadfe62757b4063e75","level":"info","message":"AIController:converse","service":"api-service","timestamp":"2025-07-12 01:10:25:1025"}
+{"captureId":"68718afadfe62757b4063e75","level":"info","message":"AIController:converse:success","modelUsed":"gemini-2.0-flash","service":"api-service","timestamp":"2025-07-12 01:10:27:1027","tokensUsed":1155}
+{"level":"info","message":"SuccessResponse: AI conversation completed successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:10:27:1027"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:11:08:118"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:11:08:118"}
+{"level":"info","message":"SuccessResponse: Collections retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:11:08:118"}
+{"level":"info","message":"SuccessResponse: Distinct site names retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:11:08:118"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:11:08:118"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:11:08:118"}
+{"level":"info","message":"SuccessResponse: Collections retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:11:08:118"}
+{"level":"info","message":"SuccessResponse: Distinct site names retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:11:09:119"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 01:11:09:119","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:11:09:119"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 01:11:09:119","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:11:09:119"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:11:56:1156"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:11:56:1156"}
+{"level":"info","message":"SuccessResponse: Distinct site names retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:11:56:1156"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:11:56:1156"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:11:56:1156"}
+{"level":"info","message":"SuccessResponse: Collections retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:11:56:1156"}
+{"level":"info","message":"SuccessResponse: Distinct site names retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:11:56:1156"}
+{"level":"info","message":"SuccessResponse: Collections retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:11:56:1156"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 01:11:56:1156","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:11:56:1156"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 01:11:56:1156","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:11:56:1156"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 01:11:58:1158","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:11:58:1158"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 01:11:58:1158","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:11:58:1158"}
+{"captureId":"68718afadfe62757b4063e75","level":"info","message":"AIController:converse","service":"api-service","timestamp":"2025-07-12 01:12:01:121"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 01:12:04:124","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:12:04:124"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 01:12:04:124","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:12:04:124"}
+{"captureId":"68718afadfe62757b4063e75","level":"info","message":"AIController:converse:success","modelUsed":"gemini-2.0-flash","service":"api-service","timestamp":"2025-07-12 01:12:04:124","tokensUsed":1004}
+{"level":"info","message":"SuccessResponse: AI conversation completed successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:12:04:124"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 01:12:07:127","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:12:07:127"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 01:12:07:127","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:12:07:127"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 01:12:38:1238","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:12:38:1238"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 01:12:38:1238","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:12:38:1238"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 01:12:42:1242","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:12:42:1242"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 01:12:42:1242","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:12:42:1242"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:20:22:2022"}
+{"level":"info","message":"SuccessResponse: Collections retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:20:22:2022"}
+{"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:20:22:2022"}
+{"level":"info","message":"SuccessResponse: Distinct site names retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:20:22:2022"}
+{"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:20:22:2022"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:20:23:2023"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 01:20:23:2023","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: Distinct site names retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:20:23:2023"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 01:20:23:2023","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:20:23:2023"}
+{"level":"info","message":"SuccessResponse: Collections retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:20:23:2023"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:20:23:2023"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:20:24:2024"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:20:24:2024"}
+{"level":"info","message":"SuccessResponse: Collections retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:20:24:2024"}
+{"level":"info","message":"SuccessResponse: Distinct site names retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:20:24:2024"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:20:24:2024"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:20:24:2024"}
+{"level":"info","message":"SuccessResponse: Collections retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:20:24:2024"}
+{"level":"info","message":"SuccessResponse: Distinct site names retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:20:24:2024"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 01:20:24:2024","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:20:24:2024"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 01:20:24:2024","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:20:24:2024"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:20:30:2030"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:20:30:2030"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:20:32:2032"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 01:20:32:2032","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:20:32:2032"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 01:20:32:2032","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:20:32:2032"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 01:20:33:2033","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:20:33:2033"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 01:20:33:2033","userId":"685fe4d7b0369feb976544c0"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:20:33:2033"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-07-12 01:21:23:2123"}
+{"level":"info","message":"SuccessResponse: Collections retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:21:23:2123"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-07-12 01:21:23:2123"}
+{"level":"info","message":"SuccessResponse: Collections retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:21:23:2123"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 01:21:25:2125","userId":"68631890285ef6f0440022f1"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:21:25:2125"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 01:21:25:2125","userId":"68631890285ef6f0440022f1"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:21:25:2125"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:23:49:2349"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:23:49:2349"}
+{"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:23:52:2352"}
+{"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:23:52:2352"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 01:23:54:2354","userId":"68631890285ef6f0440022f1"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 01:23:54:2354","userId":"68631890285ef6f0440022f1"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:23:54:2354"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:23:54:2354"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:24:03:243"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:24:03:243"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:24:06:246"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-07-12 01:24:06:246"}
+{"level":"info","message":"SuccessResponse: Collections retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:24:06:246"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-07-12 01:24:06:246"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:24:06:246"}
+{"level":"info","message":"SuccessResponse: Collections retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:24:06:246"}
+{"level":"info","message":"SuccessResponse: Search results retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:25:36:2536"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:25:42:2542"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:25:42:2542"}
+{"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:30:03:303"}
+{"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:30:03:303"}
+{"level":"info","message":"SuccessResponse: Collection created successfully","metadata":{},"service":"api-service","statusCode":201,"timestamp":"2025-07-12 01:30:18:3018"}
+{"level":"info","message":"SuccessResponse: Collection created successfully","metadata":{},"service":"api-service","statusCode":201,"timestamp":"2025-07-12 01:31:33:3133"}
+{"level":"info","message":"SuccessResponse: Collection created successfully","metadata":{},"service":"api-service","statusCode":201,"timestamp":"2025-07-12 01:31:47:3147"}
+{"level":"info","message":"SuccessResponse: Collection captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:31:51:3151"}
+{"level":"info","message":"SuccessResponse: Collection retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:31:51:3151"}
+{"level":"info","message":"SuccessResponse: Collection captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:31:51:3151"}
+{"level":"info","message":"SuccessResponse: Collection retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:31:51:3151"}
+{"level":"info","message":"SuccessResponse: Collection captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:33:42:3342"}
+{"level":"info","message":"SuccessResponse: Collection retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:33:42:3342"}
+{"level":"info","message":"SuccessResponse: Collection captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:33:42:3342"}
+{"level":"info","message":"SuccessResponse: Collection retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:33:42:3342"}
+{"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:33:43:3343"}
+{"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:33:43:3343"}
+{"level":"info","message":"SuccessResponse: Collection captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:35:35:3535"}
+{"level":"info","message":"SuccessResponse: Collection retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:35:35:3535"}
+{"level":"info","message":"SuccessResponse: Collection captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:35:35:3535"}
+{"level":"info","message":"SuccessResponse: Collection retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:35:35:3535"}
+{"level":"info","message":"SuccessResponse: Collection captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:35:44:3544"}
+{"level":"info","message":"SuccessResponse: Collection retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:35:44:3544"}
+{"level":"info","message":"SuccessResponse: Collection captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:35:44:3544"}
+{"level":"info","message":"SuccessResponse: Collection retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:35:44:3544"}
+{"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:35:47:3547"}
+{"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:35:47:3547"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:35:50:3550"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:35:50:3550"}
+{"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:35:51:3551"}
+{"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:35:51:3551"}
+{"level":"info","message":"SuccessResponse: Collection captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:35:56:3556"}
+{"level":"info","message":"SuccessResponse: Collection retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:35:56:3556"}
+{"level":"info","message":"SuccessResponse: Collection captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:35:56:3556"}
+{"level":"info","message":"SuccessResponse: Collection retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:35:56:3556"}
+{"level":"info","message":"SuccessResponse: Search results retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:36:13:3613"}
+{"level":"info","message":"SuccessResponse: Search results retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:36:20:3620"}
+{"level":"info","message":"SuccessResponse: Search results retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:36:23:3623"}
+{"level":"info","message":"SuccessResponse: Search results retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:36:32:3632"}
+{"level":"info","message":"SuccessResponse: Search results retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:36:34:3634"}
+{"level":"info","message":"SuccessResponse: Search results retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:36:39:3639"}
+{"level":"info","message":"SuccessResponse: Search results retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:36:40:3640"}
+{"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:37:41:3741"}
+{"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:37:41:3741"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:37:42:3742"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:37:42:3742"}
+{"level":"info","message":"SuccessResponse: Search results retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:37:54:3754"}
+{"level":"info","message":"SuccessResponse: Search results retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:37:56:3756"}
+{"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:38:17:3817"}
+{"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 01:38:17:3817"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Content too short to save.","service":"api-service","statusCode":400,"timestamp":"2025-07-12 02:22:13:2213"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Content too short to save.","service":"api-service","statusCode":400,"timestamp":"2025-07-12 02:22:28:2228"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Content too short to save.","service":"api-service","statusCode":400,"timestamp":"2025-07-12 02:22:59:2259"}
+{"level":"info","message":"SuccessResponse: Collection retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:25:11:2511"}
+{"level":"info","message":"SuccessResponse: Collection captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:25:11:2511"}
+{"level":"info","message":"SuccessResponse: Collection retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:25:11:2511"}
+{"level":"info","message":"SuccessResponse: Collection captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:25:11:2511"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:25:12:2512"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 02:25:12:2512","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:25:12:2512"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 02:25:12:2512","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:25:12:2512"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 02:25:14:2514","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:25:14:2514"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 02:25:14:2514","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:25:14:2514"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Content too short to save.","service":"api-service","statusCode":400,"timestamp":"2025-07-12 02:25:59:2559"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Content too short to save.","service":"api-service","statusCode":400,"timestamp":"2025-07-12 02:28:59:2859"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-07-12 02:37:07:377"}
+{"error":"Capture validation failed: content.clean: Path `content.clean` is required., contentHash: Path `contentHash` is required.","errorCode":null,"level":"error","message":"ErrorResponse: An error occurred while saving capture","service":"api-service","statusCode":500,"timestamp":"2025-07-12 02:37:10:3710"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-07-12 02:37:15:3715"}
+{"level":"info","message":"SuccessResponse: Collections retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:37:22:3722"}
+{"level":"info","message":"SuccessResponse: Collections retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:37:34:3734"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:38:22:3822"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:38:23:3823"}
+{"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:38:25:3825"}
+{"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:38:26:3826"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Capture not found","service":"api-service","statusCode":404,"timestamp":"2025-07-12 02:41:28:4128"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-07-12 02:41:28:4128"}
+{"level":"info","message":"SuccessResponse: Collections retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:41:28:4128"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Capture not found","service":"api-service","statusCode":404,"timestamp":"2025-07-12 02:41:29:4129"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Collection not found","service":"api-service","statusCode":404,"timestamp":"2025-07-12 02:41:30:4130"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Collection not found","service":"api-service","statusCode":404,"timestamp":"2025-07-12 02:41:31:4131"}
+{"level":"info","message":"SuccessResponse: Collections retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:41:31:4131"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Collection not found","service":"api-service","statusCode":404,"timestamp":"2025-07-12 02:41:32:4132"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Collection not found","service":"api-service","statusCode":404,"timestamp":"2025-07-12 02:41:33:4133"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-07-12 02:42:00:420"}
+{"level":"info","message":"SuccessResponse: Search results retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:50:38:5038"}
+{"level":"info","message":"SuccessResponse: Search results retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:50:40:5040"}
+{"level":"info","message":"SuccessResponse: Search results retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:50:41:5041"}
+{"level":"info","message":"SuccessResponse: Search results retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:50:42:5042"}
+{"level":"info","message":"SuccessResponse: Search results retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:51:20:5120"}
+{"level":"info","message":"SuccessResponse: Search results retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:51:24:5124"}
+{"level":"info","message":"SuccessResponse: Search results retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:51:25:5125"}
+{"level":"info","message":"SuccessResponse: Search results retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:51:26:5126"}
+{"level":"info","message":"SuccessResponse: Search results retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:51:27:5127"}
+{"level":"info","message":"SuccessResponse: Search results retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:51:27:5127"}
+{"level":"info","message":"SuccessResponse: Search results retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:51:28:5128"}
+{"level":"info","message":"SuccessResponse: Search results retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:51:29:5129"}
+{"level":"info","message":"SuccessResponse: Search results retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:51:30:5130"}
+{"level":"info","message":"SuccessResponse: Search results retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:51:32:5132"}
+{"level":"info","message":"SuccessResponse: Search results retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:52:11:5211"}
+{"level":"info","message":"SuccessResponse: Search results retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:52:13:5213"}
+{"level":"info","message":"SuccessResponse: Search results retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:52:13:5213"}
+{"level":"info","message":"SuccessResponse: Search results retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:52:51:5251"}
+{"level":"info","message":"SuccessResponse: Search results retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:52:52:5252"}
+{"level":"info","message":"SuccessResponse: Search results retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:52:53:5253"}
+{"level":"info","message":"SuccessResponse: Search results retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:53:00:530"}
+{"level":"info","message":"SuccessResponse: Search results retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:57:01:571"}
+{"level":"info","message":"SuccessResponse: Search results retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:57:03:573"}
+{"level":"info","message":"SuccessResponse: Search results retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:57:04:574"}
+{"level":"info","message":"SuccessResponse: Search results retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:57:06:576"}
+{"level":"info","message":"SuccessResponse: Search results retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:57:08:578"}
+{"level":"info","message":"SuccessResponse: Search results retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:57:12:5712"}
+{"level":"info","message":"SuccessResponse: Search results retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:57:14:5714"}
+{"level":"info","message":"SuccessResponse: Search results retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:57:14:5714"}
+{"level":"info","message":"SuccessResponse: Search results retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:57:17:5717"}
+{"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:57:20:5720"}
+{"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:57:23:5723"}
+{"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:57:26:5726"}
+{"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 02:57:27:5727"}
+{"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 03:00:56:056"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-07-12 03:00:56:056"}
+{"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 03:00:56:056"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-07-12 03:00:56:056"}
+{"level":"info","message":"SuccessResponse: Collections retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 03:00:57:057"}
+{"level":"info","message":"SuccessResponse: Collections retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 03:00:57:057"}
+{"level":"info","message":"SuccessResponse: Search results retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 03:12:18:1218"}
+{"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 03:12:27:1227"}
+{"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 03:12:27:1227"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 03:12:27:1227"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 03:12:28:1228"}
+{"level":"info","message":"SuccessResponse: Collections retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 03:12:52:1252"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-07-12 03:12:52:1252"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 03:12:52:1252"}
+{"level":"info","message":"SuccessResponse: Collections retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 03:12:53:1253"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 03:12:53:1253"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-07-12 03:12:53:1253"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-07-12 03:12:55:1255"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 03:12:55:1255"}
+{"level":"info","message":"SuccessResponse: Collections retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 03:12:55:1255"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-07-12 03:12:56:1256"}
+{"level":"info","message":"SuccessResponse: Collections retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 03:12:56:1256"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 03:12:56:1256"}
+{"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 03:12:58:1258"}
+{"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 03:12:58:1258"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 03:13:01:131","userId":"686f1eaaf4d582416aaad5b8"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 03:13:01:131"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 03:13:02:132","userId":"686f1eaaf4d582416aaad5b8"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 03:13:02:132"}
+{"level":"info","message":"SuccessResponse: Collections retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 04:26:59:2659"}
+{"level":"info","message":"SuccessResponse: Distinct site names retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 04:26:59:2659"}
+{"level":"info","message":"SuccessResponse: Distinct site names retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 04:26:59:2659"}
+{"level":"info","message":"SuccessResponse: Collections retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 04:26:59:2659"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: This capture already exists","service":"api-service","statusCode":409,"timestamp":"2025-07-12 04:28:06:286"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 04:28:15:2815"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 04:28:15:2815"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 04:28:20:2820"}
+{"level":"info","message":"SuccessResponse: Distinct site names retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 04:28:20:2820"}
+{"level":"info","message":"SuccessResponse: Collections retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 04:28:20:2820"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 04:28:20:2820"}
+{"level":"info","message":"SuccessResponse: Distinct site names retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 04:28:20:2820"}
+{"level":"info","message":"SuccessResponse: Collections retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 04:28:20:2820"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: This capture already exists","service":"api-service","statusCode":409,"timestamp":"2025-07-12 04:28:37:2837"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: This capture already exists","service":"api-service","statusCode":409,"timestamp":"2025-07-12 04:28:38:2838"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: This capture already exists","service":"api-service","statusCode":409,"timestamp":"2025-07-12 04:28:39:2839"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: This capture already exists","service":"api-service","statusCode":409,"timestamp":"2025-07-12 04:28:41:2841"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 04:28:46:2846","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 04:28:46:2846"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 04:28:46:2846","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 04:28:46:2846"}
+{"level":"info","message":"UserProfileService:resetAllData","service":"api-service","timestamp":"2025-07-12 04:28:49:2849","userId":"68604608762c26caf5a937c4"}
+{"deletedCount":1,"level":"info","message":"UserProfileService:clearUserCollections","service":"api-service","timestamp":"2025-07-12 04:28:49:2849","userId":"68604608762c26caf5a937c4"}
+{"deletedCount":2,"level":"info","message":"UserProfileService:clearUserCaptures","service":"api-service","timestamp":"2025-07-12 04:28:49:2849","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: Success","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 04:28:49:2849"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 04:28:52:2852"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 04:28:52:2852"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-07-12 04:28:57:2857"}
+{"level":"info","message":"SuccessResponse: Collections retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 04:28:57:2857"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-07-12 04:28:57:2857"}
+{"level":"info","message":"SuccessResponse: Collections retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 04:28:57:2857"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 04:29:00:290"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 04:29:00:290"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: This capture already exists","service":"api-service","statusCode":409,"timestamp":"2025-07-12 04:29:05:295"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: This capture already exists","service":"api-service","statusCode":409,"timestamp":"2025-07-12 04:29:13:2913"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: This capture already exists","service":"api-service","statusCode":409,"timestamp":"2025-07-12 04:30:04:304"}
+{"error":"Capture validation failed: metadata.language: `en` is not a valid enum value for path `metadata.language`.","errorCode":null,"level":"error","message":"ErrorResponse: An error occurred while saving capture","service":"api-service","statusCode":500,"timestamp":"2025-07-12 04:32:13:3213"}
+{"error":"Capture validation failed: metadata.language: `en` is not a valid enum value for path `metadata.language`.","errorCode":null,"level":"error","message":"ErrorResponse: An error occurred while saving capture","service":"api-service","statusCode":500,"timestamp":"2025-07-12 04:33:44:3344"}
+{"error":"Cannot read properties of undefined (reading 'split')","errorCode":null,"level":"error","message":"ErrorResponse: An error occurred while saving capture","service":"api-service","statusCode":500,"timestamp":"2025-07-12 04:34:13:3413"}
+{"level":"info","message":"SuccessResponse: Capture saved successfully","metadata":{},"service":"api-service","statusCode":201,"timestamp":"2025-07-12 04:35:03:353"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 04:35:08:358"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 04:35:08:358"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 04:35:10:3510"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 04:35:10:3510","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 04:35:10:3510"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 04:35:10:3510","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 04:35:10:3510"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: This capture already exists","service":"api-service","statusCode":409,"timestamp":"2025-07-12 04:35:47:3547"}
+{"error":"Capture validation failed: metadata.language: `en-US` is not a valid enum value for path `metadata.language`.","errorCode":null,"level":"error","message":"ErrorResponse: An error occurred while saving capture","service":"api-service","statusCode":500,"timestamp":"2025-07-12 04:38:40:3840"}
+{"error":"E11000 duplicate key error collection: lnkd.captures index: slug_1 dup key: { slug: \"the-illusion-of-thinking-understanding-the-strengths-and-lim\" }","errorCode":null,"level":"error","message":"ErrorResponse: An error occurred while saving capture","service":"api-service","statusCode":500,"timestamp":"2025-07-12 04:39:16:3916"}
+{"level":"info","message":"SuccessResponse: Capture saved successfully","metadata":{},"service":"api-service","statusCode":201,"timestamp":"2025-07-12 04:51:03:513"}
+{"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 04:51:09:519"}
+{"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 04:51:09:519"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 04:51:11:5111"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 04:51:11:5111"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 04:51:12:5112"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 04:51:12:5112","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 04:51:12:5112"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 04:51:12:5112","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 04:51:12:5112"}
+{"captureId":"6871bf87dc8caebf8d0ef37a","level":"info","message":"AIController:generateSummary","service":"api-service","timestamp":"2025-07-12 04:51:16:5116"}
+{"captureId":"6871bf87dc8caebf8d0ef37a","level":"info","message":"AIController:generateSummary:success","service":"api-service","summaryLength":1180,"timestamp":"2025-07-12 04:51:19:5119"}
+{"level":"info","message":"SuccessResponse: AI summary generated successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 04:51:19:5119"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 04:51:22:5122","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 04:51:22:5122"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 04:51:22:5122","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 04:51:22:5122"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 04:51:26:5126","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 04:51:26:5126"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 04:51:26:5126","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 04:51:26:5126"}
+{"captureId":"6871bf87dc8caebf8d0ef37a","level":"info","message":"AIController:converse","service":"api-service","timestamp":"2025-07-12 04:51:28:5128"}
+{"captureId":"6871bf87dc8caebf8d0ef37a","level":"info","message":"AIController:converse:success","modelUsed":"gemini-2.0-flash","service":"api-service","timestamp":"2025-07-12 04:51:31:5131","tokensUsed":1303}
+{"level":"info","message":"SuccessResponse: AI conversation completed successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 04:51:31:5131"}
+{"error":"E11000 duplicate key error collection: lnkd.captures index: contentHash_1_owner_1 dup key: { contentHash: \"\", owner: ObjectId('68604608762c26caf5a937c4') }","errorCode":null,"level":"error","message":"ErrorResponse: An error occurred while saving capture","service":"api-service","statusCode":500,"timestamp":"2025-07-12 04:51:54:5154"}
+{"error":"E11000 duplicate key error collection: lnkd.captures index: contentHash_1_owner_1 dup key: { contentHash: \"\", owner: ObjectId('68604608762c26caf5a937c4') }","errorCode":null,"level":"error","message":"ErrorResponse: An error occurred while saving capture","service":"api-service","statusCode":500,"timestamp":"2025-07-12 04:51:59:5159"}
+{"error":"E11000 duplicate key error collection: lnkd.captures index: unique_slug_per_owner_format dup key: { slug: \"untitled\", owner: ObjectId('68604608762c26caf5a937c4'), format: \"pdf\" }","errorCode":null,"level":"error","message":"ErrorResponse: An error occurred while saving capture","service":"api-service","statusCode":500,"timestamp":"2025-07-12 05:17:08:178"}
+{"level":"info","message":"SuccessResponse: Capture saved successfully","metadata":{},"service":"api-service","statusCode":201,"timestamp":"2025-07-12 05:22:51:2251"}
+{"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 05:22:58:2258"}
+{"level":"info","message":"SuccessResponse: Bookmarked captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 05:22:58:2258"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 05:22:58:2258"}
+{"level":"info","message":"SuccessResponse: Captures retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 05:22:58:2258"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 05:23:00:230"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 05:23:00:230","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 05:23:00:230"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 05:23:00:230","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 05:23:00:230"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 05:23:03:233"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 05:23:03:233","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 05:23:03:233"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 05:23:03:233","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 05:23:03:233"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 05:23:04:234"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 05:23:04:234","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 05:23:04:234"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 05:23:04:234","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 05:23:04:234"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 05:23:05:235"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 05:23:05:235","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 05:23:05:235"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 05:23:05:235","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 05:23:05:235"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 05:23:06:236"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 05:23:06:236","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 05:23:06:236"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 05:23:06:236","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 05:23:06:236"}
+{"level":"info","message":"SuccessResponse: Capture retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 05:23:08:238"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 05:23:08:238","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 05:23:08:238"}
+{"level":"info","message":"UserProfileService:getUserProfile","service":"api-service","timestamp":"2025-07-12 05:23:08:238","userId":"68604608762c26caf5a937c4"}
+{"level":"info","message":"SuccessResponse: User profile retrieved successfully","metadata":{},"service":"api-service","statusCode":200,"timestamp":"2025-07-12 05:23:08:238"}

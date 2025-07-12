@@ -1,21 +1,20 @@
 import { Document, Types } from "mongoose";
 
-// Type definitions for embedded documents
 export interface IContentHighlight {
   text: string;
   annotation?: string;
-  position: [number, number]; // start/end offsets
-  createdAt: Date;
-  createdBy: Types.ObjectId;
+  position: [number, number]; // start and end offsets
+  createdAt?: Date;
+  createdBy?: Types.ObjectId;
 }
 
 export interface IContentAttachment {
   type: "pdf" | "image" | "video" | "spreadsheet" | "audio";
   url: string;
   thumbnail?: string;
-  size: number;
+  size: number; // in bytes
   name?: string;
-  metadata?: Record<string, any>;
+  metadata?: Record<string, any>; // dynamic depending on file type
 }
 
 export interface ICaptureReference {
@@ -23,36 +22,42 @@ export interface ICaptureReference {
   url?: string;
   title?: string;
   capture?: Types.ObjectId;
-  position?: [number, number]; // For in-content anchoring
+  position?: [number, number]; // optional for inline references
 }
-
 
 export interface IHeadings {
-    level: number; // 1-6
-    text: string; // The heading text
+  level: number; // 1–6
+  text: string;
 }
 
-
-
-// Main interface
 export interface ICapture extends Omit<Document, "collection"> {
   // ---- Core Identity ----
   owner?: Types.ObjectId;
-  bookmarked?: boolean;
   workspace?: Types.ObjectId;
+  bookmarked?: boolean;
   collection?: Types.ObjectId;
   url: string;
   canonicalUrl?: string;
-  title: string;
-  slug: string;
-  headings?: IHeadings[]; // Array of headings with levels and text
-  contentHash: string;
-  conversation?: Types.ObjectId; // Reference to Conversation model
+  title?: string;
+  slug?: string;
+  headings?: IHeadings[];
+  contentHash?: string;
+  conversation?: Types.ObjectId;
+
+  // ---- Format ----
+  format:
+    | "webpage"
+    | "pdf"
+    | "video"
+    | "image"
+    | "audio"
+    | "document"
+    | "other";
 
   // ---- Content Storage ----
   content: {
-    raw: string;
-    clean: string;
+    raw?: string;
+    clean?: string;
     markdown?: string;
     highlights: IContentHighlight[];
     attachments: IContentAttachment[];
@@ -60,33 +65,24 @@ export interface ICapture extends Omit<Document, "collection"> {
 
   // ---- Enhanced Metadata ----
   metadata: {
-    // Basic
     description: string;
     favicon?: string;
     siteName?: string;
     language?: string;
-
-    // Content Analysis
     keywords: string[];
-
-    // Technical
     isPdf: boolean;
-    // Temporal
     publishedAt?: Date;
-    capturedAt: Date;
-
-    // Content Type
+    capturedAt?: Date;
+    author?: string;
     type: "article" | "document" | "product" | "discussion" | "code" | "other";
-
-    // Current Metrics
     wordCount: number;
     readingTime: number;
   };
 
-  // Future: AI/ML Features
+  // ---- AI/ML Features ----
   ai: {
     summary?: string;
-    embeddings?: number[]; // Placeholder for future embeddings
+    embeddings?: number[];
   };
 
   // ---- Graph Relationships ----
@@ -96,10 +92,14 @@ export interface ICapture extends Omit<Document, "collection"> {
   status: "active" | "archived" | "deleted";
   privacy: "private" | "workspace" | "public";
   version: number;
+
+  processingStatus: "pending" | "processing" | "complete" | "error";
+
   source: {
     ip?: string;
     userAgent?: string;
     extensionVersion: string;
+    method: "extension" | "upload" | "api" | "import";
   };
 
   // ---- Timestamps ----

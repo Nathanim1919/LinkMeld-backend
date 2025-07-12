@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { Capture, ICapture } from "../models/Capture";
+import { Capture } from "../models/Capture";
 import { hashContent } from "../utils/hashing";
 import { sanitizeHtml } from "../utils/sanitization";
 import { generateSlug } from "../utils/slugify";
@@ -7,6 +7,7 @@ import { normalizeUrl } from "../utils/urls";
 import Conversation from "../models/Conversation";
 import mongoose from "mongoose";
 import { ErrorResponse, SuccessResponse } from "../utils/responseHandlers";
+import { ICapture } from "src/types/capureTypes";
 
 // Constants
 const MIN_CONTENT_LENGTH = 50;
@@ -15,17 +16,14 @@ const MAX_DOCUMENTS = 20;
 const MAX_LINKS = 100;
 
 /**
- * Saves a new webpage capture with full content processing
- * @param req Express request with capture data
- * @param res Express response
+ * Saves a new webpage or media capture
  */
 export const saveCapture = async (
   req: Request,
   res: Response
 ): Promise<void> => {
   try {
-    // 1. Input Validation
-    const requiredFields = ["url", "timestamp"];
+    const requiredFields = ["url"];
     const missingFields = requiredFields.filter((field) => !req.body[field]);
 
     if (missingFields.length > 0) {
@@ -36,63 +34,58 @@ export const saveCapture = async (
       });
     }
 
-    const {
-      url,
-      title,
-      description,
-      mainText,
-      selectedText,
-      documents = [],
-      links = [],
-      favicon,
-      headings,
-      siteName,
-      publishedTime,
-      author,
-      keywords,
-      viewport,
-      language = "en",
-      userAgent,
-    } = req.body;
+    const format = req.body.format || detectFormat(req.body.url);
+    const isWebpage = format === "webpage";
 
-    // 2. Content Validation
-    const contentToSave = selectedText?.trim() || mainText?.trim() || "";
-    if (contentToSave.length < MIN_CONTENT_LENGTH) {
+    const mainText = req.body.mainText?.trim() || "";
+    if (isWebpage && mainText.length < MIN_CONTENT_LENGTH) {
       return ErrorResponse({
         res,
         statusCode: 400,
-        message: `Content too short (minimum ${MIN_CONTENT_LENGTH} characters required)`,
+        message: "Web content too short to save.",
       });
     }
 
-    // 3. Process Capture Data
-    const captureData = prepareCaptureData(req, contentToSave);
+    const captureData = await prepareCaptureData(req, mainText, format);
 
-    // 4. Check for Duplicates
-    const existingCapture = await Capture.findOne({
-      $or: [
-        { slug: captureData.slug },
-        { contentHash: captureData.contentHash },
-      ],
+    const orConditions = [];
+
+    if (captureData.slug) {
+      orConditions.push({ slug: captureData.slug, format: captureData.format });
+    }
+    if (captureData.contentHash) {
+      orConditions.push({ contentHash: captureData.contentHash, format: captureData.format });
+    }
+    
+    const duplicate = orConditions.length
+      ? await Capture.findOne({ $or: orConditions })
+      : null;
+    
+    
+
+    console.log("[Capture] Duplicate check:", {
+      slug: captureData.slug,
+      contentHash: captureData.contentHash,
+      duplicateExists: !!duplicate,
     });
 
-    if (existingCapture) {
+    if (duplicate) {
       return ErrorResponse({
         res,
         statusCode: 409,
-        message: "This webpage has already been captured",
-        data: { captureId: existingCapture._id },
+        message: "This capture already exists",
       });
     }
 
-    // 5. Save to Database
     const capture = await new Capture(captureData).save();
-    const conversation = await Conversation.create({ captureId: capture._id });
 
-    capture.conversation = new mongoose.Types.ObjectId(conversation._id);
-    await capture.save();
+    // // Create conversation if it's a webpage (optional for other formats)
+    // if (isWebpage) {
+    //   const conversation = await Conversation.create({ captureId: capture._id });
+    //   capture.conversation = conversation._id;
+    //   await capture.save();
+    // }
 
-    // 6. Return Success Response
     return SuccessResponse({
       res,
       statusCode: 201,
@@ -101,10 +94,11 @@ export const saveCapture = async (
         id: capture._id,
         url: capture.url,
         title: capture.title,
+        format: capture.format,
         contentLength: capture.metadata.wordCount,
-        documents: capture.documents?.length || 0,
         timestamp: capture.metadata.capturedAt,
         ai: capture.ai,
+        processingStatus: capture.processingStatus,
       },
     });
   } catch (error) {
@@ -120,42 +114,51 @@ export const saveCapture = async (
 };
 
 /**
- * Helper function to prepare capture data
+ * Prepares capture data for storage
  */
-const prepareCaptureData = (
+const prepareCaptureData = async (
   req: Request,
-  content: string
-): Partial<ICapture> => {
+  content: string,
+  format: string
+): Promise<Partial<ICapture>> => {
   const {
     url,
     title,
     description,
-    documents = [],
-    links = [],
     favicon,
     siteName,
     headings,
     publishedTime,
     author,
     keywords,
-    viewport,
-    language = "en",
+    language = "english",
     userAgent,
+    documents = [],
+    links = [],
   } = req.body;
 
-  const isPdf = !!url.match(/\.pdf($|\?)/i);
-  const wordCount = content.split(/\s+/).filter(Boolean).length;
+  const isWebpage = format === "webpage";
+  const normalizedUrl = await normalizeUrl(url);
+  const wordCount = isWebpage ? countWords(content) : 0;
 
   return {
     owner: req.user.id,
-    url: normalizeUrl(url),
-    title: sanitizeHtml(title || "Untitled", { allowedTags: [] }),
-    slug: generateSlug(title || url),
-    contentHash: hashContent(content),
-    headings,
+    url: normalizedUrl,
+    title: isWebpage
+      ? sanitizeHtml(title || "Untitled", { allowedTags: [] })
+      : undefined,
+    slug: isWebpage ? generateSlug(title || url) : undefined,
+    contentHash: isWebpage ? hashContent(content) : undefined,
+    headings: isWebpage ? headings : [],
+
+    format,
+    processingStatus: isWebpage ? "complete" : "pending",
+
     content: {
-      raw: content,
-      clean: sanitizeHtml(content, { allowedTags: [], allowedAttributes: {} }),
+      raw: isWebpage ? content : undefined,
+      clean: isWebpage
+        ? sanitizeHtml(content, { allowedTags: [], allowedAttributes: {} })
+        : undefined,
       highlights: [],
       attachments: [],
     },
@@ -164,35 +167,39 @@ const prepareCaptureData = (
       description: sanitizeHtml(description || "", { allowedTags: [] }),
       favicon: sanitizeHtml(favicon || "", { allowedTags: [] }),
       siteName: sanitizeHtml(siteName || "", { allowedTags: [] }),
-      publishedAt: sanitizeHtml(publishedTime || "", { allowedTags: [] }),
+      publishedAt: publishedTime || undefined,
+      capturedAt: new Date(),
       author: sanitizeHtml(author || "", { allowedTags: [] }),
       keywords: prepareKeywords(keywords),
-      viewport: sanitizeHtml(viewport || "", { allowedTags: [] }),
-      language: normalizeLanguage(language),
-      isPdf,
-      type: isPdf ? "document" : "article",
+      language,
+      isPdf: format === "pdf",
+      type: format === "webpage" ? "article" : "document",
       wordCount,
-      readingTime: Math.ceil(wordCount / 200),
+      readingTime: isWebpage ? Math.ceil(wordCount / 200) : 0,
     },
 
-    documents: prepareDocuments(documents),
     references: prepareLinks(links),
-
     status: "active",
     version: 1,
+
     source: {
       ip: req.ip,
       userAgent: sanitizeHtml(userAgent || "", { allowedTags: [] }),
-      extensionVersion:
-        req.headers["x-extension-version"]?.toString() || "1.0.0",
+      extensionVersion: req.headers["x-extension-version"]?.toString() || "1.0.0",
+      method: "extension", // or detect from headers later
     },
-
-    searchTokens: [
-      ...(title?.toLowerCase().split(/\s+/) || []),
-      ...(description?.toLowerCase().split(/\s+/) || []),
-    ],
   };
 };
+
+// Util to detect format from URL
+const detectFormat = (url: string): ICapture["format"] => {
+  if (url.endsWith(".pdf")) return "pdf";
+  if (url.includes("youtube.com") || url.includes("vimeo.com")) return "video";
+  return "webpage";
+};
+
+const countWords = (text: string): number =>
+  text.split(/\s+/).filter(Boolean).length;
 
 /**
  * Gets all captures for the authenticated user
