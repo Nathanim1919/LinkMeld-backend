@@ -10,7 +10,7 @@ import { MongoClient } from "mongodb";
 const mongo = new MongoClient(process.env.MONGO_URI! as string);
 mongo.connect(); // Explicitly connect
 
-const dbName = new URL(process.env.MONGO_URI!).pathname.slice(1); // Extract db name from URI
+const dbName = "deepen"
 const db = mongo.db(dbName);
 
 export const auth = betterAuth({

@@ -97,6 +97,7 @@ export interface ICapture extends Omit<Document, "collection"> {
   version: number;
 
   processingStatus: "pending" | "processing" | "complete" | "error";
+  processingStatusMessage: string;
 
   source: {
     ip?: string;

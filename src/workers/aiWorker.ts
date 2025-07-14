@@ -1,69 +1,74 @@
-// src/workers/aiWorker.ts
-
 import { Worker, Job } from "bullmq";
 import { redisConnection } from "../lib/redisClient";
 import { connectMongo } from "../config/database";
 import { Capture } from "../models/Capture";
 import { processContent } from "../ai/services/aiService";
 
-// Connect to MongoDB before worker starts processing
 connectMongo();
 
-/**
- * AI Worker
- * Consumes jobs from 'ai-queue' and performs tasks like summarization
- */
 export const aiWorker = new Worker(
   "ai-queue",
   async (job: Job) => {
     const { captureId, userId } = job.data;
+    const traceId = `[AI Worker] [${captureId}]`;
 
     try {
-      // Fetch the capture document from MongoDB
       const capture = await Capture.findById(captureId);
-
       if (!capture) {
-        console.warn(`[AI Worker] ❌ Capture not found for ID: ${captureId}`);
+        console.warn(`${traceId} ❌ Capture not found`);
         return;
       }
 
-      const text = capture.content?.clean?.trim();
-
-      if (!text) {
-        console.warn(`[AI Worker] ⚠️ No clean content found in capture ID: ${captureId}`);
-        return;
-      }
-
-      console.log(
-        `[AI Worker] 🧠 Processing captureId=${captureId}, textLength=${text.length}`
-      );
-
-      // Summarize the text using your AI service
-      const result = await processContent(text, userId, "kjhsakjdhKJAH");
-
-      const summary = result?.data?.summary?.trim() || "";
-
-      if (!summary) {
-        console.warn(`[AI Worker] ⚠️ No summary generated for captureId=${captureId}`);
-        return;
-      }
-
-      // Update the capture document with AI data
-      capture.ai = { summary };
+      // Set status to processing
+      capture.processingStatus = "processing";
       await capture.save();
 
-      console.log(
-        `[AI Worker] ✅ Saved summary (length=${summary.length}) for captureId=${captureId}`
-      );
-    } catch (error) {
-      console.error(
-        `[AI Worker] ❌ Error processing captureId=${captureId}`,
-        error instanceof Error ? error.message : error
-      );
+      const text = capture.content?.clean?.trim();
+      if (!text || text.length < 50) {
+        console.warn(`${traceId} ⚠️ Not enough content to summarize`);
+        capture.processingStatus = "error";
+        capture.processingStatusMessage = "Content too short or empty for AI";
+        await capture.save();
+        return;
+      }
+
+      console.log(`${traceId} 🧠 Running AI summarization...`);
+
+      const result = await processContent(text, userId, "kjhsakjdhKJAH");
+      const summary = result?.data?.summary?.trim();
+
+      if (!summary || summary.length < 30) {
+        console.warn(`${traceId} ⚠️ AI summary too short or empty`);
+        capture.processingStatus = "error";
+        capture.processingStatusMessage = "AI summary generation failed or empty";
+        await capture.save();
+        return;
+      }
+
+      // Save AI summary and mark complete
+      capture.ai = { summary };
+      capture.processingStatus = "complete";
+      capture.processingStatusMessage = "AI summarization complete";
+      await capture.save();
+
+      console.log(`${traceId} ✅ Summary saved, length=${summary.length}`);
+    } catch (err) {
+      const errorMsg = err instanceof Error ? err.message : String(err);
+      console.error(`${traceId} ❌ Failed to process AI summary`, errorMsg);
+
+      // If capture is available, update its status
+      try {
+        await Capture.findByIdAndUpdate(captureId, {
+          processingStatus: "error",
+          processingStatusMessage: errorMsg,
+        });
+      } catch (saveError) {
+        console.error(`${traceId} ⚠️ Failed to update status after error`, saveError);
+      }
     }
   },
   {
     connection: redisConnection,
-    concurrency: 3, // You can scale this depending on AI API rate limits
+    concurrency: 3, // adjust based on your API limits
   }
 );

@@ -1,3 +1,5 @@
+// src/controllers/captureController.ts
+
 import { Request, Response } from "express";
 import { Capture } from "../models/Capture";
 import { hashContent } from "../utils/hashing";
@@ -9,11 +11,10 @@ import { Types } from "mongoose";
 import { ErrorResponse, SuccessResponse } from "../utils/responseHandlers";
 import { ICapture } from "../types/capureTypes";
 import { pdfQueue } from "../queue/pdfProcessor";
+import { aiQueue } from "../queue/aiQueue";
 
 // Constants
 const MIN_CONTENT_LENGTH = 50;
-// const DEFAULT_PAGE_SIZE = 10;
-// const MAX_DOCUMENTS = 20;
 const MAX_LINKS = 100;
 
 /**
@@ -55,14 +56,18 @@ export const saveCapture = async (
     capture.conversation = new Types.ObjectId(conversation._id);
     await capture.save();
 
-    if (capture.metadata.isPdf){
+    if (capture.metadata.isPdf) {
       // Add to PDF processing queue
       await pdfQueue.add("process-pdf", {
         captureId: capture._id,
         url: capture.url,
       });
+    } else {
+      await aiQueue.add("process-ai", {
+        captureId: capture._id,
+        userId: capture.owner?.toString(),
+      });
     }
- 
 
     return SuccessResponse({
       res,
@@ -153,7 +158,8 @@ const prepareCaptureData = async (
     source: {
       ip: req.ip,
       userAgent: sanitizeHtml(userAgent || "", { allowedTags: [] }),
-      extensionVersion: req.headers["x-extension-version"]?.toString() || "1.0.0",
+      extensionVersion:
+        req.headers["x-extension-version"]?.toString() || "1.0.0",
       method: "extension", // or detect from headers later
     },
   };
@@ -376,65 +382,12 @@ export const getCaptureById = async (
   }
 };
 
-// Helper functions
-// const normalizeLanguage = (lang: string): string => {
-//   const supportedLanguages = [
-//     "none",
-//     "da",
-//     "nl",
-//     "english",
-//     "fi",
-//     "french",
-//     "german",
-//     "hungarian",
-//     "italian",
-//     "nb",
-//     "pt",
-//     "ro",
-//     "ru",
-//     "es",
-//     "sv",
-//     "tr",
-//   ];
-
-//   const languageMap: Record<string, string> = {
-//     en: "english",
-//     "en-US": "english",
-//     "en-GB": "english",
-//     es: "spanish",
-//     fr: "french",
-//     de: "german",
-//     pt: "portuguese",
-//     it: "italian",
-//     ru: "russian",
-//   };
-
-//   if (!lang) return "english";
-
-//   const baseLang = lang.split("-")[0].toLowerCase();
-//   const normalized = languageMap[baseLang] || languageMap[lang.toLowerCase()];
-
-//   return supportedLanguages.includes(normalized) ? normalized : "english";
-// };
-
 const prepareKeywords = (keywords: string | string[]): string[] => {
   if (Array.isArray(keywords)) {
     return keywords.map((k) => sanitizeHtml(k, { allowedTags: [] }));
   }
   return [sanitizeHtml(keywords || "", { allowedTags: [] })];
 };
-
-// const prepareDocuments = (
-//   documents: any[]
-// ): Array<{ url: string; type: string }> => {
-//   return documents
-//     .filter((doc) => doc?.url && doc?.type)
-//     .slice(0, MAX_DOCUMENTS)
-//     .map((doc) => ({
-//       url: sanitizeHtml(doc.url, { allowedTags: [] }),
-//       type: sanitizeHtml(doc.type.toLowerCase(), { allowedTags: [] }),
-//     }));
-// };
 
 const prepareLinks = (
   links: any[]

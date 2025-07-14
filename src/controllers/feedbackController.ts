@@ -46,7 +46,7 @@ export const submitFeedback = async (
   }
 };
 
-export const getFeedback = async (req: Request, res: Response) => {
+export const getFeedback = async (_: Request, res: Response) => {
   try {
     const feedbackList = await Feedback.find().sort({ createdAt: -1 });
 

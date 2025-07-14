@@ -15,7 +15,7 @@ interface ErrorResponseParams {
   statusCode?: number;
   message?: string;
   error?: any;
-  errorCode?: string;
+  errorCode?: string | null;
 }
 
 /**

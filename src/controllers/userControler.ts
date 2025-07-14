@@ -110,6 +110,8 @@ export class UserProfileController {
       const user = req.user as IUser;
       const { geminiApiKey } = req.body;
 
+
+
       // Input validation
       if (!user?.id) {
         ErrorResponse({
@@ -144,7 +146,7 @@ export class UserProfileController {
       });
 
       // Find or create profile
-      const profile = await UserProfile.findOneAndUpdate(
+     await UserProfile.findOneAndUpdate(
         { userId: user.id },
         {
           $set: { [`externalServices.${GEMINI_SERVICE}.apiKey`]: geminiApiKey },

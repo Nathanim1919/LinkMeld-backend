@@ -167,9 +167,10 @@ const CaptureSchema = new Schema<ICapture>(
       type: String,
       enum: ["pending", "processing", "complete", "error"],
       default: "pending",
-      index: true,
     },
-
+    processingStatusMessage: {
+      type: String,
+    },
     source: {
       ip: String,
       userAgent: String,

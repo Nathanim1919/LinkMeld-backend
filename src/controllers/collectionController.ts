@@ -9,10 +9,10 @@ const validateObjectId = (id: string): boolean =>
   mongoose.Types.ObjectId.isValid(id);
 
 // Standardized response structure
-interface ApiResponse<T> {
-  data: T;
-  message?: string;
-}
+// interface ApiResponse<T> {
+//   data: T;
+//   message?: string;
+// }
 
 export default {
   /**

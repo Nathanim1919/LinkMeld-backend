@@ -1,0 +1,66 @@
+version: "3.9"
+
+services:
+  api:
+    build: .
+    command: npx ts-node src/server.ts
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - MONGO_URI=${MONGO_URI}
+      - REDIS_URL=redis://redis:6379
+      - AZURE_STORAGE_CONNECTION_STRING=${AZURE_STORAGE_CONNECTION_STRING}
+
+    depends_on:
+      - mongo
+      - redis
+      - azure-storage
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1
+
+  pdf-worker:
+    build: .
+    command: npx ts-node src/workers/pdfWorker.ts
+    environment:
+      - NODE_ENV=development
+      - MONGO_URI=${MONGO_URI}
+      - REDIS_URL=redis://redis:6379
+      - AZURE_STORAGE_CONNECTION_STRING=${AZURE_STORAGE_CONNECTION_STRING}
+    depends_on:
+      - mongo
+      - redis
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1
+
+  ai-worker:
+    build: .
+    command: npx ts-node src/workers/aiWorker.ts
+    environment:
+      - NODE_ENV=development
+      - MONGO_URI=${MONGO_URI}
+      - REDIS_URL=redis://redis:6379
+      - AZURE_STORAGE_CONNECTION_STRING=${AZURE_STORAGE_CONNECTION_STRING}
+    depends_on:
+      - mongo
+      - redis
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1
+
+  mongo:
+    image: mongo:6
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+
+volumes:
+  mongo-data:

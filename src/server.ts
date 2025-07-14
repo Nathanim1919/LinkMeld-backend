@@ -32,7 +32,7 @@ app.use(
   })
 );
 
-app.all("/api/auth/*splat", (req: Request, res: Response, next: Function) => {
+app.all("/api/auth/*splat", (req: Request, res: Response) => {
   toNodeHandler(auth)(req, res);
 });
 
@@ -59,9 +59,9 @@ app.get("/api/me", async (req: Request, res: Response) => {
 });
 
 
-app.get("/api/health", (req: Request, res: Response) => {
-  res.status(200).json({ status: "ok", message: "Server is healthy" });
-});
+// app.get("/api/health", (req: Request, res: Response) => {
+//   res.status(200).json({ status: "ok", message: "Server is healthy" });
+// });
 
 // Start server
 app.listen(port, () => {
