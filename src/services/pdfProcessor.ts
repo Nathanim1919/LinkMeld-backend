@@ -7,6 +7,7 @@ import { uploadPdfToBlob } from "../utils/azureBlob";
 import { extractTextFromPdf } from "../utils/extractTextFromPdf";
 import { hashContent } from "../utils/hashing";
 import { connectMongo } from "../config/database";
+import { aiQueue } from "../queue/aiQueue";
 
 // Ensure MongoDB is connected before doing any DB operations
 connectMongo();
@@ -74,6 +75,11 @@ export async function processPdfCapture(captureId: string, url: string) {
 
     await capture.save();
     console.log(`[PDF Processor] Updated Capture: ${capture._id}`);
+
+    await aiQueue.add("process-ai", {
+      captureId: captureId,
+      userId: capture.owner?.toString(),
+    });
 
     return { success: true, captureId, slug, blobUrl };
   } catch (error) {

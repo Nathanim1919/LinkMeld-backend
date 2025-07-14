@@ -2,9 +2,8 @@ import { AIResponse } from "../types";
 import { Request } from "express";
 // import { validate as uuidValidate } from 'uuid';
 import { rateLimit } from "express-rate-limit";
-import { IUser } from "../../models/User";
-import { UserService } from "../../services/user.service";
 import { User } from "better-auth/types";
+import { UserService } from "../../services/user.service"
 
 // Type definitions
 interface Message {
@@ -12,6 +11,20 @@ interface Message {
   content: string;
   timestamp?: Date;
 }
+
+interface GeminiResponse {
+  candidates?: Array<{
+    content?: {
+      parts?: Array<{
+        text?: string;
+      }>;
+    };
+  }>;
+  usageMetadata?: {
+    totalTokenCount?: number;
+  };
+}
+
 
 // Constants and configuration
 const DEFAULT_MODEL = "gemini-2.0-flash";
@@ -41,8 +54,22 @@ const GEMINI_CONFIG = {
 };
 
 // Main function to process content
-export const processContent = async (content: string, existingSummary: string, apiKey: string): Promise<AIResponse> => {
+export const processContent = async (
+  content: string,
+  userId: string,
+  existingSummary?: string
+): Promise<AIResponse> => {
   try {
+    // Process content and generate summary
+    const apiKey = await UserService.getGeminiApiKey(userId);
+
+    if (!apiKey) {
+      return {
+        success: false,
+        error: "API key is required for AI operations",
+      };
+    }
+
     if (!content || content.trim().length < 100) {
       return {
         success: false,
@@ -54,54 +81,15 @@ export const processContent = async (content: string, existingSummary: string, a
 
     // Use Promise.allSettled to allow one promise to fail without stopping the other
     // and provide more granular error handling.
-    const [summaryResult, embeddingResult] = await Promise.allSettled([
-      generateSummary(cleanText, existingSummary, apiKey),
-      generateEmbedding(cleanText, apiKey),
-    ]);
+    const summaryResult = await generateSummary(cleanText, existingSummary, apiKey);
 
-    let summary: string | undefined;
-    let embedding: number[] | undefined;
-    let errors: string[] = [];
-
-    if (summaryResult.status === "fulfilled") {
-      summary = summaryResult.value;
-    } else {
-      console.error("Summary generation failed:", summaryResult.reason);
-      errors.push(
-        `Summary generation failed: ${
-          summaryResult.reason.message || summaryResult.reason
-        }`
-      );
-    }
-
-    if (embeddingResult.status === "fulfilled") {
-      embedding = embeddingResult.value;
-    } else {
-      console.error("Embedding generation failed:", embeddingResult.reason);
-      errors.push(
-        `Embedding generation failed: ${
-          embeddingResult.reason.message || embeddingResult.reason
-        }`
-      );
-    }
-
-    if (summary && embedding) {
       return {
         success: true,
         data: {
-          summary,
-          embedding,
+          summary:summaryResult
         },
       };
-    } else {
-      return {
-        success: false,
-        error: errors.join(" AND "),
-      };
-    }
   } catch (error) {
-    // This catch block will now only be hit if Promise.allSettled itself fails,
-    // which is unlikely, or if an error occurs before the API calls.
     return handleGeminiError(error);
   }
 };
@@ -232,9 +220,15 @@ export const generateSummary = async (
       throw new Error(`Summary API Error ${response.status}: ${raw}`);
     }
 
-    let data;
+   
     try {
-      data = await response.json();
+      const data = (await response.json()) as GeminiResponse;
+      const summaryText = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+      if (!summaryText) {
+        console.warn("No summary text found in Gemini response:", data);
+        return "";
+      }
+      return summaryText;
     } catch (jsonError: any) {
       const raw = await response.text();
       console.error(
@@ -245,87 +239,12 @@ export const generateSummary = async (
       );
       throw new Error(`Invalid JSON response from Gemini summary API: ${raw}`);
     }
-
-    const summaryText = data?.candidates?.[0]?.content?.parts?.[0]?.text;
-    if (!summaryText) {
-      console.warn("No summary text found in Gemini response:", data);
-      return "";
-    }
-
-    return summaryText;
   } catch (err) {
     clearTimeout(timeout);
     throw err;
   }
 };
 
-// Generate embedding using Gemini API
-const generateEmbedding = async (
-  text: string,
-  apiKey: string
-): Promise<number[]> => {
-  const controller = new AbortController();
-  const timeout = setTimeout(
-    () => controller.abort(),
-    GEMINI_CONFIG.REQUEST_TIMEOUT
-  );
-
-  try {
-    // Corrected the URL for embedding. The `models/` prefix should be part of the model name in the URL.
-    // For embedding, the `model` field in the body is also required and matches the URL model name.
-    const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1/models/${GEMINI_CONFIG.EMBEDDING_MODEL}:embedContent?key=${apiKey}`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          model: `models/${GEMINI_CONFIG.EMBEDDING_MODEL}`, // Ensure this matches the full model name
-          content: {
-            parts: [
-              {
-                text: text.substring(0, 30000),
-              },
-            ],
-          },
-        }),
-        signal: controller.signal,
-      }
-    );
-
-    clearTimeout(timeout);
-
-    if (!response.ok) {
-      const raw = await response.text();
-      console.error("Gemini embedding API error:", response.status, raw);
-      throw new Error(`Embedding API Error ${response.status}: ${raw}`);
-    }
-
-    let data;
-    try {
-      data = await response.json();
-    } catch (jsonError: any) {
-      const raw = await response.text();
-      console.error(
-        "Failed to parse JSON for embedding:",
-        jsonError,
-        "Raw:",
-        raw
-      );
-      throw new Error(
-        `Invalid JSON response from Gemini embedding API: ${raw}`
-      );
-    }
-
-    if (!data?.embedding?.values) {
-      console.warn("No embedding values found in Gemini response:", data);
-      return []; // Or throw an error if no embedding is considered a failure
-    }
-    return data.embedding.values;
-  } catch (err) {
-    clearTimeout(timeout);
-    throw err;
-  }
-};
 
 // Utility to clean content (HTML → plain text)
 const removeBoilerplate = (html: string): string => {
@@ -435,7 +354,9 @@ export const buildConversationPrompt = (
 Your approach is friendly, respectful, and gently proactive. Always aim to be helpful — even if the document doesn’t directly state the answer.
 
 📄 DOCUMENT STATUS:
-- Document: ${content ? "✅ Content Selected and available" : "❌ Not yet Selected"}
+- Document: ${
+    content ? "✅ Content Selected and available" : "❌ Not yet Selected"
+  }
 ${
   content
     ? `\nHere’s a preview of what was uploaded:\n---\n${content}\n---`
@@ -542,7 +463,6 @@ export const processConversation = async (
       }
     );
 
-
     if (!response.ok) {
       const errorData = await response.json();
       console.error("Gemini API error:", {
@@ -552,17 +472,18 @@ export const processConversation = async (
       });
       throw new Error(
         `API Error ${response.status}: ${
-          errorData.error?.message || "Unknown error"
+          (typeof errorData === "object" && errorData !== null && "error" in errorData && typeof (errorData as any).error?.message === "string")
+            ? (errorData as any).error.message
+            : "Unknown error"
         }`
       );
     }
 
-    const data = await response.json();
+    const data = await response.json() as GeminiResponse;
     const messageText = data?.candidates?.[0]?.content?.parts?.[0]?.text || "";
 
     // Log token usage for cost monitoring
     const tokensUsed = data?.usageMetadata?.totalTokenCount;
-  
 
     return {
       message: messageText,

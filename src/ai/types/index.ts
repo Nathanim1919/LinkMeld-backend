@@ -11,7 +11,6 @@ export interface AIResponse {
   success: boolean;
   data?: {
     summary: string;
-    embeddings: number[];
   };
   error?: string;
   retryAfter?: number;

@@ -53,18 +53,8 @@ export class AIController {
         return;
       }
 
-      // Process content and generate summary
-      const apiKey = await UserService.getGeminiApiKey(user.id);
-      if (!apiKey) {
-        ErrorResponse({
-          res,
-          statusCode: 403,
-          message: "API key is required for AI operations",
-          errorCode: "API_KEY_REQUIRED",
-        });
-        return;
-      }
-      const result = await processContent(capture.content.clean || "", capture.ai.summary || "", apiKey);
+     
+      const result = await processContent(capture.content.clean || "", user.id, capture.ai.summary || "");
 
       if (result.success && result.data) {
         capture.ai.summary = result.data.summary || "";
