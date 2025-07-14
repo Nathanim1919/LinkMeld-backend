@@ -7,7 +7,8 @@ import { normalizeUrl } from "../utils/urls";
 import Conversation from "../models/Conversation";
 import { Types } from "mongoose";
 import { ErrorResponse, SuccessResponse } from "../utils/responseHandlers";
-import { ICapture } from "src/types/capureTypes";
+import { ICapture } from "../types/capureTypes";
+import { pdfQueue } from "../queue/pdfProcessor";
 
 // Constants
 const MIN_CONTENT_LENGTH = 50;
@@ -48,40 +49,19 @@ export const saveCapture = async (
 
     const captureData = await prepareCaptureData(req, mainText, format);
 
-    const orConditions = [];
-
-    if (captureData.slug) {
-      orConditions.push({ slug: captureData.slug, format: captureData.format });
-    }
-    if (captureData.contentHash) {
-      orConditions.push({ contentHash: captureData.contentHash, format: captureData.format });
-    }
-    
-    const duplicate = orConditions.length
-      ? await Capture.findOne({ $or: orConditions })
-      : null;
-    
-    
-
-    console.log("[Capture] Duplicate check:", {
-      slug: captureData.slug,
-      contentHash: captureData.contentHash,
-      duplicateExists: !!duplicate,
-    });
-
-    if (duplicate) {
-      return ErrorResponse({
-        res,
-        statusCode: 409,
-        message: "This capture already exists",
-      });
-    }
-
     const capture = await new Capture(captureData).save();
 
     const conversation = await Conversation.create({ captureId: capture._id });
     capture.conversation = new Types.ObjectId(conversation._id);
     await capture.save();
+
+    if (capture.metadata.isPdf){
+      // Add to PDF processing queue
+      await pdfQueue.add("process-pdf", {
+        captureId: capture._id,
+        url: capture.url,
+      });
+    }
  
 
     return SuccessResponse({

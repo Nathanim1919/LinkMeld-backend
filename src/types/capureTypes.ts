@@ -37,6 +37,9 @@ export interface ICapture extends Omit<Document, "collection"> {
   bookmarked?: boolean;
   collection?: Types.ObjectId;
   url: string;
+  blobUrl?: string;
+  isDuplicate?: boolean;
+  duplicateOf?: Types.ObjectId;
   canonicalUrl?: string;
   title?: string;
   slug?: string;

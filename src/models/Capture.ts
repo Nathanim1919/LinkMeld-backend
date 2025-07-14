@@ -59,7 +59,6 @@ const CaptureSchema = new Schema<ICapture>(
     workspace: { type: Types.ObjectId, ref: "Workspace", index: true },
     bookmarked: { type: Boolean, default: false },
     collection: { type: Types.ObjectId, ref: "Collection", index: true },
-
     url: {
       type: String,
       required: true,
@@ -110,9 +109,10 @@ const CaptureSchema = new Schema<ICapture>(
       summary: { type: String, default: "" },
       embeddings: { type: [Number], default: [] },
     },
-
+    blobUrl: { type: String },
+    isDuplicate: { type: Boolean, default: false },
+    duplicateOf: { type: Types.ObjectId, ref: "Capture", default: null },
     conversation: { type: Schema.Types.ObjectId, ref: "Conversation" },
-
     content: {
       raw: { type: String, select: false },
       clean: {
@@ -218,10 +218,10 @@ CaptureSchema.index({ contentHash: 1, owner: 1 }, { unique: true });
 
 // Middleware
 CaptureSchema.pre<ICapture>("save", async function (next) {
+  // Generate slug if missing
   if (!this.slug) {
     const fallbackTitle = this.title?.trim() || "Untitled";
 
-    // If fallbackTitle is "Untitled", append a short hash of the URL or timestamp
     if (fallbackTitle.toLowerCase() === "untitled") {
       const base = this.url || new Date().toISOString();
       this.slug = `${generateSlug("untitled")}-${hashContent(base).slice(
@@ -233,31 +233,30 @@ CaptureSchema.pre<ICapture>("save", async function (next) {
     }
   }
 
+  // Normalize URL if modified
   if (this.isModified("url")) {
     this.canonicalUrl = this.canonicalUrl || (await normalizeUrl(this.url));
   }
 
   const cleanContent = this.content?.clean?.trim() ?? "";
 
-  if (this.isModified("content.clean")) {
+  if ((this.isModified("content.clean") || this.isNew) && !this.contentHash) {
     if (cleanContent.length > 0) {
-      // Normal case: hash content
       this.contentHash = hashContent(cleanContent);
       this.metadata.wordCount = countWords(cleanContent);
       this.metadata.readingTime = calculateReadingTime(cleanContent);
     } else if (this.metadata?.isPdf && this.url) {
-      // PDF fallback: hash URL instead
       this.contentHash = hashContent(this.url);
       this.metadata.wordCount = 0;
       this.metadata.readingTime = 0;
     } else {
-      // No content, not a PDF: fallback to empty hash (should be rare or invalid)
       this.contentHash = "";
       this.metadata.wordCount = 0;
       this.metadata.readingTime = 0;
     }
   }
 
+  // Versioning
   if (this.isNew) {
     this.version = 1;
   } else {
@@ -277,11 +276,11 @@ function isValidUrl(url: string): boolean {
   }
 }
 
-function countWords(text: string): number {
+export function countWords(text: string): number {
   return text?.split(/\s+/).filter((w) => w.length > 0).length;
 }
 
-function calculateReadingTime(text: string): number {
+export function calculateReadingTime(text: string): number {
   const wpm = 200;
   return Math.ceil(countWords(text) / wpm);
 }
