@@ -58,15 +58,35 @@ export const saveCapture = async (
 
     if (capture.metadata.isPdf) {
       // Add to PDF processing queue
-      await pdfQueue.add("process-pdf", {
-        captureId: capture._id,
-        url: capture.url,
-      });
+      await pdfQueue.add(
+        "process-pdf",
+        {
+          captureId: capture._id,
+          url: capture.url,
+        },
+        {
+          attempts: 3, // Total tries including the first attempt
+          backoff: {
+            type: "exponential", // or "fixed"
+            delay: 5000, // milliseconds
+          },
+        }
+      );
     } else {
-      await aiQueue.add("process-ai", {
-        captureId: capture._id,
-        userId: capture.owner?.toString(),
-      });
+      await aiQueue.add(
+        "process-ai",
+        {
+          captureId: capture._id,
+          userId: capture.owner?.toString(),
+        },
+        {
+          attempts: 3, // Total tries including the first attempt
+          backoff: {
+            type: "exponential", // or "fixed"
+            delay: 5000, // milliseconds
+          },
+        }
+      );
     }
 
     return SuccessResponse({
