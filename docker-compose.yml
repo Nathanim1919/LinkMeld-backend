@@ -32,6 +32,3 @@ services:
       - MONGO_URI=${MONGO_URI}
       - REDIS_URL=${REDIS_URL}
       - AZURE_STORAGE_CONNECTION_STRING=${AZURE_STORAGE_CONNECTION_STRING}
-
-volumes:
-  mongo-data:
