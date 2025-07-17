@@ -20,7 +20,6 @@ export const auth = betterAuth({
     "https://www.deepen.live", // Fixed syntax error
     "http://localhost:5173", // Replace with your frontend's origin
   ],
-
   secret: process.env.BETTER_AUTH_SECRET as string,
   emailAndPassword: {
     enabled: true,

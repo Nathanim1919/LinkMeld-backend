@@ -26,17 +26,21 @@ connectMongo();
 // Configure CORS middleware
 app.use(
   cors({
-    origin: "http://localhost:5173, https://deepen.live, https://www.deepen.live", // Use environment variable or default to '*'
+    origin: [
+      "http://localhost:5173",
+      "https://deepen.live",
+      "https://www.deepen.live"
+    ],
+    credentials: true,
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
-    credentials: true, // Allow credentials (cookies, authorization headers, etc.)
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
   })
 );
+
 
 app.all("/api/auth/*splat", (req: Request, res: Response) => {
   toNodeHandler(auth)(req, res);
 });
-
-
 
 app.use(express.json());
 
@@ -59,9 +63,9 @@ app.get("/api/me", async (req: Request, res: Response) => {
 });
 
 
-// app.get("/api/health", (req: Request, res: Response) => {
-//   res.status(200).json({ status: "ok", message: "Server is healthy" });
-// });
+app.get("/api/health", (_: Request, res: Response) => {
+  res.status(200).json({ status: "ok", message: "Server is healthy" });
+});
 
 // Start server
 app.listen(port, () => {
