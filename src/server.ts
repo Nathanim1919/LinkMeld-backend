@@ -26,7 +26,7 @@ connectMongo();
 // Configure CORS middleware
 app.use(
   cors({
-    origin:"http://localhost:5173, https://deepen.live", // Use environment variable or default to '*'
+    origin: "http://localhost:5173, https://deepen.live, https://www.deepen.live", // Use environment variable or default to '*'
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
     credentials: true, // Allow credentials (cookies, authorization headers, etc.)
   })

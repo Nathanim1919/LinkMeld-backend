@@ -17,6 +17,7 @@ export const auth = betterAuth({
   database: mongodbAdapter(db),
   trustedOrigins: [
     "https://deepen.live", // Added trusted origin
+    "https://www.deepen.live", // Fixed syntax error
     "http://localhost:5173", // Replace with your frontend's origin
   ],
 
