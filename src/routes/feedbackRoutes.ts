@@ -1,6 +1,7 @@
 import express from "express";
 import {
   getFeedback,
+  setFeedbackDisplayToTrue,
   submitFeedback,
 } from "../controllers/feedbackController";
 import { rateLimiter } from "../middleware/rateLimiter";
@@ -20,4 +21,10 @@ router.post("/", rateLimiter("strict"), submitFeedback);
  */
 router.get("/", getFeedback);
 
+/**
+ * @route POST /api/feedback/:feedbackId/display
+ * @desc SET the feedback display to true
+ * @access Public
+ */
+router.post("/:feedbackId/display", setFeedbackDisplayToTrue);
 export default router;

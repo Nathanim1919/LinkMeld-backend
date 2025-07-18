@@ -65,3 +65,42 @@ export const getFeedback = async (_: Request, res: Response) => {
     });
   }
 };
+
+export const setFeedbackDisplayToTrue = async (req: Request, res: Response) => {
+  try {
+    const { feedbackId } = req.params;
+
+    if (!feedbackId) {
+      return ErrorResponse({
+        res,
+        message: "FeedbackId is Null",
+        statusCode: 400,
+      });
+    }
+
+    const feedback = await Feedback.findById(feedbackId);
+    if (!feedback) {
+      return ErrorResponse({
+        res,
+        message: "Feedback Not Found",
+        statusCode: 401,
+      });
+    }
+
+    feedback.display = true;
+    await feedback.save();
+
+    return SuccessResponse({
+      res,
+      message: "Feedback display set to True",
+      data: feedback,
+    });
+  } catch (error) {
+    return ErrorResponse({
+      res,
+      statusCode: 500,
+      message: "Failed to retrieve feedback.",
+      error: error instanceof Error ? error.message : "Unknown error",
+    });
+  }
+};

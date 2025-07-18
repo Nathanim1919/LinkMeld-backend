@@ -63,8 +63,8 @@ services:
       - MONGO_URI=${MONGO_URI}
       - REDIS_URL=${REDIS_URL}
       - AZURE_STORAGE_CONNECTION_STRING=${AZURE_STORAGE_CONNECTION_STRING}
-    depends_on:
-      - redis
+    # depends_on:
+    #   - redis
 
   pdf-worker:
     image: deepenacr.azurecr.io/pdf-worker:latest
@@ -73,8 +73,8 @@ services:
       - MONGO_URI=${MONGO_URI}
       - REDIS_URL=${REDIS_URL}
       - AZURE_STORAGE_CONNECTION_STRING=${AZURE_STORAGE_CONNECTION_STRING}
-    depends_on:
-      - redis
+    # depends_on:
+    #   - redis
 
      
 
@@ -85,10 +85,10 @@ services:
       - MONGO_URI=${MONGO_URI}
       - REDIS_URL=${REDIS_URL}
       - AZURE_STORAGE_CONNECTION_STRING=${AZURE_STORAGE_CONNECTION_STRING}
-    depends_on:
-      - redis
+    # depends_on:
+    #   - redis
 
-  redis:
-    image: redis:7-alpine
-    ports:
-      - "6379:6379"
+  # redis:
+  #   image: redis:7-alpine
+  #   ports:
+  #     - "6379:6379"
