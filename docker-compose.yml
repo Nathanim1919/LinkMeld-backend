@@ -1,90 +1,90 @@
-# version: "3.9"
-
-# services:
-#   api:
-#     build:
-#       context: .
-#       dockerfile: Dockerfile.api
-#     ports:
-#       - "3000:3000"
-#     environment:
-#       - NODE_ENV=development
-#       - MONGO_URI=${MONGO_URI}
-#       - REDIS_URL=${REDIS_URL}
-#       - AZURE_STORAGE_CONNECTION_STRING=${AZURE_STORAGE_CONNECTION_STRING}
-#     depends_on:
-#       - mongo
-#       - redis
-
-
-#   pdf-worker:
-#     build:
-#       context: .
-#       dockerfile: Dockerfile.pdf-worker
-#     environment:
-#       - NODE_ENV=development
-#       - MONGO_URI=${MONGO_URI}
-#       - REDIS_URL=${REDIS_URL}
-#       - AZURE_STORAGE_CONNECTION_STRING=${AZURE_STORAGE_CONNECTION_STRING}
-#     depends_on:
-#       - mongo
-#       - redis
-
-
-#   ai-worker:
-#     build:
-#       context: .
-#       dockerfile: Dockerfile.ai-worker
-#     environment:
-#       - NODE_ENV=development
-#       - MONGO_URI=${MONGO_URI}
-#       - REDIS_URL=${REDIS_URL}
-#       - AZURE_STORAGE_CONNECTION_STRING=${AZURE_STORAGE_CONNECTION_STRING}
-#     depends_on:
-#       - mongo
-#       - redis
-
-#   mongo:
-#     image: mongo:6
-#     ports:
-#       - "27018:27017"
-
-
-
 version: "3.9"
 
 services:
   api:
-    image: deepenacr.azurecr.io/deepen-api:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.api
     ports:
       - "3000:3000"
     environment:
-      - NODE_ENV=production
+      - NODE_ENV=development
       - MONGO_URI=${MONGO_URI}
       - REDIS_URL=${REDIS_URL}
       - AZURE_STORAGE_CONNECTION_STRING=${AZURE_STORAGE_CONNECTION_STRING}
-    # depends_on:
-    #   - redis
+    depends_on:
+      - mongo
+      - redis
+
 
   pdf-worker:
-    image: deepenacr.azurecr.io/pdf-worker:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.pdf-worker
     environment:
-      - NODE_ENV=production
+      - NODE_ENV=development
       - MONGO_URI=${MONGO_URI}
       - REDIS_URL=${REDIS_URL}
       - AZURE_STORAGE_CONNECTION_STRING=${AZURE_STORAGE_CONNECTION_STRING}
-    # depends_on:
-    #   - redis
+    depends_on:
+      - mongo
+      - redis
+
+
+  ai-worker:
+    build:
+      context: .
+      dockerfile: Dockerfile.ai-worker
+    environment:
+      - NODE_ENV=development
+      - MONGO_URI=${MONGO_URI}
+      - REDIS_URL=${REDIS_URL}
+      - AZURE_STORAGE_CONNECTION_STRING=${AZURE_STORAGE_CONNECTION_STRING}
+    depends_on:
+      - mongo
+      - redis
+
+  mongo:
+    image: mongo:6
+    ports:
+      - "27018:27017"
+
+
+
+# version: "3.9"
+
+# services:
+#   api:
+#     image: deepenacr.azurecr.io/deepen-api:latest
+#     ports:
+#       - "3000:3000"
+#     environment:
+#       - NODE_ENV=production
+#       - MONGO_URI=${MONGO_URI}
+#       - REDIS_URL=${REDIS_URL}
+#       - AZURE_STORAGE_CONNECTION_STRING=${AZURE_STORAGE_CONNECTION_STRING}
+#     # depends_on:
+#     #   - redis
+
+#   pdf-worker:
+#     image: deepenacr.azurecr.io/pdf-worker:latest
+#     environment:
+#       - NODE_ENV=production
+#       - MONGO_URI=${MONGO_URI}
+#       - REDIS_URL=${REDIS_URL}
+#       - AZURE_STORAGE_CONNECTION_STRING=${AZURE_STORAGE_CONNECTION_STRING}
+#     # depends_on:
+#     #   - redis
 
      
 
-  ai-worker:
-    image: deepenacr.azurecr.io/ai-worker:latest
-    environment:
-      - NODE_ENV=production
-      - MONGO_URI=${MONGO_URI}
-      - REDIS_URL=${REDIS_URL}
-      - AZURE_STORAGE_CONNECTION_STRING=${AZURE_STORAGE_CONNECTION_STRING}
+#   ai-worker:
+#     image: deepenacr.azurecr.io/ai-worker:latest
+#     environment:
+#       - NODE_ENV=production
+#       - MONGO_URI=${MONGO_URI}
+#       - REDIS_URL=${REDIS_URL}
+#       - AZURE_STORAGE_CONNECTION_STRING=${AZURE_STORAGE_CONNECTION_STRING}
     # depends_on:
     #   - redis
 

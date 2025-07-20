@@ -53,8 +53,11 @@ export class AIController {
         return;
       }
 
-     
-      const result = await processContent(capture.content.clean || "", user.id, capture.ai.summary || "");
+      const result = await processContent(
+        capture.content.clean || "",
+        user.id,
+        capture.ai.summary || ""
+      );
 
       if (result.success && result.data) {
         capture.ai.summary = result.data.summary || "";
