@@ -8,6 +8,7 @@ import { extractTextFromPdf } from "../utils/extractTextFromPdf";
 import { hashContent } from "../utils/hashing";
 import { connectMongo } from "../config/database";
 import { aiQueue } from "../queue/aiQueue";
+import { withRetry } from "../utils/withRetry";
 
 // Ensure MongoDB is connected before doing any DB operations
 connectMongo();
@@ -25,83 +26,59 @@ connectMongo();
  * @param url - The original PDF URL
  */
 export async function processPdfCapture(captureId: string, url: string) {
-  const traceId = `[PDF Processor] [${captureId}]`; // for better logging context
-  console.log(`${traceId} 🚀 Starting PDF processing for: ${url}`);
+  const traceId = `[PDF Processor] [${captureId}]`;
 
   try {
-    // Step 1: Set initial status
-    await Capture.findByIdAndUpdate(captureId, {
+    const capture = await Capture.findByIdAndUpdate(captureId, {
       processingStatus: "processing",
       "metadata.capturedAt": new Date(),
-    });
+    }, { new: true });
 
-    // Step 2: Download the PDF
-    const pdfData = await downloadPdf(url);
-    console.log(`${traceId} 📥 Downloaded ${pdfData.fileName}, size=${pdfData.size} bytes`);
+    if (!capture) throw new Error("Capture not found");
 
-    // Step 3: Upload to Azure
-    const blobUrl = await uploadPdfToBlob(pdfData.buffer, pdfData.fileName);
-    console.log(`${traceId} ☁️ Uploaded to Azure: ${blobUrl}`);
+    const pdfData = await withRetry(() => downloadPdf(url), 3, 2000);
 
-    // Step 4: Extract clean text
-    const rawText = await extractTextFromPdf(pdfData.buffer);
+    const [blobUrl, rawText] = await Promise.all([
+      uploadPdfToBlob(pdfData.buffer, pdfData.fileName),
+      extractTextFromPdf(pdfData.buffer),
+    ]);
+
     const cleanText = rawText.replace(/\s{2,}/g, " ").trim();
     if (!cleanText || cleanText.length < 100) {
-      throw new Error("Extracted text is empty or too short");
+      throw new Error("Text content too short or invalid");
     }
 
-    // Step 5: Compute metadata
     const title = pdfData.fileName.replace(/\.pdf$/i, "") || "Untitled";
-    const slug = generateSlug(title);
-    const contentHash = hashContent(cleanText || url); // fallback in case of extraction failure
-    const wordCount = countWords(cleanText);
-    const readingTime = calculateReadingTime(cleanText);
-
-    // Step 6: Update capture document
-    const capture = await Capture.findById(captureId);
-    if (!capture) {
-      console.error(`${traceId} ❌ Capture not found`);
-      throw new Error(`Capture not found: ${captureId}`);
-    }
-
-    capture.title = title;
-    capture.slug = slug;
-    capture.blobUrl = blobUrl;
-    capture.content.clean = cleanText;
-    capture.contentHash = contentHash;
-    capture.metadata = {
-      ...capture.metadata,
+    const metadata = {
       type: "document",
       isPdf: true,
-      wordCount,
-      readingTime,
+      wordCount: countWords(cleanText),
+      readingTime: calculateReadingTime(cleanText),
       capturedAt: new Date(),
     };
 
-    await capture.save();
-    console.log(`${traceId} ✅ Updated capture metadata and content`);
+    await Capture.findByIdAndUpdate(captureId, {
+      title,
+      slug: generateSlug(title),
+      blobUrl,
+      content: { clean: cleanText },
+      contentHash: hashContent(cleanText),
+      metadata,
+      processingStatus: "ready",
+    });
 
-    // Step 7: Enqueue AI summarization
-    await aiQueue.add("process-ai", {
-      captureId: captureId,
+    await aiQueue.add(`process-ai:${capture.owner}`, {
+      captureId,
       userId: capture.owner?.toString(),
     });
 
-    console.log(`${traceId} 🧠 Queued AI summarization task`);
+    return { success: true, captureId, slug: generateSlug(title), blobUrl };
 
-    return { success: true, captureId, slug, blobUrl };
   } catch (err) {
-    const error = err instanceof Error ? err.message : String(err);
-    console.error(`${traceId} ❌ Error during PDF processing:`, error);
-
-    // Update status to error for UI
+    console.error(`${traceId} ❌ Error: ${err instanceof Error ? err.message : err}`);
     await Capture.findByIdAndUpdate(captureId, {
       processingStatus: "error",
     });
-
-    // (Optional) Send to error tracking system like Sentry, Datadog, etc.
-    // logError({ traceId, error });
-
-    return { success: false, captureId, error };
+    return { success: false, captureId, error: err instanceof Error ? err.message : String(err) };
   }
 }

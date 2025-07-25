@@ -24,6 +24,7 @@ export async function downloadPdf(url: string): Promise<DownloadedPdf> {
       },
     });
 
+
     const contentType = response.headers["content-type"] || "";
     const contentDisposition = response.headers["content-disposition"] || "";
 

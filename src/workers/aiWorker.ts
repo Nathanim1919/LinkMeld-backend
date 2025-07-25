@@ -3,6 +3,9 @@ import { redisConnection } from "../lib/redisClient";
 import { connectMongo } from "../config/database";
 import { Capture } from "../models/Capture";
 import { processContent } from "../ai/services/aiService";
+import { embedQueue } from "../queue/embedQueue";
+import { UserService } from "../services/user.service";
+import { logger } from "../utils/logger";
 
 connectMongo();
 
@@ -11,6 +14,17 @@ export const aiWorker = new Worker(
   async (job: Job) => {
     const { captureId, userId } = job.data;
     const traceId = `[AI Worker] [${captureId}]`;
+    const apiKey = await UserService.getGeminiApiKey(userId);
+    logger.info(`Adding to embed queue: ${captureId}`, {
+      captureId,
+      userId,
+      apiKey,
+    });
+    await embedQueue.add("process-embedding", {
+      captureId,
+      userId,
+      apiKey,
+    });
 
     try {
       const capture = await Capture.findById(captureId);
@@ -34,13 +48,14 @@ export const aiWorker = new Worker(
 
       console.log(`${traceId} 🧠 Running AI summarization...`);
 
-      const result = await processContent(text, userId, "kjhsakjdhKJAH");
+      const result = await processContent(text, userId);
       const summary = result?.data?.summary?.trim();
 
       if (!summary || summary.length < 30) {
         console.warn(`${traceId} ⚠️ AI summary too short or empty`);
         capture.processingStatus = "error";
-        capture.processingStatusMessage = "AI summary generation failed or empty";
+        capture.processingStatusMessage =
+          "AI summary generation failed or empty";
         await capture.save();
         return;
       }
@@ -63,7 +78,10 @@ export const aiWorker = new Worker(
           processingStatusMessage: errorMsg,
         });
       } catch (saveError) {
-        console.error(`${traceId} ⚠️ Failed to update status after error`, saveError);
+        console.error(
+          `${traceId} ⚠️ Failed to update status after error`,
+          saveError
+        );
       }
     }
   },

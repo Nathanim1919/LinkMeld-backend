@@ -43,52 +43,49 @@ services:
     depends_on:
       - mongo
       - redis
+      
+  embed-worker:
+    build:
+      context: .
+      dockerfile: Dockerfile.embed-worker
+    environment:
+      - NODE_ENV=development
+      - MONGO_URI=${MONGO_URI}
+      - REDIS_URL=${REDIS_URL}
+      - AZURE_STORAGE_CONNECTION_STRING=${AZURE_STORAGE_CONNECTION_STRING}
+    depends_on:
+      - mongo
+      - redis
+      - qdrant
+      
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - ./qdrant_data:/qdrant/storage
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "http://localhost:6333"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      
+
 
   mongo:
     image: mongo:6
     ports:
-      - "27018:27017"
+      - "27017:27017"
+    volumes:
+    - mongo_data:/data/db
 
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
 
-
-# version: "3.9"
-
-# services:
-#   api:
-#     image: deepenacr.azurecr.io/deepen-api:latest
-#     ports:
-#       - "3000:3000"
-#     environment:
-#       - NODE_ENV=production
-#       - MONGO_URI=${MONGO_URI}
-#       - REDIS_URL=${REDIS_URL}
-#       - AZURE_STORAGE_CONNECTION_STRING=${AZURE_STORAGE_CONNECTION_STRING}
-#     # depends_on:
-#     #   - redis
-
-#   pdf-worker:
-#     image: deepenacr.azurecr.io/pdf-worker:latest
-#     environment:
-#       - NODE_ENV=production
-#       - MONGO_URI=${MONGO_URI}
-#       - REDIS_URL=${REDIS_URL}
-#       - AZURE_STORAGE_CONNECTION_STRING=${AZURE_STORAGE_CONNECTION_STRING}
-#     # depends_on:
-#     #   - redis
-
-     
-
-#   ai-worker:
-#     image: deepenacr.azurecr.io/ai-worker:latest
-#     environment:
-#       - NODE_ENV=production
-#       - MONGO_URI=${MONGO_URI}
-#       - REDIS_URL=${REDIS_URL}
-#       - AZURE_STORAGE_CONNECTION_STRING=${AZURE_STORAGE_CONNECTION_STRING}
-    # depends_on:
-    #   - redis
-
-  # redis:
-  #   image: redis:7-alpine
-  #   ports:
-  #     - "6379:6379"
+volumes:
+  mongo_data:
+  qdrant_data:

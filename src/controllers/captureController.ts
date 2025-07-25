@@ -12,6 +12,7 @@ import { ErrorResponse, SuccessResponse } from "../utils/responseHandlers";
 import { ICapture } from "../types/capureTypes";
 import { pdfQueue } from "../queue/pdfProcessor";
 import { aiQueue } from "../queue/aiQueue";
+import { logger } from "../utils/logger";
 
 // Constants
 const MIN_CONTENT_LENGTH = 50;
@@ -73,6 +74,7 @@ export const saveCapture = async (
         }
       );
     } else {
+      logger.info(`AI Initializing for capture ${capture._id}`);
       await aiQueue.add(
         "process-ai",
         {

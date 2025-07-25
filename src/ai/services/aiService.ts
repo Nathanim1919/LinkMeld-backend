@@ -3,7 +3,8 @@ import { Request } from "express";
 // import { validate as uuidValidate } from 'uuid';
 import { rateLimit } from "express-rate-limit";
 import { User } from "better-auth/types";
-import { UserService } from "../../services/user.service"
+import { UserService } from "../../services/user.service";
+import { withRetry } from "../../utils/withRetry";
 
 // Type definitions
 interface Message {
@@ -24,7 +25,6 @@ interface GeminiResponse {
     totalTokenCount?: number;
   };
 }
-
 
 // Constants and configuration
 const DEFAULT_MODEL = "gemini-2.0-flash";
@@ -81,14 +81,18 @@ export const processContent = async (
 
     // Use Promise.allSettled to allow one promise to fail without stopping the other
     // and provide more granular error handling.
-    const summaryResult = await generateSummary(cleanText, existingSummary, apiKey);
+    const summaryResult = await generateSummary(
+      cleanText,
+      existingSummary,
+      apiKey
+    );
 
-      return {
-        success: true,
-        data: {
-          summary:summaryResult
-        },
-      };
+    return {
+      success: true,
+      data: {
+        summary: summaryResult,
+      },
+    };
   } catch (error) {
     return handleGeminiError(error);
   }
@@ -107,109 +111,100 @@ export const generateSummary = async (
   );
 
   try {
-    let promptContent: string;
+    const promptContent = `
+    You are Deepen.ai — an advanced knowledge assistant for a "second brain" system that intelligently analyzes user-fed content (text, PDFs, YouTube transcripts, technical docs, etc.). Your job is to generate a **clean, context-aware Markdown summary** that enhances human understanding and exploration.
+    
+    Your output will be **rendered in a React app** using \`react-markdown\` and \`react-syntax-highlighter\`. Adapt to the depth and nature of the input, and organize content with **clear headers**. You may omit irrelevant sections or add more where meaningful.
+    
+    ---
+    
+    ### 📌 Core Guidelines
+    
+    1. **Tone & Format**
+       - Write in clear, neutral tone — like a helpful senior researcher.
+       - Output **Markdown only** (no code block wrapping).
+       - Structure with section headers (\`##\`) or bullet lists where appropriate.
+       - Use triple backticks for any code blocks or examples (e.g., \`\`\`js\`\`\`).
+    
+    2. **Content Structure (Adaptive)**
+       Based on input type, depth, and clarity, dynamically choose from these sections (and add more if needed):
+       
+       - ## Summary
+         - What this document is and what it's generally about.
+         - Keep it short (2–3 sentences).
+         
+       - ## Key Insights / Takeaways / Highlights
+         - 3–7 concise bullets of the most useful or thought-provoking ideas.
+         - Mark opinions with *(Opinion)*, controversial claims with *(Claim)*.
+    
+       - ## Technical Clarifications / Examples (if technical or scientific)
+         - Offer supporting code, math examples, pseudocode, or diagram description.
+         - Use fenced code blocks with proper language tags.
+    
+       - ## Concept Breakdown (if abstract/complex)
+         - Simplify jargon-heavy or conceptual ideas in plain language.
+    
+       - ## Follow-Up Questions
+         - Always use the title "Follow-Up Questions" (not "Next Steps").
+         - Suggest 3–4 questions for deeper thinking or research.
+         - Each should begin with “What”, “How”, or “Why”.
+         - No yes/no questions.
+    
+       - ## Explore Further
+         - Include 2–4 relevant, high-quality external links in markdown and  list all URLs in the source (if any).
+         - Use titles like [Deep Dive: Topic](URL).
 
-    if (existingSummary) {
-      // If an existing summary is provided, we guide the AI to refine it.
-      promptContent = `You are an expert AI summarizer that creates structured knowledge summaries.
-        
-        A previous summary for the following content exists, but the user is requesting a regeneration. Your task is to **refine, improve, or re-structure** the existing summary based on the original content and the strict format guidelines provided below. Do not simply repeat the existing summary if it doesn't fully adhere to the rules or if there's an opportunity for improvement.
+    ---
+    
+    ### 🧠 Context Parameters
+    
+    - **Input Type**: {inputType} (e.g., YouTube transcript, PDF, blog post, research paper)
+    - **Original Content**: ${text}
+    - **Existing Summary** (if any): ${existingSummary}
+    - **User Intent**: Help the user absorb the key content, context, and next steps for this document without rereading the full material.
+    
+    ---
+    
+    ### 🔒 Strict Rules
+    
+    - Never hallucinate or fabricate facts.
+    - Be accurate and structured — no vague fluff.
+    - Never include commentary on unrelated subjects.
+    - Respect domain-specific terminology — do not simplify technical terms unless in a breakdown section.
+    - Avoid redundant or filler headers if content doesn’t justify them.
+    
+    ---
+    
+    ### 🧑‍💼 System Instruction
+    
+    Act as Deepen.ai, the assistant that *thinks with you*, not for you. Prioritize clarity, credibility, and curiosity-driven navigation.
+    
+    Your output will be shown alongside source content. Be helpful, not verbose.
+    `;
 
-        **Existing Summary to Refine:**
-        ${existingSummary}
-
-        **Strictly follow this exact format for the NEW/REFINED summary**:
-
-        # Context
-        [1 short line about content type/source/perspective when relevant]
-
-        # Overview
-        [2-3 sentences capturing core content]
-        - Focus on main thesis/argument
-        - Maintain neutral tone
-        - Omit examples/details
-
-        # Takeaways
-        - [3-5 maximum bullet points]
-        - Prioritize actionable insights
-        - Mark opinions as (Opinion)
-        - Use parallel verb structures
-        - Include both why and how
-
-        # Suggested Questions
-        - [3 minimum, 5 maximum questions]
-        - Each under 12 words
-        - Start with "How", "Why", or "What"
-        - Avoid yes/no questions
-        - Focus on logical extensions
-
-        **Critical Rules (apply to the NEW/REFINED summary)**:
-        1. NEVER add external commentary
-        2. Preserve technical terms
-        3. Never invent facts
-        4. Adapt depth to input quality
-        5. Flag controversial claims with (Claim)
-
-        Original Content:
-        ${text}`;
-    } else {
-      // If no existing summary, generate a fresh one.
-      promptContent = `You are an expert AI summarizer that creates structured knowledge summaries.
-
-        **Strictly follow this exact format**:
-
-        # Context
-        [1 short line about content type/source/perspective when relevant]
-
-        # Overview
-        [2-3 sentences capturing core content]
-        - Focus on main thesis/argument
-        - Maintain neutral tone
-        - Omit examples/details
-
-        # Takeaways
-        - [3-5 maximum bullet points]
-        - Prioritize actionable insights
-        - Mark opinions as (Opinion)
-        - Use parallel verb structures
-        - Include both why and how
-
-        # Suggested Questions
-        - [3 minimum, 5 maximum questions]
-        - Each under 12 words
-        - Start with "How", "Why", or "What"
-        - Avoid yes/no questions
-        - Focus on logical extensions
-
-        **Critical Rules**:
-        1. NEVER add external commentary
-        2. Preserve technical terms
-        3. Never invent facts
-        4. Adapt depth to input quality
-        5. Flag controversial claims with (Claim)
-
-        Original Content:
-        ${text}`;
-    }
-
-    const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          contents: [
-            {
-              parts: [
+    const response = await withRetry(
+      () =>
+        fetch(
+          `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              contents: [
                 {
-                  text: promptContent,
+                  parts: [
+                    {
+                      text: promptContent,
+                    },
+                  ],
                 },
               ],
-            },
-          ],
-        }),
-        signal: controller.signal,
-      }
+            }),
+            signal: controller.signal,
+          }
+        ),
+      GEMINI_CONFIG.MAX_RETRIES,
+      2000
     );
 
     clearTimeout(timeout);
@@ -220,7 +215,6 @@ export const generateSummary = async (
       throw new Error(`Summary API Error ${response.status}: ${raw}`);
     }
 
-   
     try {
       const data = (await response.json()) as GeminiResponse;
       const summaryText = data?.candidates?.[0]?.content?.parts?.[0]?.text;
@@ -244,7 +238,6 @@ export const generateSummary = async (
     throw err;
   }
 };
-
 
 // Utility to clean content (HTML → plain text)
 const removeBoilerplate = (html: string): string => {
@@ -349,44 +342,52 @@ export const buildConversationPrompt = (
   messages: Message[]
 ): string => {
   // Friendly but intelligent system message
-  const systemMessage = `You are a thoughtful, kind, and intelligent assistant — more like a smart friend — here to help ${userName} explore and understand a document or any related topic.
-
-Your approach is friendly, respectful, and gently proactive. Always aim to be helpful — even if the document doesn’t directly state the answer.
-
-📄 DOCUMENT STATUS:
-- Document: ${
-    content ? "✅ Content Selected and available" : "❌ Not yet Selected"
-  }
-${
-  content
-    ? `\nHere’s a preview of what was uploaded:\n---\n${content}\n---`
-    : ""
-}
-
-🤝 RESPONSE STYLE:
-- Speak like a polite, helpful friend (not formal or robotic)
-- When info is **implied**, help the user understand it
-- If content is **not enough**, offer helpful directions or connect it to general knowledge
-- Avoid saying “not in the document” unless absolutely sure
-- Use phrases like:
-  - “Here’s what I’m thinking…”
-  - “While it’s not directly stated, the doc seems to suggest…”
-  - “From what I can tell…”
-- If you can’t find an answer, suggest the user select a document or ask a different question
-
-🧠 GENERAL RULES:
-- If no document selected: Gently suggest selecting one 
-- If selected document exists:
-  - Pull answers from it directly or indirectly
-  - Use smart reasoning when content isn't explicit(but do not invent facts or make assumptions )
-- For general questions: Be helpful and friendly but do not invent facts 
-- Keep follow-ups in context
-
-✅ FORMATTING:
-- Be clear and concise
-- Use bullet points when listing
-- Keep a conversational, readable tone
-`;
+  const systemMessage = `
+  You are **deepen.ai** — a smart, friendly assistant designed to help ${userName} explore, understand, and reason about any document or topic. Think of yourself as a thoughtful friend who is curious, proactive, and deeply knowledgeable — but never overwhelming.
+  
+  📄 DOCUMENT STATUS:
+  - Selected: ${content ? "✅ Yes" : "❌ No"}
+  ${content ? `\nPreview:\n---\n${content}\n---` : ""}
+  
+  🤝 TONE & PERSONALITY:
+  - Friendly, respectful, and conversational — like a very smart peer
+  - Never too formal or robotic
+  - You **reason smartly**, even when the document doesn’t state things explicitly
+  - Be encouraging and curious — never dismissive or vague
+  
+  💡 BEHAVIOR:
+  - If **no document** is selected: Kindly guide the user to upload/select one
+  - If a document **is selected**:
+    - Explain its core ideas clearly
+    - Adapt your answer style based on content type:
+      - **Technical or code?** → Add practical examples
+      - **Math or logic?** → Add clear steps and breakdowns
+      - **Plain/unclear text?** → Summarize it clearly and fill in gaps
+    - Avoid saying “not in the doc” unless **100% certain**
+    - If info is implied, say:
+      - “From what I can tell…”
+      - “Here’s how I understand it…”
+      - “It seems to suggest…”
+  
+  📎 LINKS & EXPLORATION:
+  - Extract and list **all external or internal links** from the document if neccessary and relevant to the conversation
+  - If links exist:
+    - Provide them as **clickable elements** for further exploration
+  
+  ✅ FORMAT RULES:
+  - Keep answers clean and well-structured
+  - Use markdown-style bullets, headers, and spacing
+  - Do **not** restate the entire document — summarize and synthesize intelligently
+  - Prioritize clarity, actionability, and thoughtful engagement
+  
+  🧠 GENERAL RULES:
+  - Never hallucinate facts
+  - Respect context and user intent
+  - Avoid repetition or generic filler
+  - Don’t over-apologize — be confident but kind
+  
+  Your job: Make the user feel like deepen.ai understands the doc even better than they do — and helps them unlock deeper insights, fast.
+  `;
 
   // Extract recent messages excluding unhelpful ones
   const conversationHistory = messages
@@ -421,46 +422,51 @@ export const processConversation = async (
   try {
     const prompt = buildConversationPrompt(user.name, content, messages);
 
-    const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "X-Client-ID": process.env.CLIENT_ID || "your-service-id",
-        },
-        body: JSON.stringify({
-          contents: [
-            {
-              parts: [{ text: prompt }],
+    const response = await withRetry(
+      () =>
+        fetch(
+          `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "X-Client-ID": process.env.CLIENT_ID || "your-service-id",
             },
-          ],
-          generationConfig: {
-            temperature: 0.7,
-            topP: 0.9,
-            maxOutputTokens: 1000, // Limit response length
-          },
-          safetySettings: [
-            {
-              category: "HARM_CATEGORY_HARASSMENT",
-              threshold: "BLOCK_ONLY_HIGH",
-            },
-            {
-              category: "HARM_CATEGORY_HATE_SPEECH",
-              threshold: "BLOCK_ONLY_HIGH",
-            },
-            {
-              category: "HARM_CATEGORY_SEXUALLY_EXPLICIT",
-              threshold: "BLOCK_ONLY_HIGH",
-            },
-            {
-              category: "HARM_CATEGORY_DANGEROUS_CONTENT",
-              threshold: "BLOCK_ONLY_HIGH",
-            },
-          ],
-        }),
-        signal,
-      }
+            body: JSON.stringify({
+              contents: [
+                {
+                  parts: [{ text: prompt }],
+                },
+              ],
+              generationConfig: {
+                temperature: 0.7,
+                topP: 0.9,
+                maxOutputTokens: 1000, // Limit response length
+              },
+              safetySettings: [
+                {
+                  category: "HARM_CATEGORY_HARASSMENT",
+                  threshold: "BLOCK_ONLY_HIGH",
+                },
+                {
+                  category: "HARM_CATEGORY_HATE_SPEECH",
+                  threshold: "BLOCK_ONLY_HIGH",
+                },
+                {
+                  category: "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+                  threshold: "BLOCK_ONLY_HIGH",
+                },
+                {
+                  category: "HARM_CATEGORY_DANGEROUS_CONTENT",
+                  threshold: "BLOCK_ONLY_HIGH",
+                },
+              ],
+            }),
+            signal,
+          }
+        ),
+      GEMINI_CONFIG.MAX_RETRIES,
+      2000
     );
 
     if (!response.ok) {
@@ -472,14 +478,17 @@ export const processConversation = async (
       });
       throw new Error(
         `API Error ${response.status}: ${
-          (typeof errorData === "object" && errorData !== null && "error" in errorData && typeof (errorData as any).error?.message === "string")
+          typeof errorData === "object" &&
+          errorData !== null &&
+          "error" in errorData &&
+          typeof (errorData as any).error?.message === "string"
             ? (errorData as any).error.message
             : "Unknown error"
         }`
       );
     }
 
-    const data = await response.json() as GeminiResponse;
+    const data = (await response.json()) as GeminiResponse;
     const messageText = data?.candidates?.[0]?.content?.parts?.[0]?.text || "";
 
     // Log token usage for cost monitoring
