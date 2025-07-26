@@ -124,20 +124,11 @@ export class AIController {
       logger.info(`${SERVICE_NAME}:converse`, { captureId, model });
 
       // Fetch content
-      const content = await Capture.findById(captureId)
-        .select("content")
+      const documentSummary = await Capture.findById(captureId)
+        .select("ai.summary")
         .lean()
         .exec();
 
-      if (!content) {
-        ErrorResponse({
-          res,
-          statusCode: 404,
-          message: "Content not found",
-          errorCode: "CONTENT_NOT_FOUND",
-        });
-        return;
-      }
 
       const apiKey = await UserService.getGeminiApiKey(user.id);
 
@@ -155,7 +146,8 @@ export class AIController {
       const { message, tokensUsed, modelUsed } = await processConversation(
         user,
         apiKey,
-        content.content.clean || "",
+        documentSummary?.ai.summary || "",
+        captureId,
         messages,
         model,
         controller.signal

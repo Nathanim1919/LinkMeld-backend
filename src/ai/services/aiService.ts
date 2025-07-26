@@ -5,6 +5,8 @@ import { rateLimit } from "express-rate-limit";
 import { User } from "better-auth/types";
 import { UserService } from "../../services/user.service";
 import { withRetry } from "../../utils/withRetry";
+import { searchSimilar } from "./vectorStore";
+import { logger } from "../../utils/logger";
 
 // Type definitions
 interface Message {
@@ -337,61 +339,77 @@ export const validateRequest = (
 
 export const buildConversationPrompt = (
   userName: string,
-  content: string,
-
-  messages: Message[]
+  documentSummary: string, // This is the document's summary
+  messages: Message[],
+  retrievedContext: string // This is the content from similar chunks
 ): string => {
   // Friendly but intelligent system message
   const systemMessage = `
   You are **deepen.ai** — a smart, friendly assistant designed to help ${userName} explore, understand, and reason about any document or topic. Think of yourself as a thoughtful friend who is curious, proactive, and deeply knowledgeable — but never overwhelming.
   
-  📄 DOCUMENT STATUS:
-  - Selected: ${content ? "✅ Yes" : "❌ No"}
-  ${content ? `\nPreview:\n---\n${content}\n---` : ""}
+  📄 DOCUMENT CONTEXT:
+  - You are currently helping the user understand a specific document.
+  // --- ADD DOCUMENT SUMMARY HERE ---
+  ${
+    documentSummary
+      ? `
+  OVERALL DOCUMENT SUMMARY:
+  ---\n${documentSummary}\n---`
+      : ""
+  }
+  
+  - Here is the most relevant information retrieved from that document based on the user's current query:
+  ---\n${retrievedContext}\n---
   
   🤝 TONE & PERSONALITY:
   - Friendly, respectful, and conversational — like a very smart peer
   - Never too formal or robotic
-  - You **reason smartly**, even when the document doesn’t state things explicitly
+  - You **reason smartly**, even when the document doesn’t state things explicitly based *only* on the provided context.
   - Be encouraging and curious — never dismissive or vague
   
   💡 BEHAVIOR:
-  - If **no document** is selected: Kindly guide the user to upload/select one
-  - If a document **is selected**:
-    - Explain its core ideas clearly
-    - Adapt your answer style based on content type:
-      - **Technical or code?** → Add practical examples
-      - **Math or logic?** → Add clear steps and breakdowns
-      - **Plain/unclear text?** → Summarize it clearly and fill in gaps
-    - Avoid saying “not in the doc” unless **100% certain**
-    - If info is implied, say:
-      - “From what I can tell…”
-      - “Here’s how I understand it…”
-      - “It seems to suggest…”
+  - Answer questions *strictly using the provided "DOCUMENT CONTEXT"* above.
+  - Prioritize information from the "MOST RELEVANT CONTEXT" for specific questions.
+  - Use the "OVERALL DOCUMENT SUMMARY" for broad overview questions or if specific details are missing from the relevant context.
+  - If the answer cannot be found or reasonably inferred from the provided context (both relevant chunks AND summary), state that you cannot find the answer in the document. Do not use external knowledge.
+  - Adapt your answer style based on content type:
+    - **Technical or code?** → Add practical examples
+    - **Math or logic?** → Add clear steps and breakdowns
+    - **Plain/unclear text?** → Summarize it clearly and fill in gaps
+  - If info is implied by the context, you can say:
+    - “From what I can tell from the document…”
+    - “Here’s how I understand it based on the text…”
+    - “It seems the document suggests…”
   
   📎 LINKS & EXPLORATION:
-  - Extract and list **all external or internal links** from the document if neccessary and relevant to the conversation
-  - If links exist:
-    - Provide them as **clickable elements** for further exploration
+  - Extract and list **all external or internal links** from the *provided "MOST RELEVANT CONTEXT"* if necessary and relevant to the conversation.
+  - If links exist in the context:
+    - Provide them as **clickable elements** for further exploration.
   
   ✅ FORMAT RULES:
-  - Keep answers clean and well-structured
-  - Use markdown-style bullets, headers, and spacing
-  - Do **not** restate the entire document — summarize and synthesize intelligently
-  - Prioritize clarity, actionability, and thoughtful engagement
+  - Keep answers clean and well-structured.
+  - Use markdown-style bullets, headers, and spacing.
+  - Do **not** restate the entire document — summarize and synthesize intelligently from the provided context.
+  - Prioritize clarity, actionability, and thoughtful engagement.
   
   🧠 GENERAL RULES:
-  - Never hallucinate facts
-  - Respect context and user intent
-  - Avoid repetition or generic filler
-  - Don’t over-apologize — be confident but kind
+  - Never hallucinate facts.
+  - Respect context and user intent.
+  - Avoid repetition or generic filler.
+  - Don’t over-apologize — be confident but kind.
   
   Your job: Make the user feel like deepen.ai understands the doc even better than they do — and helps them unlock deeper insights, fast.
   `;
 
-  // Extract recent messages excluding unhelpful ones
+  // Extract recent messages (excluding any previous "I can't answer that" or tool calls)
   const conversationHistory = messages
-    .filter((msg) => !msg.content.includes("I can't answer that"))
+    // Re-evaluate this filter based on your desired conversation memory.
+    // If you uncommented '.filter((msg) => msg.role !== "assistant")', it means
+    // the LLM will only see user messages in the history, which is typically NOT desired
+    // for continuous conversation.
+    // It's usually better to keep both user and assistant messages to maintain turn-taking.
+    // The previous filter `!msg.content.includes("I can't answer that")` made more sense
+    // for excluding unhelpful AI turns from memory.
     .slice(-6) // Get last 3 exchanges (user + assistant pairs)
     .map((msg) => `${msg.role.toUpperCase()}: ${msg.content}`)
     .join("\n");
@@ -414,13 +432,57 @@ ${conversationHistory}
 export const processConversation = async (
   user: User,
   apiKey: string,
-  content: string,
+  documentSummary: string,
+  documentId: string,
   messages: Message[],
   model: string = DEFAULT_MODEL,
   signal?: AbortSignal
 ): Promise<ProcessedResponse> => {
   try {
-    const prompt = buildConversationPrompt(user.name, content, messages);
+    const lastUserMessage =
+      messages.filter((m) => m.role === "user").slice(-1)[0]?.content || "";
+
+    // 1. Perform retrieval based on the *user's current question*
+    const similarChunks = await searchSimilar({
+      query: lastUserMessage, // FIX: Query should be the user's message
+      userId: user.id,
+      documentId: documentId, // FIX: Pass the document ID to scope the search
+      userApiKey: apiKey,
+    });
+
+    let retrievedContext = "";
+    if (similarChunks.length > 0) {
+      // Combine the retrieved chunks into a single string for the LLM context
+      retrievedContext = similarChunks
+        .map((chunk: any) => chunk.payload?.text) // Assuming 'text' is the key for content in payload
+        .filter(Boolean) // Remove any null/undefined chunks
+        .join("\n---\n"); // Use a separator between chunks
+    } else {
+      console.log(
+        `No similar chunks found for user ${user.id} within doc ${documentId}`
+      );
+      // Handle cases where no relevant context is found (e.g., provide a general fallback)
+      retrievedContext =
+        "No specific relevant information found in this document for your query.";
+    }
+
+    logger.info("INFORMATION RETRIEVED", {
+      userId: user.id,
+      documentId: documentId,
+      similarChunksCount: similarChunks.length,
+      retrievedContextLength: retrievedContext.length,
+      lastUserMessage: lastUserMessage.substring(0, 100), // Log first 100 chars of the last user message
+    });
+
+    console.log(`Similar Retrieved Chunks are: ${retrievedContext}`);
+    console.log(`Retrieved document summary is: ${documentSummary}`);
+
+    const prompt = buildConversationPrompt(
+      user.name,
+      documentSummary,
+      messages,
+      retrievedContext
+    );
 
     const response = await withRetry(
       () =>
@@ -466,7 +528,7 @@ export const processConversation = async (
           }
         ),
       GEMINI_CONFIG.MAX_RETRIES,
-      2000
+      3000
     );
 
     if (!response.ok) {

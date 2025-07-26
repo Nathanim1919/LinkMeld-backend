@@ -165,10 +165,12 @@ async function ensureCollection(client: QdrantClient, collectionName: string) {
 export async function searchSimilar({
   query,
   userId,
+  documentId,
   userApiKey,
 }: {
   query: string;
   userId: string;
+  documentId: string;
   userApiKey: string;
 }) {
   const vector = await generateGeminiEmbeddingsWithFetch(
@@ -187,7 +189,10 @@ export async function searchSimilar({
     vector,
     limit: 5,
     filter: {
-      must: [{ key: "user_id", match: { value: userId } }],
+      must: [
+        { key: "user_id", match: { value: userId } },
+        { key: "doc_id", match: { value: documentId } },
+      ],
     },
   });
 }
