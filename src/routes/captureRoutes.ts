@@ -8,6 +8,8 @@ import {
   saveCapture,
   searchCaptures,
   toggleBookmark,
+  reProcessCapture,
+  deleteCapture,
 } from "../controllers/captureController";
 
 const router = express.Router();
@@ -56,11 +58,27 @@ router.get("/bookmarked", getBookmarkedCaptures);
 router.get("/:captureId", getCaptureById);
 
 /**
+ * @route   DELETE /api/captures/:captureId
+ * @desc    Delete a specific capture by ID
+ * @access  Private
+ * @params  {string} captureId - Capture ID
+ */
+router.delete("/:captureId", deleteCapture);
+
+/**
  * @route   PATCH /api/captures/:id/bookmark
  * @desc    Toggle bookmark status for a capture
  * @access  Private
  * @params  {string} id - Capture ID
  */
 router.patch("/:captureId/bookmark", rateLimiter("standard"), toggleBookmark);
+
+/**
+ * @route POST /api/captures/process/retry
+ * @desc Retry failed capture processing
+ * @access Private
+ * @query {string} query - Search term
+ */
+router.post("/:captureId/reprocess", reProcessCapture);
 
 export default router;

@@ -155,6 +155,41 @@ async function ensureCollection(client: QdrantClient, collectionName: string) {
 }
 
 /**
+ * Deletes a text embedding from the vector store.
+ * @param param0 The parameters for deleting the embedding.
+ * @param docId The unique identifier for the document.
+ * @param userId The ID of the user who owns the document.
+ * @returns A promise that resolves when the deletion is complete.
+ */
+export async function deleteTextEmbedding({
+  docId,
+  userId,
+}: {
+  docId: string;
+  userId: string;
+}) {
+  logger.info(`Deleting embedding for docId=${docId}, userId=${userId}`);
+
+  // Ensure collection exists
+  await ensureCollection(qdrant, "documents");
+
+  // Delete points by filter
+  const result = await qdrant.delete("documents", {
+    filter: {
+      must: [
+        { key: "user_id", match: { value: userId } },
+        { key: "doc_id", match: { value: docId } },
+      ],
+    },
+  });
+
+  logger.info(`Deleted embedding for docId=${docId}, userId=${userId}`, {
+    status: result.status,
+    operationId: result.operation_id,
+  });
+}
+
+/**
  * Searches for similar documents based on the provided query.
  * @param query The search query string.
  * @param userId The ID of the user making the request.

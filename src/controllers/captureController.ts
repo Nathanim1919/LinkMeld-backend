@@ -1,5 +1,4 @@
 // src/controllers/captureController.ts
-
 import { Request, Response } from "express";
 import { Capture } from "../models/Capture";
 import { hashContent } from "../utils/hashing";
@@ -13,6 +12,7 @@ import { ICapture } from "../types/capureTypes";
 import { pdfQueue } from "../queue/pdfProcessor";
 import { aiQueue } from "../queue/aiQueue";
 import { logger } from "../utils/logger";
+import { embedQueue } from "../queue/embedQueue";
 
 // Constants
 const MIN_CONTENT_LENGTH = 50;
@@ -311,6 +311,66 @@ export const getBookmarkedCaptures = async (
 };
 
 /**
+ * Deletes a capture by ID
+ * @param req
+ * @param res
+ * @returns
+ */
+export const deleteCapture = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  try {
+    const { captureId } = req.params;
+
+    if (!captureId) {
+      return ErrorResponse({
+        res,
+        statusCode: 400,
+        message: "Capture ID is required",
+      });
+    }
+
+    // Find and delete the capture
+    const capture = await Capture.findOneAndDelete({
+      _id: captureId,
+      owner: req.user.id,
+    });
+
+    if (!capture) {
+      return ErrorResponse({
+        res,
+        statusCode: 404,
+        message: "Capture not found",
+      });
+    }
+
+    // Add a delete job to remove the vector embedding
+    await embedQueue.add("delete-embedding", {
+      docId: capture?._id?.toString(),
+      userId: req.user.id,
+    });
+
+    // Optionally, delete the associated conversation
+    await Conversation.deleteOne({ captureId: capture._id });
+
+    return SuccessResponse({
+      res,
+      message: "Capture deleted successfully",
+      data: { captureId: capture._id },
+    });
+  } catch (error) {
+    console.error("[Capture] Delete error:", error);
+    return ErrorResponse({
+      res,
+      statusCode: 500,
+      message: "Failed to delete capture",
+      error: error instanceof Error ? error.message : "Unknown error",
+    });
+  }
+};
+
+/**
  * Searches captures with pagination support
  */
 export const searchCaptures = async (
@@ -422,4 +482,81 @@ const prepareLinks = (
       url: sanitizeHtml(link.href, { allowedTags: [] }),
       title: sanitizeHtml(link.text || "No title", { allowedTags: [] }),
     }));
+};
+
+export const reProcessCapture = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  try {
+    const { captureId } = req.params;
+
+    const capture = await Capture.findOne({
+      _id: captureId,
+      owner: req.user.id,
+    });
+
+    if (!capture) {
+      return ErrorResponse({
+        res,
+        statusCode: 404,
+        message: "Capture not found",
+      });
+    }
+
+    if (capture.metadata.isPdf) {
+      // Re-add to PDF processing queue
+      logger.info(`Re-adding PDF processing for capture ${capture._id}`);
+      await pdfQueue.add(
+        "process-pdf",
+        {
+          captureId: capture._id,
+          url: capture.url,
+        },
+        {
+          attempts: 3, // Total tries including the first attempt
+          backoff: {
+            type: "exponential", // or "fixed"
+            delay: 5000, // milliseconds
+          },
+        }
+      );
+
+      logger.info(`AI Initializing for re-processing capture ${capture._id}`);
+      capture.processingStatus = "processing";
+      await capture.save();
+    } else {
+      logger.info(`AI Initializing for re-processing capture ${capture._id}`);
+      capture.processingStatus = "processing";
+      await aiQueue.add(
+        "process-ai",
+        {
+          captureId: capture._id,
+          userId: capture.owner?.toString(),
+        },
+        {
+          attempts: 3, // Total tries including the first attempt
+          backoff: {
+            type: "exponential", // or "fixed"
+            delay: 5000, // milliseconds
+          },
+        }
+      );
+      await capture.save();
+    }
+
+    return SuccessResponse({
+      res,
+      message: "Capture re-processing initiated successfully",
+      data: capture,
+    });
+  } catch (error) {
+    console.error("[Capture] Re-process error:", error);
+    return ErrorResponse({
+      res,
+      statusCode: 500,
+      message: "Failed to re-process capture",
+      error: error instanceof Error ? error.message : "Unknown error",
+    });
+  }
 };

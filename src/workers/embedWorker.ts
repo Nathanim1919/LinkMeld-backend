@@ -1,9 +1,9 @@
 import { Worker, Job } from "bullmq";
 import { redisConnection } from "../lib/redisClient";
 import { connectMongo } from "../config/database";
-import { Capture } from "../models/Capture";
-import { indexText } from "../ai/services/vectorStore";
 import { logger } from "../utils/logger";
+import { handleEmbedding } from "../jobs/embed/handleEmbedding";
+import { handleDeleteEmbedding } from "../jobs/embed/handleDeleteEmbedding";
 
 async function startWorker() {
   try {
@@ -11,57 +11,30 @@ async function startWorker() {
     await connectMongo();
     logger.info("MongoDB connected successfully");
 
-   
     logger.info("Qdrant collection initialized successfully");
 
     const embedWorker = new Worker(
       "embed-queue",
       async (job: Job) => {
         logger.info(`Processing embed job: ${job.id}`);
-        logger.debug(`Job data: ${JSON.stringify(job.data, (key, value) => {
-          if (key === "apiKey") return "[REDACTED]";
-          return value;
-        })}`);
+        logger.debug(
+          `Job data: ${JSON.stringify(job.data, (key, value) => {
+            if (key === "apiKey") return "[REDACTED]";
+            return value;
+          })}`
+        );
 
-        if (!job.data || !job.data.captureId || !job.data.userId || !job.data.apiKey) {
-          logger.error(`Invalid job data: ${JSON.stringify(job.data)}`);
-          throw new Error("Invalid job data");
-        }
-
-        const { captureId, userId, apiKey } = job.data;
-        const traceId = `[Embed Worker] [${captureId}]`;
-
-        try {
-          const capture = await Capture.findById(captureId);
-          if (!capture || !capture.content?.clean) {
-            logger.warn(`${traceId} ❌ Capture not found or empty`);
-            return;
-          }
-
-          const text = capture.content.clean.trim();
-          if (text.length < 50) {
-            logger.warn(`${traceId} ⚠️ Text too short for embedding`);
-            return;
-          }
-
-          await indexText({
-            text,
-            docId: captureId,
-            userId,
-            userApiKey: apiKey,
-          });
-
-          capture.updatedAt = new Date();
-          await capture.save();
-
-          logger.info(`${traceId} ✅ Embedding completed for capture ${captureId}`);
-          logger.debug(`Capture updated: ${JSON.stringify(capture)}`);
-        } catch (err) {
-          const errorMsg = err instanceof Error ? err.message : String(err);
-          logger.error(`${traceId} ❌ Embedding failed: ${errorMsg}`, {
-            stack: err.stack,
-          });
-          throw err; // Re-throw to mark job as failed
+        // Route based on job name
+        switch (job.name) {
+          case "process-embedding":
+            await handleEmbedding(job);
+            break;
+          case "delete-embedding":
+            await handleDeleteEmbedding(job);
+            break;
+          default:
+            logger.warn(`Unknown job name: ${job.name}`);
+            throw new Error(`Unknown job name: ${job.name}`);
         }
       },
       {

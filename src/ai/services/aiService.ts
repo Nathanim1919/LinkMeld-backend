@@ -7,6 +7,7 @@ import { UserService } from "../../services/user.service";
 import { withRetry } from "../../utils/withRetry";
 import { searchSimilar } from "./vectorStore";
 import { logger } from "../../utils/logger";
+import { escapeMarkdown } from "../utils/sanitize";
 
 // Type definitions
 interface Message {
@@ -27,6 +28,19 @@ interface GeminiResponse {
     totalTokenCount?: number;
   };
 }
+
+const GEMINI_GENERATION_CONFIG = {
+  temperature: 0.7,
+  topP: 0.9,
+  maxOutputTokens: 1000,
+};
+
+const GEMINI_SAFETY_SETTINGS = [
+  { category: "HARM_CATEGORY_HARASSMENT", threshold: "BLOCK_ONLY_HIGH" },
+  { category: "HARM_CATEGORY_HATE_SPEECH", threshold: "BLOCK_ONLY_HIGH" },
+  { category: "HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold: "BLOCK_ONLY_HIGH" },
+  { category: "HARM_CATEGORY_DANGEROUS_CONTENT", threshold: "BLOCK_ONLY_HIGH" },
+];
 
 // Constants and configuration
 const DEFAULT_MODEL = "gemini-2.0-flash";
@@ -339,79 +353,65 @@ export const validateRequest = (
 
 export const buildConversationPrompt = (
   userName: string,
-  documentSummary: string, // This is the document's summary
+  documentSummary: string,
   messages: Message[],
-  retrievedContext: string // This is the content from similar chunks
+  retrievedContext: string
 ): string => {
-  // Friendly but intelligent system message
-  const systemMessage = `
-  You are **deepen.ai** — a smart, friendly assistant designed to help ${userName} explore, understand, and reason about any document or topic. Think of yourself as a thoughtful friend who is curious, proactive, and deeply knowledgeable — but never overwhelming.
-  
-  📄 DOCUMENT CONTEXT:
-  - You are currently helping the user understand a specific document.
-  // --- ADD DOCUMENT SUMMARY HERE ---
-  ${
-    documentSummary
-      ? `
-  OVERALL DOCUMENT SUMMARY:
-  ---\n${documentSummary}\n---`
-      : ""
-  }
-  
-  - Here is the most relevant information retrieved from that document based on the user's current query:
-  ---\n${retrievedContext}\n---
-  
-  🤝 TONE & PERSONALITY:
-  - Friendly, respectful, and conversational — like a very smart peer
-  - Never too formal or robotic
-  - You **reason smartly**, even when the document doesn’t state things explicitly based *only* on the provided context.
-  - Be encouraging and curious — never dismissive or vague
-  
-  💡 BEHAVIOR:
-  - Answer questions *strictly using the provided "DOCUMENT CONTEXT"* above.
-  - Prioritize information from the "MOST RELEVANT CONTEXT" for specific questions.
-  - Use the "OVERALL DOCUMENT SUMMARY" for broad overview questions or if specific details are missing from the relevant context.
-  - If the answer cannot be found or reasonably inferred from the provided context (both relevant chunks AND summary), state that you cannot find the answer in the document. Do not use external knowledge.
-  - Adapt your answer style based on content type:
-    - **Technical or code?** → Add practical examples
-    - **Math or logic?** → Add clear steps and breakdowns
-    - **Plain/unclear text?** → Summarize it clearly and fill in gaps
-  - If info is implied by the context, you can say:
-    - “From what I can tell from the document…”
-    - “Here’s how I understand it based on the text…”
-    - “It seems the document suggests…”
-  
-  📎 LINKS & EXPLORATION:
-  - Extract and list **all external or internal links** from the *provided "MOST RELEVANT CONTEXT"* if necessary and relevant to the conversation.
-  - If links exist in the context:
-    - Provide them as **clickable elements** for further exploration.
-  
-  ✅ FORMAT RULES:
-  - Keep answers clean and well-structured.
-  - Use markdown-style bullets, headers, and spacing.
-  - Do **not** restate the entire document — summarize and synthesize intelligently from the provided context.
-  - Prioritize clarity, actionability, and thoughtful engagement.
-  
-  🧠 GENERAL RULES:
-  - Never hallucinate facts.
-  - Respect context and user intent.
-  - Avoid repetition or generic filler.
-  - Don’t over-apologize — be confident but kind.
-  
-  Your job: Make the user feel like deepen.ai understands the doc even better than they do — and helps them unlock deeper insights, fast.
-  `;
+  const MAX_SUMMARY_CHARS = 1500;
 
-  // Extract recent messages (excluding any previous "I can't answer that" or tool calls)
+  const cleanSummary = escapeMarkdown(documentSummary).slice(
+    0,
+    MAX_SUMMARY_CHARS
+  );
+
+  const systemMessage = `
+You are **deepen.ai** — a smart, friendly assistant designed to help ${escapeMarkdown(
+    userName
+  )} explore, understand, and reason about any document or topic. Think of yourself as a thoughtful friend who is curious, proactive, and deeply knowledgeable — but never overwhelming.
+
+📄 DOCUMENT CONTEXT:
+- You are currently helping the user understand a specific document.
+${cleanSummary ? `OVERALL DOCUMENT SUMMARY:\n---\n${cleanSummary}\n---` : ""}
+
+- Here is the most relevant information retrieved from that document based on the user's current query:
+---\n${escapeMarkdown(retrievedContext)}\n---
+
+🤝 TONE & PERSONALITY:
+- Friendly, respectful, and conversational — like a very smart peer
+- Never too formal or robotic
+- You **reason smartly**, even when the document doesn’t state things explicitly based *only* on the provided context.
+- Be encouraging and curious — never dismissive or vague
+
+💡 BEHAVIOR:
+- Answer questions *strictly using the provided \"DOCUMENT CONTEXT\"* above.
+- Prioritize information from the \"MOST RELEVANT CONTEXT\" for specific questions.
+- Use the \"OVERALL DOCUMENT SUMMARY\" for broad overview questions or if specific details are missing from the relevant context.
+- If the answer cannot be found or reasonably inferred from the provided context (both relevant chunks AND summary), state that you cannot find the answer in the document.
+- Adapt your answer style based on content type:
+  - **Technical or code?** → Add practical examples
+  - **Math or logic?** → Add clear steps and breakdowns
+  - **Plain/unclear text?** → Summarize it clearly and fill in gaps
+
+📎 LINKS & EXPLORATION:
+- Extract and list **all links** from the *provided context* if necessary.
+- Provide them as **clickable elements**.
+
+✅ FORMAT RULES:
+- Keep answers clean and well-structured.
+- Use markdown-style bullets, headers, and spacing.
+- Do **not** restate the entire document — summarize and synthesize intelligently.
+- Prioritize clarity, actionability, and thoughtful engagement.
+
+🧠 GENERAL RULES:
+- Never hallucinate facts.
+- Respect context and user intent.
+- Avoid repetition or filler.
+- Don’t over-apologize — be confident but kind.
+`;
+
   const conversationHistory = messages
-    // Re-evaluate this filter based on your desired conversation memory.
-    // If you uncommented '.filter((msg) => msg.role !== "assistant")', it means
-    // the LLM will only see user messages in the history, which is typically NOT desired
-    // for continuous conversation.
-    // It's usually better to keep both user and assistant messages to maintain turn-taking.
-    // The previous filter `!msg.content.includes("I can't answer that")` made more sense
-    // for excluding unhelpful AI turns from memory.
-    .slice(-6) // Get last 3 exchanges (user + assistant pairs)
-    .map((msg) => `${msg.role.toUpperCase()}: ${msg.content}`)
+    .slice(-6)
+    .map((msg) => `${msg.role.toUpperCase()}: ${escapeMarkdown(msg.content)}`)
     .join("\n");
 
   const lastUserMessage =
@@ -423,7 +423,7 @@ ${systemMessage}
 🗣 CONVERSATION HISTORY:
 ${conversationHistory}
 
-❓ CURRENT USER REQUEST: "${lastUserMessage}"
+❓ CURRENT USER REQUEST: \"${escapeMarkdown(lastUserMessage)}\"
 
 💬 YOUR RESPONSE (follow the guidance above):
 `.trim();
@@ -441,10 +441,11 @@ export const processConversation = async (
   try {
     const lastUserMessage =
       messages.filter((m) => m.role === "user").slice(-1)[0]?.content || "";
+    const cleanUserMessage = lastUserMessage.trim().slice(0, 1000); // Avoid absurd length
 
     // 1. Perform retrieval based on the *user's current question*
     const similarChunks = await searchSimilar({
-      query: lastUserMessage, // FIX: Query should be the user's message
+      query: cleanUserMessage, // FIX: Query should be the user's message
       userId: user.id,
       documentId: documentId, // FIX: Pass the document ID to scope the search
       userApiKey: apiKey,
@@ -500,29 +501,8 @@ export const processConversation = async (
                   parts: [{ text: prompt }],
                 },
               ],
-              generationConfig: {
-                temperature: 0.7,
-                topP: 0.9,
-                maxOutputTokens: 1000, // Limit response length
-              },
-              safetySettings: [
-                {
-                  category: "HARM_CATEGORY_HARASSMENT",
-                  threshold: "BLOCK_ONLY_HIGH",
-                },
-                {
-                  category: "HARM_CATEGORY_HATE_SPEECH",
-                  threshold: "BLOCK_ONLY_HIGH",
-                },
-                {
-                  category: "HARM_CATEGORY_SEXUALLY_EXPLICIT",
-                  threshold: "BLOCK_ONLY_HIGH",
-                },
-                {
-                  category: "HARM_CATEGORY_DANGEROUS_CONTENT",
-                  threshold: "BLOCK_ONLY_HIGH",
-                },
-              ],
+              generationConfig: GEMINI_GENERATION_CONFIG,
+              safetySettings: GEMINI_SAFETY_SETTINGS,
             }),
             signal,
           }
@@ -562,7 +542,11 @@ export const processConversation = async (
       modelUsed: model,
     };
   } catch (error) {
-    console.error("Conversation processing failed:", error);
+    logger.error("Conversation processing failed", {
+      userId: user.id,
+      documentId,
+      error: error instanceof Error ? error.message : String(error),
+    });
     throw error;
   }
 };
