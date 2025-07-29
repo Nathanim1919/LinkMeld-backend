@@ -37,6 +37,12 @@ export async function processPdfCapture(captureId: string, url: string) {
     if (!capture) throw new Error("Capture not found");
 
     const pdfData = await withRetry(() => downloadPdf(url), 3, 2000);
+    console.log(`${traceId} Downloaded PDF: ${pdfData.fileName} (${pdfData.size} bytes)`);
+    console.log(`${traceId} PDF Text Extracted: ${pdfData}`);
+
+    // if (!pdfData){
+    //   // throw error
+    // }
 
     const [blobUrl, rawText] = await Promise.all([
       uploadPdfToBlob(pdfData.buffer, pdfData.fileName),

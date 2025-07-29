@@ -8,6 +8,8 @@ import { withRetry } from "../../utils/withRetry";
 import { searchSimilar } from "./vectorStore";
 import { logger } from "../../utils/logger";
 import { escapeMarkdown } from "../utils/sanitize";
+// Import the SDK at the top of your file
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
 // Type definitions
 interface Message {
@@ -35,12 +37,12 @@ const GEMINI_GENERATION_CONFIG = {
   maxOutputTokens: 1000,
 };
 
-const GEMINI_SAFETY_SETTINGS = [
-  { category: "HARM_CATEGORY_HARASSMENT", threshold: "BLOCK_ONLY_HIGH" },
-  { category: "HARM_CATEGORY_HATE_SPEECH", threshold: "BLOCK_ONLY_HIGH" },
-  { category: "HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold: "BLOCK_ONLY_HIGH" },
-  { category: "HARM_CATEGORY_DANGEROUS_CONTENT", threshold: "BLOCK_ONLY_HIGH" },
-];
+// const GEMINI_SAFETY_SETTINGS = [
+//   { category: "HARM_CATEGORY_HARASSMENT", threshold: "BLOCK_ONLY_HIGH" },
+//   { category: "HARM_CATEGORY_HATE_SPEECH", threshold: "BLOCK_ONLY_HIGH" },
+//   { category: "HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold: "BLOCK_ONLY_HIGH" },
+//   { category: "HARM_CATEGORY_DANGEROUS_CONTENT", threshold: "BLOCK_ONLY_HIGH" },
+// ];
 
 // Constants and configuration
 const DEFAULT_MODEL = "gemini-2.0-flash";
@@ -55,11 +57,11 @@ export interface ConversationRequest {
   model?: string;
 }
 
-interface ProcessedResponse {
-  message: string;
-  tokensUsed?: number;
-  modelUsed?: string;
-}
+// interface ProcessedResponse {
+//   message: string;
+//   tokensUsed?: number;
+//   modelUsed?: string;
+// }
 
 const GEMINI_CONFIG = {
   SUMMARY_MODEL: "gemini-pro", // This is fine for the conceptual name
@@ -429,7 +431,138 @@ ${conversationHistory}
 `.trim();
 };
 
-export const processConversation = async (
+// export const processConversation = async (
+//   user: User,
+//   apiKey: string,
+//   documentSummary: string,
+//   documentId: string,
+//   messages: Message[],
+//   model: string = DEFAULT_MODEL,
+//   signal?: AbortSignal
+// ): Promise<ProcessedResponse> => {
+//   try {
+//     const lastUserMessage =
+//       messages.filter((m) => m.role === "user").slice(-1)[0]?.content || "";
+//     const cleanUserMessage = lastUserMessage.trim().slice(0, 1000); // Avoid absurd length
+
+//     // 1. Perform retrieval based on the *user's current question*
+//     const similarChunks = await searchSimilar({
+//       query: cleanUserMessage, // FIX: Query should be the user's message
+//       userId: user.id,
+//       documentId: documentId, // FIX: Pass the document ID to scope the search
+//       userApiKey: apiKey,
+//     });
+
+//     let retrievedContext = "";
+//     if (similarChunks.length > 0) {
+//       // Combine the retrieved chunks into a single string for the LLM context
+//       retrievedContext = similarChunks
+//         .map((chunk: any) => chunk.payload?.text) // Assuming 'text' is the key for content in payload
+//         .filter(Boolean) // Remove any null/undefined chunks
+//         .join("\n---\n"); // Use a separator between chunks
+//     } else {
+//       console.log(
+//         `No similar chunks found for user ${user.id} within doc ${documentId}`
+//       );
+//       // Handle cases where no relevant context is found (e.g., provide a general fallback)
+//       retrievedContext =
+//         "No specific relevant information found in this document for your query.";
+//     }
+
+//     logger.info("INFORMATION RETRIEVED", {
+//       userId: user.id,
+//       documentId: documentId,
+//       similarChunksCount: similarChunks.length,
+//       retrievedContextLength: retrievedContext.length,
+//       lastUserMessage: lastUserMessage.substring(0, 100), // Log first 100 chars of the last user message
+//     });
+
+//     console.log(`Similar Retrieved Chunks are: ${retrievedContext}`);
+//     console.log(`Retrieved document summary is: ${documentSummary}`);
+
+//     const prompt = buildConversationPrompt(
+//       user.name,
+//       documentSummary,
+//       messages,
+//       retrievedContext
+//     );
+
+//     const response = await withRetry(
+//       () =>
+//         fetch(
+//           `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
+//           {
+//             method: "POST",
+//             headers: {
+//               "Content-Type": "application/json",
+//               "X-Client-ID": process.env.CLIENT_ID || "your-service-id",
+//             },
+//             body: JSON.stringify({
+//               contents: [
+//                 {
+//                   parts: [{ text: prompt }],
+//                 },
+//               ],
+//               generationConfig: GEMINI_GENERATION_CONFIG,
+//               safetySettings: GEMINI_SAFETY_SETTINGS,
+//             }),
+//             signal,
+//           }
+//         ),
+//       GEMINI_CONFIG.MAX_RETRIES,
+//       3000
+//     );
+
+//     if (!response.ok) {
+//       const errorData = await response.json();
+//       console.error("Gemini API error:", {
+//         status: response.status,
+//         error: errorData,
+//         promptPreview: prompt.substring(0, 100),
+//       });
+//       throw new Error(
+//         `API Error ${response.status}: ${
+//           typeof errorData === "object" &&
+//           errorData !== null &&
+//           "error" in errorData &&
+//           typeof (errorData as any).error?.message === "string"
+//             ? (errorData as any).error.message
+//             : "Unknown error"
+//         }`
+//       );
+//     }
+
+//     const data = (await response.json()) as GeminiResponse;
+//     const messageText = data?.candidates?.[0]?.content?.parts?.[0]?.text || "";
+
+//     // Log token usage for cost monitoring
+//     const tokensUsed = data?.usageMetadata?.totalTokenCount;
+
+//     return {
+//       message: messageText,
+//       tokensUsed,
+//       modelUsed: model,
+//     };
+//   } catch (error) {
+//     logger.error("Conversation processing failed", {
+//       userId: user.id,
+//       documentId,
+//       error: error instanceof Error ? error.message : String(error),
+//     });
+//     throw error;
+//   }
+// };
+
+
+
+// This function now becomes an async generator
+/**
+ * Processes a conversation by performing retrieval-augmented generation (RAG)
+ * and streaming the response from the Gemini API.
+ *
+ * @returns An AsyncIterable<string> that yields text chunks of the AI's response.
+ */
+export async function* processConversationStream(
   user: User,
   apiKey: string,
   documentSummary: string,
@@ -437,47 +570,37 @@ export const processConversation = async (
   messages: Message[],
   model: string = DEFAULT_MODEL,
   signal?: AbortSignal
-): Promise<ProcessedResponse> => {
+): AsyncIterable<string> {
   try {
+    // 1. Perform retrieval based on the user's current question
     const lastUserMessage =
       messages.filter((m) => m.role === "user").slice(-1)[0]?.content || "";
-    const cleanUserMessage = lastUserMessage.trim().slice(0, 1000); // Avoid absurd length
+    const cleanUserMessage = lastUserMessage.trim().slice(0, 1000);
 
-    // 1. Perform retrieval based on the *user's current question*
     const similarChunks = await searchSimilar({
-      query: cleanUserMessage, // FIX: Query should be the user's message
+      query: cleanUserMessage,
       userId: user.id,
-      documentId: documentId, // FIX: Pass the document ID to scope the search
+      documentId: documentId,
       userApiKey: apiKey,
     });
 
     let retrievedContext = "";
     if (similarChunks.length > 0) {
-      // Combine the retrieved chunks into a single string for the LLM context
       retrievedContext = similarChunks
-        .map((chunk: any) => chunk.payload?.text) // Assuming 'text' is the key for content in payload
-        .filter(Boolean) // Remove any null/undefined chunks
-        .join("\n---\n"); // Use a separator between chunks
+        .map((chunk: any) => chunk.payload?.text)
+        .filter(Boolean)
+        .join("\n---\n");
     } else {
-      console.log(
-        `No similar chunks found for user ${user.id} within doc ${documentId}`
-      );
-      // Handle cases where no relevant context is found (e.g., provide a general fallback)
       retrievedContext =
         "No specific relevant information found in this document for your query.";
     }
 
-    logger.info("INFORMATION RETRIEVED", {
-      userId: user.id,
-      documentId: documentId,
-      similarChunksCount: similarChunks.length,
-      retrievedContextLength: retrievedContext.length,
-      lastUserMessage: lastUserMessage.substring(0, 100), // Log first 100 chars of the last user message
+    logger.info("INFORMATION RETRIEVED FOR STREAM", {
+        userId: user.id,
+        documentId: documentId,
     });
 
-    console.log(`Similar Retrieved Chunks are: ${retrievedContext}`);
-    console.log(`Retrieved document summary is: ${documentSummary}`);
-
+    // 2. Build the final prompt
     const prompt = buildConversationPrompt(
       user.name,
       documentSummary,
@@ -485,68 +608,42 @@ export const processConversation = async (
       retrievedContext
     );
 
-    const response = await withRetry(
-      () =>
-        fetch(
-          `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              "X-Client-ID": process.env.CLIENT_ID || "your-service-id",
-            },
-            body: JSON.stringify({
-              contents: [
-                {
-                  parts: [{ text: prompt }],
-                },
-              ],
-              generationConfig: GEMINI_GENERATION_CONFIG,
-              safetySettings: GEMINI_SAFETY_SETTINGS,
-            }),
-            signal,
-          }
-        ),
-      GEMINI_CONFIG.MAX_RETRIES,
-      3000
-    );
+    // 3. Instantiate the SDK and call the streaming endpoint
+    const genAI = new GoogleGenerativeAI(apiKey);
+    const generativeModel = genAI.getGenerativeModel({
+      model: model,
+      // safetySettings: GEMINI_SAFETY_SETTINGS,
+      generationConfig: GEMINI_GENERATION_CONFIG,
+    });
+    
+    // Pass the abort signal to the SDK request
+    const streamingResult = await generativeModel.generateContentStream({
+        contents: [{ role: "user", parts: [{ text: prompt }] }],
+        // The SDK's generateContentStream takes an object with a `signal` property
+        // for cancellation. As of recent versions, it's part of the request object.
+        // If your SDK version differs, you might need to check its specific API.
+        // For now, we'll rely on the controller's outer try/catch for timeout.
+    });
 
-    if (!response.ok) {
-      const errorData = await response.json();
-      console.error("Gemini API error:", {
-        status: response.status,
-        error: errorData,
-        promptPreview: prompt.substring(0, 100),
-      });
-      throw new Error(
-        `API Error ${response.status}: ${
-          typeof errorData === "object" &&
-          errorData !== null &&
-          "error" in errorData &&
-          typeof (errorData as any).error?.message === "string"
-            ? (errorData as any).error.message
-            : "Unknown error"
-        }`
-      );
+
+    // 4. Yield each chunk of text as it arrives
+    for await (const chunk of streamingResult.stream) {
+      // AbortSignal check
+      if (signal?.aborted) {
+        throw new Error("AbortError");
+      }
+      const chunkText = chunk.text();
+      if (chunkText) {
+        yield chunkText; // 'yield' sends this piece back to the controller
+      }
     }
-
-    const data = (await response.json()) as GeminiResponse;
-    const messageText = data?.candidates?.[0]?.content?.parts?.[0]?.text || "";
-
-    // Log token usage for cost monitoring
-    const tokensUsed = data?.usageMetadata?.totalTokenCount;
-
-    return {
-      message: messageText,
-      tokensUsed,
-      modelUsed: model,
-    };
   } catch (error) {
-    logger.error("Conversation processing failed", {
+    logger.error("Conversation stream processing failed", {
       userId: user.id,
       documentId,
       error: error instanceof Error ? error.message : String(error),
     });
+    // Re-throw the error so the controller can catch and handle it
     throw error;
   }
-};
+}

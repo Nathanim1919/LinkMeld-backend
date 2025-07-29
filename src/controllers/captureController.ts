@@ -13,6 +13,7 @@ import { pdfQueue } from "../queue/pdfProcessor";
 import { aiQueue } from "../queue/aiQueue";
 import { logger } from "../utils/logger";
 import { embedQueue } from "../queue/embedQueue";
+import { checkRemotePdfSize } from "../utils/checkRemotePdfSize";
 
 // Constants
 const MIN_CONTENT_LENGTH = 50;
@@ -50,15 +51,32 @@ export const saveCapture = async (
     }
 
     const captureData = await prepareCaptureData(req, mainText, format);
+    const isPdf = captureData.metadata?.isPdf;
 
+    // ✅ Check size BEFORE saving
+    if (isPdf) {
+      if (!captureData.url) {
+        return ErrorResponse({
+          res,
+          statusCode: 400,
+          message: "Missing URL for PDF capture.",
+        });
+      }
+      const pdfCheckResult = await checkRemotePdfSize(captureData.url);
+      if (pdfCheckResult.statusCode !== 200) {
+        return ErrorResponse({
+          res,
+          statusCode: pdfCheckResult.statusCode,
+          message: pdfCheckResult.message,
+        });
+      }
+    }
+
+    // ✅ Now save to DB
     const capture = await new Capture(captureData).save();
 
-    const conversation = await Conversation.create({ captureId: capture._id });
-    capture.conversation = new Types.ObjectId(conversation._id);
-    await capture.save();
-
-    if (capture.metadata.isPdf) {
-      // Add to PDF processing queue
+    // ✅ Queue processing
+    if (isPdf) {
       await pdfQueue.add(
         "process-pdf",
         {
@@ -66,10 +84,10 @@ export const saveCapture = async (
           url: capture.url,
         },
         {
-          attempts: 3, // Total tries including the first attempt
+          attempts: 3,
           backoff: {
-            type: "exponential", // or "fixed"
-            delay: 5000, // milliseconds
+            type: "exponential",
+            delay: 5000,
           },
         }
       );
@@ -82,20 +100,25 @@ export const saveCapture = async (
           userId: capture.owner?.toString(),
         },
         {
-          attempts: 3, // Total tries including the first attempt
+          attempts: 3,
           backoff: {
-            type: "exponential", // or "fixed"
-            delay: 5000, // milliseconds
+            type: "exponential",
+            delay: 5000,
           },
         }
       );
     }
+
+    const conversation = await Conversation.create({ captureId: capture._id });
+    capture.conversation = new Types.ObjectId(conversation._id);
+    await capture.save(); // update with conversation ID
 
     return SuccessResponse({
       res,
       statusCode: 201,
       message: "Capture saved successfully",
     });
+
   } catch (error) {
     console.error("[Capture] Save error:", error);
     return ErrorResponse({
@@ -107,6 +130,7 @@ export const saveCapture = async (
     });
   }
 };
+
 
 /**
  * Prepares capture data for storage
@@ -186,6 +210,7 @@ const prepareCaptureData = async (
     },
   };
 };
+
 
 // Util to detect format from URL
 const detectFormat = (url: string): ICapture["format"] => {
