@@ -1,4 +1,4 @@
-import UserProfile from "../common/models/UserProfile";
+import UserProfile from "../../common/models/UserProfile";
 
 // user.service.ts
 export class UserService {

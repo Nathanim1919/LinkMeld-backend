@@ -1,14 +1,14 @@
 import { Request, Response } from "express";
-import { Capture } from "../common/models/Capture";
-import { logger } from "../common/utils/logger";
-import { ErrorResponse, SuccessResponse } from "../common/utils/responseHandlers";
+import { Capture } from "../../common/models/Capture";
+import { logger } from "../../common/utils/logger";
+import { ErrorResponse, SuccessResponse } from "../../common/utils/responseHandlers";
 import {
   // ConversationRequest,
   processContent,
   // processConversation,
   processConversationStream,
   validateRequest,
-} from "../ai/services/aiService";
+} from "../../ai/services/aiService";
 import { UserService } from "../services/user.service";
 
 // Constants

@@ -1,14 +1,14 @@
 // src/services/pdfProcessor.ts
 
-import { generateSlug } from "../common/utils/slugify";
-import { calculateReadingTime, Capture, countWords } from "../common/models/Capture";
-import { downloadPdf } from "../common/utils/pdfUtils";
-import { uploadPdfToBlob } from "../common/utils/azureBlob";
-import { extractTextFromPdf } from "../common/utils/extractTextFromPdf";
-import { hashContent } from "../common/utils/hashing";
+import { generateSlug } from "../../common/utils/slugify";
+import { calculateReadingTime, Capture, countWords } from "../../common/models/Capture";
+import { downloadPdf } from "../../common/utils/pdfUtils";
+import { uploadPdfToBlob } from "../../common/utils/azureBlob";
+import { extractTextFromPdf } from "../../common/utils/extractTextFromPdf";
+import { hashContent } from "../../common/utils/hashing";
 import { connectMongo } from "../config/database";
 import { aiQueue } from "../queue/aiQueue";
-import { withRetry } from "../common/utils/withRetry";
+import { withRetry } from "../../common/utils/withRetry";
 
 // Ensure MongoDB is connected before doing any DB operations
 connectMongo();

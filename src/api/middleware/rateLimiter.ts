@@ -1,8 +1,8 @@
 // src/middleware/rateLimiter.ts
 import rateLimit from "express-rate-limit";
 import { Request, Response } from "express";
-import { ErrorResponse } from "../common/utils/responseHandlers";
-import { logger } from "../common/utils/logger";
+import { ErrorResponse } from "../../common/utils/responseHandlers";
+import { logger } from "../../common/utils/logger";
 
 // Common rate limit options
 const commonOptions = {

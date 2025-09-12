@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import Feedback from "../common/models/Feedback";
-import { ErrorResponse, SuccessResponse } from "../common/utils/responseHandlers";
+import Feedback from "../../common/models/Feedback";
+import { ErrorResponse, SuccessResponse } from "../../common/utils/responseHandlers";
 
 export const submitFeedback = async (
   req: Request,

@@ -1,11 +1,11 @@
 import { Request, Response } from "express";
-import { Capture } from "../common/models/Capture";
-import Collection from "../common/models/Collection";
-import UserProfile from "../common/models/UserProfile";
-import { logger } from "../common/utils/logger";
-import { IUser } from "../common/types/userTypes";
-import { ErrorResponse, SuccessResponse } from "../common/utils/responseHandlers";
-import { validateApiKey } from "../common/utils/validators";
+import { Capture } from "../../common/models/Capture";
+import Collection from "../../common/models/Collection";
+import UserProfile from "../../common/models/UserProfile";
+import { logger } from "../../common/utils/logger";
+import { IUser } from "../types/userTypes";
+import { ErrorResponse, SuccessResponse } from "../../common/utils/responseHandlers";
+import { validateApiKey } from "../../common/utils/validators";
 
 // Constants
 const SERVICE_NAME = "UserProfileService";

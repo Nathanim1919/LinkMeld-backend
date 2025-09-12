@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import { Capture } from "../common/models/Capture";
+import { Capture } from "../../common/models/Capture";
 import { Types } from "mongoose";
-import { ErrorResponse, SuccessResponse } from "../common/utils/responseHandlers";
+import { ErrorResponse, SuccessResponse } from "../../common/utils/responseHandlers";
 
 /**
  * Helper method to find captures by site name
