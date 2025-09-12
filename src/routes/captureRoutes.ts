@@ -30,7 +30,7 @@ router.get("/", getCaptures);
  * @access  Private
  * @rate    Limited (15 requests/minute)
  */
-router.post("/save", rateLimiter("standard"), saveCapture);
+router.post("/save", rateLimiter("strict"), saveCapture);
 
 /**
  * @route   GET /api/captures/search
@@ -79,6 +79,6 @@ router.patch("/:captureId/bookmark", rateLimiter("standard"), toggleBookmark);
  * @access Private
  * @query {string} query - Search term
  */
-router.post("/:captureId/reprocess", reProcessCapture);
+router.post("/:captureId/reprocess", rateLimiter("strict"), reProcessCapture);
 
 export default router;
