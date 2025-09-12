@@ -1,9 +1,8 @@
 import { Worker, Job } from "bullmq";
-import { redisConnection } from "../lib/redisClient";
-import { connectMongo } from "../config/database";
-import { logger } from "../common/utils/logger";
-import { handleEmbedding } from "../jobs/embed/handleEmbedding";
-import { handleDeleteEmbedding } from "../jobs/embed/handleDeleteEmbedding";
+import { handleEmbedding } from "./handlers/handleEmbedding";
+import { handleDeleteEmbedding } from "./handlers/handleDeleteEmbedding";
+import { logger } from "src/common/utils/logger";
+import { redisConnection } from "src/lib/redisClient";
 
 async function startWorker() {
   try {
