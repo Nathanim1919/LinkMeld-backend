@@ -1,6 +1,6 @@
 // scripts/seedIndexes.ts
 import mongoose from "mongoose";
-import { Capture } from "../models/Capture";
+import { Capture } from "../common/models/Capture";
 import dotenv from "dotenv";
 
 dotenv.config();

@@ -1,10 +1,10 @@
 import { TaskType } from "@google/generative-ai";
 import { qdrant } from "../clients/qdrant";
-import { chunkText } from "../utils/chunkText";
-import { generateGeminiEmbeddingsWithFetch } from "../utils/embedding";
-import { logger } from "../../utils/logger";
+import { chunkText } from "../../common/utils/chunkText";
+import { generateGeminiEmbeddingsWithFetch } from "../../common/utils/embedding";
+import { logger } from "../../common/utils/logger";
 import { QdrantClient } from "@qdrant/js-client-rest";
-import { withRetry } from "../../utils/withRetry";
+import { withRetry } from "../../common/utils/withRetry";
 import { v4 as uuidv4 } from "uuid";
 const VECTOR_SIZE = 3072; // Gemini 1.5 embedding size; // Default size for Gemini embeddings
 

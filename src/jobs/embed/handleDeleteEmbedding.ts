@@ -1,7 +1,7 @@
 import { Job } from "bullmq";
-import { logger } from "../../utils/logger";
+import { logger } from "../../common/utils/logger";
 import { deleteTextEmbedding } from "../../ai/services/vectorStore";
-import { withRetry } from "../../utils/withRetry";
+import { withRetry } from "../../common/utils/withRetry";
 
 export async function handleDeleteEmbedding(job: Job) {
   const { docId, userId } = job.data;

@@ -1,7 +1,7 @@
 import { Worker, Job } from "bullmq";
 import { redisConnection } from "../lib/redisClient";
 import { connectMongo } from "../config/database";
-import { logger } from "../utils/logger";
+import { logger } from "../common/utils/logger";
 import { handleEmbedding } from "../jobs/embed/handleEmbedding";
 import { handleDeleteEmbedding } from "../jobs/embed/handleDeleteEmbedding";
 

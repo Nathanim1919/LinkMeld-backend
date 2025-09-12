@@ -4,10 +4,10 @@ import { Request } from "express";
 import { rateLimit } from "express-rate-limit";
 import { User } from "better-auth/types";
 import { UserService } from "../../services/user.service";
-import { withRetry } from "../../utils/withRetry";
+import { withRetry } from "../../common/utils/withRetry";
 import { searchSimilar } from "./vectorStore";
-import { logger } from "../../utils/logger";
-import { escapeMarkdown } from "../utils/sanitize";
+import { logger } from "../../common/utils/logger";
+import { escapeMarkdown } from "../../common/utils/sanitization";
 // Import the SDK at the top of your file
 import { GoogleGenerativeAI } from "@google/generative-ai";
 

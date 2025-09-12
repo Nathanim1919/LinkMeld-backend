@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import Waitlist from "../models/Waitlist";
-import { ErrorResponse, SuccessResponse } from "../utils/responseHandlers";
+import Waitlist from "../common/models/Waitlist";
+import { ErrorResponse, SuccessResponse } from "../common/utils/responseHandlers";
 
 export const joinWaitlist = async (req: Request, res: Response) => {
   try {

@@ -1,6 +1,6 @@
 import { Job } from "bullmq";
-import { logger } from "../../utils/logger";
-import { Capture } from "../../models/Capture";
+import { logger } from "../../common/utils/logger";
+import { Capture } from "../../common/models/Capture";
 import { indexText } from "../../ai/services/vectorStore";
 
 export const handleEmbedding = async (job: Job) => {

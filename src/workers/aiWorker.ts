@@ -1,11 +1,11 @@
 import { Worker, Job } from "bullmq";
 import { redisConnection } from "../lib/redisClient";
 import { connectMongo } from "../config/database";
-import { Capture } from "../models/Capture";
+import { Capture } from "../common/models/Capture";
 import { processContent } from "../ai/services/aiService";
 import { embedQueue } from "../queue/embedQueue";
 import { UserService } from "../services/user.service";
-import { logger } from "../utils/logger";
+import { logger } from "../common/utils/logger";
 
 connectMongo();
 

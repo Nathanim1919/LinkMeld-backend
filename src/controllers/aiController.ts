@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import { Capture } from "../models/Capture";
-import { logger } from "../utils/logger";
-import { ErrorResponse, SuccessResponse } from "../utils/responseHandlers";
+import { Capture } from "../common/models/Capture";
+import { logger } from "../common/utils/logger";
+import { ErrorResponse, SuccessResponse } from "../common/utils/responseHandlers";
 import {
   // ConversationRequest,
   processContent,

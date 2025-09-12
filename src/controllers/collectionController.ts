@@ -1,8 +1,8 @@
 import mongoose, { Types } from "mongoose";
 import { Request, Response } from "express";
-import Collection, { ICollection } from "../models/Collection";
-import { Capture } from "../models/Capture";
-import { ErrorResponse, SuccessResponse } from "../utils/responseHandlers";
+import Collection, { ICollection } from "../common/models/Collection";
+import { Capture } from "../common/models/Capture";
+import { ErrorResponse, SuccessResponse } from "../common/utils/responseHandlers";
 
 // Utility functions
 const validateObjectId = (id: string): boolean =>

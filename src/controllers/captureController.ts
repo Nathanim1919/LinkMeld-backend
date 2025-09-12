@@ -1,19 +1,19 @@
 // src/controllers/captureController.ts
 import { Request, Response } from "express";
-import { Capture } from "../models/Capture";
-import { hashContent } from "../utils/hashing";
-import { sanitizeHtml } from "../utils/sanitization";
-import { generateSlug } from "../utils/slugify";
-import { normalizeUrl } from "../utils/urls";
-import Conversation from "../models/Conversation";
+import { Capture } from "../common/models/Capture";
+import { hashContent } from "../common/utils/hashing";
+import { sanitizeHtml } from "../common/utils/sanitization";
+import { generateSlug } from "../common/utils/slugify";
+import { normalizeUrl } from "../common/utils/urls";
+import Conversation from "../common/models/Conversation";
 import { Types } from "mongoose";
-import { ErrorResponse, SuccessResponse } from "../utils/responseHandlers";
-import { ICapture } from "../types/capureTypes";
+import { ErrorResponse, SuccessResponse } from "../common/utils/responseHandlers";
+import { ICapture } from "../common/types/capureTypes";
 import { pdfQueue } from "../queue/pdfProcessor";
 import { aiQueue } from "../queue/aiQueue";
-import { logger } from "../utils/logger";
+import { logger } from "../common/utils/logger";
 import { embedQueue } from "../queue/embedQueue";
-import { checkRemotePdfSize } from "../utils/checkRemotePdfSize";
+import { checkRemotePdfSize } from "../common/utils/checkRemotePdfSize";
 
 // Constants
 const MIN_CONTENT_LENGTH = 50;
