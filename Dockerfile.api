@@ -21,4 +21,4 @@ WORKDIR /app
 COPY --from=builder /app .
 
 
-CMD ["npx", "ts-node", "src/server.ts"]
+CMD ["npx", "ts-node", "src/api/server.ts"]

@@ -1,7 +1,7 @@
 // Import RequestHandler along with the others
 // file name is auth.middleware.ts
 import { Request, Response, NextFunction, RequestHandler } from "express";
-import { auth } from "../lib/auth";
+import { auth } from "../../lib/auth";
 import { fromNodeHeaders } from "better-auth/node";
 
 // Extend the Express Request type to include the user property

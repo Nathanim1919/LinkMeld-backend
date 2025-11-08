@@ -3,7 +3,7 @@ import { Request } from "express";
 // import { validate as uuidValidate } from 'uuid';
 import { rateLimit } from "express-rate-limit";
 import { User } from "better-auth/types";
-import { UserService } from "../../services/user.service";
+import { UserService } from "../../api/services/user.service";
 import { withRetry } from "../../common/utils/withRetry";
 import { searchSimilar } from "./vectorStore";
 import { logger } from "../../common/utils/logger";

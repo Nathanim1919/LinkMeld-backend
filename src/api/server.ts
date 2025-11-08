@@ -1,7 +1,6 @@
 import "dotenv/config";
 import express, { Express } from "express";
 import cors from "cors";
-import { connectMongo } from "./config/database";
 import captureRoutes from "./routes/captureRoutes";
 import collectionRoutes from "./routes/collectionRoute";
 import sourceRoutes from "./routes/sourceRoute"; // Import source routes
@@ -9,11 +8,12 @@ import { userProfileRoutes } from "./routes/userRoute";
 import aiChatRoutes from "./routes/chatRoutes";
 import feedbackRoutes from "./routes/feedbackRoutes";
 import waitlistRoutes from "./routes/waitlistRoute";
-import { auth } from "./lib/auth";
+import { auth } from '../lib/auth';
 import { fromNodeHeaders, toNodeHandler } from "better-auth/node";
 import { Request, Response } from "express";
 import dotenv from "dotenv";
 import bodyParser from "body-parser";
+import { connectMongo } from "../common/config/database";
 dotenv.config();
 
 const app: Express = express();

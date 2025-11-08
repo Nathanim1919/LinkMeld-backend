@@ -1,14 +1,19 @@
 // src/services/pdfProcessor.ts
 
 import { generateSlug } from "../../common/utils/slugify";
-import { calculateReadingTime, Capture, countWords } from "../../common/models/Capture";
+import {
+  calculateReadingTime,
+  Capture,
+  countWords,
+} from "../../common/models/Capture";
 import { downloadPdf } from "../../common/utils/pdfUtils";
-import { uploadPdfToBlob } from "../../common/utils/azureBlob";
+import { uploadToR2 } from "../../common/utils/r2Upload";
 import { extractTextFromPdf } from "../../common/utils/extractTextFromPdf";
 import { hashContent } from "../../common/utils/hashing";
-import { connectMongo } from "../config/database";
-import { aiQueue } from "../queue/aiQueue";
 import { withRetry } from "../../common/utils/withRetry";
+import { connectMongo } from "../../common/config/database";
+import { aiProcessing } from "../../trigger/aiProcessing";
+import { embeddingProcessing, EmbeddingTaskType } from "../../trigger/embeddingProcessing";
 
 // Ensure MongoDB is connected before doing any DB operations
 connectMongo();
@@ -29,23 +34,25 @@ export async function processPdfCapture(captureId: string, url: string) {
   const traceId = `[PDF Processor] [${captureId}]`;
 
   try {
-    const capture = await Capture.findByIdAndUpdate(captureId, {
-      processingStatus: "processing",
-      "metadata.capturedAt": new Date(),
-    }, { new: true });
+    const capture = await Capture.findByIdAndUpdate(
+      captureId,
+      {
+        processingStatus: "processing",
+        "metadata.capturedAt": new Date(),
+      },
+      { new: true },
+    );
 
     if (!capture) throw new Error("Capture not found");
 
     const pdfData = await withRetry(() => downloadPdf(url), 3, 2000);
-    console.log(`${traceId} Downloaded PDF: ${pdfData.fileName} (${pdfData.size} bytes)`);
+    console.log(
+      `${traceId} Downloaded PDF: ${pdfData.fileName} (${pdfData.size} bytes)`,
+    );
     console.log(`${traceId} PDF Text Extracted: ${pdfData}`);
 
-    // if (!pdfData){
-    //   // throw error
-    // }
-
     const [blobUrl, rawText] = await Promise.all([
-      uploadPdfToBlob(pdfData.buffer, pdfData.fileName),
+      await uploadToR2(pdfData),
       extractTextFromPdf(pdfData.buffer),
     ]);
 
@@ -73,18 +80,30 @@ export async function processPdfCapture(captureId: string, url: string) {
       processingStatus: "ready",
     });
 
-    await aiQueue.add(`process-ai:${capture.owner}`, {
+    await aiProcessing.trigger({
       captureId,
-      userId: capture.owner?.toString(),
+      userId: capture.owner?.toString() || "",
+    });
+
+    await embeddingProcessing.trigger({
+      captureId,
+      userId: capture.owner?.toString() || "",
+      taskType: EmbeddingTaskType.INDEX,
     });
 
     return { success: true, captureId, slug: generateSlug(title), blobUrl };
-
   } catch (err) {
-    console.error(`${traceId} ❌ Error: ${err instanceof Error ? err.message : err}`);
+    console.error(
+      `${traceId} ❌ Error: ${err instanceof Error ? err.message : err}`,
+    );
     await Capture.findByIdAndUpdate(captureId, {
       processingStatus: "error",
+
     });
-    return { success: false, captureId, error: err instanceof Error ? err.message : String(err) };
+    return {
+      success: false,
+      captureId,
+      error: err instanceof Error ? err.message : String(err),
+    };
   }
 }

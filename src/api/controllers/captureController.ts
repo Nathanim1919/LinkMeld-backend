@@ -9,10 +9,10 @@ import Conversation from "../../common/models/Conversation";
 import { Types } from "mongoose";
 import { ErrorResponse, SuccessResponse } from "../../common/utils/responseHandlers";
 import { ICapture } from "../../common/types/capureTypes";
-import { pdfQueue } from "../../queue/pdfProcessor";
-import { aiQueue } from "../../queue/aiQueue";
 import { logger } from "../../common/utils/logger";
-import { embedQueue } from "../../queue/embedQueue";
+import { aiProcessing } from "../../trigger/aiProcessing";
+import { embeddingProcessing, EmbeddingTaskType } from "../../trigger/embeddingProcessing";
+import { pdfProcessing } from "../../trigger/pdfProcessing";
 import { checkRemotePdfSize } from "../../common/utils/checkRemotePdfSize";
 
 // Constants
@@ -77,36 +77,25 @@ export const saveCapture = async (
 
     // ✅ Queue processing
     if (isPdf) {
-      await pdfQueue.add(
-        "process-pdf",
-        {
-          captureId: capture._id,
-          url: capture.url,
-        },
-        {
-          attempts: 3,
-          backoff: {
-            type: "exponential",
-            delay: 5000,
-          },
-        }
-      );
+      await pdfProcessing.trigger({
+        captureId: capture._id?.toString() || "",
+        url: capture.url,
+      });
+
     } else {
       logger.info(`AI Initializing for capture ${capture._id}`);
-      await aiQueue.add(
-        "process-ai",
-        {
-          captureId: capture._id,
-          userId: capture.owner?.toString(),
-        },
-        {
-          attempts: 3,
-          backoff: {
-            type: "exponential",
-            delay: 5000,
-          },
-        }
-      );
+
+      await aiProcessing.trigger({
+        captureId: capture._id?.toString() || "",
+        userId: capture.owner?.toString() || "",
+      });
+
+      await embeddingProcessing.trigger({
+        captureId: capture._id?.toString() || "",
+        userId: capture.owner?.toString() || "",
+        taskType: EmbeddingTaskType.INDEX,
+      });
+
     }
 
     const conversation = await Conversation.create({ captureId: capture._id });
@@ -287,9 +276,8 @@ export const toggleBookmark = async (
 
     return SuccessResponse({
       res,
-      message: `Capture ${
-        capture.bookmarked ? "bookmarked" : "unbookmarked"
-      } successfully`,
+      message: `Capture ${capture.bookmarked ? "bookmarked" : "unbookmarked"
+        } successfully`,
       data: { captureId: capture._id },
     });
   } catch (error) {
@@ -371,9 +359,10 @@ export const deleteCapture = async (
     }
 
     // Add a delete job to remove the vector embedding
-    await embedQueue.add("delete-embedding", {
-      docId: capture?._id?.toString(),
+    await embeddingProcessing.trigger({
+      captureId: capture?._id?.toString() || "",
       userId: req.user.id,
+      taskType: EmbeddingTaskType.DELETE,
     });
 
     // Optionally, delete the associated conversation
@@ -530,43 +519,27 @@ export const reProcessCapture = async (
     }
 
     if (capture.metadata.isPdf) {
-      // Re-add to PDF processing queue
+      // Re-add to PDF processing task
       logger.info(`Re-adding PDF processing for capture ${capture._id}`);
-      await pdfQueue.add(
-        "process-pdf",
-        {
-          captureId: capture._id,
-          url: capture.url,
-        },
-        {
-          attempts: 3, // Total tries including the first attempt
-          backoff: {
-            type: "exponential", // or "fixed"
-            delay: 5000, // milliseconds
-          },
-        }
-      );
-
+      await pdfProcessing.trigger({
+        captureId: capture._id?.toString() || "",
+        url: capture.url,
+      });
       logger.info(`AI Initializing for re-processing capture ${capture._id}`);
       capture.processingStatus = "processing";
       await capture.save();
     } else {
       logger.info(`AI Initializing for re-processing capture ${capture._id}`);
       capture.processingStatus = "processing";
-      await aiQueue.add(
-        "process-ai",
-        {
-          captureId: capture._id,
-          userId: capture.owner?.toString(),
-        },
-        {
-          attempts: 3, // Total tries including the first attempt
-          backoff: {
-            type: "exponential", // or "fixed"
-            delay: 5000, // milliseconds
-          },
-        }
-      );
+      await aiProcessing.trigger({
+        captureId: capture._id?.toString() || "",
+        userId: capture.owner?.toString() || "",
+      });
+      await embeddingProcessing.trigger({
+        captureId: capture._id?.toString() || "",
+        userId: capture.owner?.toString() || "",
+        taskType: EmbeddingTaskType.INDEX,
+      });
       await capture.save();
     }
 
