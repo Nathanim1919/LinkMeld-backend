@@ -1,6 +1,12 @@
 import { QdrantClient } from "@qdrant/js-client-rest";
 
-export const qdrant = new QdrantClient({
-  url: "http://qdrant:6333", // internal Docker hostname
-  timeout: 30000, // 30 seconds
+const QDRANT_CLOUD_URL = process.env.QDRANT_CLOUD_URL;
+const QDRANT_API_KEY = process.env.QDRANT_API_KEY;
+
+const qdrant = new QdrantClient({
+  url: QDRANT_CLOUD_URL,
+  apiKey: QDRANT_API_KEY,
 });
+
+// You can now export this client to use across your Express routes
+export { qdrant };

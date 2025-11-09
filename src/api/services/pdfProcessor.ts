@@ -13,10 +13,14 @@ import { hashContent } from "../../common/utils/hashing";
 import { withRetry } from "../../common/utils/withRetry";
 import { connectMongo } from "../../common/config/database";
 import { aiProcessing } from "../../trigger/aiProcessing";
-import { embeddingProcessing, EmbeddingTaskType } from "../../trigger/embeddingProcessing";
+import {
+  embeddingProcessing,
+  EmbeddingTaskType,
+} from "../../trigger/embeddingProcessing";
 
 // Ensure MongoDB is connected before doing any DB operations
-connectMongo();
+// The connection will be awaited inside the processor function to guarantee
+// the DB is ready before any operations are attempted.
 
 /**
  * Process a PDF capture:
@@ -32,6 +36,11 @@ connectMongo();
  */
 export async function processPdfCapture(captureId: string, url: string) {
   const traceId = `[PDF Processor] [${captureId}]`;
+
+  // Ensure MongoDB connection is established before performing any DB operations.
+  // Awaiting here prevents Mongoose buffering timeouts when the service starts
+  // and the connection is not yet fully ready.
+  await connectMongo();
 
   try {
     const capture = await Capture.findByIdAndUpdate(
@@ -98,7 +107,6 @@ export async function processPdfCapture(captureId: string, url: string) {
     );
     await Capture.findByIdAndUpdate(captureId, {
       processingStatus: "error",
-
     });
     return {
       success: false,

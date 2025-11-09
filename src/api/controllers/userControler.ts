@@ -4,7 +4,10 @@ import Collection from "../../common/models/Collection";
 import UserProfile from "../../common/models/UserProfile";
 import { logger } from "../../common/utils/logger";
 import { IUser } from "../types/userTypes";
-import { ErrorResponse, SuccessResponse } from "../../common/utils/responseHandlers";
+import {
+  ErrorResponse,
+  SuccessResponse,
+} from "../../common/utils/responseHandlers";
 import { validateApiKey } from "../../common/utils/validators";
 
 // Constants
@@ -108,9 +111,11 @@ export class UserProfileController {
   static async upsertGeminiApiKey(req: Request, res: Response): Promise<void> {
     try {
       const user = req.user as IUser;
-      const { geminiApiKey } = req.body;
+      // Accept both the new field `geminiApiKey` and the legacy `apiKey` for backwards compatibility
+      const { geminiApiKey, apiKey: legacyApiKey } = req.body;
 
-
+      // Prefer explicit `geminiApiKey`, fall back to legacy `apiKey`
+      const providedKey = geminiApiKey || legacyApiKey;
 
       // Input validation
       if (!user?.id) {
@@ -122,7 +127,7 @@ export class UserProfileController {
         return;
       }
 
-      if (!geminiApiKey) {
+      if (!providedKey) {
         ErrorResponse({
           res,
           statusCode: 400,
@@ -131,7 +136,7 @@ export class UserProfileController {
         return;
       }
 
-      if (!validateApiKey.gemini(geminiApiKey)) {
+      if (!validateApiKey.gemini(providedKey)) {
         ErrorResponse({
           res,
           statusCode: 400,
@@ -142,16 +147,17 @@ export class UserProfileController {
 
       logger.info(`${SERVICE_NAME}:upsertGeminiApiKey`, {
         userId: user.id,
-        keyPresent: !!geminiApiKey,
+        keyPresent: !!providedKey,
+        legacyFieldUsed: !!legacyApiKey && !geminiApiKey,
       });
 
       // Find or create profile
-     await UserProfile.findOneAndUpdate(
+      await UserProfile.findOneAndUpdate(
         { userId: user.id },
         {
-          $set: { [`externalServices.${GEMINI_SERVICE}.apiKey`]: geminiApiKey },
+          $set: { [`externalServices.${GEMINI_SERVICE}.apiKey`]: providedKey },
         },
-        { upsert: true, new: true }
+        { upsert: true, new: true },
       );
 
       SuccessResponse({
@@ -185,7 +191,13 @@ export class UserProfileController {
         });
         return;
       }
-      const profile = await UserProfile.findOne({ userId: user.id });
+
+      // Include the encrypted Gemini API key explicitly (schema uses select: false)
+      const profile = await UserProfile.findOne({ userId: user.id })
+        .select("+externalServices.gemini.apiKey")
+        .lean()
+        .exec();
+
       if (!profile) {
         ErrorResponse({
           res,
@@ -194,10 +206,35 @@ export class UserProfileController {
         });
         return;
       }
+
+      // Extract and mask the Gemini key; never return the raw key
+      const rawKey = profile?.externalServices?.gemini?.apiKey as
+        | string
+        | undefined;
+      const hasApiKey = !!rawKey;
+      const maskedKey = hasApiKey
+        ? `${rawKey.slice(0, 4)}...${rawKey.slice(-4)}`
+        : undefined;
+
+      // Remove raw key from object if present to avoid accidental leaks
+      if (profile.externalServices && profile.externalServices.gemini) {
+        delete profile.externalServices.gemini.apiKey;
+      }
+
       SuccessResponse({
         res,
         statusCode: 200,
-        data: profile,
+        data: {
+          ...profile,
+          externalServices: {
+            ...profile.externalServices,
+            gemini: {
+              ...(profile.externalServices?.gemini || {}),
+              hasApiKey,
+              maskedKey,
+            },
+          },
+        },
       });
     } catch (error) {
       logger.error(`${SERVICE_NAME}:getUserProfile:error`, error);

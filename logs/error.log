@@ -2,3 +2,68 @@
 {"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-11-08 18:33:41:3341"}
 {"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: User profile not found","service":"api-service","statusCode":404,"timestamp":"2025-11-08 18:35:51:3551"}
 {"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: User profile not found","service":"api-service","statusCode":404,"timestamp":"2025-11-08 18:35:52:3552"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: User profile not found","service":"api-service","statusCode":404,"timestamp":"2025-11-09 10:48:51:4851"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: User profile not found","service":"api-service","statusCode":404,"timestamp":"2025-11-09 10:48:52:4852"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Gemini API key is required","service":"api-service","statusCode":400,"timestamp":"2025-11-09 10:49:44:4944"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Gemini API key is required","service":"api-service","statusCode":400,"timestamp":"2025-11-09 10:49:48:4948"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Gemini API key is required","service":"api-service","statusCode":400,"timestamp":"2025-11-09 10:50:28:5028"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: User profile not found","service":"api-service","statusCode":404,"timestamp":"2025-11-09 10:51:19:5119"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: User profile not found","service":"api-service","statusCode":404,"timestamp":"2025-11-09 10:51:19:5119"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: User profile not found","service":"api-service","statusCode":404,"timestamp":"2025-11-09 10:51:21:5121"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: User profile not found","service":"api-service","statusCode":404,"timestamp":"2025-11-09 10:51:21:5121"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Gemini API key is required","service":"api-service","statusCode":400,"timestamp":"2025-11-09 10:51:25:5125"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Gemini API key is required","service":"api-service","statusCode":400,"timestamp":"2025-11-09 10:54:33:5433"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Gemini API key is required","service":"api-service","statusCode":400,"timestamp":"2025-11-09 10:56:35:5635"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Gemini API key is required","service":"api-service","statusCode":400,"timestamp":"2025-11-09 10:56:44:5644"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: PDF file exceeds the 5MB limit.","service":"api-service","statusCode":400,"timestamp":"2025-11-09 11:01:06:16"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Invalid Gemini API key format","service":"api-service","statusCode":400,"timestamp":"2025-11-09 11:04:05:45"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-11-09 11:21:48:2148"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-11-09 11:22:14:2214"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-11-09 11:22:16:2216"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-11-09 11:22:19:2219"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-11-09 11:22:23:2223"}
+{"documentId":"690f62fe7916bb61f4ef70e0","error":"fetch failed","level":"error","message":"Conversation stream processing failed","service":"api-service","timestamp":"2025-11-09 11:32:51:3251","userId":"690f62b07916bb61f4ef70d7"}
+{"level":"error","message":"AIController:converse:stream:error fetch failed","name":"TypeError","service":"api-service","timestamp":"2025-11-09 11:32:51:3251"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: PDF file exceeds the 5MB limit.","service":"api-service","statusCode":400,"timestamp":"2025-11-09 11:36:02:362"}
+{"documentId":"690f62fe7916bb61f4ef70e0","error":"fetch failed","level":"error","message":"Conversation stream processing failed","service":"api-service","timestamp":"2025-11-09 11:45:41:4541","userId":"690f62b07916bb61f4ef70d7"}
+{"level":"error","message":"AIController:converse:stream:error fetch failed","name":"TypeError","service":"api-service","timestamp":"2025-11-09 11:45:41:4541"}
+{
+  service: 'api-service',
+  level: 'error',
+  message: 'Failed to verify collection documents: fetch failed',
+  stack: 'TypeError: fetch failed\n' +
+    '    at node:internal/deps/undici/undici:13502:13\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n' +
+    '    at fetchJson (file:///home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/@qdrant/openapi-typescript-fetch/dist/esm/fetcher.js:132:22)\n' +
+    '    at file:///home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/@qdrant/js-client-rest/dist/esm/api-client.js:32:24\n' +
+    '    at handler (file:///home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/@qdrant/openapi-typescript-fetch/dist/esm/fetcher.js:153:16)\n' +
+    '    at file:///home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/@qdrant/js-client-rest/dist/esm/api-client.js:16:24\n' +
+    '    at handler (file:///home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/@qdrant/openapi-typescript-fetch/dist/esm/fetcher.js:153:16)\n' +
+    '    at fetchUrl (file:///home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/@qdrant/openapi-typescript-fetch/dist/esm/fetcher.js:159:22)\n' +
+    '    at Object.fun [as getCollection] (file:///home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/@qdrant/openapi-typescript-fetch/dist/esm/fetcher.js:165:20)\n' +
+    '    at QdrantClient.getCollection (file:///home/nathanim/Documents/myCompany/LinkMeld/LinkMeld-backend/node_modules/@qdrant/js-client-rest/dist/esm/qdrant-client.js:857:26)',
+  cause: Error: getaddrinfo EAI_AGAIN qdrant
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+      at GetAddrInfoReqWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+    errno: -3001,
+    code: 'EAI_AGAIN',
+    syscall: 'getaddrinfo',
+    hostname: 'qdrant'
+  },
+  timestamp: '2025-11-09 12:21:37:2137'
+}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-11-09 12:21:37:2137"}
+{"documentId":"69105d00ca2b05a61f1f6697","error":"fetch failed","level":"error","message":"Conversation stream processing failed","service":"api-service","timestamp":"2025-11-09 12:23:04:234","userId":"690f62b07916bb61f4ef70d7"}
+{"level":"error","message":"AIController:converse:stream:error fetch failed","name":"TypeError","service":"api-service","timestamp":"2025-11-09 12:23:04:234"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Capture not found","service":"api-service","statusCode":404,"timestamp":"2025-11-09 12:39:57:3957"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Capture not found","service":"api-service","statusCode":404,"timestamp":"2025-11-09 12:39:58:3958"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: Capture not found","service":"api-service","statusCode":404,"timestamp":"2025-11-09 12:40:35:4035"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-11-09 12:40:45:4045"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-11-09 14:43:42:4342"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-11-09 14:43:45:4345"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-11-09 14:43:46:4346"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-11-09 14:56:25:5625"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-11-09 14:56:27:5627"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-11-09 14:56:29:5629"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-11-09 14:56:34:5634"}
+{"error":null,"errorCode":null,"level":"error","message":"ErrorResponse: No distinct site names found for user","service":"api-service","statusCode":404,"timestamp":"2025-11-09 14:58:41:5841"}
