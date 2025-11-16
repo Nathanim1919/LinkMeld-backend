@@ -1,6 +1,5 @@
 .env
-./node_modules
-./qdrant_data
-
+logs/
+node_modules/
+qdrant_data/
 .trigger
-./logs
