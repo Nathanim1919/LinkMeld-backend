@@ -55,18 +55,18 @@ export async function indexText({
       userApiKey,
       "RETRIEVAL_DOCUMENT" as TaskType.RETRIEVAL_DOCUMENT,
       3,
-      2000
+      2000,
     );
 
     if (embedding !== null) {
       // Validate embedding
       if (!Array.isArray(embedding) || embedding.length !== VECTOR_SIZE) {
         logger.error(
-          `Invalid embedding for chunk ${i} of doc ${docId}: Expected ${VECTOR_SIZE} dimensions, got ${embedding.length}`
+          `Invalid embedding for chunk ${i} of doc ${docId}: Expected ${VECTOR_SIZE} dimensions, got ${embedding.length}`,
         );
         continue;
       }
-      
+
       points.push({
         id: uuidv4(), // Generate a unique ID for the point
         vector: embedding,
@@ -78,12 +78,12 @@ export async function indexText({
           created_at: new Date().toISOString(),
         },
       });
-      
+
       logger.debug("First point to upsert:", JSON.stringify(points[0]));
-      logger.debug(`POINTS: ${points}`)
+      logger.debug(`POINTS: ${points}`);
     } else {
       logger.warn(
-        `Failed to generate embedding for chunk ${i} of doc ${docId}`
+        `Failed to generate embedding for chunk ${i} of doc ${docId}`,
       );
     }
   }
@@ -101,18 +101,19 @@ export async function indexText({
     async () => {
       try {
         logger.debug(
-          `Upserting ${points.length} points to documents collection`
+          `Upserting ${points.length} points to documents collection`,
         );
-        await qdrant.upsert("documents", { points })
-        .then(res=>{
-          logger.info(`THE RESPONSE IS: ${res}`)
-          logger.info(
-            `Successfully upserted ${points.length} points for doc ${docId}`
-          );
-        })
-        .catch(err=> {
-          logger.error(`ERROR OCCURED: ${err}`)
-        })
+        await qdrant
+          .upsert("documents", { points })
+          .then((res) => {
+            logger.info(`THE RESPONSE IS: ${res}`);
+            logger.info(
+              `Successfully upserted ${points.length} points for doc ${docId}`,
+            );
+          })
+          .catch((err) => {
+            logger.error(`ERROR OCCURED: ${err}`);
+          });
         // logger.info(`Upsert result: ${JSON.stringify(result)}`);
       } catch (error) {
         logger.error(`Upsert failed for doc ${docId}:`, {
@@ -129,7 +130,7 @@ export async function indexText({
       }
     },
     3,
-    2000
+    2000,
   );
 }
 
@@ -213,7 +214,7 @@ export async function searchSimilar({
     userApiKey,
     "RETRIEVAL_QUERY" as TaskType.RETRIEVAL_QUERY,
     3,
-    2000
+    2000,
   );
 
   if (!vector) {

@@ -2,7 +2,6 @@ import { TaskType } from "@google/generative-ai"; // You might need to install @
 import { withRetry } from "../../common/utils/withRetry";
 import { logger } from "../../common/utils/logger";
 
-
 // Define the structure for the nested embedding object
 interface EmbeddingValue {
   values: number[];
@@ -25,9 +24,11 @@ interface EmbeddingResponse {
 export async function generateGeminiEmbeddingsWithFetch(
   text: string,
   apiKey: string,
-  taskType: TaskType.RETRIEVAL_DOCUMENT | TaskType.RETRIEVAL_QUERY = TaskType.RETRIEVAL_DOCUMENT,
+  taskType:
+    | TaskType.RETRIEVAL_DOCUMENT
+    | TaskType.RETRIEVAL_QUERY = TaskType.RETRIEVAL_DOCUMENT,
   maxRetries: number = 3,
-  initialDelay: number = 2000 // 2 seconds
+  initialDelay: number = 2000, // 2 seconds
 ): Promise<number[] | null> {
   const EMBEDDING_MODEL = "gemini-embedding-001";
   const ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/${EMBEDDING_MODEL}:embedContent?key=${apiKey}`;
@@ -36,7 +37,7 @@ export async function generateGeminiEmbeddingsWithFetch(
 
   const requestBody = {
     content: {
-      parts: [{ text: text }]
+      parts: [{ text: text }],
     },
     taskType: taskType,
   };
@@ -53,7 +54,7 @@ export async function generateGeminiEmbeddingsWithFetch(
           signal: controller.signal,
         }),
       maxRetries,
-      initialDelay
+      initialDelay,
     );
 
     if (!response.ok) {
@@ -74,7 +75,11 @@ export async function generateGeminiEmbeddingsWithFetch(
     });
 
     // Correctly access the embedding values
-    if (data.embedding && Array.isArray(data.embedding.values) && data.embedding.values.length > 0) {
+    if (
+      data.embedding &&
+      Array.isArray(data.embedding.values) &&
+      data.embedding.values.length > 0
+    ) {
       logger.info("Embeddings generated successfully", {
         embeddingSize: data.embedding.values.length,
         taskType: taskType,
@@ -89,7 +94,6 @@ export async function generateGeminiEmbeddingsWithFetch(
       console.error("Invalid embedding response structure or empty embedding values:", data);
       return null;
     }
-
   } catch (error) {
     logger.error("Failed to generate embeddings after retries:", { error: (error as Error).message });
     return null;

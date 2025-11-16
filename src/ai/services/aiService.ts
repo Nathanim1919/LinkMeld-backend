@@ -7,12 +7,12 @@ import { UserService } from "../../api/services/user.service";
 import { withRetry } from "../../common/utils/withRetry";
 import { searchSimilar } from "./vectorStore";
 import { logger } from "../../common/utils/logger";
-import { escapeMarkdown } from "../../common/utils/sanitization";
 // Import the SDK at the top of your file
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import { Prompt } from "../prompts/summaryPrompts";
 
 // Type definitions
-interface Message {
+export interface Message {
   role: "user" | "assistant" | "system";
   content: string;
   timestamp?: Date;
@@ -75,7 +75,7 @@ const GEMINI_CONFIG = {
 export const processContent = async (
   content: string,
   userId: string,
-  existingSummary?: string
+  existingSummary?: string,
 ): Promise<AIResponse> => {
   try {
     // Process content and generate summary
@@ -102,7 +102,7 @@ export const processContent = async (
     const summaryResult = await generateSummary(
       cleanText,
       existingSummary,
-      apiKey
+      apiKey,
     );
 
     return {
@@ -120,86 +120,15 @@ export const processContent = async (
 export const generateSummary = async (
   text: string,
   existingSummary: string = "", // This is now crucial
-  apiKey: string
+  apiKey: string,
 ): Promise<string> => {
   const controller = new AbortController();
   const timeout = setTimeout(
     () => controller.abort(),
-    GEMINI_CONFIG.REQUEST_TIMEOUT
+    GEMINI_CONFIG.REQUEST_TIMEOUT,
   );
 
   try {
-    const promptContent = `
-    You are Deepen.ai — an advanced knowledge assistant for a "second brain" system that intelligently analyzes user-fed content (text, PDFs, YouTube transcripts, technical docs, etc.). Your job is to generate a **clean, context-aware Markdown summary** that enhances human understanding and exploration.
-    
-    Your output will be **rendered in a React app** using \`react-markdown\` and \`react-syntax-highlighter\`. Adapt to the depth and nature of the input, and organize content with **clear headers**. You may omit irrelevant sections or add more where meaningful.
-    
-    ---
-    
-    ### 📌 Core Guidelines
-    
-    1. **Tone & Format**
-       - Write in clear, neutral tone — like a helpful senior researcher.
-       - Output **Markdown only** (no code block wrapping).
-       - Structure with section headers (\`##\`) or bullet lists where appropriate.
-       - Use triple backticks for any code blocks or examples (e.g., \`\`\`js\`\`\`).
-    
-    2. **Content Structure (Adaptive)**
-       Based on input type, depth, and clarity, dynamically choose from these sections (and add more if needed):
-       
-       - ## Summary
-         - What this document is and what it's generally about.
-         - Keep it short (2–3 sentences).
-         
-       - ## Key Insights / Takeaways / Highlights
-         - 3–7 concise bullets of the most useful or thought-provoking ideas.
-         - Mark opinions with *(Opinion)*, controversial claims with *(Claim)*.
-    
-       - ## Technical Clarifications / Examples (if technical or scientific)
-         - Offer supporting code, math examples, pseudocode, or diagram description.
-         - Use fenced code blocks with proper language tags.
-    
-       - ## Concept Breakdown (if abstract/complex)
-         - Simplify jargon-heavy or conceptual ideas in plain language.
-    
-       - ## Follow-Up Questions
-         - Always use the title "Follow-Up Questions" (not "Next Steps").
-         - Suggest 3–4 questions for deeper thinking or research.
-         - Each should begin with “What”, “How”, or “Why”.
-         - No yes/no questions.
-    
-       - ## Explore Further
-         - Include 2–4 relevant, high-quality external links in markdown and  list all URLs in the source (if any).
-         - Use titles like [Deep Dive: Topic](URL).
-
-    ---
-    
-    ### 🧠 Context Parameters
-    
-    - **Input Type**: {inputType} (e.g., YouTube transcript, PDF, blog post, research paper)
-    - **Original Content**: ${text}
-    - **Existing Summary** (if any): ${existingSummary}
-    - **User Intent**: Help the user absorb the key content, context, and next steps for this document without rereading the full material.
-    
-    ---
-    
-    ### 🔒 Strict Rules
-    
-    - Never hallucinate or fabricate facts.
-    - Be accurate and structured — no vague fluff.
-    - Never include commentary on unrelated subjects.
-    - Respect domain-specific terminology — do not simplify technical terms unless in a breakdown section.
-    - Avoid redundant or filler headers if content doesn’t justify them.
-    
-    ---
-    
-    ### 🧑‍💼 System Instruction
-    
-    Act as Deepen.ai, the assistant that *thinks with you*, not for you. Prioritize clarity, credibility, and curiosity-driven navigation.
-    
-    Your output will be shown alongside source content. Be helpful, not verbose.
-    `;
-
     const response = await withRetry(
       () =>
         fetch(
@@ -212,17 +141,17 @@ export const generateSummary = async (
                 {
                   parts: [
                     {
-                      text: promptContent,
+                      text: Prompt.generateSummary(text, existingSummary),
                     },
                   ],
                 },
               ],
             }),
             signal: controller.signal,
-          }
+          },
         ),
       GEMINI_CONFIG.MAX_RETRIES,
-      2000
+      2000,
     );
 
     clearTimeout(timeout);
@@ -247,7 +176,7 @@ export const generateSummary = async (
         "Failed to parse JSON for summary:",
         jsonError,
         "Raw:",
-        raw
+        raw,
       );
       throw new Error(`Invalid JSON response from Gemini summary API: ${raw}`);
     }
@@ -316,7 +245,7 @@ export const conversationRateLimiter = rateLimit({
 });
 
 export const validateRequest = (
-  req: Request
+  req: Request,
 ): { isValid: boolean; error?: string } => {
   if (!req.body) return { isValid: false, error: "Request body is missing" };
 
@@ -357,203 +286,15 @@ export const buildConversationPrompt = (
   userName: string,
   documentSummary: string,
   messages: Message[],
-  retrievedContext: string
+  retrievedContext: string,
 ): string => {
-  const MAX_SUMMARY_CHARS = 1500;
-
-  const cleanSummary = escapeMarkdown(documentSummary).slice(
-    0,
-    MAX_SUMMARY_CHARS
+  return Prompt.conversationPrompt(
+    userName,
+    documentSummary,
+    messages,
+    retrievedContext,
   );
-
-  const systemMessage = `
-You are **deepen.ai** — a smart, friendly assistant designed to help ${escapeMarkdown(
-    userName
-  )} explore, understand, and reason about any document or topic. Think of yourself as a thoughtful friend who is curious, proactive, and deeply knowledgeable — but never overwhelming.
-
-📄 DOCUMENT CONTEXT:
-- You are currently helping the user understand a specific document.
-${cleanSummary ? `OVERALL DOCUMENT SUMMARY:\n---\n${cleanSummary}\n---` : ""}
-
-- Here is the most relevant information retrieved from that document based on the user's current query:
----\n${escapeMarkdown(retrievedContext)}\n---
-
-🤝 TONE & PERSONALITY:
-- Friendly, respectful, and conversational — like a very smart peer
-- Never too formal or robotic
-- You **reason smartly**, even when the document doesn’t state things explicitly based *only* on the provided context.
-- Be encouraging and curious — never dismissive or vague
-
-💡 BEHAVIOR:
-- Answer questions *strictly using the provided \"DOCUMENT CONTEXT\"* above.
-- Prioritize information from the \"MOST RELEVANT CONTEXT\" for specific questions.
-- Use the \"OVERALL DOCUMENT SUMMARY\" for broad overview questions or if specific details are missing from the relevant context.
-- If the answer cannot be found or reasonably inferred from the provided context (both relevant chunks AND summary), state that you cannot find the answer in the document.
-- Adapt your answer style based on content type:
-  - **Technical or code?** → Add practical examples
-  - **Math or logic?** → Add clear steps and breakdowns
-  - **Plain/unclear text?** → Summarize it clearly and fill in gaps
-
-📎 LINKS & EXPLORATION:
-- Extract and list **all links** from the *provided context* if necessary.
-- Provide them as **clickable elements**.
-
-✅ FORMAT RULES:
-- Keep answers clean and well-structured.
-- Use markdown-style bullets, headers, and spacing.
-- Do **not** restate the entire document — summarize and synthesize intelligently.
-- Prioritize clarity, actionability, and thoughtful engagement.
-
-🧠 GENERAL RULES:
-- Never hallucinate facts.
-- Respect context and user intent.
-- Avoid repetition or filler.
-- Don’t over-apologize — be confident but kind.
-`;
-
-  const conversationHistory = messages
-    .slice(-6)
-    .map((msg) => `${msg.role.toUpperCase()}: ${escapeMarkdown(msg.content)}`)
-    .join("\n");
-
-  const lastUserMessage =
-    messages.filter((m) => m.role === "user").slice(-1)[0]?.content || "";
-
-  return `
-${systemMessage}
-
-🗣 CONVERSATION HISTORY:
-${conversationHistory}
-
-❓ CURRENT USER REQUEST: \"${escapeMarkdown(lastUserMessage)}\"
-
-💬 YOUR RESPONSE (follow the guidance above):
-`.trim();
 };
-
-// export const processConversation = async (
-//   user: User,
-//   apiKey: string,
-//   documentSummary: string,
-//   documentId: string,
-//   messages: Message[],
-//   model: string = DEFAULT_MODEL,
-//   signal?: AbortSignal
-// ): Promise<ProcessedResponse> => {
-//   try {
-//     const lastUserMessage =
-//       messages.filter((m) => m.role === "user").slice(-1)[0]?.content || "";
-//     const cleanUserMessage = lastUserMessage.trim().slice(0, 1000); // Avoid absurd length
-
-//     // 1. Perform retrieval based on the *user's current question*
-//     const similarChunks = await searchSimilar({
-//       query: cleanUserMessage, // FIX: Query should be the user's message
-//       userId: user.id,
-//       documentId: documentId, // FIX: Pass the document ID to scope the search
-//       userApiKey: apiKey,
-//     });
-
-//     let retrievedContext = "";
-//     if (similarChunks.length > 0) {
-//       // Combine the retrieved chunks into a single string for the LLM context
-//       retrievedContext = similarChunks
-//         .map((chunk: any) => chunk.payload?.text) // Assuming 'text' is the key for content in payload
-//         .filter(Boolean) // Remove any null/undefined chunks
-//         .join("\n---\n"); // Use a separator between chunks
-//     } else {
-//       console.log(
-//         `No similar chunks found for user ${user.id} within doc ${documentId}`
-//       );
-//       // Handle cases where no relevant context is found (e.g., provide a general fallback)
-//       retrievedContext =
-//         "No specific relevant information found in this document for your query.";
-//     }
-
-//     logger.info("INFORMATION RETRIEVED", {
-//       userId: user.id,
-//       documentId: documentId,
-//       similarChunksCount: similarChunks.length,
-//       retrievedContextLength: retrievedContext.length,
-//       lastUserMessage: lastUserMessage.substring(0, 100), // Log first 100 chars of the last user message
-//     });
-
-//     console.log(`Similar Retrieved Chunks are: ${retrievedContext}`);
-//     console.log(`Retrieved document summary is: ${documentSummary}`);
-
-//     const prompt = buildConversationPrompt(
-//       user.name,
-//       documentSummary,
-//       messages,
-//       retrievedContext
-//     );
-
-//     const response = await withRetry(
-//       () =>
-//         fetch(
-//           `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
-//           {
-//             method: "POST",
-//             headers: {
-//               "Content-Type": "application/json",
-//               "X-Client-ID": process.env.CLIENT_ID || "your-service-id",
-//             },
-//             body: JSON.stringify({
-//               contents: [
-//                 {
-//                   parts: [{ text: prompt }],
-//                 },
-//               ],
-//               generationConfig: GEMINI_GENERATION_CONFIG,
-//               safetySettings: GEMINI_SAFETY_SETTINGS,
-//             }),
-//             signal,
-//           }
-//         ),
-//       GEMINI_CONFIG.MAX_RETRIES,
-//       3000
-//     );
-
-//     if (!response.ok) {
-//       const errorData = await response.json();
-//       console.error("Gemini API error:", {
-//         status: response.status,
-//         error: errorData,
-//         promptPreview: prompt.substring(0, 100),
-//       });
-//       throw new Error(
-//         `API Error ${response.status}: ${
-//           typeof errorData === "object" &&
-//           errorData !== null &&
-//           "error" in errorData &&
-//           typeof (errorData as any).error?.message === "string"
-//             ? (errorData as any).error.message
-//             : "Unknown error"
-//         }`
-//       );
-//     }
-
-//     const data = (await response.json()) as GeminiResponse;
-//     const messageText = data?.candidates?.[0]?.content?.parts?.[0]?.text || "";
-
-//     // Log token usage for cost monitoring
-//     const tokensUsed = data?.usageMetadata?.totalTokenCount;
-
-//     return {
-//       message: messageText,
-//       tokensUsed,
-//       modelUsed: model,
-//     };
-//   } catch (error) {
-//     logger.error("Conversation processing failed", {
-//       userId: user.id,
-//       documentId,
-//       error: error instanceof Error ? error.message : String(error),
-//     });
-//     throw error;
-//   }
-// };
-
-
 
 // This function now becomes an async generator
 /**
@@ -569,7 +310,7 @@ export async function* processConversationStream(
   documentId: string,
   messages: Message[],
   model: string = DEFAULT_MODEL,
-  signal?: AbortSignal
+  signal?: AbortSignal,
 ): AsyncIterable<string> {
   try {
     // 1. Perform retrieval based on the user's current question
@@ -596,8 +337,8 @@ export async function* processConversationStream(
     }
 
     logger.info("INFORMATION RETRIEVED FOR STREAM", {
-        userId: user.id,
-        documentId: documentId,
+      userId: user.id,
+      documentId: documentId,
     });
 
     // 2. Build the final prompt
@@ -605,7 +346,7 @@ export async function* processConversationStream(
       user.name,
       documentSummary,
       messages,
-      retrievedContext
+      retrievedContext,
     );
 
     // 3. Instantiate the SDK and call the streaming endpoint
@@ -615,22 +356,27 @@ export async function* processConversationStream(
       // safetySettings: GEMINI_SAFETY_SETTINGS,
       generationConfig: GEMINI_GENERATION_CONFIG,
     });
-    
-    // Pass the abort signal to the SDK request
-    const streamingResult = await generativeModel.generateContentStream({
-        contents: [{ role: "user", parts: [{ text: prompt }] }],
-        // The SDK's generateContentStream takes an object with a `signal` property
-        // for cancellation. As of recent versions, it's part of the request object.
-        // If your SDK version differs, you might need to check its specific API.
-        // For now, we'll rely on the controller's outer try/catch for timeout.
-    });
 
+    // NOTE: Do NOT pass the AbortSignal into the SDK request object here.
+    // Some SDK implementations serialize unknown fields into the JSON payload,
+    // which can cause the remote API to reject the request (e.g. \"Unknown name 'signal'\").
+    // Instead, rely on the controller-level AbortSignal and the internal abort
+    // checks performed while iterating the returned stream below. We intentionally
+    // avoid forwarding `signal` into the request object to prevent it from being
+    // included in the JSON payload sent to the API.
+    const streamingResult = await generativeModel.generateContentStream({
+      contents: [{ role: "user", parts: [{ text: prompt }] }],
+    });
 
     // 4. Yield each chunk of text as it arrives
     for await (const chunk of streamingResult.stream) {
-      // AbortSignal check
+      // AbortSignal check - if signalled, throw an error with the name "AbortError"
+      // so upstream handlers can distinguish timeout/abort cases.
       if (signal?.aborted) {
-        throw new Error("AbortError");
+        const abortErr = Object.assign(new Error("Request aborted"), {
+          name: "AbortError",
+        });
+        throw abortErr;
       }
       const chunkText = chunk.text();
       if (chunkText) {

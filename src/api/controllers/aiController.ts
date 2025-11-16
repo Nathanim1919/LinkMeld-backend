@@ -1,7 +1,10 @@
 import { Request, Response } from "express";
 import { Capture } from "../../common/models/Capture";
 import { logger } from "../../common/utils/logger";
-import { ErrorResponse, SuccessResponse } from "../../common/utils/responseHandlers";
+import {
+  ErrorResponse,
+  SuccessResponse,
+} from "../../common/utils/responseHandlers";
 import {
   // ConversationRequest,
   processContent,
@@ -13,7 +16,8 @@ import { UserService } from "../services/user.service";
 
 // Constants
 const SERVICE_NAME = "AIController";
-const REQUEST_TIMEOUT_MS = 10000; // 10 seconds
+// Increased timeout to 60 seconds for longer AI responses/streaming
+const REQUEST_TIMEOUT_MS = 60000; // 60 seconds
 
 /**
  * @class AIController
@@ -57,7 +61,7 @@ export class AIController {
       const result = await processContent(
         capture.content.clean || "",
         user.id,
-        capture.ai.summary || ""
+        capture.ai.summary || "",
       );
 
       if (result.success && result.data) {
@@ -103,11 +107,11 @@ export class AIController {
    * @method converse
    * @description Handles AI conversation with context from a capture
    */
-static async chat(req: Request, res: Response): Promise<void> {
+  static async chat(req: Request, res: Response): Promise<void> {
     const controller = new AbortController();
     const timeout = setTimeout(
       () => controller.abort("Request timeout"),
-      REQUEST_TIMEOUT_MS
+      REQUEST_TIMEOUT_MS,
     );
     const { user } = req;
 
@@ -121,13 +125,19 @@ static async chat(req: Request, res: Response): Promise<void> {
       const { isValid, error } = validateRequest(req);
       if (!isValid) {
         // We can't send a normal JSON error if headers are flushed, so we send an error event.
-        res.write(`data: ${JSON.stringify({ error: error || "Invalid request", code: "INVALID_REQUEST" })}\n\n`);
+        res.write(
+          `data: ${JSON.stringify({ error: error || "Invalid request", code: "INVALID_REQUEST" })}\n\n`,
+        );
         res.end();
         return;
       }
 
       const { captureId, messages, model } = req.body;
-      logger.info(`${SERVICE_NAME}:converse:stream:start`, { captureId, model });
+
+      logger.info(`${SERVICE_NAME}:converse:stream:start`, {
+        captureId,
+        model,
+      });
 
       const documentSummary = await Capture.findById(captureId)
         .select("ai.summary")
@@ -136,10 +146,17 @@ static async chat(req: Request, res: Response): Promise<void> {
       const apiKey = await UserService.getGeminiApiKey(user.id);
 
       if (!apiKey) {
-        res.write(`data: ${JSON.stringify({ error: "API key is required", code: "API_KEY_REQUIRED" })}\n\n`);
+        res.write(
+          `data: ${JSON.stringify({ error: "API key is required", code: "API_KEY_REQUIRED" })}\n\n`,
+        );
         res.end();
         return;
       }
+
+      logger.info(`${SERVICE_NAME}:converse:stream:start`, {
+        captureId,
+        model,
+      });
 
       // Get the stream from our service function
       const stream = processConversationStream(
@@ -149,7 +166,7 @@ static async chat(req: Request, res: Response): Promise<void> {
         captureId,
         messages,
         model,
-        controller.signal
+        controller.signal,
       );
 
       // Write each chunk from the stream to the response
@@ -160,14 +177,31 @@ static async chat(req: Request, res: Response): Promise<void> {
       // Send a final message to indicate the stream is successfully done
       res.write(`data: ${JSON.stringify({ done: true })}\n\n`);
     } catch (error) {
-        const err = error as Error;
-        logger.error(`${SERVICE_NAME}:converse:stream:error`, { name: err.name, message: err.message });
-      
-        // Send an error event to the client before closing
-        const errorCode = err.name === 'AbortError' ? 'REQUEST_TIMEOUT' : 'AI_CONVERSATION_FAILED';
-        const errorMessage = err.name === 'AbortError' ? 'Request timed out' : 'AI conversation failed';
+      const err = error as Error;
+      logger.error(`${SERVICE_NAME}:converse:stream:error`, {
+        name: err.name,
+        message: err.message,
+        stack: err.stack,
+      });
 
-        res.write(`data: ${JSON.stringify({ error: errorMessage, code: errorCode })}\n\n`);
+      // Send an error event to the client before closing.
+      // Include error details so the client can surface a clearer message.
+      const errorCode =
+        err.name === "AbortError"
+          ? "REQUEST_TIMEOUT"
+          : "AI_CONVERSATION_FAILED";
+      const errorMessage =
+        err.name === "AbortError"
+          ? "Request timed out"
+          : "AI conversation failed";
+
+      res.write(
+        `data: ${JSON.stringify({
+          error: errorMessage,
+          code: errorCode,
+          details: err.message,
+        })}\n\n`,
+      );
     } finally {
       clearTimeout(timeout);
       res.end(); // Always close the connection
