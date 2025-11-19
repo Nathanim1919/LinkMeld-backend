@@ -8,7 +8,7 @@ import { userProfileRoutes } from "./routes/userRoute";
 import aiChatRoutes from "./routes/chatRoutes";
 import feedbackRoutes from "./routes/feedbackRoutes";
 import waitlistRoutes from "./routes/waitlistRoute";
-import { auth } from '../lib/auth';
+import { auth } from "../lib/auth";
 import { fromNodeHeaders, toNodeHandler } from "better-auth/node";
 import { Request, Response } from "express";
 import dotenv from "dotenv";
@@ -31,11 +31,12 @@ app.use(
       "http://localhost:5173",
       "https://deepen.live",
       "https://www.deepen.live",
+      "https://deepen-ten.vercel.app/",
     ],
     credentials: true,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With"],
-  })
+  }),
 );
 
 app.all("/api/auth/*splat", (req: Request, res: Response) => {
