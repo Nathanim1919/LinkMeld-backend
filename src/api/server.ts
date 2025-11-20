@@ -31,7 +31,7 @@ app.use(
       "http://localhost:5173",
       "https://deepen.live",
       "https://www.deepen.live",
-      "https://deepen-ten.vercel.app/",
+      "https://deepen-ten.vercel.app",
     ],
     credentials: true,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
