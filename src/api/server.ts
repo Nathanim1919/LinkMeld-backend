@@ -17,10 +17,14 @@ import { connectMongo } from "../common/config/database";
 dotenv.config();
 
 const app: Express = express();
-const port = process.env.PORT || 3000;
 
 // Connect to MongoDB
 connectMongo();
+
+// Prefer the platform-provided PORT; fallback to 3000 for local dev
+const port = Number(process.env.PORT) || 3000;
+// Prefer the platform-provided HOST; bind to 0.0.0.0 by default so health checks can reach the process
+const host = process.env.HOST || "0.0.0.0";
 
 // Increase payload limit to 10MB
 
@@ -69,6 +73,6 @@ app.get("/api/health", (_: Request, res: Response) => {
 });
 
 // Start server
-app.listen(port, () => {
-  console.log(`⚡️[server]: Server is running on port ${port}`);
+app.listen(port, host, () => {
+  console.log(`⚡️[server]: Server is running at http://${host}:${port}`);
 });
