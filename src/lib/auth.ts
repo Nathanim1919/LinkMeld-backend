@@ -10,7 +10,7 @@ import { MongoClient } from "mongodb";
 const mongo = new MongoClient(process.env.MONGO_URI! as string);
 mongo.connect(); // Explicitly connect
 
-const dbName = "deepen"
+const dbName = "deepen";
 const db = mongo.db(dbName);
 
 export const auth = betterAuth({
@@ -19,6 +19,7 @@ export const auth = betterAuth({
     "https://deepen.live", // Added trusted origin
     "https://www.deepen.live", // Fixed syntax error
     "http://localhost:5173", // Replace with your frontend's origin
+    "https://deepen-api.onrender.com", // Added trusted origin
   ],
   secret: process.env.BETTER_AUTH_SECRET as string,
   emailAndPassword: {

@@ -43,11 +43,11 @@ app.all("/api/auth/*splat", (req: Request, res: Response) => {
   toNodeHandler(auth)(req, res);
 });
 
-app.use(express.json());
+// ✅ Correct: Use built-in express middleware with limits
+app.use(express.json({ limit: "10mb" }));
+app.use(express.urlencoded({ limit: "10mb", extended: true }));
 
-app.use(bodyParser.json({ limit: "10mb" }));
-app.use(bodyParser.urlencoded({ limit: "10mb", extended: true }));
-
+// You can remove the 'import bodyParser' and 'app.use(bodyParser...)' lines entirely.
 // Routes
 app.use("/api/v1/captures", captureRoutes);
 app.use("/api/v1/folders", collectionRoutes);
@@ -69,6 +69,9 @@ app.get("/api/health", (_: Request, res: Response) => {
 });
 
 // Start server
-app.listen(port, () => {
-  console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
+app.listen(port, "0.0.0.0", () => {
+  console.log(`⚡️[server]: Server is running on port ${port}`);
+  console.log(
+    `Public URL: ${process.env.PUBLIC_URL || "https://deepen-api.onrender.com"}`,
+  );
 });
