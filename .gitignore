@@ -1,4 +1,5 @@
 .env
+dist/
 logs/
 node_modules/
 qdrant_data/

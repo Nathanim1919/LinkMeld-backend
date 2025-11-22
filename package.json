@@ -2,9 +2,9 @@
   "name": "linkmeld-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/api/server.js",
+  "main": "dist/src/api/server.js",
   "scripts": {
-    "start": "node dist/api/server.js",
+    "start": "node dist/src/api/server.js",
     "dev": "ts-node-dev --respawn --transpile-only src/api/server.ts",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -47,13 +47,14 @@
   },
   "devDependencies": {
     "@trigger.dev/build": "4.1.0",
+    "@types/body-parser": "^1.19.6",
     "@types/bull": "^3.15.9",
+    "@types/cors": "^2.8.18",
+    "@types/express": "^5.0.5",
     "@types/node": "^22.15.21",
     "@types/pdf-parse": "^1.1.5",
-    "@types/uuid": "^10.0.0",
-    "@types/cors": "^2.8.18",
-    "@types/express": "^5.0.2",
     "@types/sanitize-html": "^2.16.0",
+    "@types/uuid": "^10.0.0",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.8.3"
   }
