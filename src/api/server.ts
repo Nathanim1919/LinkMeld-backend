@@ -12,7 +12,7 @@ import { auth } from "../lib/auth";
 import { fromNodeHeaders, toNodeHandler } from "better-auth/node";
 import { Request, Response } from "express";
 import dotenv from "dotenv";
-import bodyParser from "body-parser";
+// import bodyParser from "body-parser";
 import { connectMongo } from "../common/config/database";
 dotenv.config();
 
