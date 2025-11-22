@@ -22,6 +22,13 @@ export const auth = betterAuth({
     "https://deepen-api.onrender.com", // Added trusted origin
     "https://deepen-ten.vercel.app",
   ],
+  advanced: {
+    // THIS IS THE FIX
+    defaultCookieAttributes: {
+      sameSite: "none",
+      secure: true, // Required for SameSite="none"
+    },
+  },
   secret: process.env.BETTER_AUTH_SECRET as string,
   emailAndPassword: {
     enabled: true,
