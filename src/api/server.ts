@@ -48,7 +48,6 @@ app.use(express.json());
 app.use(bodyParser.json({ limit: "10mb" }));
 app.use(bodyParser.urlencoded({ limit: "10mb", extended: true }));
 
-// Routes
 app.use("/api/v1/captures", captureRoutes);
 app.use("/api/v1/folders", collectionRoutes);
 app.use("/api/v1/sources", sourceRoutes); // Use source routes
@@ -56,6 +55,9 @@ app.use("/api/v1/account", userProfileRoutes);
 app.use("/api/v1/ai", aiChatRoutes);
 app.use("/api/v1/feedback", feedbackRoutes);
 app.use("/api/v1/waitlist", waitlistRoutes);
+app.use("/api/v1/health", (_: Request, res: Response) => {
+  res.status(200).json({ status: "ok", message: "Server is healthy" });
+});
 
 app.get("/api/me", async (req: Request, res: Response) => {
   const session = await auth.api.getSession({
