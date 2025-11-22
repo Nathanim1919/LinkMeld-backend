@@ -24,6 +24,6 @@
     "resolveJsonModule": true,
     "baseUrl": "."
   },
-  "exclude": ["node_modules", "trigger.config.ts"],
-  "include": ["./src/**/*.ts"]
+  "exclude": ["node_modules"],
+  "include": ["./src/**/*.ts", "./src/trigger.config.ts"]
 }
