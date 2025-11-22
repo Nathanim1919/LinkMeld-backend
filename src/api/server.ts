@@ -17,7 +17,7 @@ import { connectMongo } from "../common/config/database";
 dotenv.config();
 
 const app: Express = express();
-const port = process.env.PORT || 3000;
+const port: number = parseInt(process.env.PORT || "3000", 10);
 
 // Connect to MongoDB
 connectMongo();
